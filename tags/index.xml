@@ -6,9 +6,46 @@
     <description>Recent content in Tags on Prashant Bhardwaj</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Sun, 11 Aug 2019 23:14:58 +0100</lastBuildDate>
     
 	<atom:link href="https://prashantbhardwaj.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>about</title>
+      <link>https://prashantbhardwaj.github.io/tags/about/</link>
+      <pubDate>Sun, 11 Aug 2019 23:14:58 +0100</pubDate>
+      
+      <guid>https://prashantbhardwaj.github.io/tags/about/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bio</title>
+      <link>https://prashantbhardwaj.github.io/tags/bio/</link>
+      <pubDate>Sun, 11 Aug 2019 23:14:58 +0100</pubDate>
+      
+      <guid>https://prashantbhardwaj.github.io/tags/bio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>me</title>
+      <link>https://prashantbhardwaj.github.io/tags/me/</link>
+      <pubDate>Sun, 11 Aug 2019 23:14:58 +0100</pubDate>
+      
+      <guid>https://prashantbhardwaj.github.io/tags/me/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>resume</title>
+      <link>https://prashantbhardwaj.github.io/tags/resume/</link>
+      <pubDate>Sun, 11 Aug 2019 23:14:58 +0100</pubDate>
+      
+      <guid>https://prashantbhardwaj.github.io/tags/resume/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
