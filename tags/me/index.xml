@@ -6,10 +6,19 @@
     <description>Recent content in me on Prashant Bhardwaj</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 11 Aug 2019 23:14:58 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 12 Aug 2019 23:22:50 +0100</lastBuildDate>
     
 	<atom:link href="https://prashantbhardwaj.github.io/tags/me/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Post1</title>
+      <link>https://prashantbhardwaj.github.io/posts/2019/08/post1/</link>
+      <pubDate>Mon, 12 Aug 2019 23:22:50 +0100</pubDate>
+      
+      <guid>https://prashantbhardwaj.github.io/posts/2019/08/post1/</guid>
+      <description>Kuchh bhi</description>
+    </item>
     
     <item>
       <title>About</title>

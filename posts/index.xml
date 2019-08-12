@@ -1,0 +1,23 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on Prashant Bhardwaj</title>
+        <link>https://prashantbhardwaj.github.io/posts/</link>
+        <description>Recent content in Posts on Prashant Bhardwaj</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Mon, 12 Aug 2019 23:22:50 +0100</lastBuildDate>
+        <atom:link href="https://prashantbhardwaj.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Post1</title>
+            <link>https://prashantbhardwaj.github.io/posts/2019/08/post1/</link>
+            <pubDate>Mon, 12 Aug 2019 23:22:50 +0100</pubDate>
+            
+            <guid>https://prashantbhardwaj.github.io/posts/2019/08/post1/</guid>
+            <description>Kuchh bhi</description>
+            <content type="html"><![CDATA[<p>Kuchh bhi</p>
+]]></content>
+        </item>
+        
+    </channel>
+</rss>
