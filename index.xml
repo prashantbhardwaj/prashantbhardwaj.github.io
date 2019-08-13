@@ -6,10 +6,20 @@
     <description>Recent content on Prashant Bhardwaj</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Aug 2019 23:22:50 +0100</lastBuildDate>
+    <copyright>copyright@Prashant</copyright>
+    <lastBuildDate>Tue, 13 Aug 2019 00:40:27 +0100</lastBuildDate>
     
 	<atom:link href="https://prashantbhardwaj.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>मेरा परिचय</title>
+      <link>https://prashantbhardwaj.github.io/hi/about/</link>
+      <pubDate>Tue, 13 Aug 2019 00:40:27 +0100</pubDate>
+      
+      <guid>https://prashantbhardwaj.github.io/hi/about/</guid>
+      <description>मेरा परिचय</description>
+    </item>
     
     <item>
       <title>Post1</title>

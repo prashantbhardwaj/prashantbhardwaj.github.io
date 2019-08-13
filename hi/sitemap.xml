@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://prashantbhardwaj.github.io/hi/categories/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://prashantbhardwaj.github.io/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="hi"
+                href="https://prashantbhardwaj.github.io/hi/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://prashantbhardwaj.github.io/hi/tags/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://prashantbhardwaj.github.io/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="hi"
+                href="https://prashantbhardwaj.github.io/hi/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://prashantbhardwaj.github.io/hi/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://prashantbhardwaj.github.io/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="hi"
+                href="https://prashantbhardwaj.github.io/hi/"
+                />
+  </url>
+  
+</urlset>
