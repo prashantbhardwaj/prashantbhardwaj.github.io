@@ -40,7 +40,7 @@
   </url>
   
   <url>
-    <loc>https://prashantbhardwaj.github.io/posts/2019/08/post1/</loc>
+    <loc>https://prashantbhardwaj.github.io/posts/2019/08/build-your-website-using-gohugo-and-host-it-on-github-pages/</loc>
     <lastmod>2019-08-12T23:22:50+01:00</lastmod>
   </url>
   
@@ -67,7 +67,25 @@
   </url>
   
   <url>
-    <loc>https://prashantbhardwaj.github.io/tags/me/</loc>
+    <loc>https://prashantbhardwaj.github.io/tags/github-pages/</loc>
+    <lastmod>2019-08-12T23:22:50+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://prashantbhardwaj.github.io/tags/go-hugo/</loc>
+    <lastmod>2019-08-12T23:22:50+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://prashantbhardwaj.github.io/tags/open-source/</loc>
+    <lastmod>2019-08-12T23:22:50+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://prashantbhardwaj.github.io/tags/website/</loc>
     <lastmod>2019-08-12T23:22:50+01:00</lastmod>
     <priority>0</priority>
   </url>
@@ -85,6 +103,12 @@
   
   <url>
     <loc>https://prashantbhardwaj.github.io/tags/bio/</loc>
+    <lastmod>2019-08-11T23:14:58+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://prashantbhardwaj.github.io/tags/me/</loc>
     <lastmod>2019-08-11T23:14:58+01:00</lastmod>
     <priority>0</priority>
   </url>

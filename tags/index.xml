@@ -13,11 +13,38 @@
     
     
     <item>
-      <title>me</title>
-      <link>https://prashantbhardwaj.github.io/tags/me/</link>
+      <title>github-pages</title>
+      <link>https://prashantbhardwaj.github.io/tags/github-pages/</link>
       <pubDate>Mon, 12 Aug 2019 23:22:50 +0100</pubDate>
       
-      <guid>https://prashantbhardwaj.github.io/tags/me/</guid>
+      <guid>https://prashantbhardwaj.github.io/tags/github-pages/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>go-hugo</title>
+      <link>https://prashantbhardwaj.github.io/tags/go-hugo/</link>
+      <pubDate>Mon, 12 Aug 2019 23:22:50 +0100</pubDate>
+      
+      <guid>https://prashantbhardwaj.github.io/tags/go-hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>open-source</title>
+      <link>https://prashantbhardwaj.github.io/tags/open-source/</link>
+      <pubDate>Mon, 12 Aug 2019 23:22:50 +0100</pubDate>
+      
+      <guid>https://prashantbhardwaj.github.io/tags/open-source/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>website</title>
+      <link>https://prashantbhardwaj.github.io/tags/website/</link>
+      <pubDate>Mon, 12 Aug 2019 23:22:50 +0100</pubDate>
+      
+      <guid>https://prashantbhardwaj.github.io/tags/website/</guid>
       <description></description>
     </item>
     
@@ -36,6 +63,15 @@
       <pubDate>Sun, 11 Aug 2019 23:14:58 +0100</pubDate>
       
       <guid>https://prashantbhardwaj.github.io/tags/bio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>me</title>
+      <link>https://prashantbhardwaj.github.io/tags/me/</link>
+      <pubDate>Sun, 11 Aug 2019 23:14:58 +0100</pubDate>
+      
+      <guid>https://prashantbhardwaj.github.io/tags/me/</guid>
       <description></description>
     </item>
     
