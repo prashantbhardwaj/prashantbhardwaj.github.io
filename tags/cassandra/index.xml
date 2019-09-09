@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cassandra on Prashant Bhardwaj</title>
+    <link>https://prashantbhardwaj.github.io/tags/cassandra/</link>
+    <description>Recent content in cassandra on Prashant Bhardwaj</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>copyright@Prashant</copyright>
+    <lastBuildDate>Mon, 09 Sep 2019 23:36:07 +0100</lastBuildDate>
+    
+	<atom:link href="https://prashantbhardwaj.github.io/tags/cassandra/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cassandra : When to use and how to use</title>
+      <link>https://prashantbhardwaj.github.io/posts/2019/09/cassandra-when-to-use-and-how-to-use/</link>
+      <pubDate>Mon, 09 Sep 2019 23:36:07 +0100</pubDate>
+      
+      <guid>https://prashantbhardwaj.github.io/posts/2019/09/cassandra-when-to-use-and-how-to-use/</guid>
+      <description>I don&amp;rsquo;t think that I need to explain what Cassandra is. OK, one liner is enough ! It is NoSQL database, primarily used in big data projects.</description>
+    </item>
+    
+  </channel>
+</rss>

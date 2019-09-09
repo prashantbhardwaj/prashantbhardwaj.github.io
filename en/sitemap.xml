@@ -3,19 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://prashantbhardwaj.github.io/hi/</loc>
-    <lastmod>2019-08-13T23:10:51+01:00</lastmod>
+    <loc>https://prashantbhardwaj.github.io/posts/2019/09/cassandra-when-to-use-and-how-to-use/</loc>
+    <lastmod>2019-09-09T23:36:07+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://prashantbhardwaj.github.io/posts/</loc>
+    <lastmod>2019-09-09T23:36:07+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://prashantbhardwaj.github.io/hi/posts/post2/</loc>
-    <lastmod>2019-08-13T23:10:51+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://prashantbhardwaj.github.io/</loc>
-    <lastmod>2019-08-13T23:10:51+01:00</lastmod>
+    <lastmod>2019-09-09T23:36:07+01:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -27,6 +27,51 @@
                 hreflang="en"
                 href="https://prashantbhardwaj.github.io/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://prashantbhardwaj.github.io/tags/</loc>
+    <lastmod>2019-09-09T23:36:07+01:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="hi"
+                href="https://prashantbhardwaj.github.io/hi/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://prashantbhardwaj.github.io/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://prashantbhardwaj.github.io/tags/apache/</loc>
+    <lastmod>2019-09-09T23:36:07+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://prashantbhardwaj.github.io/tags/cassandra/</loc>
+    <lastmod>2019-09-09T23:36:07+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://prashantbhardwaj.github.io/tags/open-source/</loc>
+    <lastmod>2019-09-09T23:36:07+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://prashantbhardwaj.github.io/hi/</loc>
+    <lastmod>2019-08-13T23:10:51+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://prashantbhardwaj.github.io/hi/posts/post2/</loc>
+    <lastmod>2019-08-13T23:10:51+01:00</lastmod>
   </url>
   
   <url>
@@ -45,28 +90,6 @@
   </url>
   
   <url>
-    <loc>https://prashantbhardwaj.github.io/posts/</loc>
-    <lastmod>2019-08-12T23:22:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://prashantbhardwaj.github.io/tags/</loc>
-    <lastmod>2019-08-12T23:22:50+01:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="hi"
-                href="https://prashantbhardwaj.github.io/hi/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://prashantbhardwaj.github.io/tags/"
-                />
-  </url>
-  
-  <url>
     <loc>https://prashantbhardwaj.github.io/tags/github-pages/</loc>
     <lastmod>2019-08-12T23:22:50+01:00</lastmod>
     <priority>0</priority>
@@ -74,12 +97,6 @@
   
   <url>
     <loc>https://prashantbhardwaj.github.io/tags/go-hugo/</loc>
-    <lastmod>2019-08-12T23:22:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://prashantbhardwaj.github.io/tags/open-source/</loc>
     <lastmod>2019-08-12T23:22:50+01:00</lastmod>
     <priority>0</priority>
   </url>
