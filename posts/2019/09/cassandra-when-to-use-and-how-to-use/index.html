@@ -7,7 +7,9 @@
 <meta name="author"
     content="Prashant Bhardwaj ">
 <meta name="description"
-    content="I don&amp;rsquo;t think that I need to explain what Cassandra is. OK, one liner is enough ! It is NoSQL database, primarily used in big data projects." />
+    content="I don&amp;rsquo;t think that I need to explain what Cassandra is. OK, one liner is enough ! It is NoSQL database, primarily used in big data projects.
+Before we start discussing scenarios where Cassandra fits very well, let&amp;rsquo;s discuss where it doesn&amp;rsquo;t fit at all.
+Common mistakes when using Cassandra We don&amp;rsquo;t have big data in the beginning however our data will grow and will become big one day Our organization has Cassandra running as a service so it is easy for us to atleast start with it Ohh !" />
 <meta name="keywords" content="homepage, blog, science, informatics, development, programming" />
 <meta name="robots" content="noodp" />
 <link rel="canonical" href="https://prashantbhardwaj.github.io/posts/2019/09/cassandra-when-to-use-and-how-to-use/" />
@@ -37,12 +39,14 @@
 <link rel="mask-icon" href="https://prashantbhardwaj.github.io/safari-pinned-tab.svg" color="#252627">
 <link rel="shortcut icon" href="https://prashantbhardwaj.github.io/favicon.ico">
 <meta name="theme-color" content="#252627"><meta itemprop="name" content="Cassandra : When to use and how to use">
-<meta itemprop="description" content="I don&rsquo;t think that I need to explain what Cassandra is. OK, one liner is enough ! It is NoSQL database, primarily used in big data projects.">
+<meta itemprop="description" content="I don&rsquo;t think that I need to explain what Cassandra is. OK, one liner is enough ! It is NoSQL database, primarily used in big data projects.
+Before we start discussing scenarios where Cassandra fits very well, let&rsquo;s discuss where it doesn&rsquo;t fit at all.
+Common mistakes when using Cassandra We don&rsquo;t have big data in the beginning however our data will grow and will become big one day Our organization has Cassandra running as a service so it is easy for us to atleast start with it Ohh !">
 
 
 <meta itemprop="datePublished" content="2019-09-09T23:36:07&#43;01:00" />
 <meta itemprop="dateModified" content="2019-09-09T23:36:07&#43;01:00" />
-<meta itemprop="wordCount" content="27">
+<meta itemprop="wordCount" content="127">
 
 
 
@@ -51,7 +55,9 @@
 <meta name="twitter:image" content="https://prashantbhardwaj.github.io/"/>
 
 <meta name="twitter:title" content="Cassandra : When to use and how to use"/>
-<meta name="twitter:description" content="I don&rsquo;t think that I need to explain what Cassandra is. OK, one liner is enough ! It is NoSQL database, primarily used in big data projects."/>
+<meta name="twitter:description" content="I don&rsquo;t think that I need to explain what Cassandra is. OK, one liner is enough ! It is NoSQL database, primarily used in big data projects.
+Before we start discussing scenarios where Cassandra fits very well, let&rsquo;s discuss where it doesn&rsquo;t fit at all.
+Common mistakes when using Cassandra We don&rsquo;t have big data in the beginning however our data will grow and will become big one day Our organization has Cassandra running as a service so it is easy for us to atleast start with it Ohh !"/>
 
 
 
@@ -127,6 +133,15 @@
             <div class="post-content">
                 <p>I don&rsquo;t think that I need to explain what Cassandra is. OK, one liner is enough ! It is NoSQL database, primarily used in big data projects.</p>
 
+<p>Before we start discussing scenarios where Cassandra fits very well, let&rsquo;s discuss where it doesn&rsquo;t fit at all.</p>
+
+<p><strong>Common mistakes when using Cassandra</strong>
+<strong>We don&rsquo;t have big data in the beginning however our data will grow and will become big one day</strong>
+<strong>Our organization has Cassandra running as a service so it is easy for us to atleast start with it</strong>
+<strong>Ohh ! CQL is just like SQL. Great !!, now we can query any data !</strong>
+<strong>Ohh no, Cassandra doesn&rsquo;t allow manipulation of data during read or write</strong>
+<strong>WoW, this User defined functions are great things, let&rsquo;s create many</strong></p>
+
             </div>
         </article>
 
@@ -137,7 +152,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://prashantbhardwaj.github.io/tags/cassandra">cassandra</a></span><span class="tag"><a href="https://prashantbhardwaj.github.io/tags/open-source">open-source</a></span><span class="tag"><a href="https://prashantbhardwaj.github.io/tags/apache">apache</a></span>
                 </p>
 
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>27 Words</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>127 Words</p>
 
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-09-09 23:36 &#43;0100</p>
         </div>
@@ -150,6 +165,13 @@
                 </div>
 
                 <div class="pagination__buttons">
+                    
+                        <span class="button previous">
+                            <a href="https://prashantbhardwaj.github.io/posts/2019/09/cassandra-what-is-this/">
+                                <span class="button__icon">←</span>
+                                <span class="button__text">Cassandra : What is this?</span>
+                            </a>
+                        </span>
                     
 
                     

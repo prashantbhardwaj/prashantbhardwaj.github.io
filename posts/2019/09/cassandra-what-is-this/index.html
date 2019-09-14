@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author"
+    content="Prashant Bhardwaj ">
+<meta name="description"
+    content="Agenda  Characterstics How does it internally work References  The Apache Cassandra database is the right choice when you need scalability and high availability without compromising performance. Linear scalability and proven fault-tolerance on commodity hardware or cloud infrastructure make it the perfect platform for mission-critical data. Cassandra&amp;rsquo;s support for replicating across multiple datacenters is best-in-class, providing lower latency for your users and the peace of mind of knowing that you can survive regional outages." />
+<meta name="keywords" content="homepage, blog, science, informatics, development, programming" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://prashantbhardwaj.github.io/posts/2019/09/cassandra-what-is-this/" />
+
+
+<title>
+    
+    Cassandra : What is this? :: Prashant Bhardwaj  — A Java developer
+    
+</title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://prashantbhardwaj.github.io/main.min.0d47b4686e972122bd29f0c1e3dd024a2d541cd8b1b543622520822ea6f4238a.css">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://prashantbhardwaj.github.io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://prashantbhardwaj.github.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://prashantbhardwaj.github.io/favicon-16x16.png">
+<link rel="manifest" href="https://prashantbhardwaj.github.io/site.webmanifest">
+<link rel="mask-icon" href="https://prashantbhardwaj.github.io/safari-pinned-tab.svg" color="#252627">
+<link rel="shortcut icon" href="https://prashantbhardwaj.github.io/favicon.ico">
+<meta name="theme-color" content="#252627"><meta itemprop="name" content="Cassandra : What is this?">
+<meta itemprop="description" content="Agenda  Characterstics How does it internally work References  The Apache Cassandra database is the right choice when you need scalability and high availability without compromising performance. Linear scalability and proven fault-tolerance on commodity hardware or cloud infrastructure make it the perfect platform for mission-critical data. Cassandra&rsquo;s support for replicating across multiple datacenters is best-in-class, providing lower latency for your users and the peace of mind of knowing that you can survive regional outages.">
+
+
+<meta itemprop="datePublished" content="2019-09-14T17:01:38&#43;01:00" />
+<meta itemprop="dateModified" content="2019-09-14T17:01:38&#43;01:00" />
+<meta itemprop="wordCount" content="1221">
+
+
+
+<meta itemprop="keywords" content="cassandra,open-source,apache," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://prashantbhardwaj.github.io/"/>
+
+<meta name="twitter:title" content="Cassandra : What is this?"/>
+<meta name="twitter:description" content="Agenda  Characterstics How does it internally work References  The Apache Cassandra database is the right choice when you need scalability and high availability without compromising performance. Linear scalability and proven fault-tolerance on commodity hardware or cloud infrastructure make it the perfect platform for mission-critical data. Cassandra&rsquo;s support for replicating across multiple datacenters is best-in-class, providing lower latency for your users and the peace of mind of knowing that you can survive regional outages."/>
+
+
+
+
+<meta property="article:published_time" content="2019-09-14 17:01:38 &#43;0100 BST" />
+
+
+
+
+
+
+
+    </head>
+
+    <body class="">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://prashantbhardwaj.github.io/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">prashant_bhardwaj</span>
+            <span class="logo__cursor"></span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://prashantbhardwaj.github.io/about">About</a></li><li><a href="https://prashantbhardwaj.github.io/posts">Blogs</a></li><li><a href="https://prashantbhardwaj.github.io/hi">हिन्दी</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>6 minutes
+
+            
+
+            </p>
+        </div>
+
+        <article>
+            <h1 class="post-title"><a href="https://prashantbhardwaj.github.io/posts/2019/09/cassandra-what-is-this/">Cassandra : What is this?</a></h1>
+
+            
+
+            <div class="post-content">
+                
+
+<h2>Agenda</h2>
+
+<ul>
+<li><a href="#h2-characterstics-h2">Characterstics</a></li>
+<li><a href="#h2-how-does-it-internally-work-h2">How does it internally work</a></li>
+<li><a href="#h2-references-h2">References</a></li>
+</ul>
+
+<p>The Apache Cassandra database is the right choice when you need scalability and high availability without compromising performance. Linear scalability and proven fault-tolerance on commodity hardware or cloud infrastructure make it the perfect platform for mission-critical data. Cassandra&rsquo;s support for replicating across multiple datacenters is best-in-class, providing lower latency for your users and the peace of mind of knowing that you can survive regional outages.</p>
+
+<h2 id="h2-characterstics-h2"><h2>Characterstics</h2></h2>
+
+<p><strong>Fault tolerant</strong>
+Data is automatically replicated to multiple nodes for fault-tolerance. Replication across multiple data centers is supported. Failed nodes can be replaced with no downtime.</p>
+
+<p><strong>Performant</strong>
+Cassandra consistently outperforms popular NoSQL alternatives in benchmarks and real applications, primarily because of fundamental architectural choices.</p>
+
+<p><strong>Decentralized</strong>
+There are no single points of failure. There are no network bottlenecks. Every node in the cluster is identical.</p>
+
+<p><strong>Scalable</strong>
+Some of the largest production deployments include Apple&rsquo;s, with over 75,000 nodes storing over 10 PB of data, Netflix (2,500 nodes, 420 TB, over 1 trillion requests per day), Chinese search engine Easou (270 nodes, 300 TB, over 800 million requests per day), and eBay (over 100 nodes, 250 TB).</p>
+
+<p><strong>Durable</strong>
+Cassandra is suitable for applications that can&rsquo;t afford to lose data, even when an entire data center goes down.</p>
+
+<p><strong>You&rsquo;re in control</strong>
+Choose between synchronous or asynchronous replication for each update. Highly available asynchronous operations are optimized with features like Hinted Handoff and Read Repair.</p>
+
+<p><strong>Elastic</strong>
+Read and write throughput both increase linearly as new machines are added, with no downtime or interruption to applications.</p>
+
+<p><strong>Professionally Supported</strong>
+Cassandra support contracts and services are available from third parties.</p>
+
+<h2 id="h2-how-does-it-internally-work-h2"><h2>How does it internally work</h2></h2>
+
+<h3>Fully replicated</h3>
+
+<p><img src="https://prashantbhardwaj.github.io/caas/caas-cluster.png" alt="alt text" /></p>
+
+<ul>
+<li>Client writes local</li>
+<li>Data syncs across WAN</li>
+<li>Replication factor per data center</li>
+</ul>
+
+<h3>Writes on a single node</h3>
+
+<p><img src="https://prashantbhardwaj.github.io/caas/cass-write.png" alt="alt text" /></p>
+
+<p>Entire write happens in following steps</p>
+
+<ul>
+<li>Logging data in the commit log</li>
+<li>Writing data to the memtable</li>
+<li>Flushing data from the memtable</li>
+<li>Storing data on disk in SSTables</li>
+<li>Compaction</li>
+</ul>
+
+<p>First thing it does, is writing the data in commit log, which is on disc, because of that it is durable.
+It is append only log which is sequencial write and that is the reason that write in Cassandra is super fast.</p>
+
+<p>Then it writes data in memtable. The memtable is a write-back cache of data partitions that Cassandra looks up by key. The more a table is used, the larger its memtable needs to be. Cassandra can dynamically allocate the right amount of memory for the memtable or you can manage the amount of memory being utilized yourself.</p>
+
+<p>Row in memtable can have 2 billion columns. After writing data in the column it sends acknowldgement back to client.</p>
+
+<p>The memtable, unlike a write-through cache, stores writes until reaching a limit, and then is flushed. When memtable contents exceed a configurable threshold, the memtable data, which includes indexes, is put in a queue to be flushed to disk. To flush the data, Cassandra sorts memtables by partition key and then writes the data to disk sequentially. The process is extremely fast because it involves only a commitlog append and the sequential write.</p>
+
+<p>SSTables are immutable, not written to again after the memtable is flushed. Consequently, a partition is typically stored across multiple SSTable files So, if a row is not in memtable, a read of the row needs look-up in all the SSTable files. This is why read in Cassandra is much slower than write.</p>
+
+<p>Data in the commit log is purged after its corresponding data in the memtable is flushed to the SSTable. The commit log is for recovering the data in memtable in the event of a hardware failure.</p>
+
+<p>as we know that data for a row in SSTable is not in just one SSTable. Whenever data in a row is updated Cassandra writes a new timestamped version of the inserted or updated data in another SSTable. Cassandra also does not delete in place because the SSTable is immutable. Instead, Cassandra marks data to be deleted using a tombstone. Tombstones exist for a configured time period defined by the gc_grace_seconds value set on the table. During compaction, there is a temporary spike in disk space usage and disk I/O because the old and new SSTables co-exist. This diagram depicts the compaction process:</p>
+
+<p><img src="https://prashantbhardwaj.github.io/caas/caas-compaction.png" alt="alt text" /></p>
+
+<p>Compaction merges the data in each SSTable data by partition key, selecting the latest data for storage based on its timestamp. Cassandra can merge the data performantly, without random IO, because rows are sorted by partition key within each SSTable. After evicting tombstones and removing deleted data, columns, and rows, the compaction process consolidates SSTables into a single file. The old SSTable files are deleted as soon as any pending reads finish using the files. Disk space occupied by old SSTables becomes available for reuse.</p>
+
+<p>Data input to SSTables is sorted to prevent random I/O during SSTable consolidation. After compaction, Cassandra uses the new consolidated SSTable instead of multiple old SSTables, fulfilling read requests more efficiently than before compaction. The old SSTable files are deleted as soon as any pending reads finish using the files. Disk space occupied by old SSTables becomes available for reuse.</p>
+
+<p>Although no random I/O occurs, compaction can still be a fairly heavyweight operation. During compaction, there is a temporary spike in disk space usage and disk I/O because the old and new SSTables co-exist. To minimize deteriorating read speed, compaction runs in the background.</p>
+
+<h3>Coordinated reads</h3>
+
+<p><img src="https://prashantbhardwaj.github.io/caas/caas-read.png" alt="alt text" /></p>
+
+<p>When a read request starts its journey, the data’s partition key is used to find what nodes have the data. After that, the request is sent to a number of nodes set by the tunable consistency level for reads. Then, on each node, in a certain order, Cassandra checks different places that can have the data. The first one is the memtable. If the data is not there, it checks the row key cache (if enabled), then the bloom filter and then the partition key cache (also if enabled). If the partition key cache has the needed partition key, Cassandra goes straight to the compression offsets, and after that it finally fetches the needed data out of a certain SSTable. If the partition key wasn’t found in partition key cache, Cassandra checks the partition summary and then the primary index before going to the compression offsets and extracting the data from the SSTable.</p>
+
+<p>After the data with the latest timestamp is located, it is fetched to the coordinator. Here, another stage of the read occurs. As we’ve stated here, Cassandra has issues with data consistency. The thing is that you write many data replicas and you may read their old versions instead of the newer ones. But Cassandra doesn’t ignore these consistency-related problems: it tries to solve them with a read repair process. The nodes that are involved in the read return results. Then, Cassandra compares these results based on the “last write wins” policy. Hence, the new data version is the main candidate to be returned to the user, while the older versions are rewritten to their nodes. But that’s not all. In the background, Cassandra checks the rest of the nodes that have the requested data (because the replication factor is often bigger than consistency level). When these nodes return results, the DB also compares them and the older ones get rewritten. Only after this, the user actually gets the result.</p>
+
+<h2 id="h2-references-h2"><h2>References</h2></h2>
+
+<ul>
+<li><a href="https://docs.datastax.com/en/archived/cassandra/2.0/cassandra/dml/dml_write_path_c.html">https://docs.datastax.com/en/archived/cassandra/2.0/cassandra/dml/dml_write_path_c.html</a></li>
+<li><a href="https://www.scnsoft.com/blog/cassandra-performance">https://www.scnsoft.com/blog/cassandra-performance</a></li>
+</ul>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://prashantbhardwaj.github.io/tags/cassandra">cassandra</a></span><span class="tag"><a href="https://prashantbhardwaj.github.io/tags/open-source">open-source</a></span><span class="tag"><a href="https://prashantbhardwaj.github.io/tags/apache">apache</a></span>
+                </p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1221 Words</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-09-14 17:01 &#43;0100</p>
+        </div>
+
+        
+            <div class="pagination">
+                <div class="pagination__title">
+                    <span class="pagination__title-h">Read other posts</span>
+                    <hr />
+                </div>
+
+                <div class="pagination__buttons">
+                    
+
+                    
+                        <span class="button next">
+                            <a href="https://prashantbhardwaj.github.io/posts/2019/09/cassandra-when-to-use-and-how-to-use/">
+                                <span class="button__text">Cassandra : When to use and how to use</span>
+                                <span class="button__icon">→</span>
+                            </a>
+                        </span>
+                    
+                </div>
+            </div>
+        
+
+        
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2019</span>
+            
+                <span><a href="https://prashantbhardwaj.github.io/">Prashant Bhardwaj</a></span>
+            
+            <span>copyright@Prashant</span>
+            <span> <a href="https://prashantbhardwaj.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">rhazdon</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="https://prashantbhardwaj.github.io/bundle.min.4c3fb12a087ceed4a52cb5d57068a9795c7069617a01ca70f788052ad66e1791779e6c72686e1dc0ca13dc03b0203204b6566bb0dd1ee80de2b7ff4d8fe53db2.js" integrity="sha512-TD&#43;xKgh87tSlLLXVcGipeVxwaWF6Acpw94gFKtZuF5F3nmxyaG4dwMoT3AOwIDIEtlZrsN0e6A3it/9Nj&#43;U9sg=="></script>
+
+
+
+    </body>
+</html>
