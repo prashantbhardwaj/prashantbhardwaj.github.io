@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>copyright@Prashant</copyright>
-    <lastBuildDate>Sat, 14 Sep 2019 17:01:38 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 19 Sep 2019 23:36:07 +0100</lastBuildDate>
     
 	<atom:link href="https://prashantbhardwaj.github.io/tags/open-source/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cassandra : When to use and how to use</title>
+      <link>https://prashantbhardwaj.github.io/posts/2019/09/cassandra-when-to-use-and-how-to-use/</link>
+      <pubDate>Thu, 19 Sep 2019 23:36:07 +0100</pubDate>
+      
+      <guid>https://prashantbhardwaj.github.io/posts/2019/09/cassandra-when-to-use-and-how-to-use/</guid>
+      <description>I don&amp;rsquo;t think that I need to explain what Cassandra is. OK, one liner is enough ! It is NoSQL database, primarily used in big data projects.
+Before we start discussing scenarios where Cassandra fits very well, let&amp;rsquo;s discuss where it doesn&amp;rsquo;t fit at all.
+Common mistakes when using Cassandra We&amp;rsquo;ll have lots of data, let&amp;rsquo;s use Cassandra
+Cassandra is not a typical database which fits in every Big Data use case.</description>
+    </item>
     
     <item>
       <title>Cassandra : What is this?</title>
@@ -19,17 +31,6 @@
       
       <guid>https://prashantbhardwaj.github.io/posts/2019/09/cassandra-what-is-this/</guid>
       <description>Agenda  Characterstics How does it internally work References  The Apache Cassandra database is the right choice when you need scalability and high availability without compromising performance. Linear scalability and proven fault-tolerance on commodity hardware or cloud infrastructure make it the perfect platform for mission-critical data. Cassandra&amp;rsquo;s support for replicating across multiple datacenters is best-in-class, providing lower latency for your users and the peace of mind of knowing that you can survive regional outages.</description>
-    </item>
-    
-    <item>
-      <title>Cassandra : When to use and how to use</title>
-      <link>https://prashantbhardwaj.github.io/posts/2019/09/cassandra-when-to-use-and-how-to-use/</link>
-      <pubDate>Mon, 09 Sep 2019 23:36:07 +0100</pubDate>
-      
-      <guid>https://prashantbhardwaj.github.io/posts/2019/09/cassandra-when-to-use-and-how-to-use/</guid>
-      <description>I don&amp;rsquo;t think that I need to explain what Cassandra is. OK, one liner is enough ! It is NoSQL database, primarily used in big data projects.
-Before we start discussing scenarios where Cassandra fits very well, let&amp;rsquo;s discuss where it doesn&amp;rsquo;t fit at all.
-Common mistakes when using Cassandra We don&amp;rsquo;t have big data in the beginning however our data will grow and will become big one day Our organization has Cassandra running as a service so it is easy for us to atleast start with it Ohh !</description>
     </item>
     
     <item>

@@ -6,8 +6,51 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>copyright@Prashant</copyright>
-        <lastBuildDate>Sat, 14 Sep 2019 17:01:38 +0100</lastBuildDate>
+        <lastBuildDate>Thu, 19 Sep 2019 23:36:07 +0100</lastBuildDate>
         <atom:link href="https://prashantbhardwaj.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Cassandra : When to use and how to use</title>
+            <link>https://prashantbhardwaj.github.io/posts/2019/09/cassandra-when-to-use-and-how-to-use/</link>
+            <pubDate>Thu, 19 Sep 2019 23:36:07 +0100</pubDate>
+            
+            <guid>https://prashantbhardwaj.github.io/posts/2019/09/cassandra-when-to-use-and-how-to-use/</guid>
+            <description>I don&amp;rsquo;t think that I need to explain what Cassandra is. OK, one liner is enough ! It is NoSQL database, primarily used in big data projects.
+Before we start discussing scenarios where Cassandra fits very well, let&amp;rsquo;s discuss where it doesn&amp;rsquo;t fit at all.
+Common mistakes when using Cassandra We&amp;rsquo;ll have lots of data, let&amp;rsquo;s use Cassandra
+Cassandra is not a typical database which fits in every Big Data use case.</description>
+            <content type="html"><![CDATA[<p>I don&rsquo;t think that I need to explain what Cassandra is. OK, one liner is enough ! It is NoSQL database, primarily used in big data projects.</p>
+
+<p>Before we start discussing scenarios where Cassandra fits very well, let&rsquo;s discuss where it doesn&rsquo;t fit at all.</p>
+
+<h2>Common mistakes when using Cassandra</h2>
+
+<p><strong>We&rsquo;ll have lots of data, let&rsquo;s use Cassandra</strong></p>
+
+<p>Cassandra is not a typical database which fits in every Big Data use case. In some no big data cases also it can fit very well. At other side it can be a bad choice even in a big data project.
+Cassandra is useless unless you need to read a lot of data in one go and that data is stored side by side so that a single seek read can grab entire data you need.
+It is very bad if your query is returning just one or few rows and you are making lot of queries.</p>
+
+<p><strong>Our organization has Cassandra running as a service so it is easy for us to atleast start with it</strong></p>
+
+<p>So what? Let other teams use but you stay away if it doesn&rsquo;t suite you.
+Sometime MySQL can be a better choice than Cassandra.</p>
+
+<p><strong>Ohh ! CQL is just like SQL. Great !!, now we can query any data !</strong></p>
+
+<p>No this is incorrect. CQL is not SQL. You can&rsquo;t join tables in CQL. There are many other differences too.</p>
+
+<p><strong>Ohh no, Cassandra doesn&rsquo;t allow manipulation of data during read or write</strong></p>
+
+<p>Yes, it just gives you what is stored or simply writes what you give it. No data manupulation on the fly.</p>
+
+<p><strong>WoW, this User defined functions are great things, let&rsquo;s create many</strong></p>
+
+<p>Don&rsquo;t keep Cassandra coordinator busy in doing things which are not related to Cassandra. This will impact the performance of your Cassandra cluster.</p>
+
+<p><strong>NOTE</strong> - For any question/suggestion, please send email to    <strong>amu.prashant1@gmail.com</strong></p>
+]]></content>
+        </item>
         
         <item>
             <title>Cassandra : What is this?</title>
@@ -56,16 +99,6 @@ Cassandra support contracts and services are available from third parties.</p>
 
 <h2 id="h2-how-does-it-internally-work-h2"><h2>How does it internally work</h2></h2>
 
-<h3>Fully replicated</h3>
-
-<p><img src="/caas/caas-cluster.png" alt="alt text" /></p>
-
-<ul>
-<li>Client writes local</li>
-<li>Data syncs across WAN</li>
-<li>Replication factor per data center</li>
-</ul>
-
 <h3>Writes on a single node</h3>
 
 <p><img src="/caas/cass-write.png" alt="alt text" /></p>
@@ -107,9 +140,33 @@ It is append only log which is sequencial write and that is the reason that writ
 
 <p><img src="/caas/caas-read.png" alt="alt text" /></p>
 
-<p>When a read request starts its journey, the data’s partition key is used to find what nodes have the data. After that, the request is sent to a number of nodes set by the tunable consistency level for reads. Then, on each node, in a certain order, Cassandra checks different places that can have the data. The first one is the memtable. If the data is not there, it checks the row key cache (if enabled), then the bloom filter and then the partition key cache (also if enabled). If the partition key cache has the needed partition key, Cassandra goes straight to the compression offsets, and after that it finally fetches the needed data out of a certain SSTable. If the partition key wasn’t found in partition key cache, Cassandra checks the partition summary and then the primary index before going to the compression offsets and extracting the data from the SSTable.</p>
+<p>Application client can send data request to any node of your cluster. That node then becomes coordinator for that request. Now it is coordinator&rsquo;s job to talk to other nodes, get the data and return it to client.
+When a read request starts its journey, the data’s partition key is used to find what nodes have the data. After that, the request is sent to a number of nodes set by the tunable consistency level for reads. Then, on each node, in a certain order, Cassandra checks different places that can have the data.</p>
+
+<ul>
+<li>The first one is the memtable.</li>
+<li>If the data is not there, it checks the row key cache (if enabled),</li>
+<li>then the bloom filter and</li>
+<li>then the partition key cache (also if enabled).</li>
+<li>If the partition key cache has the needed partition key, Cassandra goes straight to the compression offsets,</li>
+<li>and after that it finally fetches the needed data out of a certain SSTable.</li>
+<li>If the partition key wasn’t found in partition key cache, Cassandra checks the partition summary</li>
+<li>and then the primary index before going to the compression offsets and extracting the data from the SSTable.</li>
+</ul>
 
 <p>After the data with the latest timestamp is located, it is fetched to the coordinator. Here, another stage of the read occurs. As we’ve stated here, Cassandra has issues with data consistency. The thing is that you write many data replicas and you may read their old versions instead of the newer ones. But Cassandra doesn’t ignore these consistency-related problems: it tries to solve them with a read repair process. The nodes that are involved in the read return results. Then, Cassandra compares these results based on the “last write wins” policy. Hence, the new data version is the main candidate to be returned to the user, while the older versions are rewritten to their nodes. But that’s not all. In the background, Cassandra checks the rest of the nodes that have the requested data (because the replication factor is often bigger than consistency level). When these nodes return results, the DB also compares them and the older ones get rewritten. Only after this, the user actually gets the result.</p>
+
+<h3>Fully replicated</h3>
+
+<p>You run Cassandra in a cluster with more than one nodes. Which not only gives reliability in case any node goes down but this reliability comes with the fact that data of each node is replicated on other nodes. That is why if any node goes down, other nodes start serving that data.</p>
+
+<p><img src="/caas/caas-cluster.png" alt="alt text" /></p>
+
+<ul>
+<li>Client writes local</li>
+<li>Data syncs across WAN</li>
+<li>Replication factor per data center</li>
+</ul>
 
 <h2 id="h2-references-h2"><h2>References</h2></h2>
 
@@ -117,28 +174,9 @@ It is append only log which is sequencial write and that is the reason that writ
 <li><a href="https://docs.datastax.com/en/archived/cassandra/2.0/cassandra/dml/dml_write_path_c.html">https://docs.datastax.com/en/archived/cassandra/2.0/cassandra/dml/dml_write_path_c.html</a></li>
 <li><a href="https://www.scnsoft.com/blog/cassandra-performance">https://www.scnsoft.com/blog/cassandra-performance</a></li>
 </ul>
-]]></content>
-        </item>
-        
-        <item>
-            <title>Cassandra : When to use and how to use</title>
-            <link>https://prashantbhardwaj.github.io/posts/2019/09/cassandra-when-to-use-and-how-to-use/</link>
-            <pubDate>Mon, 09 Sep 2019 23:36:07 +0100</pubDate>
-            
-            <guid>https://prashantbhardwaj.github.io/posts/2019/09/cassandra-when-to-use-and-how-to-use/</guid>
-            <description>I don&amp;rsquo;t think that I need to explain what Cassandra is. OK, one liner is enough ! It is NoSQL database, primarily used in big data projects.
-Before we start discussing scenarios where Cassandra fits very well, let&amp;rsquo;s discuss where it doesn&amp;rsquo;t fit at all.
-Common mistakes when using Cassandra We don&amp;rsquo;t have big data in the beginning however our data will grow and will become big one day Our organization has Cassandra running as a service so it is easy for us to atleast start with it Ohh !</description>
-            <content type="html"><![CDATA[<p>I don&rsquo;t think that I need to explain what Cassandra is. OK, one liner is enough ! It is NoSQL database, primarily used in big data projects.</p>
 
-<p>Before we start discussing scenarios where Cassandra fits very well, let&rsquo;s discuss where it doesn&rsquo;t fit at all.</p>
-
-<p><strong>Common mistakes when using Cassandra</strong>
-<strong>We don&rsquo;t have big data in the beginning however our data will grow and will become big one day</strong>
-<strong>Our organization has Cassandra running as a service so it is easy for us to atleast start with it</strong>
-<strong>Ohh ! CQL is just like SQL. Great !!, now we can query any data !</strong>
-<strong>Ohh no, Cassandra doesn&rsquo;t allow manipulation of data during read or write</strong>
-<strong>WoW, this User defined functions are great things, let&rsquo;s create many</strong></p>
+<p><strong>Note</strong>
+For any question/suggestion, please send email to   <strong>amu.prashant1@gmail.com</strong></p>
 ]]></content>
         </item>
         

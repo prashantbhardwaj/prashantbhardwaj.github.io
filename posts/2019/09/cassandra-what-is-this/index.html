@@ -42,7 +42,7 @@
 
 <meta itemprop="datePublished" content="2019-09-14T17:01:38&#43;01:00" />
 <meta itemprop="dateModified" content="2019-09-14T17:01:38&#43;01:00" />
-<meta itemprop="wordCount" content="1221">
+<meta itemprop="wordCount" content="1321">
 
 
 
@@ -112,7 +112,7 @@
     <main class="post">
 
         <div class="post-info">
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>6 minutes
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>7 minutes
 
             
 
@@ -165,16 +165,6 @@ Cassandra support contracts and services are available from third parties.</p>
 
 <h2 id="h2-how-does-it-internally-work-h2"><h2>How does it internally work</h2></h2>
 
-<h3>Fully replicated</h3>
-
-<p><img src="https://prashantbhardwaj.github.io/caas/caas-cluster.png" alt="alt text" /></p>
-
-<ul>
-<li>Client writes local</li>
-<li>Data syncs across WAN</li>
-<li>Replication factor per data center</li>
-</ul>
-
 <h3>Writes on a single node</h3>
 
 <p><img src="https://prashantbhardwaj.github.io/caas/cass-write.png" alt="alt text" /></p>
@@ -216,9 +206,33 @@ It is append only log which is sequencial write and that is the reason that writ
 
 <p><img src="https://prashantbhardwaj.github.io/caas/caas-read.png" alt="alt text" /></p>
 
-<p>When a read request starts its journey, the data’s partition key is used to find what nodes have the data. After that, the request is sent to a number of nodes set by the tunable consistency level for reads. Then, on each node, in a certain order, Cassandra checks different places that can have the data. The first one is the memtable. If the data is not there, it checks the row key cache (if enabled), then the bloom filter and then the partition key cache (also if enabled). If the partition key cache has the needed partition key, Cassandra goes straight to the compression offsets, and after that it finally fetches the needed data out of a certain SSTable. If the partition key wasn’t found in partition key cache, Cassandra checks the partition summary and then the primary index before going to the compression offsets and extracting the data from the SSTable.</p>
+<p>Application client can send data request to any node of your cluster. That node then becomes coordinator for that request. Now it is coordinator&rsquo;s job to talk to other nodes, get the data and return it to client.
+When a read request starts its journey, the data’s partition key is used to find what nodes have the data. After that, the request is sent to a number of nodes set by the tunable consistency level for reads. Then, on each node, in a certain order, Cassandra checks different places that can have the data.</p>
+
+<ul>
+<li>The first one is the memtable.</li>
+<li>If the data is not there, it checks the row key cache (if enabled),</li>
+<li>then the bloom filter and</li>
+<li>then the partition key cache (also if enabled).</li>
+<li>If the partition key cache has the needed partition key, Cassandra goes straight to the compression offsets,</li>
+<li>and after that it finally fetches the needed data out of a certain SSTable.</li>
+<li>If the partition key wasn’t found in partition key cache, Cassandra checks the partition summary</li>
+<li>and then the primary index before going to the compression offsets and extracting the data from the SSTable.</li>
+</ul>
 
 <p>After the data with the latest timestamp is located, it is fetched to the coordinator. Here, another stage of the read occurs. As we’ve stated here, Cassandra has issues with data consistency. The thing is that you write many data replicas and you may read their old versions instead of the newer ones. But Cassandra doesn’t ignore these consistency-related problems: it tries to solve them with a read repair process. The nodes that are involved in the read return results. Then, Cassandra compares these results based on the “last write wins” policy. Hence, the new data version is the main candidate to be returned to the user, while the older versions are rewritten to their nodes. But that’s not all. In the background, Cassandra checks the rest of the nodes that have the requested data (because the replication factor is often bigger than consistency level). When these nodes return results, the DB also compares them and the older ones get rewritten. Only after this, the user actually gets the result.</p>
+
+<h3>Fully replicated</h3>
+
+<p>You run Cassandra in a cluster with more than one nodes. Which not only gives reliability in case any node goes down but this reliability comes with the fact that data of each node is replicated on other nodes. That is why if any node goes down, other nodes start serving that data.</p>
+
+<p><img src="https://prashantbhardwaj.github.io/caas/caas-cluster.png" alt="alt text" /></p>
+
+<ul>
+<li>Client writes local</li>
+<li>Data syncs across WAN</li>
+<li>Replication factor per data center</li>
+</ul>
 
 <h2 id="h2-references-h2"><h2>References</h2></h2>
 
@@ -226,6 +240,9 @@ It is append only log which is sequencial write and that is the reason that writ
 <li><a href="https://docs.datastax.com/en/archived/cassandra/2.0/cassandra/dml/dml_write_path_c.html">https://docs.datastax.com/en/archived/cassandra/2.0/cassandra/dml/dml_write_path_c.html</a></li>
 <li><a href="https://www.scnsoft.com/blog/cassandra-performance">https://www.scnsoft.com/blog/cassandra-performance</a></li>
 </ul>
+
+<p><strong>Note</strong>
+For any question/suggestion, please send email to   <strong>amu.prashant1@gmail.com</strong></p>
 
             </div>
         </article>
@@ -237,7 +254,7 @@ It is append only log which is sequencial write and that is the reason that writ
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://prashantbhardwaj.github.io/tags/cassandra">cassandra</a></span><span class="tag"><a href="https://prashantbhardwaj.github.io/tags/open-source">open-source</a></span><span class="tag"><a href="https://prashantbhardwaj.github.io/tags/apache">apache</a></span>
                 </p>
 
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1221 Words</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1321 Words</p>
 
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-09-14 17:01 &#43;0100</p>
         </div>
@@ -251,11 +268,18 @@ It is append only log which is sequencial write and that is the reason that writ
 
                 <div class="pagination__buttons">
                     
+                        <span class="button previous">
+                            <a href="https://prashantbhardwaj.github.io/posts/2019/09/cassandra-when-to-use-and-how-to-use/">
+                                <span class="button__icon">←</span>
+                                <span class="button__text">Cassandra : When to use and how to use</span>
+                            </a>
+                        </span>
+                    
 
                     
                         <span class="button next">
-                            <a href="https://prashantbhardwaj.github.io/posts/2019/09/cassandra-when-to-use-and-how-to-use/">
-                                <span class="button__text">Cassandra : When to use and how to use</span>
+                            <a href="https://prashantbhardwaj.github.io/posts/2019/08/build-your-website-using-gohugo-and-host-it-on-github-pages/">
+                                <span class="button__text">Build your website using GoHugo and host it on GitHub Pages</span>
                                 <span class="button__icon">→</span>
                             </a>
                         </span>
