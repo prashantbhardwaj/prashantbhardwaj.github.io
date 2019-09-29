@@ -1,20 +1,202 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on Prashant Bhardwaj</title>
-        <link>https://prashantbhardwaj.github.io/posts/</link>
+        <link>/posts/</link>
         <description>Recent content in Posts on Prashant Bhardwaj</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>copyright@Prashant</copyright>
-        <lastBuildDate>Thu, 19 Sep 2019 23:36:07 +0100</lastBuildDate>
-        <atom:link href="https://prashantbhardwaj.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        <lastBuildDate>Sun, 29 Sep 2019 13:49:13 +0100</lastBuildDate>
+        <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Cassandra Replication Strategies</title>
+            <link>/posts/2019/09/cassandra-replication-strategies/</link>
+            <pubDate>Sun, 29 Sep 2019 13:49:13 +0100</pubDate>
+            
+            <guid>/posts/2019/09/cassandra-replication-strategies/</guid>
+            <description>There are two kinds of replication strategies in Cassandra.
+SimpleStrategy SimpleStrategy is used when you have just one data center. SimpleStrategy places the first replica on the node selected by the partitioner. After that, remaining replicas are placed in clockwise direction in the Node ring.
+NetworkTopologyStrategy NetworkTopologyStrategy is used when you have more than two data centers.
+In NetworkTopologyStrategy, replicas are set for each data center separately. NetworkTopologyStrategy places replicas in the clockwise direction in the ring until reaches the first node in another rack.</description>
+            <content type="html"><![CDATA[<p>There are two kinds of replication strategies in Cassandra.</p>
+
+<h3>SimpleStrategy</h3>
+
+<p>SimpleStrategy is used when you have just one data center. SimpleStrategy places the first replica on the node selected by the partitioner. After that, remaining replicas are placed in clockwise direction in the Node ring.</p>
+
+<p><img src="/caas/simple-replication-strategy.jpg" alt="alt text" /></p>
+
+<h3>NetworkTopologyStrategy</h3>
+
+<p>NetworkTopologyStrategy is used when you have more than two data centers.</p>
+
+<p>In NetworkTopologyStrategy, replicas are set for each data center separately. NetworkTopologyStrategy places replicas in the clockwise direction in the ring until reaches the first node in another rack.</p>
+
+<p>This strategy tries to place replicas on different racks in the same data center. This is due to the reason that sometimes failure or problem can occur in the rack. Then replicas on other nodes can provide data.</p>
+
+<p>Here is the pictorial representation of the Network topology strategy</p>
+
+<p><img src="/caas/network-replication-strategy.jpg" alt="alt text" /></p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Cassandra Consistency Levels List</title>
+            <link>/posts/2019/09/cassandra-consistency-levels-list/</link>
+            <pubDate>Sat, 28 Sep 2019 11:19:22 +0100</pubDate>
+            
+            <guid>/posts/2019/09/cassandra-consistency-levels-list/</guid>
+            <description>Typical values of consistency levels are -
+Note - Write operation consists of writing to commit log and memtable.
+   Level Write Read Usage     ALL A write must be on all replica nodes in the cluster for that partition. Returns the record after all replicas. The read operation will fail if a replica does not respond. Provides the highest consistency and the lowest availability of any other level.</description>
+            <content type="html"><![CDATA[<p>Typical values of consistency levels are -</p>
+
+<p>Note - Write operation consists of writing to commit log and memtable.</p>
+
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th align="center">Write</th>
+<th align="right">Read</th>
+<th>Usage</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>ALL</td>
+<td align="center">A write must be on all replica nodes in the cluster for that partition.</td>
+<td align="right">Returns the record after all replicas. The read operation will fail if a replica does not respond.</td>
+<td>Provides the highest consistency and the lowest availability of any other level.</td>
+</tr>
+
+<tr>
+<td>EACH_QUORUM</td>
+<td align="center">A write must be on a quorum of replica nodes in each datacenter.</td>
+<td align="right">Not supported for reads.</td>
+<td>Strong consistency. Used in multiple datacenter clusters to strictly maintain consistency at the same level in each datacenter. For example, choose this level if you want a write to fail when a datacenter is down and the QUORUM cannot be reached on that datacenter.</td>
+</tr>
+
+<tr>
+<td>QUORUM</td>
+<td align="center">A write must be on a quorum of replica nodes across all datacenters.</td>
+<td align="right">Returns the record after a quorum of replicas from all datacenters has responded.</td>
+<td>Used in either single or multiple datacenter clusters to maintain strong consistency across the cluster. Use if you can tolerate some level of failure.</td>
+</tr>
+
+<tr>
+<td>LOCAL_QUORUM</td>
+<td align="center">A write must be on a quorum of replica nodes in the same datacenter as the coordinator.</td>
+<td align="right">Returns the record after a quorum of replicas in the current datacenter as the coordinator has reported.</td>
+<td>Strong consistency. Avoids latency of inter-datacenter communication. Used in multiple datacenter clusters with a rack-aware replica placement strategy, such as NetworkTopologyStrategy, and a properly configured snitch. Use to maintain consistency locally (within the single datacenter). Can be used with SimpleStrategy.</td>
+</tr>
+
+<tr>
+<td>ONE</td>
+<td align="center">A write must be at least one replica node.</td>
+<td align="right">Returns a response from the closest replica, as determined by the snitch. By default, a read repair runs in the background to make the other replicas consistent.</td>
+<td>Satisfies the needs of most users because consistency requirements are not stringent.</td>
+</tr>
+
+<tr>
+<td>TWO</td>
+<td align="center">A write must be at least two replica nodes.</td>
+<td align="right">Returns the most recent data from two of the closest replicas.</td>
+<td>Similar to ONE.</td>
+</tr>
+
+<tr>
+<td>THREE</td>
+<td align="center">A write must be at least three replica nodes.</td>
+<td align="right">Returns the most recent data from three of the closest replicas.</td>
+<td>Similar to TWO.</td>
+</tr>
+
+<tr>
+<td>LOCAL_ONE</td>
+<td align="center">A write must be sent to, and successfully acknowledged by, at least one replica node in the local datacenter.</td>
+<td align="right">Returns a response from the closest replica in the local datacenter.</td>
+<td>In a multiple datacenter clusters, a consistency level of ONE is often desirable, but cross-DC traffic is not. LOCAL_ONE accomplishes this. For security and quality reasons, you can use this consistency level in an offline datacenter to prevent automatic connection to online nodes in other datacenters if an offline node goes down.</td>
+</tr>
+
+<tr>
+<td>SERIAL</td>
+<td align="center">Not supported</td>
+<td align="right">Allows reading the current (and possibly uncommitted) state of data without proposing a new addition or update. If a SERIAL read finds an uncommitted transaction in progress, it will commit the transaction as part of the read. Similar to QUORUM.</td>
+<td>To read the latest value of a column after a user has invoked a lightweight transaction to write to the column, use SERIAL. Cassandra then checks the inflight lightweight transaction for updates and, if found, returns the latest data.</td>
+</tr>
+
+<tr>
+<td>LOCAL_SERIAL</td>
+<td align="center">Not supported</td>
+<td align="right">Same as SERIAL, but confined to the datacenter. Similar to LOCAL_QUORUM.</td>
+<td>Used to achieve linearizable consistency for lightweight transactions.</td>
+</tr>
+
+<tr>
+<td>ANY</td>
+<td align="center">A write must be written to at least one node. If all replica nodes for the given partition key are down, the write can still succeed after a hinted handoff has been written. If all replica nodes are down at write time, an ANY write is not readable until the replica nodes for that partition have recovered.</td>
+<td align="right">Not supported</td>
+<td>Provides low latency and a guarantee that a write never fails. Delivers the lowest consistency and highest availability.</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Cassandra - Replication Factor &amp; Consistency Level</title>
+            <link>/posts/2019/09/cassandra-replication-factor-consistency-level/</link>
+            <pubDate>Sat, 28 Sep 2019 09:31:52 +0100</pubDate>
+            
+            <guid>/posts/2019/09/cassandra-replication-factor-consistency-level/</guid>
+            <description>Replication Factor Whenever we start Cassandra, we start a cluster, which is a collection of 1 or more than one nodes. A cluster can be splitted onto more than one datacenter. Cassandra’s architecture was that the hardware failure can occur at any time. Any node can be down. Even entire datacenter can go down so it is better to add more than one data centers in your cluster. Cassandra stores data replicas on multiple nodes to ensure reliability and fault tolerance.</description>
+            <content type="html"><![CDATA[<p><h2>Replication Factor</h2>
+Whenever we start Cassandra, we start a cluster, which is a collection of 1 or more than one nodes. A cluster can be splitted onto more than one datacenter. Cassandra’s architecture was that the hardware failure can occur at any time. Any node can be down. Even entire datacenter can go down so it is better to add more than one data centers in your cluster. Cassandra stores data replicas on multiple nodes to ensure reliability and fault tolerance. The total number of replicas for a keyspace across a Cassandra cluster is referred to as the keyspace&rsquo;s replication factor. A replication factor of one means that there is only one copy of each row in the Cassandra cluster. A replication factor of two means there are two copies of each row, where each copy is on a different node. All replicas are equally important; there is no primary or master replica.</p>
+
+<p>In a production system, it is advisable to have three or more Cassandra nodes in each data center, and the default replication factor should be three. As a general rule, the replication factor should not exceed the number of Cassandra nodes in the cluster. If there are 3 nodes in your cluster then how can you store data on more than three nodes?</p>
+
+<p>If you add additional Cassandra nodes to the cluster, the default replication factor is not affected.</p>
+
+<p>For example, if you increase the number of Cassandra nodes to six, but leave the replication factor at three, that means data will be replicated on just three nodes not on all six nodes. If you are adding of deleting nodes in a cluster, it is your responsibility to change the replication factor. If a node goes down, a higher replication factor means a higher probability that the data on the node exists on one of the remaining nodes. The downside of a higher replication factor is an increased latency on data writes.</p>
+
+<p>All the nodes exchange information with each other using Gossip protocol. Gossip is a protocol in Cassandra by which nodes can communicate with each other.</p>
+
+<p>There are two kinds of replication strategies in Cassandra. Which are mentioned <a href="../cassandra-replication-strategy/">here</a>.</p>
+
+<p><h2>Consistency Level</h2>
+When you write any data in a cluster which has four nodes and replication factor three, data is stored on three nodes. This replication of data on three nodes is quick but not instant. When you write a data and instantly read the same data, it is possible that data is not yet completly replicated and some of the nodes are returning old data. Then how Cassandra enforces consistency? Simple answer is - Using consistency level.</p>
+
+<p>The Cassandra consistency level is defined as the minimum number of Cassandra nodes that must acknowledge a read or write operation before the operation can be considered successful. Different consistency levels can be assigned to different Edge keyspaces.</p>
+
+<p><a href="../cassandra-consistency-levels-list/">This table describes various types of write/read consistency levels. </a></p>
+
+<p>When connecting to Cassandra for read and write operations, generally used consistency level value is LOCAL_QUORUM. However, some keyspaces are defined to use a consistency level of one.</p>
+
+<p>The calculation of the value of LOCAL_QUORUM for a data center is:</p>
+
+<pre><code>LOCAL_QUORUM = (replication_factor/2) + 1 
+</code></pre>
+
+<p>As described above, the default replication factor for an Edge production environment with three Cassandra nodes is three. Therefore, the default value of LOCAL_QUORUM = (<sup>3</sup>&frasl;<sub>2</sub>) +1 = 2 (the value is rounded down to an integer).</p>
+
+<p>With LOCAL_QUORUM = 2, at least two of the three Cassandra nodes in the data center must respond to a read/write operation for the operation to succeed. For a three node Cassandra cluster, the cluster could therefore tolerate one node being down per data center.</p>
+
+<p>By specifying the consistency level as LOCAL_QUORUM, Edge avoids the latency required by validating operations across multiple data centers. If a keyspace used the Cassandra QUORUM value as the consistency level, read/write operations would have to be validated across all data centers.</p>
+
+<p>If you add additional Cassandra nodes to the cluster, the consistency level is not affected.
+Consistency level can be different for read and write queries however it is advised to use same consistency level for read and write.</p>
+]]></content>
+        </item>
         
         <item>
             <title>Cassandra : When to use and how to use</title>
-            <link>https://prashantbhardwaj.github.io/posts/2019/09/cassandra-when-to-use-and-how-to-use/</link>
+            <link>/posts/2019/09/cassandra-when-to-use-and-how-to-use/</link>
             <pubDate>Thu, 19 Sep 2019 23:36:07 +0100</pubDate>
             
-            <guid>https://prashantbhardwaj.github.io/posts/2019/09/cassandra-when-to-use-and-how-to-use/</guid>
+            <guid>/posts/2019/09/cassandra-when-to-use-and-how-to-use/</guid>
             <description>I don&amp;rsquo;t think that I need to explain what Cassandra is. OK, one liner is enough ! It is NoSQL database, primarily used in big data projects.
 Before we start discussing scenarios where Cassandra fits very well, let&amp;rsquo;s discuss where it doesn&amp;rsquo;t fit at all.
 Common mistakes when using Cassandra We&amp;rsquo;ll have lots of data, let&amp;rsquo;s use Cassandra
@@ -54,10 +236,10 @@ Sometime MySQL can be a better choice than Cassandra.</p>
         
         <item>
             <title>Cassandra : What is this?</title>
-            <link>https://prashantbhardwaj.github.io/posts/2019/09/cassandra-what-is-this/</link>
+            <link>/posts/2019/09/cassandra-what-is-this/</link>
             <pubDate>Sat, 14 Sep 2019 17:01:38 +0100</pubDate>
             
-            <guid>https://prashantbhardwaj.github.io/posts/2019/09/cassandra-what-is-this/</guid>
+            <guid>/posts/2019/09/cassandra-what-is-this/</guid>
             <description>Agenda  Characterstics How does it internally work References  The Apache Cassandra database is the right choice when you need scalability and high availability without compromising performance. Linear scalability and proven fault-tolerance on commodity hardware or cloud infrastructure make it the perfect platform for mission-critical data. Cassandra&amp;rsquo;s support for replicating across multiple datacenters is best-in-class, providing lower latency for your users and the peace of mind of knowing that you can survive regional outages.</description>
             <content type="html"><![CDATA[
 
@@ -182,10 +364,10 @@ For any question/suggestion, please send email to   <strong>amu.prashant1@gmail.
         
         <item>
             <title>Build your website using GoHugo and host it on GitHub Pages</title>
-            <link>https://prashantbhardwaj.github.io/posts/2019/08/build-your-website-using-gohugo-and-host-it-on-github-pages/</link>
+            <link>/posts/2019/08/build-your-website-using-gohugo-and-host-it-on-github-pages/</link>
             <pubDate>Mon, 12 Aug 2019 23:22:50 +0100</pubDate>
             
-            <guid>https://prashantbhardwaj.github.io/posts/2019/08/build-your-website-using-gohugo-and-host-it-on-github-pages/</guid>
+            <guid>/posts/2019/08/build-your-website-using-gohugo-and-host-it-on-github-pages/</guid>
             <description>Overview GitHub came up with GitHub pages service, which hosts static web content free of cost. For Tech bloggers and for those who are trying to make their hands dirty in static web content creation, this is the best service at this moment. Read tagline of GitHub Pages -
 GoHugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, GoHugo makes building websites fun again.</description>
             <content type="html"><![CDATA[

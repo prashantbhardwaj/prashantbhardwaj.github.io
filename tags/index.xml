@@ -2,103 +2,103 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Prashant Bhardwaj</title>
-    <link>https://prashantbhardwaj.github.io/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on Prashant Bhardwaj</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>copyright@Prashant</copyright>
-    <lastBuildDate>Thu, 19 Sep 2019 23:36:07 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 29 Sep 2019 13:49:13 +0100</lastBuildDate>
     
-	<atom:link href="https://prashantbhardwaj.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>apache</title>
-      <link>https://prashantbhardwaj.github.io/tags/apache/</link>
-      <pubDate>Thu, 19 Sep 2019 23:36:07 +0100</pubDate>
+      <link>/tags/apache/</link>
+      <pubDate>Sun, 29 Sep 2019 13:49:13 +0100</pubDate>
       
-      <guid>https://prashantbhardwaj.github.io/tags/apache/</guid>
+      <guid>/tags/apache/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cassandra</title>
-      <link>https://prashantbhardwaj.github.io/tags/cassandra/</link>
-      <pubDate>Thu, 19 Sep 2019 23:36:07 +0100</pubDate>
+      <link>/tags/cassandra/</link>
+      <pubDate>Sun, 29 Sep 2019 13:49:13 +0100</pubDate>
       
-      <guid>https://prashantbhardwaj.github.io/tags/cassandra/</guid>
+      <guid>/tags/cassandra/</guid>
       <description></description>
     </item>
     
     <item>
       <title>open-source</title>
-      <link>https://prashantbhardwaj.github.io/tags/open-source/</link>
-      <pubDate>Thu, 19 Sep 2019 23:36:07 +0100</pubDate>
+      <link>/tags/open-source/</link>
+      <pubDate>Sun, 29 Sep 2019 13:49:13 +0100</pubDate>
       
-      <guid>https://prashantbhardwaj.github.io/tags/open-source/</guid>
+      <guid>/tags/open-source/</guid>
       <description></description>
     </item>
     
     <item>
       <title>github-pages</title>
-      <link>https://prashantbhardwaj.github.io/tags/github-pages/</link>
+      <link>/tags/github-pages/</link>
       <pubDate>Mon, 12 Aug 2019 23:22:50 +0100</pubDate>
       
-      <guid>https://prashantbhardwaj.github.io/tags/github-pages/</guid>
+      <guid>/tags/github-pages/</guid>
       <description></description>
     </item>
     
     <item>
       <title>go-hugo</title>
-      <link>https://prashantbhardwaj.github.io/tags/go-hugo/</link>
+      <link>/tags/go-hugo/</link>
       <pubDate>Mon, 12 Aug 2019 23:22:50 +0100</pubDate>
       
-      <guid>https://prashantbhardwaj.github.io/tags/go-hugo/</guid>
+      <guid>/tags/go-hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>website</title>
-      <link>https://prashantbhardwaj.github.io/tags/website/</link>
+      <link>/tags/website/</link>
       <pubDate>Mon, 12 Aug 2019 23:22:50 +0100</pubDate>
       
-      <guid>https://prashantbhardwaj.github.io/tags/website/</guid>
+      <guid>/tags/website/</guid>
       <description></description>
     </item>
     
     <item>
       <title>about</title>
-      <link>https://prashantbhardwaj.github.io/tags/about/</link>
+      <link>/tags/about/</link>
       <pubDate>Sun, 11 Aug 2019 23:14:58 +0100</pubDate>
       
-      <guid>https://prashantbhardwaj.github.io/tags/about/</guid>
+      <guid>/tags/about/</guid>
       <description></description>
     </item>
     
     <item>
       <title>bio</title>
-      <link>https://prashantbhardwaj.github.io/tags/bio/</link>
+      <link>/tags/bio/</link>
       <pubDate>Sun, 11 Aug 2019 23:14:58 +0100</pubDate>
       
-      <guid>https://prashantbhardwaj.github.io/tags/bio/</guid>
+      <guid>/tags/bio/</guid>
       <description></description>
     </item>
     
     <item>
       <title>me</title>
-      <link>https://prashantbhardwaj.github.io/tags/me/</link>
+      <link>/tags/me/</link>
       <pubDate>Sun, 11 Aug 2019 23:14:58 +0100</pubDate>
       
-      <guid>https://prashantbhardwaj.github.io/tags/me/</guid>
+      <guid>/tags/me/</guid>
       <description></description>
     </item>
     
     <item>
       <title>resume</title>
-      <link>https://prashantbhardwaj.github.io/tags/resume/</link>
+      <link>/tags/resume/</link>
       <pubDate>Sun, 11 Aug 2019 23:14:58 +0100</pubDate>
       
-      <guid>https://prashantbhardwaj.github.io/tags/resume/</guid>
+      <guid>/tags/resume/</guid>
       <description></description>
     </item>
     

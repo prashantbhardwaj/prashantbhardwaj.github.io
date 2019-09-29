@@ -10,7 +10,7 @@
     content="Agenda  Characterstics How does it internally work References  The Apache Cassandra database is the right choice when you need scalability and high availability without compromising performance. Linear scalability and proven fault-tolerance on commodity hardware or cloud infrastructure make it the perfect platform for mission-critical data. Cassandra&amp;rsquo;s support for replicating across multiple datacenters is best-in-class, providing lower latency for your users and the peace of mind of knowing that you can survive regional outages." />
 <meta name="keywords" content="homepage, blog, science, informatics, development, programming" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="https://prashantbhardwaj.github.io/posts/2019/09/cassandra-what-is-this/" />
+<link rel="canonical" href="/posts/2019/09/cassandra-what-is-this/" />
 
 
 <title>
@@ -26,16 +26,16 @@
 
 
 
-<link rel="stylesheet" href="https://prashantbhardwaj.github.io/main.min.0d47b4686e972122bd29f0c1e3dd024a2d541cd8b1b543622520822ea6f4238a.css">
+<link rel="stylesheet" href="/main.min.0d47b4686e972122bd29f0c1e3dd024a2d541cd8b1b543622520822ea6f4238a.css">
 
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="https://prashantbhardwaj.github.io/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://prashantbhardwaj.github.io/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://prashantbhardwaj.github.io/favicon-16x16.png">
-<link rel="manifest" href="https://prashantbhardwaj.github.io/site.webmanifest">
-<link rel="mask-icon" href="https://prashantbhardwaj.github.io/safari-pinned-tab.svg" color="#252627">
-<link rel="shortcut icon" href="https://prashantbhardwaj.github.io/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">
+<link rel="shortcut icon" href="/favicon.ico">
 <meta name="theme-color" content="#252627"><meta itemprop="name" content="Cassandra : What is this?">
 <meta itemprop="description" content="Agenda  Characterstics How does it internally work References  The Apache Cassandra database is the right choice when you need scalability and high availability without compromising performance. Linear scalability and proven fault-tolerance on commodity hardware or cloud infrastructure make it the perfect platform for mission-critical data. Cassandra&rsquo;s support for replicating across multiple datacenters is best-in-class, providing lower latency for your users and the peace of mind of knowing that you can survive regional outages.">
 
@@ -48,7 +48,7 @@
 
 <meta itemprop="keywords" content="cassandra,open-source,apache," />
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://prashantbhardwaj.github.io/"/>
+<meta name="twitter:image" content="/"/>
 
 <meta name="twitter:title" content="Cassandra : What is this?"/>
 <meta name="twitter:description" content="Agenda  Characterstics How does it internally work References  The Apache Cassandra database is the right choice when you need scalability and high availability without compromising performance. Linear scalability and proven fault-tolerance on commodity hardware or cloud infrastructure make it the perfect platform for mission-critical data. Cassandra&rsquo;s support for replicating across multiple datacenters is best-in-class, providing lower latency for your users and the peace of mind of knowing that you can survive regional outages."/>
@@ -70,7 +70,7 @@
         <div class="container">
             <header class="header">
     <span class="header__inner">
-        <a href="https://prashantbhardwaj.github.io/" style="text-decoration: none;">
+        <a href="/" style="text-decoration: none;">
     <div class="logo">
         
             <span class="logo__mark">></span>
@@ -84,7 +84,7 @@
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://prashantbhardwaj.github.io/about">About</a></li><li><a href="https://prashantbhardwaj.github.io/posts">Blogs</a></li><li><a href="https://prashantbhardwaj.github.io/hi">हिन्दी</a></li>
+    <ul class="menu__inner"><li><a href="/about">About</a></li><li><a href="/posts">Blogs</a></li><li><a href="/hi">हिन्दी</a></li>
     </ul>
 </nav>
 
@@ -120,7 +120,7 @@
         </div>
 
         <article>
-            <h1 class="post-title"><a href="https://prashantbhardwaj.github.io/posts/2019/09/cassandra-what-is-this/">Cassandra : What is this?</a></h1>
+            <h1 class="post-title"><a href="/posts/2019/09/cassandra-what-is-this/">Cassandra : What is this?</a></h1>
 
             
 
@@ -167,7 +167,7 @@ Cassandra support contracts and services are available from third parties.</p>
 
 <h3>Writes on a single node</h3>
 
-<p><img src="https://prashantbhardwaj.github.io/caas/cass-write.png" alt="alt text" /></p>
+<p><img src="/caas/cass-write.png" alt="alt text" /></p>
 
 <p>Entire write happens in following steps</p>
 
@@ -194,7 +194,7 @@ It is append only log which is sequencial write and that is the reason that writ
 
 <p>as we know that data for a row in SSTable is not in just one SSTable. Whenever data in a row is updated Cassandra writes a new timestamped version of the inserted or updated data in another SSTable. Cassandra also does not delete in place because the SSTable is immutable. Instead, Cassandra marks data to be deleted using a tombstone. Tombstones exist for a configured time period defined by the gc_grace_seconds value set on the table. During compaction, there is a temporary spike in disk space usage and disk I/O because the old and new SSTables co-exist. This diagram depicts the compaction process:</p>
 
-<p><img src="https://prashantbhardwaj.github.io/caas/caas-compaction.png" alt="alt text" /></p>
+<p><img src="/caas/caas-compaction.png" alt="alt text" /></p>
 
 <p>Compaction merges the data in each SSTable data by partition key, selecting the latest data for storage based on its timestamp. Cassandra can merge the data performantly, without random IO, because rows are sorted by partition key within each SSTable. After evicting tombstones and removing deleted data, columns, and rows, the compaction process consolidates SSTables into a single file. The old SSTable files are deleted as soon as any pending reads finish using the files. Disk space occupied by old SSTables becomes available for reuse.</p>
 
@@ -204,7 +204,7 @@ It is append only log which is sequencial write and that is the reason that writ
 
 <h3>Coordinated reads</h3>
 
-<p><img src="https://prashantbhardwaj.github.io/caas/caas-read.png" alt="alt text" /></p>
+<p><img src="/caas/caas-read.png" alt="alt text" /></p>
 
 <p>Application client can send data request to any node of your cluster. That node then becomes coordinator for that request. Now it is coordinator&rsquo;s job to talk to other nodes, get the data and return it to client.
 When a read request starts its journey, the data’s partition key is used to find what nodes have the data. After that, the request is sent to a number of nodes set by the tunable consistency level for reads. Then, on each node, in a certain order, Cassandra checks different places that can have the data.</p>
@@ -226,7 +226,7 @@ When a read request starts its journey, the data’s partition key is used to fi
 
 <p>You run Cassandra in a cluster with more than one nodes. Which not only gives reliability in case any node goes down but this reliability comes with the fact that data of each node is replicated on other nodes. That is why if any node goes down, other nodes start serving that data.</p>
 
-<p><img src="https://prashantbhardwaj.github.io/caas/caas-cluster.png" alt="alt text" /></p>
+<p><img src="/caas/caas-cluster.png" alt="alt text" /></p>
 
 <ul>
 <li>Client writes local</li>
@@ -251,7 +251,7 @@ For any question/suggestion, please send email to   <strong>amu.prashant1@gmail.
 
         <div class="post-info">
                 <p>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://prashantbhardwaj.github.io/tags/cassandra">cassandra</a></span><span class="tag"><a href="https://prashantbhardwaj.github.io/tags/open-source">open-source</a></span><span class="tag"><a href="https://prashantbhardwaj.github.io/tags/apache">apache</a></span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="/tags/cassandra">cassandra</a></span><span class="tag"><a href="/tags/open-source">open-source</a></span><span class="tag"><a href="/tags/apache">apache</a></span>
                 </p>
 
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1321 Words</p>
@@ -269,7 +269,7 @@ For any question/suggestion, please send email to   <strong>amu.prashant1@gmail.
                 <div class="pagination__buttons">
                     
                         <span class="button previous">
-                            <a href="https://prashantbhardwaj.github.io/posts/2019/09/cassandra-when-to-use-and-how-to-use/">
+                            <a href="/posts/2019/09/cassandra-when-to-use-and-how-to-use/">
                                 <span class="button__icon">←</span>
                                 <span class="button__text">Cassandra : When to use and how to use</span>
                             </a>
@@ -278,7 +278,7 @@ For any question/suggestion, please send email to   <strong>amu.prashant1@gmail.
 
                     
                         <span class="button next">
-                            <a href="https://prashantbhardwaj.github.io/posts/2019/08/build-your-website-using-gohugo-and-host-it-on-github-pages/">
+                            <a href="/posts/2019/08/build-your-website-using-gohugo-and-host-it-on-github-pages/">
                                 <span class="button__text">Build your website using GoHugo and host it on GitHub Pages</span>
                                 <span class="button__icon">→</span>
                             </a>
@@ -299,10 +299,10 @@ For any question/suggestion, please send email to   <strong>amu.prashant1@gmail.
         <div class="footer__content">
             <span>&copy; 2019</span>
             
-                <span><a href="https://prashantbhardwaj.github.io/">Prashant Bhardwaj</a></span>
+                <span><a href="/">Prashant Bhardwaj</a></span>
             
             <span>copyright@Prashant</span>
-            <span> <a href="https://prashantbhardwaj.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+            <span> <a href="/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
         </div>
     </div>
     <div class="footer__inner">
@@ -326,7 +326,7 @@ For any question/suggestion, please send email to   <strong>amu.prashant1@gmail.
 
 
 
-<script type="text/javascript" src="https://prashantbhardwaj.github.io/bundle.min.4c3fb12a087ceed4a52cb5d57068a9795c7069617a01ca70f788052ad66e1791779e6c72686e1dc0ca13dc03b0203204b6566bb0dd1ee80de2b7ff4d8fe53db2.js" integrity="sha512-TD&#43;xKgh87tSlLLXVcGipeVxwaWF6Acpw94gFKtZuF5F3nmxyaG4dwMoT3AOwIDIEtlZrsN0e6A3it/9Nj&#43;U9sg=="></script>
+<script type="text/javascript" src="/bundle.min.4c3fb12a087ceed4a52cb5d57068a9795c7069617a01ca70f788052ad66e1791779e6c72686e1dc0ca13dc03b0203204b6566bb0dd1ee80de2b7ff4d8fe53db2.js" integrity="sha512-TD&#43;xKgh87tSlLLXVcGipeVxwaWF6Acpw94gFKtZuF5F3nmxyaG4dwMoT3AOwIDIEtlZrsN0e6A3it/9Nj&#43;U9sg=="></script>
 
 
 

@@ -3,156 +3,171 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://prashantbhardwaj.github.io/posts/2019/09/cassandra-when-to-use-and-how-to-use/</loc>
-    <lastmod>2019-09-19T23:36:07+01:00</lastmod>
+    <loc>/posts/2019/09/cassandra-replication-strategies/</loc>
+    <lastmod>2019-09-29T13:49:13+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://prashantbhardwaj.github.io/posts/</loc>
-    <lastmod>2019-09-19T23:36:07+01:00</lastmod>
+    <loc>/posts/</loc>
+    <lastmod>2019-09-29T13:49:13+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://prashantbhardwaj.github.io/</loc>
-    <lastmod>2019-09-19T23:36:07+01:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="hi"
-                href="https://prashantbhardwaj.github.io/hi/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://prashantbhardwaj.github.io/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://prashantbhardwaj.github.io/tags/</loc>
-    <lastmod>2019-09-19T23:36:07+01:00</lastmod>
+    <loc>/</loc>
+    <lastmod>2019-09-29T13:49:13+01:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="hi"
-                href="https://prashantbhardwaj.github.io/hi/tags/"
+                href="/hi/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://prashantbhardwaj.github.io/tags/"
+                href="/"
                 />
   </url>
   
   <url>
-    <loc>https://prashantbhardwaj.github.io/tags/apache/</loc>
-    <lastmod>2019-09-19T23:36:07+01:00</lastmod>
+    <loc>/tags/</loc>
+    <lastmod>2019-09-29T13:49:13+01:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="hi"
+                href="/hi/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>/tags/apache/</loc>
+    <lastmod>2019-09-29T13:49:13+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://prashantbhardwaj.github.io/tags/cassandra/</loc>
-    <lastmod>2019-09-19T23:36:07+01:00</lastmod>
+    <loc>/tags/cassandra/</loc>
+    <lastmod>2019-09-29T13:49:13+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://prashantbhardwaj.github.io/tags/open-source/</loc>
-    <lastmod>2019-09-19T23:36:07+01:00</lastmod>
+    <loc>/tags/open-source/</loc>
+    <lastmod>2019-09-29T13:49:13+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://prashantbhardwaj.github.io/posts/2019/09/cassandra-what-is-this/</loc>
+    <loc>/posts/2019/09/cassandra-consistency-levels-list/</loc>
+    <lastmod>2019-09-28T11:19:22+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/2019/09/cassandra-replication-factor-consistency-level/</loc>
+    <lastmod>2019-09-28T09:31:52+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/2019/09/cassandra-when-to-use-and-how-to-use/</loc>
+    <lastmod>2019-09-19T23:36:07+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/2019/09/cassandra-what-is-this/</loc>
     <lastmod>2019-09-14T17:01:38+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://prashantbhardwaj.github.io/hi/</loc>
+    <loc>/hi/</loc>
     <lastmod>2019-08-13T23:10:51+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://prashantbhardwaj.github.io/hi/posts/post2/</loc>
+    <loc>/hi/posts/post2/</loc>
     <lastmod>2019-08-13T23:10:51+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://prashantbhardwaj.github.io/hi/posts/post1/</loc>
+    <loc>/hi/posts/post1/</loc>
     <lastmod>2019-08-13T22:40:43+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://prashantbhardwaj.github.io/hi/about/</loc>
+    <loc>/hi/about/</loc>
     <lastmod>2019-08-13T00:40:27+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://prashantbhardwaj.github.io/posts/2019/08/build-your-website-using-gohugo-and-host-it-on-github-pages/</loc>
+    <loc>/posts/2019/08/build-your-website-using-gohugo-and-host-it-on-github-pages/</loc>
     <lastmod>2019-08-12T23:22:50+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://prashantbhardwaj.github.io/tags/github-pages/</loc>
-    <lastmod>2019-08-12T23:22:50+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://prashantbhardwaj.github.io/tags/go-hugo/</loc>
+    <loc>/tags/github-pages/</loc>
     <lastmod>2019-08-12T23:22:50+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://prashantbhardwaj.github.io/tags/website/</loc>
+    <loc>/tags/go-hugo/</loc>
     <lastmod>2019-08-12T23:22:50+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://prashantbhardwaj.github.io/about/</loc>
+    <loc>/tags/website/</loc>
+    <lastmod>2019-08-12T23:22:50+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/about/</loc>
     <lastmod>2019-08-11T23:14:58+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://prashantbhardwaj.github.io/tags/about/</loc>
+    <loc>/tags/about/</loc>
     <lastmod>2019-08-11T23:14:58+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://prashantbhardwaj.github.io/tags/bio/</loc>
+    <loc>/tags/bio/</loc>
     <lastmod>2019-08-11T23:14:58+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://prashantbhardwaj.github.io/tags/me/</loc>
+    <loc>/tags/me/</loc>
     <lastmod>2019-08-11T23:14:58+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://prashantbhardwaj.github.io/tags/resume/</loc>
+    <loc>/tags/resume/</loc>
     <lastmod>2019-08-11T23:14:58+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://prashantbhardwaj.github.io/categories/</loc>
+    <loc>/categories/</loc>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="hi"
-                href="https://prashantbhardwaj.github.io/hi/categories/"
+                href="/hi/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://prashantbhardwaj.github.io/categories/"
+                href="/categories/"
                 />
   </url>
   

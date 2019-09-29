@@ -2,22 +2,54 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Prashant Bhardwaj</title>
-    <link>https://prashantbhardwaj.github.io/</link>
+    <link>/</link>
     <description>Recent content on Prashant Bhardwaj</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>copyright@Prashant</copyright>
-    <lastBuildDate>Thu, 19 Sep 2019 23:36:07 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 29 Sep 2019 13:49:13 +0100</lastBuildDate>
     
-	<atom:link href="https://prashantbhardwaj.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Cassandra Replication Strategies</title>
+      <link>/posts/2019/09/cassandra-replication-strategies/</link>
+      <pubDate>Sun, 29 Sep 2019 13:49:13 +0100</pubDate>
+      
+      <guid>/posts/2019/09/cassandra-replication-strategies/</guid>
+      <description>There are two kinds of replication strategies in Cassandra.
+SimpleStrategy SimpleStrategy is used when you have just one data center. SimpleStrategy places the first replica on the node selected by the partitioner. After that, remaining replicas are placed in clockwise direction in the Node ring.
+NetworkTopologyStrategy NetworkTopologyStrategy is used when you have more than two data centers.
+In NetworkTopologyStrategy, replicas are set for each data center separately. NetworkTopologyStrategy places replicas in the clockwise direction in the ring until reaches the first node in another rack.</description>
+    </item>
+    
+    <item>
+      <title>Cassandra Consistency Levels List</title>
+      <link>/posts/2019/09/cassandra-consistency-levels-list/</link>
+      <pubDate>Sat, 28 Sep 2019 11:19:22 +0100</pubDate>
+      
+      <guid>/posts/2019/09/cassandra-consistency-levels-list/</guid>
+      <description>Typical values of consistency levels are -
+Note - Write operation consists of writing to commit log and memtable.
+   Level Write Read Usage     ALL A write must be on all replica nodes in the cluster for that partition. Returns the record after all replicas. The read operation will fail if a replica does not respond. Provides the highest consistency and the lowest availability of any other level.</description>
+    </item>
+    
+    <item>
+      <title>Cassandra - Replication Factor &amp; Consistency Level</title>
+      <link>/posts/2019/09/cassandra-replication-factor-consistency-level/</link>
+      <pubDate>Sat, 28 Sep 2019 09:31:52 +0100</pubDate>
+      
+      <guid>/posts/2019/09/cassandra-replication-factor-consistency-level/</guid>
+      <description>Replication Factor Whenever we start Cassandra, we start a cluster, which is a collection of 1 or more than one nodes. A cluster can be splitted onto more than one datacenter. Cassandra’s architecture was that the hardware failure can occur at any time. Any node can be down. Even entire datacenter can go down so it is better to add more than one data centers in your cluster. Cassandra stores data replicas on multiple nodes to ensure reliability and fault tolerance.</description>
+    </item>
+    
+    <item>
       <title>Cassandra : When to use and how to use</title>
-      <link>https://prashantbhardwaj.github.io/posts/2019/09/cassandra-when-to-use-and-how-to-use/</link>
+      <link>/posts/2019/09/cassandra-when-to-use-and-how-to-use/</link>
       <pubDate>Thu, 19 Sep 2019 23:36:07 +0100</pubDate>
       
-      <guid>https://prashantbhardwaj.github.io/posts/2019/09/cassandra-when-to-use-and-how-to-use/</guid>
+      <guid>/posts/2019/09/cassandra-when-to-use-and-how-to-use/</guid>
       <description>I don&amp;rsquo;t think that I need to explain what Cassandra is. OK, one liner is enough ! It is NoSQL database, primarily used in big data projects.
 Before we start discussing scenarios where Cassandra fits very well, let&amp;rsquo;s discuss where it doesn&amp;rsquo;t fit at all.
 Common mistakes when using Cassandra We&amp;rsquo;ll have lots of data, let&amp;rsquo;s use Cassandra
@@ -26,56 +58,56 @@ Cassandra is not a typical database which fits in every Big Data use case.</desc
     
     <item>
       <title>Cassandra : What is this?</title>
-      <link>https://prashantbhardwaj.github.io/posts/2019/09/cassandra-what-is-this/</link>
+      <link>/posts/2019/09/cassandra-what-is-this/</link>
       <pubDate>Sat, 14 Sep 2019 17:01:38 +0100</pubDate>
       
-      <guid>https://prashantbhardwaj.github.io/posts/2019/09/cassandra-what-is-this/</guid>
+      <guid>/posts/2019/09/cassandra-what-is-this/</guid>
       <description>Agenda  Characterstics How does it internally work References  The Apache Cassandra database is the right choice when you need scalability and high availability without compromising performance. Linear scalability and proven fault-tolerance on commodity hardware or cloud infrastructure make it the perfect platform for mission-critical data. Cassandra&amp;rsquo;s support for replicating across multiple datacenters is best-in-class, providing lower latency for your users and the peace of mind of knowing that you can survive regional outages.</description>
     </item>
     
     <item>
       <title>Post2</title>
-      <link>https://prashantbhardwaj.github.io/hi/posts/post2/</link>
+      <link>/hi/posts/post2/</link>
       <pubDate>Tue, 13 Aug 2019 23:10:51 +0100</pubDate>
       
-      <guid>https://prashantbhardwaj.github.io/hi/posts/post2/</guid>
+      <guid>/hi/posts/post2/</guid>
       <description>पोस्ट 2</description>
     </item>
     
     <item>
       <title>Post1</title>
-      <link>https://prashantbhardwaj.github.io/hi/posts/post1/</link>
+      <link>/hi/posts/post1/</link>
       <pubDate>Tue, 13 Aug 2019 22:40:43 +0100</pubDate>
       
-      <guid>https://prashantbhardwaj.github.io/hi/posts/post1/</guid>
+      <guid>/hi/posts/post1/</guid>
       <description>पोस्ट १</description>
     </item>
     
     <item>
       <title>मेरा परिचय</title>
-      <link>https://prashantbhardwaj.github.io/hi/about/</link>
+      <link>/hi/about/</link>
       <pubDate>Tue, 13 Aug 2019 00:40:27 +0100</pubDate>
       
-      <guid>https://prashantbhardwaj.github.io/hi/about/</guid>
+      <guid>/hi/about/</guid>
       <description>मेरा परिचय</description>
     </item>
     
     <item>
       <title>Build your website using GoHugo and host it on GitHub Pages</title>
-      <link>https://prashantbhardwaj.github.io/posts/2019/08/build-your-website-using-gohugo-and-host-it-on-github-pages/</link>
+      <link>/posts/2019/08/build-your-website-using-gohugo-and-host-it-on-github-pages/</link>
       <pubDate>Mon, 12 Aug 2019 23:22:50 +0100</pubDate>
       
-      <guid>https://prashantbhardwaj.github.io/posts/2019/08/build-your-website-using-gohugo-and-host-it-on-github-pages/</guid>
+      <guid>/posts/2019/08/build-your-website-using-gohugo-and-host-it-on-github-pages/</guid>
       <description>Overview GitHub came up with GitHub pages service, which hosts static web content free of cost. For Tech bloggers and for those who are trying to make their hands dirty in static web content creation, this is the best service at this moment. Read tagline of GitHub Pages -
 GoHugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, GoHugo makes building websites fun again.</description>
     </item>
     
     <item>
       <title>About</title>
-      <link>https://prashantbhardwaj.github.io/about/</link>
+      <link>/about/</link>
       <pubDate>Sun, 11 Aug 2019 23:14:58 +0100</pubDate>
       
-      <guid>https://prashantbhardwaj.github.io/about/</guid>
+      <guid>/about/</guid>
       <description>Nine years of experience of developing enterprise applications in business domains like Banking, HiTech, and Retail for world leaders in their segments like Apple, JPMorgan, Barclays and Walgreens.
 Technology
          Programming Languages Java 8   Spring Framework MVC, Web, ORM, AOP, Data JPA, RESTDoc   Web services SOAP Services, JSON/XML based REST   ORM Hibernate   Messaging Apache AciveMQ, Oracle AQ, Apache Qpid, Kafka   Integration Framework Apache Camel, Enterprise Integration Patterns   Database Cassandra, MySQL,Oracle   Cache Oracle Coherence, EhCache, Gemfire, Google Guava   Web/Application Server JBoss AS, Tomcat, Web Sphere   Operating Systems Windows, Apple iMac, Linux   Dev Tools IntelliJ, Eclipse, JBoss developer Studio, IBM RAD   Testing JUnit, Mockito, RestAssure, Spring MVC Test, Cucumber   Testing tools Jmeter, AppPerfect, SoapUI, Postman   Code Analysis SonarQube, PMD, Dependency scan   Web Technologies HTML, JSP, CSS, Java Script, JSON, XML   Version Control Git, SVN, CVS   Build technologies Maven, Gradle, Jenkins   Methodologies &amp;amp; tools Agile, Scrum (Jira, Stash, Confluence, BitBucket)   CI &amp;amp; CD tools Jenkins, Jules   Cloud AWS, Pivotal Cloud Foundry   Other Open source technologies Apache Storm, Disruptor    Education</description>

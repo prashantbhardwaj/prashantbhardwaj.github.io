@@ -3,47 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://prashantbhardwaj.github.io/hi/categories/</loc>
+    <loc>/hi/categories/</loc>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://prashantbhardwaj.github.io/categories/"
+                href="/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="hi"
-                href="https://prashantbhardwaj.github.io/hi/categories/"
+                href="/hi/categories/"
                 />
   </url>
   
   <url>
-    <loc>https://prashantbhardwaj.github.io/hi/tags/</loc>
+    <loc>/hi/tags/</loc>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://prashantbhardwaj.github.io/tags/"
+                href="/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="hi"
-                href="https://prashantbhardwaj.github.io/hi/tags/"
+                href="/hi/tags/"
                 />
   </url>
   
   <url>
-    <loc>https://prashantbhardwaj.github.io/hi/</loc>
+    <loc>/hi/</loc>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://prashantbhardwaj.github.io/"
+                href="/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="hi"
-                href="https://prashantbhardwaj.github.io/hi/"
+                href="/hi/"
                 />
   </url>
   

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>github-pages on Prashant Bhardwaj</title>
-    <link>https://prashantbhardwaj.github.io/tags/github-pages/</link>
+    <link>/tags/github-pages/</link>
     <description>Recent content in github-pages on Prashant Bhardwaj</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>copyright@Prashant</copyright>
     <lastBuildDate>Mon, 12 Aug 2019 23:22:50 +0100</lastBuildDate>
     
-	<atom:link href="https://prashantbhardwaj.github.io/tags/github-pages/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/github-pages/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Build your website using GoHugo and host it on GitHub Pages</title>
-      <link>https://prashantbhardwaj.github.io/posts/2019/08/build-your-website-using-gohugo-and-host-it-on-github-pages/</link>
+      <link>/posts/2019/08/build-your-website-using-gohugo-and-host-it-on-github-pages/</link>
       <pubDate>Mon, 12 Aug 2019 23:22:50 +0100</pubDate>
       
-      <guid>https://prashantbhardwaj.github.io/posts/2019/08/build-your-website-using-gohugo-and-host-it-on-github-pages/</guid>
+      <guid>/posts/2019/08/build-your-website-using-gohugo-and-host-it-on-github-pages/</guid>
       <description>Overview GitHub came up with GitHub pages service, which hosts static web content free of cost. For Tech bloggers and for those who are trying to make their hands dirty in static web content creation, this is the best service at this moment. Read tagline of GitHub Pages -
 GoHugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, GoHugo makes building websites fun again.</description>
     </item>

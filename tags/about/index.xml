@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>about on Prashant Bhardwaj</title>
-    <link>https://prashantbhardwaj.github.io/tags/about/</link>
+    <link>/tags/about/</link>
     <description>Recent content in about on Prashant Bhardwaj</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>copyright@Prashant</copyright>
     <lastBuildDate>Sun, 11 Aug 2019 23:14:58 +0100</lastBuildDate>
     
-	<atom:link href="https://prashantbhardwaj.github.io/tags/about/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/about/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About</title>
-      <link>https://prashantbhardwaj.github.io/about/</link>
+      <link>/about/</link>
       <pubDate>Sun, 11 Aug 2019 23:14:58 +0100</pubDate>
       
-      <guid>https://prashantbhardwaj.github.io/about/</guid>
+      <guid>/about/</guid>
       <description>Nine years of experience of developing enterprise applications in business domains like Banking, HiTech, and Retail for world leaders in their segments like Apple, JPMorgan, Barclays and Walgreens.
 Technology
          Programming Languages Java 8   Spring Framework MVC, Web, ORM, AOP, Data JPA, RESTDoc   Web services SOAP Services, JSON/XML based REST   ORM Hibernate   Messaging Apache AciveMQ, Oracle AQ, Apache Qpid, Kafka   Integration Framework Apache Camel, Enterprise Integration Patterns   Database Cassandra, MySQL,Oracle   Cache Oracle Coherence, EhCache, Gemfire, Google Guava   Web/Application Server JBoss AS, Tomcat, Web Sphere   Operating Systems Windows, Apple iMac, Linux   Dev Tools IntelliJ, Eclipse, JBoss developer Studio, IBM RAD   Testing JUnit, Mockito, RestAssure, Spring MVC Test, Cucumber   Testing tools Jmeter, AppPerfect, SoapUI, Postman   Code Analysis SonarQube, PMD, Dependency scan   Web Technologies HTML, JSP, CSS, Java Script, JSON, XML   Version Control Git, SVN, CVS   Build technologies Maven, Gradle, Jenkins   Methodologies &amp;amp; tools Agile, Scrum (Jira, Stash, Confluence, BitBucket)   CI &amp;amp; CD tools Jenkins, Jules   Cloud AWS, Pivotal Cloud Foundry   Other Open source technologies Apache Storm, Disruptor    Education</description>
