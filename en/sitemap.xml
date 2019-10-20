@@ -3,19 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/posts/2019/09/cassandra-replication-strategies/</loc>
-    <lastmod>2019-09-29T13:49:13+01:00</lastmod>
+    <loc>/posts/2019/10/cassandra-how-is-data-deleted-and-what-are-tombstones/</loc>
+    <lastmod>2019-10-16T22:56:24+01:00</lastmod>
   </url>
   
   <url>
     <loc>/posts/</loc>
-    <lastmod>2019-09-29T13:49:13+01:00</lastmod>
+    <lastmod>2019-10-16T22:56:24+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-09-29T13:49:13+01:00</lastmod>
+    <lastmod>2019-10-16T22:56:24+01:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -31,7 +31,7 @@
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2019-09-29T13:49:13+01:00</lastmod>
+    <lastmod>2019-10-16T22:56:24+01:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -47,20 +47,25 @@
   
   <url>
     <loc>/tags/apache/</loc>
-    <lastmod>2019-09-29T13:49:13+01:00</lastmod>
+    <lastmod>2019-10-16T22:56:24+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/cassandra/</loc>
-    <lastmod>2019-09-29T13:49:13+01:00</lastmod>
+    <lastmod>2019-10-16T22:56:24+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/open-source/</loc>
-    <lastmod>2019-09-29T13:49:13+01:00</lastmod>
+    <lastmod>2019-10-16T22:56:24+01:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/posts/2019/09/cassandra-replication-strategies/</loc>
+    <lastmod>2019-09-29T13:49:13+01:00</lastmod>
   </url>
   
   <url>
@@ -74,12 +79,12 @@
   </url>
   
   <url>
-    <loc>/posts/2019/09/cassandra-when-to-use-and-how-to-use/</loc>
+    <loc>/posts/2019/09/cassandra-when-not-to-use/</loc>
     <lastmod>2019-09-19T23:36:07+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/posts/2019/09/cassandra-what-is-this/</loc>
+    <loc>/posts/2019/09/cassandra-overview-how-is-data-written-and-read/</loc>
     <lastmod>2019-09-14T17:01:38+01:00</lastmod>
   </url>
   

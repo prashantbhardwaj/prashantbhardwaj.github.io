@@ -6,11 +6,135 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>copyright@Prashant</copyright>
-        <lastBuildDate>Sun, 29 Sep 2019 13:49:13 +0100</lastBuildDate>
+        <lastBuildDate>Wed, 16 Oct 2019 22:56:24 +0100</lastBuildDate>
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
-            <title>Cassandra Replication Strategies</title>
+            <title>Cassandra : How is data deleted and what are Tombstones?</title>
+            <link>/posts/2019/10/cassandra-how-is-data-deleted-and-what-are-tombstones/</link>
+            <pubDate>Wed, 16 Oct 2019 22:56:24 +0100</pubDate>
+            
+            <guid>/posts/2019/10/cassandra-how-is-data-deleted-and-what-are-tombstones/</guid>
+            <description>Data in Cassandra is replcated on more than one node. In another terms - &amp;lsquo;Same data is copied on more than one node&amp;rsquo;. Any change in that data should be made in all the copies of that data stored on various nodes of a cluster. Same is applied for deletes as well. If a data is deleted then it should be deleted from all the nodes. But what if any node which has a copy of that data is down.</description>
+            <content type="html"><![CDATA[<p>Data in Cassandra is replcated on more than one node. In another terms - &lsquo;Same data is copied on more than one node&rsquo;. Any change in that data should be made in all the copies of that data stored on various nodes of a cluster. Same is applied for <strong>deletes</strong> as well. If a data is deleted then it should be deleted from all the nodes. But what if any node which has a copy of that data is down. When that node will come up and will be asked for that data, it will provide that data and same data will be copied on other nodes once again. Such data is called <strong>Zombie</strong> record.</p>
+
+<p>How does Cassandra make sure that if a data is deleted than it should be deleted from all the nodes even if any node where that data is stored, is down. Cassandra manages that by creating <strong>tombstones</strong>.</p>
+
+<p>How does these tombstones help Cassandra? Now again think about the scenario in which a data is stored on three nodes. With Local_Quorum consistency and 3 replication factor and just 2 nodes are up and running, if DELETE requests came, data got deleted from 2 live nodes, while remained saved on one node which was down when DELETE request came. Now this third node comes up and a READ request comes. This third node returns the data but other two nodes say that we had data but now we have tombstones at the place of that data. Now, cassandra knows that if two nodes have tombstones that means that data was deleted and then it repairs data on that remaining third node and deletes from that node as well.</p>
+
+<p>Now, we understand why Cassandra creates tombstones to flagged the data as deleted so that same message can be propegated to nodes which were down when DELETE request came. But another question here - Is DELETE is the only operation, in which Cassandra creates tombstone? Answer is &lsquo;NO&rsquo;.</p>
+
+<p>Tombstones are created in following cases -</p>
+
+<ul>
+<li>Using a CQL DELETE statement</li>
+<li>Expiring data with time-to-live (TTL)</li>
+<li>Using internal operations, such as Using materialized views</li>
+<li>INSERT or UPDATE operations with a null value</li>
+<li>UPDATE operations with a collection column</li>
+</ul>
+
+<p>When a tombstone is created, it can be marked on different parts of a partition. Based on the location of the marker, tombstones can be categorized into one of the following groups. Each category typically corresponds to one unique type of data deletion operation.</p>
+
+<ul>
+<li>Partition tombstones</li>
+<li>Row tombstones</li>
+<li>Range tombstones</li>
+<li>ComplexColumn tombstones</li>
+<li>Cell tombstones</li>
+<li>TTL tombstones</li>
+</ul>
+
+<p>All of these types are explained in details <a href="https://docs.datastax.com/en/dse/5.1/dse-arch/datastax_enterprise/dbInternals/archTombstones.html">on this page</a>.</p>
+
+<p>The tombstones go through the write path, and are written to SSTables on one or more nodes. A key differentiator of a tombstone is a built-in expiration known as the grace period, set by gc_grace_seconds. At the end of its expiration period, the tombstone is deleted as part of the normal compaction process.</p>
+
+<p>Having an excessive number of tombstones in a table can negatively impact application performance. Many tombstones often indicate potential issues with either the data model or in the application.</p>
+
+<p><strong>Partition tombstones</strong></p>
+
+<p>Partition tombstones are generated when an entire partition is deleted explicitly. In the CQL DELETE statement, the WHERE clause is an equality condition against the partition key.</p>
+
+<pre><code>DELETE from cycling.rank_by_year_and_name WHERE 
+ race_year = 2014 AND race_name = '4th Tour of Beijing';
+</code></pre>
+
+<p><strong>Row tombstones</strong></p>
+
+<p>Row tombstones are generated when a particular row within a partition is deleted explicitly. The schema has a composite primary key that includes both the partition key and the clustering key. In the CQL DELETE statement, the WHERE clause is an equality condition against both the partition key and the clustering key columns.</p>
+
+<pre><code>DELETE from cycling.rank_by_year_and_name WHERE 
+ race_year = 2015 AND race_name = 'Giro d''Italia - Stage 11 - Forli &gt; Imola' AND rank = 2;
+</code></pre>
+
+<p><strong>Range tombstones</strong></p>
+
+<p>Range tombstones occur when several rows within a partition that can be expressed through a range search are deleted explicitly. The schema has a composite primary key that includes both a partition key and a clustering key. In the CQL DELETE statement, the WHERE clause is an equality condition against the partition key, plus an inequality condition against the clustering key.
+Tip: If following this tutorial from the beginning, drop the rank_by_year_and_name table and then recreate it to populate the table with the necessary data.</p>
+
+<pre><code>DELETE from cycling.rank_by_year_and_name WHERE 
+ race_year = 2015 AND race_name = 'Tour of Japan - Stage 4 - Minami &gt; Shinshu' AND rank &gt; 1;
+</code></pre>
+
+<p><strong>ComplexColumn tombstones</strong></p>
+
+<p>ComplexColumn tombstones are generated when inserting or updating a collection type column, such as set, list, and map.</p>
+
+<p>Previously we created the cyclist_career_teams table. Run the following cqlsh command to insert data into that table.</p>
+
+<pre><code>INSERT INTO cycling.cyclist_career_teams (
+     id,
+     lastname,
+     teams)
+     VALUES (cb07baad-eac8-4f65-b28a-bddc06a0de23, 'ARMITSTEAD', { 
+     'Boels-Dolmans Cycling Team','AA Drink - Leontien.nl','Team Garmin - Cervelo' } );
+</code></pre>
+
+<p><strong>Cell tombstones</strong></p>
+
+<p>Cell tombstones are generated when explicitly deleting a value from a cell, such as a column for a specific row of a partition, or when inserting or updating a cell with null values, as shown in the following example.</p>
+
+<pre><code>INSERT INTO cycling.rank_by_year_and_name (
+     race_year,
+     race_name,
+     cyclist_name,
+     rank)
+     VALUES (2018, 'Giro d''Italia - Stage 11 - Osimo &gt; Imola', null, 1);
+</code></pre>
+
+<p><strong>TTL tombstones</strong></p>
+
+<p>TTL tombstones are generated when the TTL (time-to-live) period expires. The TTL expiration marker can occur at either the row or cell level. However, DSE marks TTL data differently from tombstone data that was explicitly deleted. Even if a partition has only a single row (with no clustering key), the TTL mark is still made at the row level.</p>
+
+<p>The following statement sets TTL for an entire row.</p>
+
+<pre><code>INSERT INTO cycling.cyclist_career_teams (
+     id,
+     lastname,
+     teams)
+     VALUES (
+       e7cd5752-bc0d-4157-a80f-7523add8dbcd, 
+       'VAN DER BREGGEN', 
+       {
+         'Rabobank-Liv Woman Cycling Team',
+         'Sengers Ladies Cycling Team',
+         'Team Flexpoint' 
+        }
+      ) 
+     USING TTL 1;
+</code></pre>
+
+<p>The following statement sets TTL for a single cell.</p>
+
+<pre><code>UPDATE cycling.rank_by_year_and_name USING TTL 1
+  SET cyclist_name = 'Cloudy Archipelago' WHERE race_year = 2018 AND 
+  race_name = 'Giro d''Italia - Stage 11 - Osimo &gt; Imola' AND rank = 1;
+</code></pre>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Cassandra : Replication Strategies</title>
             <link>/posts/2019/09/cassandra-replication-strategies/</link>
             <pubDate>Sun, 29 Sep 2019 13:49:13 +0100</pubDate>
             
@@ -38,11 +162,13 @@ In NetworkTopologyStrategy, replicas are set for each data center separately. Ne
 <p>Here is the pictorial representation of the Network topology strategy</p>
 
 <p><img src="/caas/network-replication-strategy.jpg" alt="alt text" /></p>
+
+<p><strong>NOTE</strong> - For any question/suggestion, please send email to    <strong>amu.prashant1@gmail.com</strong></p>
 ]]></content>
         </item>
         
         <item>
-            <title>Cassandra Consistency Levels List</title>
+            <title>Cassandra : Consistency Levels List</title>
             <link>/posts/2019/09/cassandra-consistency-levels-list/</link>
             <pubDate>Sat, 28 Sep 2019 11:19:22 +0100</pubDate>
             
@@ -143,11 +269,13 @@ Note - Write operation consists of writing to commit log and memtable.
 </tr>
 </tbody>
 </table>
+
+<p><strong>NOTE</strong> - For any question/suggestion, please send email to    <strong>amu.prashant1@gmail.com</strong></p>
 ]]></content>
         </item>
         
         <item>
-            <title>Cassandra - Replication Factor &amp; Consistency Level</title>
+            <title>Cassandra : Replication Factor &amp; Consistency Level</title>
             <link>/posts/2019/09/cassandra-replication-factor-consistency-level/</link>
             <pubDate>Sat, 28 Sep 2019 09:31:52 +0100</pubDate>
             
@@ -188,15 +316,17 @@ When you write any data in a cluster which has four nodes and replication factor
 
 <p>If you add additional Cassandra nodes to the cluster, the consistency level is not affected.
 Consistency level can be different for read and write queries however it is advised to use same consistency level for read and write.</p>
+
+<p><strong>NOTE</strong> - For any question/suggestion, please send email to    <strong>amu.prashant1@gmail.com</strong></p>
 ]]></content>
         </item>
         
         <item>
-            <title>Cassandra : When to use and how to use</title>
-            <link>/posts/2019/09/cassandra-when-to-use-and-how-to-use/</link>
+            <title>Cassandra : When not to use</title>
+            <link>/posts/2019/09/cassandra-when-not-to-use/</link>
             <pubDate>Thu, 19 Sep 2019 23:36:07 +0100</pubDate>
             
-            <guid>/posts/2019/09/cassandra-when-to-use-and-how-to-use/</guid>
+            <guid>/posts/2019/09/cassandra-when-not-to-use/</guid>
             <description>I don&amp;rsquo;t think that I need to explain what Cassandra is. OK, one liner is enough ! It is NoSQL database, primarily used in big data projects.
 Before we start discussing scenarios where Cassandra fits very well, let&amp;rsquo;s discuss where it doesn&amp;rsquo;t fit at all.
 Common mistakes when using Cassandra We&amp;rsquo;ll have lots of data, let&amp;rsquo;s use Cassandra
@@ -235,11 +365,11 @@ Sometime MySQL can be a better choice than Cassandra.</p>
         </item>
         
         <item>
-            <title>Cassandra : What is this?</title>
-            <link>/posts/2019/09/cassandra-what-is-this/</link>
+            <title>Cassandra : Overview, how is data written and read?</title>
+            <link>/posts/2019/09/cassandra-overview-how-is-data-written-and-read/</link>
             <pubDate>Sat, 14 Sep 2019 17:01:38 +0100</pubDate>
             
-            <guid>/posts/2019/09/cassandra-what-is-this/</guid>
+            <guid>/posts/2019/09/cassandra-overview-how-is-data-written-and-read/</guid>
             <description>Agenda  Characterstics How does it internally work References  The Apache Cassandra database is the right choice when you need scalability and high availability without compromising performance. Linear scalability and proven fault-tolerance on commodity hardware or cloud infrastructure make it the perfect platform for mission-critical data. Cassandra&amp;rsquo;s support for replicating across multiple datacenters is best-in-class, providing lower latency for your users and the peace of mind of knowing that you can survive regional outages.</description>
             <content type="html"><![CDATA[
 

@@ -7,13 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>copyright@Prashant</copyright>
-    <lastBuildDate>Sun, 29 Sep 2019 13:49:13 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 16 Oct 2019 22:56:24 +0100</lastBuildDate>
     
 	<atom:link href="/tags/cassandra/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Cassandra Replication Strategies</title>
+      <title>Cassandra : How is data deleted and what are Tombstones?</title>
+      <link>/posts/2019/10/cassandra-how-is-data-deleted-and-what-are-tombstones/</link>
+      <pubDate>Wed, 16 Oct 2019 22:56:24 +0100</pubDate>
+      
+      <guid>/posts/2019/10/cassandra-how-is-data-deleted-and-what-are-tombstones/</guid>
+      <description>Data in Cassandra is replcated on more than one node. In another terms - &amp;lsquo;Same data is copied on more than one node&amp;rsquo;. Any change in that data should be made in all the copies of that data stored on various nodes of a cluster. Same is applied for deletes as well. If a data is deleted then it should be deleted from all the nodes. But what if any node which has a copy of that data is down.</description>
+    </item>
+    
+    <item>
+      <title>Cassandra : Replication Strategies</title>
       <link>/posts/2019/09/cassandra-replication-strategies/</link>
       <pubDate>Sun, 29 Sep 2019 13:49:13 +0100</pubDate>
       
@@ -25,7 +34,7 @@ In NetworkTopologyStrategy, replicas are set for each data center separately. Ne
     </item>
     
     <item>
-      <title>Cassandra Consistency Levels List</title>
+      <title>Cassandra : Consistency Levels List</title>
       <link>/posts/2019/09/cassandra-consistency-levels-list/</link>
       <pubDate>Sat, 28 Sep 2019 11:19:22 +0100</pubDate>
       
@@ -36,7 +45,7 @@ Note - Write operation consists of writing to commit log and memtable.
     </item>
     
     <item>
-      <title>Cassandra - Replication Factor &amp; Consistency Level</title>
+      <title>Cassandra : Replication Factor &amp; Consistency Level</title>
       <link>/posts/2019/09/cassandra-replication-factor-consistency-level/</link>
       <pubDate>Sat, 28 Sep 2019 09:31:52 +0100</pubDate>
       
@@ -45,11 +54,11 @@ Note - Write operation consists of writing to commit log and memtable.
     </item>
     
     <item>
-      <title>Cassandra : When to use and how to use</title>
-      <link>/posts/2019/09/cassandra-when-to-use-and-how-to-use/</link>
+      <title>Cassandra : When not to use</title>
+      <link>/posts/2019/09/cassandra-when-not-to-use/</link>
       <pubDate>Thu, 19 Sep 2019 23:36:07 +0100</pubDate>
       
-      <guid>/posts/2019/09/cassandra-when-to-use-and-how-to-use/</guid>
+      <guid>/posts/2019/09/cassandra-when-not-to-use/</guid>
       <description>I don&amp;rsquo;t think that I need to explain what Cassandra is. OK, one liner is enough ! It is NoSQL database, primarily used in big data projects.
 Before we start discussing scenarios where Cassandra fits very well, let&amp;rsquo;s discuss where it doesn&amp;rsquo;t fit at all.
 Common mistakes when using Cassandra We&amp;rsquo;ll have lots of data, let&amp;rsquo;s use Cassandra
@@ -57,11 +66,11 @@ Cassandra is not a typical database which fits in every Big Data use case.</desc
     </item>
     
     <item>
-      <title>Cassandra : What is this?</title>
-      <link>/posts/2019/09/cassandra-what-is-this/</link>
+      <title>Cassandra : Overview, how is data written and read?</title>
+      <link>/posts/2019/09/cassandra-overview-how-is-data-written-and-read/</link>
       <pubDate>Sat, 14 Sep 2019 17:01:38 +0100</pubDate>
       
-      <guid>/posts/2019/09/cassandra-what-is-this/</guid>
+      <guid>/posts/2019/09/cassandra-overview-how-is-data-written-and-read/</guid>
       <description>Agenda  Characterstics How does it internally work References  The Apache Cassandra database is the right choice when you need scalability and high availability without compromising performance. Linear scalability and proven fault-tolerance on commodity hardware or cloud infrastructure make it the perfect platform for mission-critical data. Cassandra&amp;rsquo;s support for replicating across multiple datacenters is best-in-class, providing lower latency for your users and the peace of mind of knowing that you can survive regional outages.</description>
     </item>
     
