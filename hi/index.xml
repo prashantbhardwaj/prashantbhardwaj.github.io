@@ -7,9 +7,40 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>copyright@Prashant</copyright>
+    <lastBuildDate>Tue, 13 Aug 2019 23:10:51 +0100</lastBuildDate>
     
 	<atom:link href="/hi/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>प्रत्येक व्यक्ति का कल्याण कैसे संभव?</title>
+      <link>/hi/posts/2019/08/%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%A4%E0%A5%8D%E0%A4%AF%E0%A5%87%E0%A4%95-%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A4%BF-%E0%A4%95%E0%A4%BE-%E0%A4%95%E0%A4%B2%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%A3-%E0%A4%95%E0%A5%88%E0%A4%B8%E0%A5%87-%E0%A4%B8%E0%A4%82%E0%A4%AD%E0%A4%B5/</link>
+      <pubDate>Tue, 13 Aug 2019 23:10:51 +0100</pubDate>
+      
+      <guid>/hi/posts/2019/08/%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%A4%E0%A5%8D%E0%A4%AF%E0%A5%87%E0%A4%95-%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A4%BF-%E0%A4%95%E0%A4%BE-%E0%A4%95%E0%A4%B2%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%A3-%E0%A4%95%E0%A5%88%E0%A4%B8%E0%A5%87-%E0%A4%B8%E0%A4%82%E0%A4%AD%E0%A4%B5/</guid>
+      <description>कल्याण की कामना कौन नहीं रखता, प्रत्येक व्यक्ति रखता है और व्यक्ति अपने और अपने परिवार के कल्याण हेतु सर्वदा हर सम्भव प्रयास करता रहता है ! किन्तु विरले मनुष्य यह जानते हैं कि हम सबके कल्याण में एक दूसरे का कल्याण छुपा है। हम सब मोतियों की माला हैं अगर एक भी मोती टूटा तो पूरी माला की रौनक बिगड़ जाती है।
+छोटे छोटे मूंगों की माला में यदि एक सेर भर का मोती लगा दिया तो क्या होगा?</description>
+    </item>
+    
+    <item>
+      <title>मेरा परिचय</title>
+      <link>/hi/about/</link>
+      <pubDate>Tue, 13 Aug 2019 00:40:27 +0100</pubDate>
+      
+      <guid>/hi/about/</guid>
+      <description>अपना परिचय स्वयं देना बड़ा अटपटा लगता है ! अब कैसे स्वयँ के बारे में अच्छा अच्छा लिखूं ? ऐसा करता हूँ मैंने अब तक क्या क्या किया है, सीखा है, पढ़ा है - वो सब लिखे देता हूँ !
+मेरा जन्म हुआ सन १९८६ में, उत्तरप्रदेश राज्य के बुलंदशहर नमक जिले में ! प्रारंभिक शिक्षा पायी श्रीमती गोमती देवी स्मारक विद्यालय शिकारपुर से | छठवीं से बारहबीं कक्षा तक पढ़ाई की सूरजभान सरस्वती विद्या मंदिर इण्टर कॉलेज से !</description>
+    </item>
+    
+    <item>
+      <title>Hugo का प्रयोग कर बनायें अपनी वेबसाइट, करें होस्ट GitHub Pages पर वो भी मुफ़्त में  </title>
+      <link>/hi/posts/2019/08/hugo-%E0%A4%95%E0%A4%BE-%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%AF%E0%A5%8B%E0%A4%97-%E0%A4%95%E0%A4%B0-%E0%A4%AC%E0%A4%A8%E0%A4%BE%E0%A4%AF%E0%A5%87%E0%A4%82-%E0%A4%85%E0%A4%AA%E0%A4%A8%E0%A5%80-%E0%A4%B5%E0%A5%87%E0%A4%AC%E0%A4%B8%E0%A4%BE%E0%A4%87%E0%A4%9F-%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82-%E0%A4%B9%E0%A5%8B%E0%A4%B8%E0%A5%8D%E0%A4%9F-github-pages-%E0%A4%AA%E0%A4%B0-%E0%A4%B5%E0%A5%8B-%E0%A4%AD%E0%A5%80-%E0%A4%AE%E0%A5%81%E0%A5%9E%E0%A5%8D%E0%A4%A4-%E0%A4%AE%E0%A5%87%E0%A4%82/</link>
+      <pubDate>Mon, 12 Aug 2019 23:22:50 +0100</pubDate>
+      
+      <guid>/hi/posts/2019/08/hugo-%E0%A4%95%E0%A4%BE-%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%AF%E0%A5%8B%E0%A4%97-%E0%A4%95%E0%A4%B0-%E0%A4%AC%E0%A4%A8%E0%A4%BE%E0%A4%AF%E0%A5%87%E0%A4%82-%E0%A4%85%E0%A4%AA%E0%A4%A8%E0%A5%80-%E0%A4%B5%E0%A5%87%E0%A4%AC%E0%A4%B8%E0%A4%BE%E0%A4%87%E0%A4%9F-%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82-%E0%A4%B9%E0%A5%8B%E0%A4%B8%E0%A5%8D%E0%A4%9F-github-pages-%E0%A4%AA%E0%A4%B0-%E0%A4%B5%E0%A5%8B-%E0%A4%AD%E0%A5%80-%E0%A4%AE%E0%A5%81%E0%A5%9E%E0%A5%8D%E0%A4%A4-%E0%A4%AE%E0%A5%87%E0%A4%82/</guid>
+      <description>Overview GitHub came up with GitHub pages service, which hosts static web content free of cost. For Tech bloggers and for those who are trying to make their hands dirty in static web content creation, this is the best service at this moment. Read tagline of GitHub Pages -
+GoHugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, GoHugo makes building websites fun again.</description>
+    </item>
     
   </channel>
 </rss>

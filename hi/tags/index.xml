@@ -7,9 +7,46 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>copyright@Prashant</copyright>
+    <lastBuildDate>Mon, 12 Aug 2019 23:22:50 +0100</lastBuildDate>
     
 	<atom:link href="/hi/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>github-pages</title>
+      <link>/hi/tags/github-pages/</link>
+      <pubDate>Mon, 12 Aug 2019 23:22:50 +0100</pubDate>
+      
+      <guid>/hi/tags/github-pages/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>go-hugo</title>
+      <link>/hi/tags/go-hugo/</link>
+      <pubDate>Mon, 12 Aug 2019 23:22:50 +0100</pubDate>
+      
+      <guid>/hi/tags/go-hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>open-source</title>
+      <link>/hi/tags/open-source/</link>
+      <pubDate>Mon, 12 Aug 2019 23:22:50 +0100</pubDate>
+      
+      <guid>/hi/tags/open-source/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>website</title>
+      <link>/hi/tags/website/</link>
+      <pubDate>Mon, 12 Aug 2019 23:22:50 +0100</pubDate>
+      
+      <guid>/hi/tags/website/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

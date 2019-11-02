@@ -3,22 +3,75 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/hi/categories/</loc>
+    <loc>/hi/posts/</loc>
+    <lastmod>2019-08-13T23:10:51+01:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/categories/"
+                href="/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="hi"
-                href="/hi/categories/"
+                href="/hi/posts/"
+                />
+  </url>
+  
+  <url>
+    <loc>/hi/posts/2019/08/%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%A4%E0%A5%8D%E0%A4%AF%E0%A5%87%E0%A4%95-%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A4%BF-%E0%A4%95%E0%A4%BE-%E0%A4%95%E0%A4%B2%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%A3-%E0%A4%95%E0%A5%88%E0%A4%B8%E0%A5%87-%E0%A4%B8%E0%A4%82%E0%A4%AD%E0%A4%B5/</loc>
+    <lastmod>2019-08-13T23:10:51+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/hi/</loc>
+    <lastmod>2019-08-13T23:10:51+01:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="hi"
+                href="/hi/"
+                />
+  </url>
+  
+  <url>
+    <loc>/hi/about/</loc>
+    <lastmod>2019-08-13T00:40:27+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="hi"
+                href="/hi/about/"
+                />
+  </url>
+  
+  <url>
+    <loc>/hi/posts/2019/08/hugo-%E0%A4%95%E0%A4%BE-%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%AF%E0%A5%8B%E0%A4%97-%E0%A4%95%E0%A4%B0-%E0%A4%AC%E0%A4%A8%E0%A4%BE%E0%A4%AF%E0%A5%87%E0%A4%82-%E0%A4%85%E0%A4%AA%E0%A4%A8%E0%A5%80-%E0%A4%B5%E0%A5%87%E0%A4%AC%E0%A4%B8%E0%A4%BE%E0%A4%87%E0%A4%9F-%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82-%E0%A4%B9%E0%A5%8B%E0%A4%B8%E0%A5%8D%E0%A4%9F-github-pages-%E0%A4%AA%E0%A4%B0-%E0%A4%B5%E0%A5%8B-%E0%A4%AD%E0%A5%80-%E0%A4%AE%E0%A5%81%E0%A5%9E%E0%A5%8D%E0%A4%A4-%E0%A4%AE%E0%A5%87%E0%A4%82/</loc>
+    <lastmod>2019-08-12T23:22:50+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/posts/2019/08/build-your-website-using-gohugo-and-host-it-on-github-pages/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="hi"
+                href="/hi/posts/2019/08/hugo-%E0%A4%95%E0%A4%BE-%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%AF%E0%A5%8B%E0%A4%97-%E0%A4%95%E0%A4%B0-%E0%A4%AC%E0%A4%A8%E0%A4%BE%E0%A4%AF%E0%A5%87%E0%A4%82-%E0%A4%85%E0%A4%AA%E0%A4%A8%E0%A5%80-%E0%A4%B5%E0%A5%87%E0%A4%AC%E0%A4%B8%E0%A4%BE%E0%A4%87%E0%A4%9F-%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82-%E0%A4%B9%E0%A5%8B%E0%A4%B8%E0%A5%8D%E0%A4%9F-github-pages-%E0%A4%AA%E0%A4%B0-%E0%A4%B5%E0%A5%8B-%E0%A4%AD%E0%A5%80-%E0%A4%AE%E0%A5%81%E0%A5%9E%E0%A5%8D%E0%A4%A4-%E0%A4%AE%E0%A5%87%E0%A4%82/"
                 />
   </url>
   
   <url>
     <loc>/hi/tags/</loc>
+    <lastmod>2019-08-12T23:22:50+01:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -33,17 +86,81 @@
   </url>
   
   <url>
-    <loc>/hi/</loc>
+    <loc>/hi/tags/github-pages/</loc>
+    <lastmod>2019-08-12T23:22:50+01:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/"
+                href="/tags/github-pages/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="hi"
-                href="/hi/"
+                href="/hi/tags/github-pages/"
+                />
+  </url>
+  
+  <url>
+    <loc>/hi/tags/go-hugo/</loc>
+    <lastmod>2019-08-12T23:22:50+01:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/go-hugo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="hi"
+                href="/hi/tags/go-hugo/"
+                />
+  </url>
+  
+  <url>
+    <loc>/hi/tags/open-source/</loc>
+    <lastmod>2019-08-12T23:22:50+01:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/open-source/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="hi"
+                href="/hi/tags/open-source/"
+                />
+  </url>
+  
+  <url>
+    <loc>/hi/tags/website/</loc>
+    <lastmod>2019-08-12T23:22:50+01:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/website/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="hi"
+                href="/hi/tags/website/"
+                />
+  </url>
+  
+  <url>
+    <loc>/hi/categories/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="hi"
+                href="/hi/categories/"
                 />
   </url>
   
