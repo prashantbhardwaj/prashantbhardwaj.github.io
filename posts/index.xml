@@ -6,8 +6,28 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>copyright@Prashant</copyright>
-        <lastBuildDate>Sun, 29 Dec 2019 12:42:09 +0000</lastBuildDate>
+        <lastBuildDate>Sun, 29 Dec 2019 14:52:11 +0000</lastBuildDate>
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>SignalR</title>
+            <link>/posts/2019/12/signalr/</link>
+            <pubDate>Sun, 29 Dec 2019 14:52:11 +0000</pubDate>
+            
+            <guid>/posts/2019/12/signalr/</guid>
+            <description></description>
+            <content type="html"><![CDATA[]]></content>
+        </item>
+        
+        <item>
+            <title>Socket</title>
+            <link>/posts/2019/12/socket/</link>
+            <pubDate>Sun, 29 Dec 2019 14:51:32 +0000</pubDate>
+            
+            <guid>/posts/2019/12/socket/</guid>
+            <description></description>
+            <content type="html"><![CDATA[]]></content>
+        </item>
         
         <item>
             <title>Django</title>
@@ -43,7 +63,7 @@ NOTE - For any question/suggestion, please send email to amu.prashant1@gmail.com
             <pubDate>Sun, 29 Dec 2019 11:53:57 +0000</pubDate>
             
             <guid>/posts/2019/12/document-oriented-databases/</guid>
-            <description>Agenda  Overview ArangoDB CouchDB Crate.IO OrientDB SednaDB Apache-Solr References  Overview A document-oriented database is a database designed for storing, retrieving and managing document-oriented information, also known as semi-structured data.
+            <description>Agenda  Overview ArangoDB CouchDB Crate.IO OrientDB SednaDB Apache-Solr RethinkDB MongoDB References  Overview A document-oriented database is a database designed for storing, retrieving and managing document-oriented information, also known as semi-structured data.
 Document-oriented databases are one of the main categories of NoSQL databases, and the popularity of the term &amp;ldquo;document-oriented database&amp;rdquo; has grown with the use of the term NoSQL itself. XML databases are a subclass of document-oriented databases that are optimized to work with XML documents.</description>
             <content type="html"><![CDATA[
 
@@ -57,6 +77,8 @@ Document-oriented databases are one of the main categories of NoSQL databases, a
 <li><a href="#h2-orientdb-h2">OrientDB</a></li>
 <li><a href="#h2-sednadb-h2">SednaDB</a></li>
 <li><a href="#h2-apache-solr-h2">Apache-Solr</a></li>
+<li><a href="#h2-rethinkdb-h2">RethinkDB</a></li>
+<li><a href="#h2-mongodbdb-h2">MongoDB</a></li>
 <li><a href="#h2-references-h2">References</a></li>
 </ul>
 
@@ -179,6 +201,94 @@ Solr is highly reliable, scalable and fault tolerant, providing distributed inde
 * Flexible and Adaptable with easy configuration
 * Near Real-Time Indexing
 * Extensible Plugin Architecture</p>
+
+<h2 id="h2-rethinkdb-h2"><h2>RethinkDB</h2></h2>
+
+<p>(<a href="https://rethinkdb.com/">https://rethinkdb.com/</a>)</p>
+
+<p>RethinkDB is the open-source, scalable database that makes building realtime apps dramatically easier.
+RethinkDB pushes JSON to your apps in realtime. When your app polls for data, it becomes slow, unscalable, and cumbersome to maintain.</p>
+
+<h3>Use Cases</h3>
+
+<p><strong>Web + mobile apps</strong></p>
+
+<p>Web apps like Google Docs, Trello, and Quora pioneered the realtime experience on the web. With RethinkDB, you can build amazing realtime apps with dramatically less engineering effort.</p>
+
+<p><strong>Multiplayer games</strong></p>
+
+<p>When a player takes an action in a multiplayer game, every other player in the game needs to see the change in realtime. RethinkDB dramatically simplifies the data infrastructure for low latency, high throughput realtime interactions.</p>
+
+<p><strong>Realtime marketplaces</strong></p>
+
+<p>RethinkDB dramatically reduces the complexity of building realtime trading and optimization engines. Publish realtime updates to thousands of clients, and provide pricing updates to users in milliseconds.</p>
+
+<p><strong>Streaming analytics</strong></p>
+
+<p>Build realtime dashboards with RethinkDB data push notifications, and make instantaneous business decisions.</p>
+
+<p><strong>Connected devices</strong></p>
+
+<p>RethinkDB dramatically simplifies modern IoT infrastructures. Stream data between connected devices, enable messaging and signaling, and trigger actions in millions of devices in milliseconds.</p>
+
+<h3>Other features</h3>
+
+<p><strong>Work with your favorite stack</strong>
+Query JSON documents with Python, Ruby, Node.js or dozens of other languages. Build modern apps using your favorite web framework, paired with realtime technologies like <a href="https://socket.io/">Socket.io</a> or <a href="https://dotnet.microsoft.com/apps/aspnet/signalr">SignalR</a>.</p>
+
+<p><strong>Everything you need to build modern apps</strong>
+Express relationships using joins, build location-aware apps, or store multimedia and time-series data. Do analytics with aggregation and map/reduce, and speed up your apps using flexible indexing.</p>
+
+<p><strong>Built with love by the open source community</strong>
+Originally developed by a core team of database experts and over 100 contributors from around the world, RethinkDB is shaped by developers like you participating in an open source community development process.</p>
+
+<p><strong>Robust architecture</strong>
+RethinkDB integrates the latest advances in database technology. It has a modern distributed architecture, a highly-optimized buffer cache, and a state-of-the-art storage engine. All of these components work together to create a robust, scalable, high-performance database.</p>
+
+<p><strong>Changefeeds in RethinkDB</strong>
+Learn about changefeeds, RethinkDB&rsquo;s realtime push technology, and how it can be used to build and scale realtime apps.</p>
+
+<p><strong>Map-reduce in RethinkDB</strong>
+RethinkDB has powerful Hadoop-style map-reduce tools, that integrate cleanly into the query language. Learn how they work, and play with a few examples.</p>
+
+<p><strong>Geospatial queries</strong>
+Learn how to use GeoJSON features to build location-aware apps in RethinkDB.</p>
+
+<p><strong>Deploying with a PaaS</strong>
+Learn how to deploy RethinkDB on cloud services like Compose.io, AWS, and others.</p>
+
+<h2 id="h2-mongodb-h2"><h2>MongoDB</h2></h2>
+
+<p>(<a href="https://www.mongodb.com/">https://www.mongodb.com/</a>)</p>
+
+<p>As claimed by themselves, it is most popular database. It is a general purpose, document-based, distributed database built for modern application developers and for the cloud era. No database makes you more productive.</p>
+
+<p>MongoDB is a document database, which means it stores data in JSON-like documents. We believe this is the most natural way to think about data, and is much more expressive and powerful than the traditional row/column model.</p>
+
+<p><strong>Rich JSON Documents</strong>
+The most natural and productive way to work with data. Supports arrays and nested objects as values. Allows for flexible and dynamic schemas.</p>
+
+<p><strong>Powerful query language</strong>
+Rich and expressive query language that allows you to filter and sort by any field, no matter how nested it may be within a document.
+Support for aggregations and other modern use-cases such as geo-based search, graph search, and text search.
+Queries are themselves JSON, and thus easily composable. No more concatenating strings to dynamically generate SQL queries.</p>
+
+<p><strong>All the power of a relational database, and more&hellip;</strong>
+Full ACID transactions.
+Support for joins in queries.
+Two types of relationships instead of one: reference and embedded.</p>
+
+<ul>
+<li>Fully Automated</li>
+<li>Global Clusters</li>
+<li>Backup</li>
+<li>Monitoring &amp; Alerts</li>
+<li>Serverless Triggers</li>
+<li>Best-In-Class Security</li>
+<li>Charts</li>
+<li>BI Connector</li>
+<li>Compass</li>
+</ul>
 
 <p><strong>NOTE</strong> - For any question/suggestion, please send email to    <strong>amu.prashant1@gmail.com</strong></p>
 

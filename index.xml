@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>copyright@Prashant</copyright>
-    <lastBuildDate>Sun, 29 Dec 2019 12:42:09 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 29 Dec 2019 14:52:11 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SignalR</title>
+      <link>/posts/2019/12/signalr/</link>
+      <pubDate>Sun, 29 Dec 2019 14:52:11 +0000</pubDate>
+      
+      <guid>/posts/2019/12/signalr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Socket</title>
+      <link>/posts/2019/12/socket/</link>
+      <pubDate>Sun, 29 Dec 2019 14:51:32 +0000</pubDate>
+      
+      <guid>/posts/2019/12/socket/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Django</title>
@@ -38,38 +56,8 @@ NOTE - For any question/suggestion, please send email to amu.prashant1@gmail.com
       <pubDate>Sun, 29 Dec 2019 11:53:57 +0000</pubDate>
       
       <guid>/posts/2019/12/document-oriented-databases/</guid>
-      <description>Agenda  Overview ArangoDB CouchDB Crate.IO OrientDB SednaDB Apache-Solr References  Overview A document-oriented database is a database designed for storing, retrieving and managing document-oriented information, also known as semi-structured data.
+      <description>Agenda  Overview ArangoDB CouchDB Crate.IO OrientDB SednaDB Apache-Solr RethinkDB MongoDB References  Overview A document-oriented database is a database designed for storing, retrieving and managing document-oriented information, also known as semi-structured data.
 Document-oriented databases are one of the main categories of NoSQL databases, and the popularity of the term &amp;ldquo;document-oriented database&amp;rdquo; has grown with the use of the term NoSQL itself. XML databases are a subclass of document-oriented databases that are optimized to work with XML documents.</description>
-    </item>
-    
-    <item>
-      <title>मनमर्जियां (लुटेरा - 2013)</title>
-      <link>/hi/posts/manmarziyaan/</link>
-      <pubDate>Sun, 03 Nov 2019 21:11:09 +0000</pubDate>
-      
-      <guid>/hi/posts/manmarziyaan/</guid>
-      <description>यूँ तो सोलह सावन.. आये गये
-गौर नहीं किया. हमने
-भीगा मन का आँगन&amp;hellip; इस मर्तबा
-क्या जाने क्या किया. तुमने
-दिल में जागी
-इश्क वाली
-मनमर्जियां, मनमर्जियां
-ज़िद्द की मारी (यूँ तो सोलह)
-भोली भाली (सावन)
-मनमर्जियां (आये गये)
-मनमर्जियां
-अब तलक से
-कुछ अलग सी
-मनमर्जियां, मनमर्जियां
-हम ज़मीन पे (भीगा मन का)
-तो फलक से (आँगन)
-मनमर्जियां (इस मर्तबा)
-मनमर्जियां
-सिक्कों जैसे
-है उछाली
-मनमर्जियां, मनमर्जियां
-ज़िद्द की मारी (यूँ तो सोलह)</description>
     </item>
     
     <item>
@@ -123,15 +111,6 @@ Note - Write operation consists of writing to commit log and memtable.
 Before we start discussing scenarios where Cassandra fits very well, let&amp;rsquo;s discuss where it doesn&amp;rsquo;t fit at all.
 Common mistakes when using Cassandra We&amp;rsquo;ll have lots of data, let&amp;rsquo;s use Cassandra
 Cassandra is not a typical database which fits in every Big Data use case.</description>
-    </item>
-    
-    <item>
-      <title>Cassandra : Overview, how is data written and read?</title>
-      <link>/posts/2019/09/cassandra-overview-how-is-data-written-and-read/</link>
-      <pubDate>Sat, 14 Sep 2019 17:01:38 +0100</pubDate>
-      
-      <guid>/posts/2019/09/cassandra-overview-how-is-data-written-and-read/</guid>
-      <description>Agenda  Characterstics How does it internally work References  The Apache Cassandra database is the right choice when you need scalability and high availability without compromising performance. Linear scalability and proven fault-tolerance on commodity hardware or cloud infrastructure make it the perfect platform for mission-critical data. Cassandra&amp;rsquo;s support for replicating across multiple datacenters is best-in-class, providing lower latency for your users and the peace of mind of knowing that you can survive regional outages.</description>
     </item>
     
   </channel>
