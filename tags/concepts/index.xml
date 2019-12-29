@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>concepts on Prashant Bhardwaj</title>
+    <link>/tags/concepts/</link>
+    <description>Recent content in concepts on Prashant Bhardwaj</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>copyright@Prashant</copyright>
+    <lastBuildDate>Sun, 29 Dec 2019 12:34:02 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/concepts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Offline First</title>
+      <link>/posts/2019/12/offline-first/</link>
+      <pubDate>Sun, 29 Dec 2019 12:34:02 +0000</pubDate>
+      
+      <guid>/posts/2019/12/offline-first/</guid>
+      <description>I am in the process of reading and collecting material for this, meanwhile you can read this - http://offlinefirst.org/
+NOTE - For any question/suggestion, please send email to amu.prashant1@gmail.com</description>
+    </item>
+    
+  </channel>
+</rss>

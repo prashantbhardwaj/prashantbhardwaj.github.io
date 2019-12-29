@@ -3,13 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/posts/2019/10/cassandra-how-is-data-deleted-and-what-are-tombstones/</loc>
-    <lastmod>2019-10-16T22:56:24+01:00</lastmod>
+    <loc>/posts/2019/12/django/</loc>
+    <lastmod>2019-12-29T12:42:09+00:00</lastmod>
   </url>
   
   <url>
     <loc>/posts/</loc>
-    <lastmod>2019-10-16T22:56:24+01:00</lastmod>
+    <lastmod>2019-12-29T12:42:09+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -25,7 +25,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-10-16T22:56:24+01:00</lastmod>
+    <lastmod>2019-12-29T12:42:09+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -41,7 +41,7 @@
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2019-10-16T22:56:24+01:00</lastmod>
+    <lastmod>2019-12-29T12:42:09+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -53,6 +53,92 @@
                 hreflang="en"
                 href="/tags/"
                 />
+  </url>
+  
+  <url>
+    <loc>/tags/framework/</loc>
+    <lastmod>2019-12-29T12:42:09+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/python/</loc>
+    <lastmod>2019-12-29T12:42:09+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/web/</loc>
+    <lastmod>2019-12-29T12:42:09+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/posts/2019/12/offline-first/</loc>
+    <lastmod>2019-12-29T12:34:02+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/concepts/</loc>
+    <lastmod>2019-12-29T12:34:02+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/design/</loc>
+    <lastmod>2019-12-29T12:34:02+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/mobile/</loc>
+    <lastmod>2019-12-29T12:34:02+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/offline/</loc>
+    <lastmod>2019-12-29T12:34:02+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/posts/2019/12/document-oriented-databases/</loc>
+    <lastmod>2019-12-29T11:53:57+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/databases/</loc>
+    <lastmod>2019-12-29T11:53:57+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/document-oriented-design/</loc>
+    <lastmod>2019-12-29T11:53:57+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/no-sql/</loc>
+    <lastmod>2019-12-29T11:53:57+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/hi/</loc>
+    <lastmod>2019-11-03T21:11:09+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/hi/posts/manmarziyaan/</loc>
+    <lastmod>2019-11-03T21:11:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/2019/10/cassandra-how-is-data-deleted-and-what-are-tombstones/</loc>
+    <lastmod>2019-10-16T22:56:24+01:00</lastmod>
   </url>
   
   <url>
@@ -106,12 +192,6 @@
   <url>
     <loc>/posts/2019/09/cassandra-overview-how-is-data-written-and-read/</loc>
     <lastmod>2019-09-14T17:01:38+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/hi/</loc>
-    <lastmod>2019-08-13T23:10:51+01:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

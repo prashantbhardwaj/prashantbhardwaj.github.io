@@ -7,98 +7,98 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>copyright@Prashant</copyright>
-    <lastBuildDate>Wed, 16 Oct 2019 22:56:24 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 29 Dec 2019 12:42:09 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>apache</title>
-      <link>/tags/apache/</link>
-      <pubDate>Wed, 16 Oct 2019 22:56:24 +0100</pubDate>
+      <title>framework</title>
+      <link>/tags/framework/</link>
+      <pubDate>Sun, 29 Dec 2019 12:42:09 +0000</pubDate>
       
-      <guid>/tags/apache/</guid>
+      <guid>/tags/framework/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>cassandra</title>
-      <link>/tags/cassandra/</link>
-      <pubDate>Wed, 16 Oct 2019 22:56:24 +0100</pubDate>
+      <title>python</title>
+      <link>/tags/python/</link>
+      <pubDate>Sun, 29 Dec 2019 12:42:09 +0000</pubDate>
       
-      <guid>/tags/cassandra/</guid>
+      <guid>/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>open-source</title>
-      <link>/tags/open-source/</link>
-      <pubDate>Wed, 16 Oct 2019 22:56:24 +0100</pubDate>
+      <title>web</title>
+      <link>/tags/web/</link>
+      <pubDate>Sun, 29 Dec 2019 12:42:09 +0000</pubDate>
       
-      <guid>/tags/open-source/</guid>
+      <guid>/tags/web/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>github-pages</title>
-      <link>/tags/github-pages/</link>
-      <pubDate>Mon, 12 Aug 2019 23:22:50 +0100</pubDate>
+      <title>concepts</title>
+      <link>/tags/concepts/</link>
+      <pubDate>Sun, 29 Dec 2019 12:34:02 +0000</pubDate>
       
-      <guid>/tags/github-pages/</guid>
+      <guid>/tags/concepts/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>go-hugo</title>
-      <link>/tags/go-hugo/</link>
-      <pubDate>Mon, 12 Aug 2019 23:22:50 +0100</pubDate>
+      <title>design</title>
+      <link>/tags/design/</link>
+      <pubDate>Sun, 29 Dec 2019 12:34:02 +0000</pubDate>
       
-      <guid>/tags/go-hugo/</guid>
+      <guid>/tags/design/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>website</title>
-      <link>/tags/website/</link>
-      <pubDate>Mon, 12 Aug 2019 23:22:50 +0100</pubDate>
+      <title>mobile</title>
+      <link>/tags/mobile/</link>
+      <pubDate>Sun, 29 Dec 2019 12:34:02 +0000</pubDate>
       
-      <guid>/tags/website/</guid>
+      <guid>/tags/mobile/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>about</title>
-      <link>/tags/about/</link>
-      <pubDate>Sun, 11 Aug 2019 23:14:58 +0100</pubDate>
+      <title>offline</title>
+      <link>/tags/offline/</link>
+      <pubDate>Sun, 29 Dec 2019 12:34:02 +0000</pubDate>
       
-      <guid>/tags/about/</guid>
+      <guid>/tags/offline/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>bio</title>
-      <link>/tags/bio/</link>
-      <pubDate>Sun, 11 Aug 2019 23:14:58 +0100</pubDate>
+      <title>databases</title>
+      <link>/tags/databases/</link>
+      <pubDate>Sun, 29 Dec 2019 11:53:57 +0000</pubDate>
       
-      <guid>/tags/bio/</guid>
+      <guid>/tags/databases/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>me</title>
-      <link>/tags/me/</link>
-      <pubDate>Sun, 11 Aug 2019 23:14:58 +0100</pubDate>
+      <title>document-oriented-design</title>
+      <link>/tags/document-oriented-design/</link>
+      <pubDate>Sun, 29 Dec 2019 11:53:57 +0000</pubDate>
       
-      <guid>/tags/me/</guid>
+      <guid>/tags/document-oriented-design/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>resume</title>
-      <link>/tags/resume/</link>
-      <pubDate>Sun, 11 Aug 2019 23:14:58 +0100</pubDate>
+      <title>no-sql</title>
+      <link>/tags/no-sql/</link>
+      <pubDate>Sun, 29 Dec 2019 11:53:57 +0000</pubDate>
       
-      <guid>/tags/resume/</guid>
+      <guid>/tags/no-sql/</guid>
       <description></description>
     </item>
     

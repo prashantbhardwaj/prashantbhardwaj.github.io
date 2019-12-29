@@ -6,8 +6,190 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>copyright@Prashant</copyright>
-        <lastBuildDate>Wed, 16 Oct 2019 22:56:24 +0100</lastBuildDate>
+        <lastBuildDate>Sun, 29 Dec 2019 12:42:09 +0000</lastBuildDate>
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Django</title>
+            <link>/posts/2019/12/django/</link>
+            <pubDate>Sun, 29 Dec 2019 12:42:09 +0000</pubDate>
+            
+            <guid>/posts/2019/12/django/</guid>
+            <description>I am in the process of reading and collecting material for this, meanwhile you can read this - https://www.djangoproject.com/
+NOTE - For any question/suggestion, please send email to amu.prashant1@gmail.com</description>
+            <content type="html"><![CDATA[<p>I am in the process of reading and collecting material for this, meanwhile you can read this - <a href="https://www.djangoproject.com/">https://www.djangoproject.com/</a></p>
+
+<p><strong>NOTE</strong> - For any question/suggestion, please send email to    <strong>amu.prashant1@gmail.com</strong></p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Offline First</title>
+            <link>/posts/2019/12/offline-first/</link>
+            <pubDate>Sun, 29 Dec 2019 12:34:02 +0000</pubDate>
+            
+            <guid>/posts/2019/12/offline-first/</guid>
+            <description>I am in the process of reading and collecting material for this, meanwhile you can read this - http://offlinefirst.org/
+NOTE - For any question/suggestion, please send email to amu.prashant1@gmail.com</description>
+            <content type="html"><![CDATA[<p>I am in the process of reading and collecting material for this, meanwhile you can read this - <a href="http://offlinefirst.org/">http://offlinefirst.org/</a></p>
+
+<p><strong>NOTE</strong> - For any question/suggestion, please send email to    <strong>amu.prashant1@gmail.com</strong></p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Document Oriented Databases</title>
+            <link>/posts/2019/12/document-oriented-databases/</link>
+            <pubDate>Sun, 29 Dec 2019 11:53:57 +0000</pubDate>
+            
+            <guid>/posts/2019/12/document-oriented-databases/</guid>
+            <description>Agenda  Overview ArangoDB CouchDB Crate.IO OrientDB SednaDB Apache-Solr References  Overview A document-oriented database is a database designed for storing, retrieving and managing document-oriented information, also known as semi-structured data.
+Document-oriented databases are one of the main categories of NoSQL databases, and the popularity of the term &amp;ldquo;document-oriented database&amp;rdquo; has grown with the use of the term NoSQL itself. XML databases are a subclass of document-oriented databases that are optimized to work with XML documents.</description>
+            <content type="html"><![CDATA[
+
+<h2>Agenda</h2>
+
+<ul>
+<li><a href="#h2-overview-h2">Overview</a></li>
+<li><a href="#h2-arangodb-h2">ArangoDB</a></li>
+<li><a href="#h2-couchdb-h2">CouchDB</a></li>
+<li><a href="#h2-crate.io-h2">Crate.IO</a></li>
+<li><a href="#h2-orientdb-h2">OrientDB</a></li>
+<li><a href="#h2-sednadb-h2">SednaDB</a></li>
+<li><a href="#h2-apache-solr-h2">Apache-Solr</a></li>
+<li><a href="#h2-references-h2">References</a></li>
+</ul>
+
+<h2 id="h2-overview-h2"><h2>Overview</h2></h2>
+
+<p>A document-oriented database is a database designed for storing, retrieving and managing document-oriented information, also known as semi-structured data.</p>
+
+<p>Document-oriented databases are one of the main categories of NoSQL databases, and the popularity of the term &ldquo;document-oriented database&rdquo; has grown with the use of the term NoSQL itself. XML databases are a subclass of document-oriented databases that are optimized to work with XML documents. Graph databases are similar, but add another layer, the relationship, which allows them to link documents for rapid traversal.</p>
+
+<p>Document-oriented databases are inherently a subclass of the key-value store, another NoSQL database concept. The difference lies in the way the data is processed; in a key-value store, the data is considered to be inherently opaque to the database, whereas a document-oriented system relies on internal structure in the document in order to extract metadata that the database engine uses for further optimization. Although the difference is often moot due to tools in the systems, conceptually the document-store is designed to offer a richer experience with modern programming techniques.</p>
+
+<p>Document databases contrast strongly with the traditional relational database (RDB). Relational databases generally store data in separate tables that are defined by the programmer, and a single object may be spread across several tables. Document databases store all information for a given object in a single instance in the database, and every stored object can be different from every other. This eliminates the need for object-relational mapping while loading data into the database.</p>
+
+<p>Next, we are going to discuss some of the popular &lsquo;Document Oriented Databases&rsquo; -</p>
+
+<h2 id="h2-arangodb-h2"><h2>ArangoDB</h2></h2>
+
+<p>(<a href="https://www.arangodb.com/">https://www.arangodb.com/</a>)</p>
+
+<p>ArangoDB is the open-source native multi-model database for graph, document, key/value and search needs.</p>
+
+<p>In this database -</p>
+
+<p>developers can Map data natively to the database and access it with the best patterns for the job – traversals, joins, search, ranking, geospatial, aggregations – you name it. It is available in under Apache License. It supports languages like - C, .NET, Java, Python, Node.js, PHP, Scala, Go, Ruby, Elixir.</p>
+
+<p>For architects - Polyglot persistence without the costs. Easily design, scale and adapt your architectures to changing needs and with much less effort.</p>
+
+<p>For Data Scientiests - Combine the flexibility of JSON with semantic search and graph technology for next generation feature extraction even for large datasets.</p>
+
+<p>ArangoDB OASIS is scalable fully managed service for ArangoDB. Which can be deployed in AWS, Google Cloud or Azure. It can be run under Docker or Kubernetes.</p>
+
+<p>AQL (ArangoDB&rsquo;s query language) is a declarative query language letting you access the very same data with a broad range of access patterns like traversals, JOINs, search, geospatial or any combination. Everyone experienced with SQL will have an easy start with AQL and might think AQL feels more like coding.</p>
+
+<h2 id="h2-couchdb-h2"><h2>CouchDB</h2></h2>
+
+<p>(<a href="https://couchdb.apache.org/">https://couchdb.apache.org/</a>)</p>
+
+<p>Seamless multi-master sync, that scales from Big Data to Mobile, with an Intuitive HTTP/JSON API and designed for Reliability.
+ Apache CouchDB™ lets you access your data where you need it. The Couch Replication Protocol is implemented in a variety of projects and products that span every imaginable computing environment from globally distributed server-clusters, over mobile phones to web browsers.</p>
+
+<p>Store your data safely, on your own servers, or with any leading cloud provider. Your web- and native applications love CouchDB, because it speaks JSON natively and supports binary data for all your data storage needs.</p>
+
+<p>The Couch Replication Protocol lets your data flow seamlessly between server clusters to mobile phones and web browsers, enabling a compelling offline-first user-experience while maintaining high performance and strong reliability. CouchDB comes with a developer-friendly query language, and optionally MapReduce for simple, efficient, and comprehensive data retrieval.</p>
+
+<p><strong>Single node or cluster</strong> CouchDB is a terrific single-node database that works just like any other database behind an application server of your choice. Most people start with a single node CouchDB instance. More demanding projects can seamlessly upgrade to a cluster. CouchDB is also a clustered database that allows you to run a single logical database server on any number of servers or VMs. A CouchDB cluster improves on the single-node setup with higher capacity and high-availability without changing any APIs.</p>
+
+<p><strong>HTTP/JSON</strong> CouchDB makes use of the ubiquitous HTTP protocol and JSON data format and is compatible with any software that supports them. CouchDB also works great with external tools like HTTP proxy servers, load balancers.</p>
+
+<p><strong>Offline First Data Sync</strong> CouchDB’s unique Replication Protocol is the foundation for a whole new generation of “Offline First” applications for Mobile applications and other environments with challenging network infrastructures.</p>
+
+<p><strong>Ecosystem</strong> CouchDB is built for servers (from a Raspberry Pi to big cloud installations), while PouchDB is built for mobile &amp; desktop web-browsers and Couchbase Lite is built for native iOS &amp; Android apps. And all of them can seamlessly replicate data with each other.
+CouchDB is serious about data reliability.</p>
+
+<p><strong>Reliability</strong> Individual nodes use a crash-resistent append-only data structure. A multi-node CouchDB cluster saves all data redundantly, so it is always available when you need it.</p>
+
+<h2 id="h2-crate-io-h2"><h2>Crate.IO</h2></h2>
+
+<p>(<a href="https://crate.io/">https://crate.io/</a>)</p>
+
+<p>It claims to be the #1 database for IoT-scale. Purpose-built to scale modern applications in a machine data world.</p>
+
+<p>A highly scalable SQL database seam­lessly growing with the use case. Pro­cess, store, query &amp; analyze massive amounts of data in real-time with ease.</p>
+
+<p><strong>SQL Ease + NoSQL Agility</strong> A distributed SQL DBMS built atop NoSQL storage &amp; indexing delivers the best of SQL &amp; NoSQL in one DB.</p>
+
+<p><strong>Simple Scalability, Always On</strong> Masterless architecture with auto-sharding &amp; replication. Simple to scale and to keep running, 24x7.</p>
+
+<p><strong>Real-time Performance</strong> Distributed. In-memory. Columnar. Query a firehose of data in real time&ndash;time series, geospatial, joins, aggregations, text search,&hellip;</p>
+
+<p><strong>Dynamic Schema</strong> Schema evolves automatically as new columns are inserted. Elegantly handles any tabular or non-tabular data to support a wide range of use cases.</p>
+
+<p><strong>Instant Results</strong> Monitor your data in real-time. Connect your data to any SQL-based visualization tool. Turn your data into action.</p>
+
+<h2 id="h2-orientdb-h2"><h2>OrientDB</h2></h2>
+
+<p>(<a href="https://orientdb.org">https://orientdb.org</a>)</p>
+
+<p>OrientDB is the first Multi-Model Open Source NoSQL DBMS that combines the power of graphs and the flexibility of documents into one scalable, high-performance operational database.</p>
+
+<p>Gone are the days where your database only supports a single data model. As a direct response to polyglot persistence, multi-model databases acknowledge the need for multiple data models, combining them to reduce operational complexity and maintain data consistency. Though graph databases have grown in popularity, most NoSQL products are still used to provide scalability to applications sitting on a relational DBMS. Advanced 2nd generation NoSQL products like OrientDB are the future: providing more functionality and flexibility, while being powerful enough to replace your operational DBMS.</p>
+
+<h2 id="h2-sednadb-h2"><h2>SednaDB</h2></h2>
+
+<p>(<a href="https://www.sedna.org/">https://www.sedna.org/</a>)</p>
+
+<p>Sedna is a free native XML database which provides a full range of core database services - persistent storage, ACID transactions, security, indices, hot backup. Flexible XML processing facilities include W3C XQuery implementation, tight integration of XQuery with full-text search facilities and a node-level update language.</p>
+
+<p><strong>Basic Features</strong></p>
+
+<ul>
+<li>Available for free in open source form under Apache License 2.0</li>
+<li>Native XML database system implemented in C/C++</li>
+<li>Support for W3C XQuery language validated by W3C XQuery Test Suite</li>
+<li>Full-text search indices (native or based on dtSearch)</li>
+<li>Support for a declarative node-level update language</li>
+<li>Support for ACID transactions</li>
+<li>Support for fine-grained XML triggers</li>
+<li>Incremental hot backup</li>
+<li>Indices (based on B-tree)</li>
+<li>Support for Unicode (utf8)</li>
+<li>SQL connection from XQuery</li>
+<li>XQuery external functions implemented in C</li>
+<li>Database security (users, roles and privileges)</li>
+</ul>
+
+<h2 id="h2-apache-solr-h2"><h2>Apache Solr</h2></h2>
+
+<p>(<a href="https://lucene.apache.org/solr/">https://lucene.apache.org/solr/</a>)</p>
+
+<p>Solr is the popular, blazing-fast, open source enterprise search platform built on Apache Lucene.
+Solr is highly reliable, scalable and fault tolerant, providing distributed indexing, replication and load-balanced querying, automated failover and recovery, centralized configuration and more. Solr powers the search and navigation features of many of the world&rsquo;s largest internet sites.</p>
+
+<p><strong>Features</strong>
+* Advanced Full-Text Search Capabilities
+* Optimized for High Volume Traffic
+* Standards Based Open Interfaces - XML, JSON and HTTP
+* Comprehensive Administration Interfaces
+* Easy Monitoring
+* Highly Scalable and Fault Tolerant
+* Flexible and Adaptable with easy configuration
+* Near Real-Time Indexing
+* Extensible Plugin Architecture</p>
+
+<p><strong>NOTE</strong> - For any question/suggestion, please send email to    <strong>amu.prashant1@gmail.com</strong></p>
+
+<h2 id="h2-references-h2"><h2>References</h2></h2>
+
+<ul>
+<li>Wikipedia</li>
+<li>Websites of mentioned databases</li>
+</ul>
+]]></content>
+        </item>
         
         <item>
             <title>Cassandra : How is data deleted and what are Tombstones?</title>
@@ -130,6 +312,8 @@ Tip: If following this tutorial from the beginning, drop the rank_by_year_and_na
   SET cyclist_name = 'Cloudy Archipelago' WHERE race_year = 2018 AND 
   race_name = 'Giro d''Italia - Stage 11 - Osimo &gt; Imola' AND rank = 1;
 </code></pre>
+
+<p><strong>NOTE</strong> - For any question/suggestion, please send email to    <strong>amu.prashant1@gmail.com</strong></p>
 ]]></content>
         </item>
         
@@ -563,6 +747,8 @@ Now, when I will push any static web contents like HTML, CSS or JS files, those 
 <li><a href="https://gohugo.io/getting-started/installing/">GoHugo Installation steps</a></li>
 <li><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">GoHost Hugo site on GitHub</a></li>
 </ul>
+
+<p><strong>NOTE</strong> - For any question/suggestion, please send email to    <strong>amu.prashant1@gmail.com</strong></p>
 ]]></content>
         </item>
         

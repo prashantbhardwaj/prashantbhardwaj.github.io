@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>document-oriented-design on Prashant Bhardwaj</title>
+    <link>/tags/document-oriented-design/</link>
+    <description>Recent content in document-oriented-design on Prashant Bhardwaj</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>copyright@Prashant</copyright>
+    <lastBuildDate>Sun, 29 Dec 2019 11:53:57 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/document-oriented-design/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Document Oriented Databases</title>
+      <link>/posts/2019/12/document-oriented-databases/</link>
+      <pubDate>Sun, 29 Dec 2019 11:53:57 +0000</pubDate>
+      
+      <guid>/posts/2019/12/document-oriented-databases/</guid>
+      <description>Agenda  Overview ArangoDB CouchDB Crate.IO OrientDB SednaDB Apache-Solr References  Overview A document-oriented database is a database designed for storing, retrieving and managing document-oriented information, also known as semi-structured data.
+Document-oriented databases are one of the main categories of NoSQL databases, and the popularity of the term &amp;ldquo;document-oriented database&amp;rdquo; has grown with the use of the term NoSQL itself. XML databases are a subclass of document-oriented databases that are optimized to work with XML documents.</description>
+    </item>
+    
+  </channel>
+</rss>

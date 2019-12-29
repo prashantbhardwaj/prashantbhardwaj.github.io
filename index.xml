@@ -7,10 +7,70 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>copyright@Prashant</copyright>
-    <lastBuildDate>Wed, 16 Oct 2019 22:56:24 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 29 Dec 2019 12:42:09 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Django</title>
+      <link>/posts/2019/12/django/</link>
+      <pubDate>Sun, 29 Dec 2019 12:42:09 +0000</pubDate>
+      
+      <guid>/posts/2019/12/django/</guid>
+      <description>I am in the process of reading and collecting material for this, meanwhile you can read this - https://www.djangoproject.com/
+NOTE - For any question/suggestion, please send email to amu.prashant1@gmail.com</description>
+    </item>
+    
+    <item>
+      <title>Offline First</title>
+      <link>/posts/2019/12/offline-first/</link>
+      <pubDate>Sun, 29 Dec 2019 12:34:02 +0000</pubDate>
+      
+      <guid>/posts/2019/12/offline-first/</guid>
+      <description>I am in the process of reading and collecting material for this, meanwhile you can read this - http://offlinefirst.org/
+NOTE - For any question/suggestion, please send email to amu.prashant1@gmail.com</description>
+    </item>
+    
+    <item>
+      <title>Document Oriented Databases</title>
+      <link>/posts/2019/12/document-oriented-databases/</link>
+      <pubDate>Sun, 29 Dec 2019 11:53:57 +0000</pubDate>
+      
+      <guid>/posts/2019/12/document-oriented-databases/</guid>
+      <description>Agenda  Overview ArangoDB CouchDB Crate.IO OrientDB SednaDB Apache-Solr References  Overview A document-oriented database is a database designed for storing, retrieving and managing document-oriented information, also known as semi-structured data.
+Document-oriented databases are one of the main categories of NoSQL databases, and the popularity of the term &amp;ldquo;document-oriented database&amp;rdquo; has grown with the use of the term NoSQL itself. XML databases are a subclass of document-oriented databases that are optimized to work with XML documents.</description>
+    </item>
+    
+    <item>
+      <title>मनमर्जियां (लुटेरा - 2013)</title>
+      <link>/hi/posts/manmarziyaan/</link>
+      <pubDate>Sun, 03 Nov 2019 21:11:09 +0000</pubDate>
+      
+      <guid>/hi/posts/manmarziyaan/</guid>
+      <description>यूँ तो सोलह सावन.. आये गये
+गौर नहीं किया. हमने
+भीगा मन का आँगन&amp;hellip; इस मर्तबा
+क्या जाने क्या किया. तुमने
+दिल में जागी
+इश्क वाली
+मनमर्जियां, मनमर्जियां
+ज़िद्द की मारी (यूँ तो सोलह)
+भोली भाली (सावन)
+मनमर्जियां (आये गये)
+मनमर्जियां
+अब तलक से
+कुछ अलग सी
+मनमर्जियां, मनमर्जियां
+हम ज़मीन पे (भीगा मन का)
+तो फलक से (आँगन)
+मनमर्जियां (इस मर्तबा)
+मनमर्जियां
+सिक्कों जैसे
+है उछाली
+मनमर्जियां, मनमर्जियां
+ज़िद्द की मारी (यूँ तो सोलह)</description>
+    </item>
     
     <item>
       <title>Cassandra : How is data deleted and what are Tombstones?</title>
@@ -72,46 +132,6 @@ Cassandra is not a typical database which fits in every Big Data use case.</desc
       
       <guid>/posts/2019/09/cassandra-overview-how-is-data-written-and-read/</guid>
       <description>Agenda  Characterstics How does it internally work References  The Apache Cassandra database is the right choice when you need scalability and high availability without compromising performance. Linear scalability and proven fault-tolerance on commodity hardware or cloud infrastructure make it the perfect platform for mission-critical data. Cassandra&amp;rsquo;s support for replicating across multiple datacenters is best-in-class, providing lower latency for your users and the peace of mind of knowing that you can survive regional outages.</description>
-    </item>
-    
-    <item>
-      <title>प्रत्येक व्यक्ति का कल्याण कैसे संभव?</title>
-      <link>/hi/posts/post2/</link>
-      <pubDate>Tue, 13 Aug 2019 23:10:51 +0100</pubDate>
-      
-      <guid>/hi/posts/post2/</guid>
-      <description>कल्याण की कामना कौन नहीं रखता, प्रत्येक व्यक्ति रखता है और व्यक्ति अपने और अपने परिवार के कल्याण हेतु सर्वदा हर सम्भव प्रयास करता रहता है ! किन्तु विरले मनुष्य यह जानते हैं कि हम सबके कल्याण में एक दूसरे का कल्याण छुपा है। हम सब मोतियों की माला हैं अगर एक भी मोती टूटा तो पूरी माला की रौनक बिगड़ जाती है।
-छोटे छोटे मूंगों की माला में यदि एक सेर भर का मोती लगा दिया तो क्या होगा?</description>
-    </item>
-    
-    <item>
-      <title>मेरा परिचय</title>
-      <link>/hi/about/</link>
-      <pubDate>Tue, 13 Aug 2019 00:40:27 +0100</pubDate>
-      
-      <guid>/hi/about/</guid>
-      <description>अपना परिचय स्वयं देना बड़ा अटपटा लगता है ! अब कैसे स्वयँ के बारे में अच्छा अच्छा लिखूं ? ऐसा करता हूँ मैंने अब तक क्या क्या किया है, सीखा है, पढ़ा है - वो सब लिखे देता हूँ !
-मेरा जन्म हुआ सन १९८६ में, उत्तरप्रदेश राज्य के बुलंदशहर नमक जिले में ! प्रारंभिक शिक्षा पायी श्रीमती गोमती देवी स्मारक विद्यालय शिकारपुर से | छठवीं से बारहबीं कक्षा तक पढ़ाई की सूरजभान सरस्वती विद्या मंदिर इण्टर कॉलेज से !</description>
-    </item>
-    
-    <item>
-      <title>Build your website using GoHugo and host it on GitHub Pages</title>
-      <link>/posts/2019/08/build-your-website-using-gohugo-and-host-it-on-github-pages/</link>
-      <pubDate>Mon, 12 Aug 2019 23:22:50 +0100</pubDate>
-      
-      <guid>/posts/2019/08/build-your-website-using-gohugo-and-host-it-on-github-pages/</guid>
-      <description>Overview GitHub came up with GitHub pages service, which hosts static web content free of cost. For Tech bloggers and for those who are trying to make their hands dirty in static web content creation, this is the best service at this moment. Read tagline of GitHub Pages -
-GoHugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, GoHugo makes building websites fun again.</description>
-    </item>
-    
-    <item>
-      <title>Hugo का प्रयोग कर बनायें अपनी वेबसाइट, करें होस्ट GitHub Pages पर वो भी मुफ़्त में  </title>
-      <link>/hi/posts/post1/</link>
-      <pubDate>Mon, 12 Aug 2019 23:22:50 +0100</pubDate>
-      
-      <guid>/hi/posts/post1/</guid>
-      <description>Overview GitHub came up with GitHub pages service, which hosts static web content free of cost. For Tech bloggers and for those who are trying to make their hands dirty in static web content creation, this is the best service at this moment. Read tagline of GitHub Pages -
-GoHugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, GoHugo makes building websites fun again.</description>
     </item>
     
   </channel>
