@@ -3,8 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/posts/2019/12/happy-new-year-2020/</loc>
+    <lastmod>2019-12-31T13:15:22+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/posts/</loc>
-    <lastmod>2019-12-29T14:52:11+00:00</lastmod>
+    <lastmod>2019-12-31T13:15:22+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -20,7 +25,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-12-29T14:52:11+00:00</lastmod>
+    <lastmod>2019-12-31T13:15:22+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -136,6 +141,17 @@
   </url>
   
   <url>
+    <loc>/hi/</loc>
+    <lastmod>2019-11-03T21:11:09+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/hi/posts/manmarziyaan/</loc>
+    <lastmod>2019-11-03T21:11:09+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/posts/2019/10/cassandra-how-is-data-deleted-and-what-are-tombstones/</loc>
     <lastmod>2019-10-16T22:56:24+01:00</lastmod>
   </url>
@@ -194,9 +210,8 @@
   </url>
   
   <url>
-    <loc>/hi/</loc>
-    <lastmod>2019-08-13T00:40:27+01:00</lastmod>
-    <priority>0</priority>
+    <loc>/hi/posts/post2/</loc>
+    <lastmod>2019-08-13T23:10:51+01:00</lastmod>
   </url>
   
   <url>
@@ -217,6 +232,11 @@
                 hreflang="en"
                 href="/posts/2019/08/build-your-website-using-gohugo-and-host-it-on-github-pages/"
                 />
+  </url>
+  
+  <url>
+    <loc>/hi/posts/post1/</loc>
+    <lastmod>2019-08-12T23:22:50+01:00</lastmod>
   </url>
   
   <url>

@@ -6,8 +6,19 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>copyright@Prashant</copyright>
-        <lastBuildDate>Sun, 29 Dec 2019 14:52:11 +0000</lastBuildDate>
+        <lastBuildDate>Tue, 31 Dec 2019 13:15:22 +0000</lastBuildDate>
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Happy New Year 2020</title>
+            <link>/posts/2019/12/happy-new-year-2020/</link>
+            <pubDate>Tue, 31 Dec 2019 13:15:22 +0000</pubDate>
+            
+            <guid>/posts/2019/12/happy-new-year-2020/</guid>
+            <description></description>
+            <content type="html"><![CDATA[<p><img src="/hny-2020.png" alt="alt text" /></p>
+]]></content>
+        </item>
         
         <item>
             <title>SignalR</title>
