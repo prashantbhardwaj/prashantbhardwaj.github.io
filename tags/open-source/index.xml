@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>copyright@Prashant</copyright>
-    <lastBuildDate>Wed, 16 Oct 2019 22:56:24 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 02 Jul 2020 00:38:30 +0100</lastBuildDate>
     
 	<atom:link href="/tags/open-source/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Open Source Contributions</title>
+      <link>/posts/2020/07/open-source-contributions/</link>
+      <pubDate>Thu, 02 Jul 2020 00:38:30 +0100</pubDate>
+      
+      <guid>/posts/2020/07/open-source-contributions/</guid>
+      <description> Hugo theme - hugo-theme-hello-friend-ng  Hindi language added in langFlags and translations also added for hindi.  </description>
+    </item>
     
     <item>
       <title>Cassandra : How is data deleted and what are Tombstones?</title>

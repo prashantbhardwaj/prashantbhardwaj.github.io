@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>copyright@Prashant</copyright>
-    <lastBuildDate>Tue, 31 Dec 2019 13:15:22 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 02 Jul 2020 00:38:30 +0100</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Open Source Contributions</title>
+      <link>/posts/2020/07/open-source-contributions/</link>
+      <pubDate>Thu, 02 Jul 2020 00:38:30 +0100</pubDate>
+      
+      <guid>/posts/2020/07/open-source-contributions/</guid>
+      <description> Hugo theme - hugo-theme-hello-friend-ng  Hindi language added in langFlags and translations also added for hindi.  </description>
+    </item>
+    
+    <item>
+      <title>Managing Stakeholders</title>
+      <link>/posts/2020/05/managing-stakeholders/</link>
+      <pubDate>Tue, 26 May 2020 14:04:23 +0100</pubDate>
+      
+      <guid>/posts/2020/05/managing-stakeholders/</guid>
+      <description> Communicate Consult early and often Remember - &amp;lsquo;they are human&amp;rsquo; Plan it Relationsships Show your care Manage risks Compromise Understand - what is success Take responsibilities  </description>
+    </item>
+    
+    <item>
+      <title>New Home Move - Checklist</title>
+      <link>/posts/2020/02/new-home-move-checklist/</link>
+      <pubDate>Wed, 26 Feb 2020 13:32:16 +0000</pubDate>
+      
+      <guid>/posts/2020/02/new-home-move-checklist/</guid>
+      <description>A. Things to be checked with agent before you handover keys  None of your stuff left in the house, garden, sheds Bins are clear Leave some money in &amp;lsquo;Pay as you go&amp;rsquo; accounts so that when new family moves in they have things (like electricity, gas) working. If you are moving electronic applinces with you, make sure you don&amp;rsquo;t break plugs/switched and other connectors like water connectors etc. Divert your posts to your new address If you are leaving any newly purchased item in the house, don&amp;rsquo;t forget to leave guarantee/warranty papers of those items Leave smoke/fire alarms in working condition Clear all the bills (Internet, electricity, gas, water, council, factor etc.</description>
+    </item>
     
     <item>
       <title>Happy New Year 2020</title>
@@ -78,38 +105,6 @@ Document-oriented databases are one of the main categories of NoSQL databases, a
       
       <guid>/posts/2019/10/cassandra-how-is-data-deleted-and-what-are-tombstones/</guid>
       <description>Data in Cassandra is replcated on more than one node. In another terms - &amp;lsquo;Same data is copied on more than one node&amp;rsquo;. Any change in that data should be made in all the copies of that data stored on various nodes of a cluster. Same is applied for deletes as well. If a data is deleted then it should be deleted from all the nodes. But what if any node which has a copy of that data is down.</description>
-    </item>
-    
-    <item>
-      <title>Cassandra : Replication Strategies</title>
-      <link>/posts/2019/09/cassandra-replication-strategies/</link>
-      <pubDate>Sun, 29 Sep 2019 13:49:13 +0100</pubDate>
-      
-      <guid>/posts/2019/09/cassandra-replication-strategies/</guid>
-      <description>There are two kinds of replication strategies in Cassandra.
-SimpleStrategy SimpleStrategy is used when you have just one data center. SimpleStrategy places the first replica on the node selected by the partitioner. After that, remaining replicas are placed in clockwise direction in the Node ring.
-NetworkTopologyStrategy NetworkTopologyStrategy is used when you have more than two data centers.
-In NetworkTopologyStrategy, replicas are set for each data center separately. NetworkTopologyStrategy places replicas in the clockwise direction in the ring until reaches the first node in another rack.</description>
-    </item>
-    
-    <item>
-      <title>Cassandra : Consistency Levels List</title>
-      <link>/posts/2019/09/cassandra-consistency-levels-list/</link>
-      <pubDate>Sat, 28 Sep 2019 11:19:22 +0100</pubDate>
-      
-      <guid>/posts/2019/09/cassandra-consistency-levels-list/</guid>
-      <description>Typical values of consistency levels are -
-Note - Write operation consists of writing to commit log and memtable.
-   Level Write Read Usage     ALL A write must be on all replica nodes in the cluster for that partition. Returns the record after all replicas. The read operation will fail if a replica does not respond. Provides the highest consistency and the lowest availability of any other level.</description>
-    </item>
-    
-    <item>
-      <title>Cassandra : Replication Factor &amp; Consistency Level</title>
-      <link>/posts/2019/09/cassandra-replication-factor-consistency-level/</link>
-      <pubDate>Sat, 28 Sep 2019 09:31:52 +0100</pubDate>
-      
-      <guid>/posts/2019/09/cassandra-replication-factor-consistency-level/</guid>
-      <description>Replication Factor Whenever we start Cassandra, we start a cluster, which is a collection of 1 or more than one nodes. A cluster can be splitted onto more than one datacenter. Cassandra’s architecture was that the hardware failure can occur at any time. Any node can be down. Even entire datacenter can go down so it is better to add more than one data centers in your cluster. Cassandra stores data replicas on multiple nodes to ensure reliability and fault tolerance.</description>
     </item>
     
   </channel>

@@ -3,13 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/posts/2019/12/happy-new-year-2020/</loc>
-    <lastmod>2019-12-31T13:15:22+00:00</lastmod>
+    <loc>/posts/2020/07/open-source-contributions/</loc>
+    <lastmod>2020-07-02T00:38:30+01:00</lastmod>
   </url>
   
   <url>
     <loc>/posts/</loc>
-    <lastmod>2019-12-31T13:15:22+00:00</lastmod>
+    <lastmod>2020-07-02T00:38:30+01:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -25,7 +25,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-12-31T13:15:22+00:00</lastmod>
+    <lastmod>2020-07-02T00:38:30+01:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -37,6 +37,65 @@
                 hreflang="en"
                 href="/"
                 />
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-07-02T00:38:30+01:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="hi"
+                href="/hi/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>/tags/contribution/</loc>
+    <lastmod>2020-07-02T00:38:30+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/github/</loc>
+    <lastmod>2020-07-02T00:38:30+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/open-source/</loc>
+    <lastmod>2020-07-02T00:38:30+01:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="hi"
+                href="/hi/tags/open-source/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/open-source/"
+                />
+  </url>
+  
+  <url>
+    <loc>/posts/2020/05/managing-stakeholders/</loc>
+    <lastmod>2020-05-26T14:04:23+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/2020/02/new-home-move-checklist/</loc>
+    <lastmod>2020-02-26T13:32:16+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/2019/12/happy-new-year-2020/</loc>
+    <lastmod>2019-12-31T13:15:22+00:00</lastmod>
   </url>
   
   <url>
@@ -52,22 +111,6 @@
   <url>
     <loc>/posts/2019/12/django/</loc>
     <lastmod>2019-12-29T12:42:09+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2019-12-29T12:42:09+00:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="hi"
-                href="/hi/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/tags/"
-                />
   </url>
   
   <url>
@@ -155,22 +198,6 @@
     <loc>/tags/cassandra/</loc>
     <lastmod>2019-10-16T22:56:24+01:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/open-source/</loc>
-    <lastmod>2019-10-16T22:56:24+01:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="hi"
-                href="/hi/tags/open-source/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/tags/open-source/"
-                />
   </url>
   
   <url>

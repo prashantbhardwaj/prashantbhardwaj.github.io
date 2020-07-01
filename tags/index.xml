@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>copyright@Prashant</copyright>
-    <lastBuildDate>Sun, 29 Dec 2019 12:42:09 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 02 Jul 2020 00:38:30 +0100</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>contribution</title>
+      <link>/tags/contribution/</link>
+      <pubDate>Thu, 02 Jul 2020 00:38:30 +0100</pubDate>
+      
+      <guid>/tags/contribution/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github</title>
+      <link>/tags/github/</link>
+      <pubDate>Thu, 02 Jul 2020 00:38:30 +0100</pubDate>
+      
+      <guid>/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>open-source</title>
+      <link>/tags/open-source/</link>
+      <pubDate>Thu, 02 Jul 2020 00:38:30 +0100</pubDate>
+      
+      <guid>/tags/open-source/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>framework</title>
@@ -72,33 +99,6 @@
       <pubDate>Sun, 29 Dec 2019 12:34:02 +0000</pubDate>
       
       <guid>/tags/offline/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>databases</title>
-      <link>/tags/databases/</link>
-      <pubDate>Sun, 29 Dec 2019 11:53:57 +0000</pubDate>
-      
-      <guid>/tags/databases/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>document-oriented-design</title>
-      <link>/tags/document-oriented-design/</link>
-      <pubDate>Sun, 29 Dec 2019 11:53:57 +0000</pubDate>
-      
-      <guid>/tags/document-oriented-design/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>no-sql</title>
-      <link>/tags/no-sql/</link>
-      <pubDate>Sun, 29 Dec 2019 11:53:57 +0000</pubDate>
-      
-      <guid>/tags/no-sql/</guid>
       <description></description>
     </item>
     
