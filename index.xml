@@ -99,12 +99,33 @@ Document-oriented databases are one of the main categories of NoSQL databases, a
     </item>
     
     <item>
-      <title>Cassandra : How is data deleted and what are Tombstones?</title>
-      <link>/posts/2019/10/cassandra-how-is-data-deleted-and-what-are-tombstones/</link>
-      <pubDate>Wed, 16 Oct 2019 22:56:24 +0100</pubDate>
+      <title>मनमर्जियां (लुटेरा - 2013)</title>
+      <link>/hi/posts/manmarziyaan/</link>
+      <pubDate>Sun, 03 Nov 2019 21:11:09 +0000</pubDate>
       
-      <guid>/posts/2019/10/cassandra-how-is-data-deleted-and-what-are-tombstones/</guid>
-      <description>Data in Cassandra is replcated on more than one node. In another terms - &amp;lsquo;Same data is copied on more than one node&amp;rsquo;. Any change in that data should be made in all the copies of that data stored on various nodes of a cluster. Same is applied for deletes as well. If a data is deleted then it should be deleted from all the nodes. But what if any node which has a copy of that data is down.</description>
+      <guid>/hi/posts/manmarziyaan/</guid>
+      <description>यूँ तो सोलह सावन.. आये गये
+गौर नहीं किया. हमने
+भीगा मन का आँगन&amp;hellip; इस मर्तबा
+क्या जाने क्या किया. तुमने
+दिल में जागी
+इश्क वाली
+मनमर्जियां, मनमर्जियां
+ज़िद्द की मारी (यूँ तो सोलह)
+भोली भाली (सावन)
+मनमर्जियां (आये गये)
+मनमर्जियां
+अब तलक से
+कुछ अलग सी
+मनमर्जियां, मनमर्जियां
+हम ज़मीन पे (भीगा मन का)
+तो फलक से (आँगन)
+मनमर्जियां (इस मर्तबा)
+मनमर्जियां
+सिक्कों जैसे
+है उछाली
+मनमर्जियां, मनमर्जियां
+ज़िद्द की मारी (यूँ तो सोलह)</description>
     </item>
     
   </channel>
