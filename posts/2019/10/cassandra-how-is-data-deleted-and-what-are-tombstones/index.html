@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="Prashant Bhardwaj ">
 <meta name="description" content="Data in Cassandra is replcated on more than one node. In another terms - &amp;lsquo;Same data is copied on more than one node&amp;rsquo;. Any change in that data should be made in all the copies of that data stored on various nodes of a cluster. Same is applied for deletes as well. If a data is deleted then it should be deleted from all the nodes. But what if any node which has a copy of that data is down." />
-<meta name="keywords" content="homepage, blog, science, informatics, development, programming" />
+<meta name="keywords" content="homepage, blog, science, informatics, development, programming, cassandra, open-source, apache, databases" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
 <link rel="canonical" href="/posts/2019/10/cassandra-how-is-data-deleted-and-what-are-tombstones/" />
@@ -25,7 +25,9 @@
 
 
 
-<link rel="stylesheet" href="/main.min.2f0d18b84270567c723bff340b09ab08db3a7634237cd9667d052eb6b14669b8.css">
+<link rel="stylesheet" href="/main.dede02da9537a98158079c023e83573e18127834838ef08172acce888341a797.css">
+
+
 
 
 
@@ -41,11 +43,14 @@
 
 
 <meta itemprop="keywords" content="cassandra,open-source,apache,databases," />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/"/>
 
 <meta name="twitter:title" content="Cassandra : How is data deleted and what are Tombstones?"/>
 <meta name="twitter:description" content="Data in Cassandra is replcated on more than one node. In another terms - &lsquo;Same data is copied on more than one node&rsquo;. Any change in that data should be made in all the copies of that data stored on various nodes of a cluster. Same is applied for deletes as well. If a data is deleted then it should be deleted from all the nodes. But what if any node which has a copy of that data is down."/>
+
+
 
 
 
@@ -71,7 +76,11 @@
         
             <span class="logo__mark">></span>
             <span class="logo__text">prashant_bhardwaj</span>
-            <span class="logo__cursor" style=""></span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
         
     </div>
 </a>
@@ -283,10 +292,8 @@ Tip: If following this tutorial from the beginning, drop the rank_by_year_and_na
                 </div>
             </div>
         
-
-        
-          <div id="comments" class="thin">
-    <div id="disqus_thread"></div>
+            <div id="comments" class="thin">
+                <div id="disqus_thread"></div>
 <script type="application/javascript">
     var disqus_config = function () {
     
@@ -306,8 +313,7 @@ Tip: If following this tutorial from the beginning, drop the rank_by_year_and_na
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-</div>
-        
+            </div>
     </main>
 
             </div>
@@ -320,14 +326,16 @@ Tip: If following this tutorial from the beginning, drop the rank_by_year_and_na
             
                 <span><a href="/">Prashant Bhardwaj</a></span>
             
-            <span>copyright@Prashant</span>
+            
+                <span>copyright@Prashant</span>
+            
             <span> <a href="/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
         </div>
     </div>
     <div class="footer__inner">
         <div class="footer__content">
             <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
-            <span>Made with &#10084; by <a href="https://github.com/rhazdon">rhazdon</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
         </div>
     </div>
 </footer>
@@ -340,7 +348,7 @@ Tip: If following this tutorial from the beginning, drop the rank_by_year_and_na
 
 
 
-<script type="text/javascript" src="/bundle.min.2d5469329143160ae2456a69c3c76dc2d0a3b212b46afe291a51bd68650ed6f8697e001dab54f1c272c77ce08092a8c55e5bb4314e0ee334aab4b927ec896638.js" integrity="sha512-LVRpMpFDFgriRWppw8dtwtCjshK0av4pGlG9aGUO1vhpfgAdq1TxwnLHfOCAkqjFXlu0MU4O4zSqtLkn7IlmOA=="></script>
+<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
 
 
 
