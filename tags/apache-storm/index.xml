@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>apache-storm on Prashant Bhardwaj</title>
+    <link>/tags/apache-storm/</link>
+    <description>Recent content in apache-storm on Prashant Bhardwaj</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>copyright@Prashant</copyright>
+    <lastBuildDate>Mon, 06 Jul 2020 23:07:49 +0100</lastBuildDate>
+    
+	<atom:link href="/tags/apache-storm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Jms to Kafka Bridge</title>
+      <link>/posts/2020/07/jms-to-kafka-bridge/</link>
+      <pubDate>Mon, 06 Jul 2020 23:07:49 +0100</pubDate>
+      
+      <guid>/posts/2020/07/jms-to-kafka-bridge/</guid>
+      <description>Often we integrate two systems where one system is emitting events on some jms solution while another is listening a kafka topic and expecting source messages on kafka. In such cases, we write a bridge application which reads data from jms and writes on kafka.
+This bridge application should satisfy following requirements -
+ It should send messages on kafka without breaking the sequence of message. If jms broker goes down, it should keep trying to connect to that and whenever broker starts, application should reconnect and should start listening messages.</description>
+    </item>
+    
+  </channel>
+</rss>

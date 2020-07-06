@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>copyright@Prashant</copyright>
-    <lastBuildDate>Thu, 02 Jul 2020 00:38:30 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jul 2020 23:07:49 +0100</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Jms to Kafka Bridge</title>
+      <link>/posts/2020/07/jms-to-kafka-bridge/</link>
+      <pubDate>Mon, 06 Jul 2020 23:07:49 +0100</pubDate>
+      
+      <guid>/posts/2020/07/jms-to-kafka-bridge/</guid>
+      <description>Often we integrate two systems where one system is emitting events on some jms solution while another is listening a kafka topic and expecting source messages on kafka. In such cases, we write a bridge application which reads data from jms and writes on kafka.
+This bridge application should satisfy following requirements -
+ It should send messages on kafka without breaking the sequence of message. If jms broker goes down, it should keep trying to connect to that and whenever broker starts, application should reconnect and should start listening messages.</description>
+    </item>
     
     <item>
       <title>Open Source Contributions</title>
@@ -54,8 +65,7 @@
       <pubDate>Sun, 29 Dec 2019 14:52:11 +0000</pubDate>
       
       <guid>/posts/2019/12/signalr/</guid>
-      <description>I am in the process of reading and collecting material for this, meanwhile you can read this - https://dotnet.microsoft.com/apps/aspnet/signalr
-NOTE - For any question/suggestion, please send email to amu.prashant1@gmail.com</description>
+      <description>I am in the process of reading and collecting material for this, meanwhile you can read this - https://dotnet.microsoft.com/apps/aspnet/signalr</description>
     </item>
     
     <item>
@@ -64,8 +74,7 @@ NOTE - For any question/suggestion, please send email to amu.prashant1@gmail.com
       <pubDate>Sun, 29 Dec 2019 14:51:32 +0000</pubDate>
       
       <guid>/posts/2019/12/socket/</guid>
-      <description>I am in the process of reading and collecting material for this, meanwhile you can read this - https://socket.io/
-NOTE - For any question/suggestion, please send email to amu.prashant1@gmail.com</description>
+      <description>I am in the process of reading and collecting material for this, meanwhile you can read this - https://socket.io/</description>
     </item>
     
     <item>
@@ -74,8 +83,7 @@ NOTE - For any question/suggestion, please send email to amu.prashant1@gmail.com
       <pubDate>Sun, 29 Dec 2019 12:42:09 +0000</pubDate>
       
       <guid>/posts/2019/12/django/</guid>
-      <description>I am in the process of reading and collecting material for this, meanwhile you can read this - https://www.djangoproject.com/
-NOTE - For any question/suggestion, please send email to amu.prashant1@gmail.com</description>
+      <description>I am in the process of reading and collecting material for this, meanwhile you can read this - https://www.djangoproject.com/</description>
     </item>
     
     <item>
@@ -84,8 +92,7 @@ NOTE - For any question/suggestion, please send email to amu.prashant1@gmail.com
       <pubDate>Sun, 29 Dec 2019 12:34:02 +0000</pubDate>
       
       <guid>/posts/2019/12/offline-first/</guid>
-      <description>I am in the process of reading and collecting material for this, meanwhile you can read this - http://offlinefirst.org/
-NOTE - For any question/suggestion, please send email to amu.prashant1@gmail.com</description>
+      <description>I am in the process of reading and collecting material for this, meanwhile you can read this - http://offlinefirst.org/</description>
     </item>
     
     <item>
@@ -96,36 +103,6 @@ NOTE - For any question/suggestion, please send email to amu.prashant1@gmail.com
       <guid>/posts/2019/12/document-oriented-databases/</guid>
       <description>Agenda  Overview ArangoDB CouchDB Crate.IO OrientDB SednaDB Apache-Solr RethinkDB MongoDB References  Overview A document-oriented database is a database designed for storing, retrieving and managing document-oriented information, also known as semi-structured data.
 Document-oriented databases are one of the main categories of NoSQL databases, and the popularity of the term &amp;ldquo;document-oriented database&amp;rdquo; has grown with the use of the term NoSQL itself. XML databases are a subclass of document-oriented databases that are optimized to work with XML documents.</description>
-    </item>
-    
-    <item>
-      <title>मनमर्जियां (लुटेरा - 2013)</title>
-      <link>/hi/posts/manmarziyaan/</link>
-      <pubDate>Sun, 03 Nov 2019 21:11:09 +0000</pubDate>
-      
-      <guid>/hi/posts/manmarziyaan/</guid>
-      <description>यूँ तो सोलह सावन.. आये गये
-गौर नहीं किया. हमने
-भीगा मन का आँगन&amp;hellip; इस मर्तबा
-क्या जाने क्या किया. तुमने
-दिल में जागी
-इश्क वाली
-मनमर्जियां, मनमर्जियां
-ज़िद्द की मारी (यूँ तो सोलह)
-भोली भाली (सावन)
-मनमर्जियां (आये गये)
-मनमर्जियां
-अब तलक से
-कुछ अलग सी
-मनमर्जियां, मनमर्जियां
-हम ज़मीन पे (भीगा मन का)
-तो फलक से (आँगन)
-मनमर्जियां (इस मर्तबा)
-मनमर्जियां
-सिक्कों जैसे
-है उछाली
-मनमर्जियां, मनमर्जियां
-ज़िद्द की मारी (यूँ तो सोलह)</description>
     </item>
     
   </channel>

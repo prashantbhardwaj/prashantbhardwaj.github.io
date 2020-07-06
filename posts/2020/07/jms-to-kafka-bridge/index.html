@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Prashant Bhardwaj ">
+<meta name="description" content="Often we integrate two systems where one system is emitting events on some jms solution while another is listening a kafka topic and expecting source messages on kafka. In such cases, we write a bridge application which reads data from jms and writes on kafka.
+This bridge application should satisfy following requirements -
+ It should send messages on kafka without breaking the sequence of message. If jms broker goes down, it should keep trying to connect to that and whenever broker starts, application should reconnect and should start listening messages." />
+<meta name="keywords" content="homepage, blog, science, informatics, development, programming, jms, open-source, apache, qpid, apache-qpid, kafka, apache-kafka, camel, apache-camel, storm, apache-storm, java" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="/posts/2020/07/jms-to-kafka-bridge/" />
+
+
+    <title>
+        
+            Jms to Kafka Bridge :: Prashant Bhardwaj  — A Java developer
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.d1ea4af8fd04fb24a4f8b882ea54bd04eb245427ca4baf527c81a5dab071410b.css">
+
+
+
+
+
+
+<meta itemprop="name" content="Jms to Kafka Bridge">
+<meta itemprop="description" content="Often we integrate two systems where one system is emitting events on some jms solution while another is listening a kafka topic and expecting source messages on kafka. In such cases, we write a bridge application which reads data from jms and writes on kafka.
+This bridge application should satisfy following requirements -
+ It should send messages on kafka without breaking the sequence of message. If jms broker goes down, it should keep trying to connect to that and whenever broker starts, application should reconnect and should start listening messages.">
+
+
+<meta itemprop="datePublished" content="2020-07-06T23:07:49&#43;01:00" />
+<meta itemprop="dateModified" content="2020-07-06T23:07:49&#43;01:00" />
+<meta itemprop="wordCount" content="448">
+
+
+
+<meta itemprop="keywords" content="jms,open-source,apache,qpid,apache-qpid,kafka,apache-kafka,camel,apache-camel,storm,apache-storm,java," />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/"/>
+
+<meta name="twitter:title" content="Jms to Kafka Bridge"/>
+<meta name="twitter:description" content="Often we integrate two systems where one system is emitting events on some jms solution while another is listening a kafka topic and expecting source messages on kafka. In such cases, we write a bridge application which reads data from jms and writes on kafka.
+This bridge application should satisfy following requirements -
+ It should send messages on kafka without breaking the sequence of message. If jms broker goes down, it should keep trying to connect to that and whenever broker starts, application should reconnect and should start listening messages."/>
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2020-07-06 23:07:49 &#43;0100 BST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">prashant_bhardwaj</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about">About</a></li><li><a href="/posts">Blogs</a></li><li><a href="/hi">हिन्दी</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        3 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="/posts/2020/07/jms-to-kafka-bridge/">Jms to Kafka Bridge</a>
+      </h1>
+
+      
+
+      <div class="post-content">
+        
+
+<p>Often we integrate two systems where one system is emitting events on some jms solution while another is listening a kafka topic and expecting source messages on kafka. In such cases, we write a bridge application which reads data from jms and writes on kafka.</p>
+
+<p><img src="/jms-to-kafka-1.PNG" alt="alt text" /></p>
+
+<p>This bridge application should satisfy following requirements -</p>
+
+<ul>
+<li>It should send messages on kafka without breaking the sequence of message.</li>
+<li>If jms broker goes down, it should keep trying to connect to that and whenever broker starts, application should reconnect and should start listening messages.</li>
+<li>If jms broker balances its nodes (shift master node from one to another), application should reconnect and should start listening messages.</li>
+<li>If kafka goes down, it should keep trying to connect to that and either should stop reading messages from queue or should keep holding those messages which couldn&rsquo;t be send to kafka. Whenever kafka broker starts, application should reconnect and should start sending messages.</li>
+<li>If application goes down, it should do that gracefully - should stop listening new messages and should finish processing of messages which are already under process.</li>
+<li>In no case, a message should be lost.</li>
+</ul>
+
+<p>Next, we&rsquo;ll be discussing 3 examples using different technologies. We are using Apache Qpid as JMS broker.</p>
+
+<ol>
+<li>JMS to Kafka using Spring JMS</li>
+<li>JMS to Kafka using Apache Camel</li>
+<li>JMS to Kafka using Apache Storm</li>
+</ol>
+
+<h3 id="1-jms-to-kafka-using-spring-jms">1. JMS to Kafka using Spring JMS</h3>
+
+<p>This code can be found here - <br> <a href="https://github.com/prashantbhardwaj/qpid-to-kafka-using-spring-jms">https://github.com/prashantbhardwaj/qpid-to-kafka-using-spring-jms</a></p>
+
+<p><code>DefaultMessageListenerContainer</code> is used to create connection with Qpid and <code>KafkaTemplate</code> is used to send message to Kafka.</p>
+
+<table>
+<thead>
+<tr>
+<th>Test case</th>
+<th align="center">Pass/Fail</th>
+<th align="right">Remark</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>no out of sequence message</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>reconnect on jms broker start up</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>reconnect on jms broker node shuffle up</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>reconnect on kafka start up</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>graceful application shutdown</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>no message loss</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>performance</td>
+<td align="center">x msgs/sec</td>
+<td align="right"></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="2-jms-to-kafka-using-apache-camel">2. JMS to Kafka using Apache Camel</h3>
+
+<p>This code can be found here - <br>  <a href="https://github.com/prashantbhardwaj/qpid-to-kafka-using-camel">https://github.com/prashantbhardwaj/qpid-to-kafka-using-camel</a></p>
+
+<table>
+<thead>
+<tr>
+<th>Test case</th>
+<th align="center">Pass/Fail</th>
+<th align="right">Remark</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>no out of sequence message</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>reconnect on jms broker start up</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>reconnect on jms broker node shuffle up</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>reconnect on kafka start up</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>graceful application shutdown</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>no message loss</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>performance</td>
+<td align="center">y msgs/sec</td>
+<td align="right"></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="3-jms-to-kafka-using-apache-storm">3. JMS to Kafka using Apache Storm</h3>
+
+<p>This code can be found here - <br> <a href="https://github.com/prashantbhardwaj/qpid-to-kafka-using-storm">https://github.com/prashantbhardwaj/qpid-to-kafka-using-storm</a></p>
+
+<table>
+<thead>
+<tr>
+<th>Test case</th>
+<th align="center">Pass/Fail</th>
+<th align="right">Remark</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>no out of sequence message</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>reconnect on jms broker start up</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>reconnect on jms broker node shuffle up</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>reconnect on kafka start up</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>graceful application shutdown</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>no message loss</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>performance</td>
+<td align="center">z msgs/sec</td>
+<td align="right"></td>
+</tr>
+</tbody>
+</table>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+        <p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon">
+            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+            <line x1="7" y1="7" x2="7" y2="7"></line>
+          </svg><span class="tag"><a href="/tags/jms/">jms</a></span><span class="tag"><a href="/tags/open-source/">open-source</a></span><span class="tag"><a href="/tags/apache/">apache</a></span><span class="tag"><a href="/tags/qpid/">qpid</a></span><span class="tag"><a href="/tags/apache-qpid/">apache-qpid</a></span><span class="tag"><a href="/tags/kafka/">kafka</a></span><span class="tag"><a href="/tags/apache-kafka/">apache-kafka</a></span><span class="tag"><a href="/tags/camel/">camel</a></span><span class="tag"><a href="/tags/apache-camel/">apache-camel</a></span><span class="tag"><a href="/tags/storm/">storm</a></span><span class="tag"><a href="/tags/apache-storm/">apache-storm</a></span><span class="tag"><a href="/tags/java/">java</a></span>
+        </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        448 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        2020-07-06 23:07 &#43;0100
+      </p>
+    </div>
+
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h">Read other posts</span>
+          <hr />
+        </div>
+
+        <div class="pagination__buttons">
+          
+
+          
+            <span class="button next">
+              <a href="/posts/2020/07/open-source-contributions/">
+                <span class="button__text">Open Source Contributions</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+
+    
+      
+        <div id="comments">
+          <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "prashantbhardwaj" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+      
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+                <span><a href="/">Prashant Bhardwaj</a></span>
+            
+            
+                <span>copyright@Prashant</span>
+            
+            <span> <a href="/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+
+
+
+    </body>
+</html>

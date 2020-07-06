@@ -6,8 +6,220 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>copyright@Prashant</copyright>
-        <lastBuildDate>Thu, 02 Jul 2020 00:38:30 +0100</lastBuildDate>
+        <lastBuildDate>Mon, 06 Jul 2020 23:07:49 +0100</lastBuildDate>
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Jms to Kafka Bridge</title>
+            <link>/posts/2020/07/jms-to-kafka-bridge/</link>
+            <pubDate>Mon, 06 Jul 2020 23:07:49 +0100</pubDate>
+            
+            <guid>/posts/2020/07/jms-to-kafka-bridge/</guid>
+            <description>Often we integrate two systems where one system is emitting events on some jms solution while another is listening a kafka topic and expecting source messages on kafka. In such cases, we write a bridge application which reads data from jms and writes on kafka.
+This bridge application should satisfy following requirements -
+ It should send messages on kafka without breaking the sequence of message. If jms broker goes down, it should keep trying to connect to that and whenever broker starts, application should reconnect and should start listening messages.</description>
+            <content type="html"><![CDATA[
+
+<p>Often we integrate two systems where one system is emitting events on some jms solution while another is listening a kafka topic and expecting source messages on kafka. In such cases, we write a bridge application which reads data from jms and writes on kafka.</p>
+
+<p><img src="/jms-to-kafka-1.PNG" alt="alt text" /></p>
+
+<p>This bridge application should satisfy following requirements -</p>
+
+<ul>
+<li>It should send messages on kafka without breaking the sequence of message.</li>
+<li>If jms broker goes down, it should keep trying to connect to that and whenever broker starts, application should reconnect and should start listening messages.</li>
+<li>If jms broker balances its nodes (shift master node from one to another), application should reconnect and should start listening messages.</li>
+<li>If kafka goes down, it should keep trying to connect to that and either should stop reading messages from queue or should keep holding those messages which couldn&rsquo;t be send to kafka. Whenever kafka broker starts, application should reconnect and should start sending messages.</li>
+<li>If application goes down, it should do that gracefully - should stop listening new messages and should finish processing of messages which are already under process.</li>
+<li>In no case, a message should be lost.</li>
+</ul>
+
+<p>Next, we&rsquo;ll be discussing 3 examples using different technologies. We are using Apache Qpid as JMS broker.</p>
+
+<ol>
+<li>JMS to Kafka using Spring JMS</li>
+<li>JMS to Kafka using Apache Camel</li>
+<li>JMS to Kafka using Apache Storm</li>
+</ol>
+
+<h3 id="1-jms-to-kafka-using-spring-jms">1. JMS to Kafka using Spring JMS</h3>
+
+<p>This code can be found here - <br> <a href="https://github.com/prashantbhardwaj/qpid-to-kafka-using-spring-jms">https://github.com/prashantbhardwaj/qpid-to-kafka-using-spring-jms</a></p>
+
+<p><code>DefaultMessageListenerContainer</code> is used to create connection with Qpid and <code>KafkaTemplate</code> is used to send message to Kafka.</p>
+
+<table>
+<thead>
+<tr>
+<th>Test case</th>
+<th align="center">Pass/Fail</th>
+<th align="right">Remark</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>no out of sequence message</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>reconnect on jms broker start up</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>reconnect on jms broker node shuffle up</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>reconnect on kafka start up</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>graceful application shutdown</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>no message loss</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>performance</td>
+<td align="center">x msgs/sec</td>
+<td align="right"></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="2-jms-to-kafka-using-apache-camel">2. JMS to Kafka using Apache Camel</h3>
+
+<p>This code can be found here - <br>  <a href="https://github.com/prashantbhardwaj/qpid-to-kafka-using-camel">https://github.com/prashantbhardwaj/qpid-to-kafka-using-camel</a></p>
+
+<table>
+<thead>
+<tr>
+<th>Test case</th>
+<th align="center">Pass/Fail</th>
+<th align="right">Remark</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>no out of sequence message</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>reconnect on jms broker start up</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>reconnect on jms broker node shuffle up</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>reconnect on kafka start up</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>graceful application shutdown</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>no message loss</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>performance</td>
+<td align="center">y msgs/sec</td>
+<td align="right"></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="3-jms-to-kafka-using-apache-storm">3. JMS to Kafka using Apache Storm</h3>
+
+<p>This code can be found here - <br> <a href="https://github.com/prashantbhardwaj/qpid-to-kafka-using-storm">https://github.com/prashantbhardwaj/qpid-to-kafka-using-storm</a></p>
+
+<table>
+<thead>
+<tr>
+<th>Test case</th>
+<th align="center">Pass/Fail</th>
+<th align="right">Remark</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>no out of sequence message</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>reconnect on jms broker start up</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>reconnect on jms broker node shuffle up</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>reconnect on kafka start up</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>graceful application shutdown</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>no message loss</td>
+<td align="center">not tested yet</td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>performance</td>
+<td align="center">z msgs/sec</td>
+<td align="right"></td>
+</tr>
+</tbody>
+</table>
+]]></content>
+        </item>
         
         <item>
             <title>Open Source Contributions</title>
@@ -189,11 +401,8 @@
             <pubDate>Sun, 29 Dec 2019 14:52:11 +0000</pubDate>
             
             <guid>/posts/2019/12/signalr/</guid>
-            <description>I am in the process of reading and collecting material for this, meanwhile you can read this - https://dotnet.microsoft.com/apps/aspnet/signalr
-NOTE - For any question/suggestion, please send email to amu.prashant1@gmail.com</description>
+            <description>I am in the process of reading and collecting material for this, meanwhile you can read this - https://dotnet.microsoft.com/apps/aspnet/signalr</description>
             <content type="html"><![CDATA[<p>I am in the process of reading and collecting material for this, meanwhile you can read this - <a href="https://dotnet.microsoft.com/apps/aspnet/signalr">https://dotnet.microsoft.com/apps/aspnet/signalr</a></p>
-
-<p><strong>NOTE</strong> - For any question/suggestion, please send email to    <strong>amu.prashant1@gmail.com</strong></p>
 ]]></content>
         </item>
         
@@ -203,11 +412,8 @@ NOTE - For any question/suggestion, please send email to amu.prashant1@gmail.com
             <pubDate>Sun, 29 Dec 2019 14:51:32 +0000</pubDate>
             
             <guid>/posts/2019/12/socket/</guid>
-            <description>I am in the process of reading and collecting material for this, meanwhile you can read this - https://socket.io/
-NOTE - For any question/suggestion, please send email to amu.prashant1@gmail.com</description>
+            <description>I am in the process of reading and collecting material for this, meanwhile you can read this - https://socket.io/</description>
             <content type="html"><![CDATA[<p>I am in the process of reading and collecting material for this, meanwhile you can read this - <a href="https://socket.io/">https://socket.io/</a></p>
-
-<p><strong>NOTE</strong> - For any question/suggestion, please send email to    <strong>amu.prashant1@gmail.com</strong></p>
 ]]></content>
         </item>
         
@@ -217,11 +423,8 @@ NOTE - For any question/suggestion, please send email to amu.prashant1@gmail.com
             <pubDate>Sun, 29 Dec 2019 12:42:09 +0000</pubDate>
             
             <guid>/posts/2019/12/django/</guid>
-            <description>I am in the process of reading and collecting material for this, meanwhile you can read this - https://www.djangoproject.com/
-NOTE - For any question/suggestion, please send email to amu.prashant1@gmail.com</description>
+            <description>I am in the process of reading and collecting material for this, meanwhile you can read this - https://www.djangoproject.com/</description>
             <content type="html"><![CDATA[<p>I am in the process of reading and collecting material for this, meanwhile you can read this - <a href="https://www.djangoproject.com/">https://www.djangoproject.com/</a></p>
-
-<p><strong>NOTE</strong> - For any question/suggestion, please send email to    <strong>amu.prashant1@gmail.com</strong></p>
 ]]></content>
         </item>
         
@@ -231,11 +434,8 @@ NOTE - For any question/suggestion, please send email to amu.prashant1@gmail.com
             <pubDate>Sun, 29 Dec 2019 12:34:02 +0000</pubDate>
             
             <guid>/posts/2019/12/offline-first/</guid>
-            <description>I am in the process of reading and collecting material for this, meanwhile you can read this - http://offlinefirst.org/
-NOTE - For any question/suggestion, please send email to amu.prashant1@gmail.com</description>
+            <description>I am in the process of reading and collecting material for this, meanwhile you can read this - http://offlinefirst.org/</description>
             <content type="html"><![CDATA[<p>I am in the process of reading and collecting material for this, meanwhile you can read this - <a href="http://offlinefirst.org/">http://offlinefirst.org/</a></p>
-
-<p><strong>NOTE</strong> - For any question/suggestion, please send email to    <strong>amu.prashant1@gmail.com</strong></p>
 ]]></content>
         </item>
         
@@ -472,8 +672,6 @@ Two types of relationships instead of one: reference and embedded.</p>
 <li>Compass</li>
 </ul>
 
-<p><strong>NOTE</strong> - For any question/suggestion, please send email to    <strong>amu.prashant1@gmail.com</strong></p>
-
 <h2 id="h2-references-h2"><h2>References</h2></h2>
 
 <ul>
@@ -604,8 +802,6 @@ Tip: If following this tutorial from the beginning, drop the rank_by_year_and_na
   SET cyclist_name = 'Cloudy Archipelago' WHERE race_year = 2018 AND 
   race_name = 'Giro d''Italia - Stage 11 - Osimo &gt; Imola' AND rank = 1;
 </code></pre>
-
-<p><strong>NOTE</strong> - For any question/suggestion, please send email to    <strong>amu.prashant1@gmail.com</strong></p>
 ]]></content>
         </item>
         
@@ -638,8 +834,6 @@ In NetworkTopologyStrategy, replicas are set for each data center separately. Ne
 <p>Here is the pictorial representation of the Network topology strategy</p>
 
 <p><img src="/caas/network-replication-strategy.jpg" alt="alt text" /></p>
-
-<p><strong>NOTE</strong> - For any question/suggestion, please send email to    <strong>amu.prashant1@gmail.com</strong></p>
 ]]></content>
         </item>
         
@@ -745,8 +939,6 @@ Note - Write operation consists of writing to commit log and memtable.
 </tr>
 </tbody>
 </table>
-
-<p><strong>NOTE</strong> - For any question/suggestion, please send email to    <strong>amu.prashant1@gmail.com</strong></p>
 ]]></content>
         </item>
         
@@ -792,8 +984,6 @@ When you write any data in a cluster which has four nodes and replication factor
 
 <p>If you add additional Cassandra nodes to the cluster, the consistency level is not affected.
 Consistency level can be different for read and write queries however it is advised to use same consistency level for read and write.</p>
-
-<p><strong>NOTE</strong> - For any question/suggestion, please send email to    <strong>amu.prashant1@gmail.com</strong></p>
 ]]></content>
         </item>
         
@@ -835,8 +1025,6 @@ Sometime MySQL can be a better choice than Cassandra.</p>
 <p><strong>WoW, this User defined functions are great things, let&rsquo;s create many</strong></p>
 
 <p>Don&rsquo;t keep Cassandra coordinator busy in doing things which are not related to Cassandra. This will impact the performance of your Cassandra cluster.</p>
-
-<p><strong>NOTE</strong> - For any question/suggestion, please send email to    <strong>amu.prashant1@gmail.com</strong></p>
 ]]></content>
         </item>
         
@@ -962,9 +1150,6 @@ When a read request starts its journey, the data’s partition key is used to fi
 <li><a href="https://docs.datastax.com/en/archived/cassandra/2.0/cassandra/dml/dml_write_path_c.html">https://docs.datastax.com/en/archived/cassandra/2.0/cassandra/dml/dml_write_path_c.html</a></li>
 <li><a href="https://www.scnsoft.com/blog/cassandra-performance">https://www.scnsoft.com/blog/cassandra-performance</a></li>
 </ul>
-
-<p><strong>Note</strong>
-For any question/suggestion, please send email to   <strong>amu.prashant1@gmail.com</strong></p>
 ]]></content>
         </item>
         
@@ -1039,8 +1224,6 @@ Now, when I will push any static web contents like HTML, CSS or JS files, those 
 <li><a href="https://gohugo.io/getting-started/installing/">GoHugo Installation steps</a></li>
 <li><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">GoHost Hugo site on GitHub</a></li>
 </ul>
-
-<p><strong>NOTE</strong> - For any question/suggestion, please send email to    <strong>amu.prashant1@gmail.com</strong></p>
 ]]></content>
         </item>
         

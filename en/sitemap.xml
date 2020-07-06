@@ -3,13 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/posts/2020/07/open-source-contributions/</loc>
-    <lastmod>2020-07-02T00:38:30+01:00</lastmod>
+    <loc>/posts/2020/07/jms-to-kafka-bridge/</loc>
+    <lastmod>2020-07-06T23:07:49+01:00</lastmod>
   </url>
   
   <url>
     <loc>/posts/</loc>
-    <lastmod>2020-07-02T00:38:30+01:00</lastmod>
+    <lastmod>2020-07-06T23:07:49+01:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -25,7 +25,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-07-02T00:38:30+01:00</lastmod>
+    <lastmod>2020-07-06T23:07:49+01:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -41,7 +41,7 @@
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2020-07-02T00:38:30+01:00</lastmod>
+    <lastmod>2020-07-06T23:07:49+01:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -56,20 +56,62 @@
   </url>
   
   <url>
-    <loc>/tags/contribution/</loc>
-    <lastmod>2020-07-02T00:38:30+01:00</lastmod>
+    <loc>/tags/apache/</loc>
+    <lastmod>2020-07-06T23:07:49+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/github/</loc>
-    <lastmod>2020-07-02T00:38:30+01:00</lastmod>
+    <loc>/tags/apache-camel/</loc>
+    <lastmod>2020-07-06T23:07:49+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/apache-kafka/</loc>
+    <lastmod>2020-07-06T23:07:49+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/apache-qpid/</loc>
+    <lastmod>2020-07-06T23:07:49+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/apache-storm/</loc>
+    <lastmod>2020-07-06T23:07:49+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/camel/</loc>
+    <lastmod>2020-07-06T23:07:49+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/java/</loc>
+    <lastmod>2020-07-06T23:07:49+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/jms/</loc>
+    <lastmod>2020-07-06T23:07:49+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/kafka/</loc>
+    <lastmod>2020-07-06T23:07:49+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/open-source/</loc>
-    <lastmod>2020-07-02T00:38:30+01:00</lastmod>
+    <lastmod>2020-07-06T23:07:49+01:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -81,6 +123,35 @@
                 hreflang="en"
                 href="/tags/open-source/"
                 />
+  </url>
+  
+  <url>
+    <loc>/tags/qpid/</loc>
+    <lastmod>2020-07-06T23:07:49+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/storm/</loc>
+    <lastmod>2020-07-06T23:07:49+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/posts/2020/07/open-source-contributions/</loc>
+    <lastmod>2020-07-02T00:38:30+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/contribution/</loc>
+    <lastmod>2020-07-02T00:38:30+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/github/</loc>
+    <lastmod>2020-07-02T00:38:30+01:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -197,12 +268,6 @@
   <url>
     <loc>/posts/2019/10/cassandra-how-is-data-deleted-and-what-are-tombstones/</loc>
     <lastmod>2019-10-16T22:56:24+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/apache/</loc>
-    <lastmod>2019-10-16T22:56:24+01:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
