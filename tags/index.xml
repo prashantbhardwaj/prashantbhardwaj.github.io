@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>copyright@Prashant</copyright>
-    <lastBuildDate>Wed, 08 Jul 2020 19:45:25 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jul 2020 23:07:49 +0100</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,45 +15,9 @@
     <item>
       <title>apache</title>
       <link>/tags/apache/</link>
-      <pubDate>Wed, 08 Jul 2020 19:45:25 +0100</pubDate>
+      <pubDate>Mon, 06 Jul 2020 23:07:49 +0100</pubDate>
       
       <guid>/tags/apache/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>apache-qpid</title>
-      <link>/tags/apache-qpid/</link>
-      <pubDate>Wed, 08 Jul 2020 19:45:25 +0100</pubDate>
-      
-      <guid>/tags/apache-qpid/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>java</title>
-      <link>/tags/java/</link>
-      <pubDate>Wed, 08 Jul 2020 19:45:25 +0100</pubDate>
-      
-      <guid>/tags/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>open-source</title>
-      <link>/tags/open-source/</link>
-      <pubDate>Wed, 08 Jul 2020 19:45:25 +0100</pubDate>
-      
-      <guid>/tags/open-source/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>qpid</title>
-      <link>/tags/qpid/</link>
-      <pubDate>Wed, 08 Jul 2020 19:45:25 +0100</pubDate>
-      
-      <guid>/tags/qpid/</guid>
       <description></description>
     </item>
     
@@ -76,6 +40,15 @@
     </item>
     
     <item>
+      <title>apache-qpid</title>
+      <link>/tags/apache-qpid/</link>
+      <pubDate>Mon, 06 Jul 2020 23:07:49 +0100</pubDate>
+      
+      <guid>/tags/apache-qpid/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>apache-storm</title>
       <link>/tags/apache-storm/</link>
       <pubDate>Mon, 06 Jul 2020 23:07:49 +0100</pubDate>
@@ -94,11 +67,38 @@
     </item>
     
     <item>
+      <title>java</title>
+      <link>/tags/java/</link>
+      <pubDate>Mon, 06 Jul 2020 23:07:49 +0100</pubDate>
+      
+      <guid>/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>jms</title>
       <link>/tags/jms/</link>
       <pubDate>Mon, 06 Jul 2020 23:07:49 +0100</pubDate>
       
       <guid>/tags/jms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kafka</title>
+      <link>/tags/kafka/</link>
+      <pubDate>Mon, 06 Jul 2020 23:07:49 +0100</pubDate>
+      
+      <guid>/tags/kafka/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>open-source</title>
+      <link>/tags/open-source/</link>
+      <pubDate>Mon, 06 Jul 2020 23:07:49 +0100</pubDate>
+      
+      <guid>/tags/open-source/</guid>
       <description></description>
     </item>
     
