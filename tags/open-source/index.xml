@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>copyright@Prashant</copyright>
-    <lastBuildDate>Mon, 06 Jul 2020 23:07:49 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jul 2020 19:45:25 +0100</lastBuildDate>
     
 	<atom:link href="/tags/open-source/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Apache Qpid</title>
+      <link>/posts/2020/07/apache-qpid/</link>
+      <pubDate>Wed, 08 Jul 2020 19:45:25 +0100</pubDate>
+      
+      <guid>/posts/2020/07/apache-qpid/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Jms to Kafka Bridge</title>
@@ -100,16 +109,6 @@ Cassandra is not a typical database which fits in every Big Data use case.</desc
       <pubDate>Mon, 12 Aug 2019 23:22:50 +0100</pubDate>
       
       <guid>/posts/2019/08/build-your-website-using-gohugo-and-host-it-on-github-pages/</guid>
-      <description>Overview GitHub came up with GitHub pages service, which hosts static web content free of cost. For Tech bloggers and for those who are trying to make their hands dirty in static web content creation, this is the best service at this moment. Read tagline of GitHub Pages -
-GoHugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, GoHugo makes building websites fun again.</description>
-    </item>
-    
-    <item>
-      <title>Hugo का प्रयोग कर बनायें अपनी वेबसाइट, करें होस्ट GitHub Pages पर वो भी मुफ़्त में  </title>
-      <link>/hi/posts/post1/</link>
-      <pubDate>Mon, 12 Aug 2019 23:22:50 +0100</pubDate>
-      
-      <guid>/hi/posts/post1/</guid>
       <description>Overview GitHub came up with GitHub pages service, which hosts static web content free of cost. For Tech bloggers and for those who are trying to make their hands dirty in static web content creation, this is the best service at this moment. Read tagline of GitHub Pages -
 GoHugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, GoHugo makes building websites fun again.</description>
     </item>

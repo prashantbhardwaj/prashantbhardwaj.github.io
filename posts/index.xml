@@ -6,8 +6,18 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>copyright@Prashant</copyright>
-        <lastBuildDate>Mon, 06 Jul 2020 23:07:49 +0100</lastBuildDate>
+        <lastBuildDate>Wed, 08 Jul 2020 19:45:25 +0100</lastBuildDate>
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Apache Qpid</title>
+            <link>/posts/2020/07/apache-qpid/</link>
+            <pubDate>Wed, 08 Jul 2020 19:45:25 +0100</pubDate>
+            
+            <guid>/posts/2020/07/apache-qpid/</guid>
+            <description></description>
+            <content type="html"><![CDATA[]]></content>
+        </item>
         
         <item>
             <title>Jms to Kafka Bridge</title>
@@ -381,61 +391,6 @@ This bridge application should satisfy following requirements -
 <li>Wine</li>
 <li>Other luxury items</li>
 </ul>
-]]></content>
-        </item>
-        
-        <item>
-            <title>Happy New Year 2020</title>
-            <link>/posts/2019/12/happy-new-year-2020/</link>
-            <pubDate>Tue, 31 Dec 2019 13:15:22 +0000</pubDate>
-            
-            <guid>/posts/2019/12/happy-new-year-2020/</guid>
-            <description></description>
-            <content type="html"><![CDATA[<p><img src="/hny-2020.png" alt="alt text" /></p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>SignalR</title>
-            <link>/posts/2019/12/signalr/</link>
-            <pubDate>Sun, 29 Dec 2019 14:52:11 +0000</pubDate>
-            
-            <guid>/posts/2019/12/signalr/</guid>
-            <description>I am in the process of reading and collecting material for this, meanwhile you can read this - https://dotnet.microsoft.com/apps/aspnet/signalr</description>
-            <content type="html"><![CDATA[<p>I am in the process of reading and collecting material for this, meanwhile you can read this - <a href="https://dotnet.microsoft.com/apps/aspnet/signalr">https://dotnet.microsoft.com/apps/aspnet/signalr</a></p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>Socket</title>
-            <link>/posts/2019/12/socket/</link>
-            <pubDate>Sun, 29 Dec 2019 14:51:32 +0000</pubDate>
-            
-            <guid>/posts/2019/12/socket/</guid>
-            <description>I am in the process of reading and collecting material for this, meanwhile you can read this - https://socket.io/</description>
-            <content type="html"><![CDATA[<p>I am in the process of reading and collecting material for this, meanwhile you can read this - <a href="https://socket.io/">https://socket.io/</a></p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>Django</title>
-            <link>/posts/2019/12/django/</link>
-            <pubDate>Sun, 29 Dec 2019 12:42:09 +0000</pubDate>
-            
-            <guid>/posts/2019/12/django/</guid>
-            <description>I am in the process of reading and collecting material for this, meanwhile you can read this - https://www.djangoproject.com/</description>
-            <content type="html"><![CDATA[<p>I am in the process of reading and collecting material for this, meanwhile you can read this - <a href="https://www.djangoproject.com/">https://www.djangoproject.com/</a></p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>Offline First</title>
-            <link>/posts/2019/12/offline-first/</link>
-            <pubDate>Sun, 29 Dec 2019 12:34:02 +0000</pubDate>
-            
-            <guid>/posts/2019/12/offline-first/</guid>
-            <description>I am in the process of reading and collecting material for this, meanwhile you can read this - http://offlinefirst.org/</description>
-            <content type="html"><![CDATA[<p>I am in the process of reading and collecting material for this, meanwhile you can read this - <a href="http://offlinefirst.org/">http://offlinefirst.org/</a></p>
 ]]></content>
         </item>
         
