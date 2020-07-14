@@ -6,8 +6,29 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>copyright@Prashant</copyright>
-        <lastBuildDate>Mon, 06 Jul 2020 23:07:49 +0100</lastBuildDate>
+        <lastBuildDate>Tue, 14 Jul 2020 22:46:54 +0100</lastBuildDate>
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Keys to Success</title>
+            <link>/posts/2020/07/keys-to-success/</link>
+            <pubDate>Tue, 14 Jul 2020 22:46:54 +0100</pubDate>
+            
+            <guid>/posts/2020/07/keys-to-success/</guid>
+            <description>Keys to Success  Empathy Optimism Embrace ambiguity Make it Learn from failure Iterate, Iterate Creative Confidence  </description>
+            <content type="html"><![CDATA[<h2>Keys to Success</h2>
+
+<ul>
+<li>Empathy</li>
+<li>Optimism</li>
+<li>Embrace ambiguity</li>
+<li>Make it</li>
+<li>Learn from failure</li>
+<li>Iterate, Iterate</li>
+<li>Creative Confidence</li>
+</ul>
+]]></content>
+        </item>
         
         <item>
             <title>Jms to Kafka Bridge</title>
@@ -244,13 +265,13 @@ This bridge application should satisfy following requirements -
             <pubDate>Tue, 26 May 2020 14:04:23 +0100</pubDate>
             
             <guid>/posts/2020/05/managing-stakeholders/</guid>
-            <description> Communicate Consult early and often Remember - &amp;lsquo;they are human&amp;rsquo; Plan it Relationsships Show your care Manage risks Compromise Understand - what is success Take responsibilities  </description>
+            <description> Communicate Consult early and often Remember - &amp;lsquo;they are human&amp;rsquo; Plan it Relationships Show your care Manage risks Compromise Understand - what is success Take responsibilities  </description>
             <content type="html"><![CDATA[<ul>
 <li>Communicate</li>
 <li>Consult early and often</li>
 <li>Remember - &lsquo;they are human&rsquo;</li>
 <li>Plan it</li>
-<li>Relationsships</li>
+<li>Relationships</li>
 <li>Show your care</li>
 <li>Manage risks</li>
 <li>Compromise</li>

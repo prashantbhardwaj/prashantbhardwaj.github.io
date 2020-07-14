@@ -104,5 +104,15 @@ Cassandra is not a typical database which fits in every Big Data use case.</desc
 GoHugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, GoHugo makes building websites fun again.</description>
     </item>
     
+    <item>
+      <title>Hugo का प्रयोग कर बनायें अपनी वेबसाइट, करें होस्ट GitHub Pages पर वो भी मुफ़्त में  </title>
+      <link>/hi/posts/post1/</link>
+      <pubDate>Mon, 12 Aug 2019 23:22:50 +0100</pubDate>
+      
+      <guid>/hi/posts/post1/</guid>
+      <description>Overview GitHub came up with GitHub pages service, which hosts static web content free of cost. For Tech bloggers and for those who are trying to make their hands dirty in static web content creation, this is the best service at this moment. Read tagline of GitHub Pages -
+GoHugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, GoHugo makes building websites fun again.</description>
+    </item>
+    
   </channel>
 </rss>
