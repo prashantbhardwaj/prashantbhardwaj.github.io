@@ -18,7 +18,7 @@
       <pubDate>Tue, 14 Jul 2020 22:46:54 +0100</pubDate>
       
       <guid>/posts/2020/07/keys-to-success/</guid>
-      <description>Keys to Success  Empathy Optimism Embrace ambiguity Make it Learn from failure Iterate, Iterate Creative Confidence  </description>
+      <description> Empathy Optimism Embrace ambiguity Make it Learn from failure Iterate, Iterate Creative Confidence  </description>
     </item>
     
     <item>
@@ -70,36 +70,6 @@ Document-oriented databases are one of the main categories of NoSQL databases, a
     </item>
     
     <item>
-      <title>मनमर्जियां (लुटेरा - 2013)</title>
-      <link>/hi/posts/manmarziyaan/</link>
-      <pubDate>Sun, 03 Nov 2019 21:11:09 +0000</pubDate>
-      
-      <guid>/hi/posts/manmarziyaan/</guid>
-      <description>यूँ तो सोलह सावन.. आये गये
-गौर नहीं किया. हमने
-भीगा मन का आँगन&amp;hellip; इस मर्तबा
-क्या जाने क्या किया. तुमने
-दिल में जागी
-इश्क वाली
-मनमर्जियां, मनमर्जियां
-ज़िद्द की मारी (यूँ तो सोलह)
-भोली भाली (सावन)
-मनमर्जियां (आये गये)
-मनमर्जियां
-अब तलक से
-कुछ अलग सी
-मनमर्जियां, मनमर्जियां
-हम ज़मीन पे (भीगा मन का)
-तो फलक से (आँगन)
-मनमर्जियां (इस मर्तबा)
-मनमर्जियां
-सिक्कों जैसे
-है उछाली
-मनमर्जियां, मनमर्जियां
-ज़िद्द की मारी (यूँ तो सोलह)</description>
-    </item>
-    
-    <item>
       <title>Cassandra : How is data deleted and what are Tombstones?</title>
       <link>/posts/2019/10/cassandra-how-is-data-deleted-and-what-are-tombstones/</link>
       <pubDate>Wed, 16 Oct 2019 22:56:24 +0100</pubDate>
@@ -129,6 +99,15 @@ In NetworkTopologyStrategy, replicas are set for each data center separately. Ne
       <description>Typical values of consistency levels are -
 Note - Write operation consists of writing to commit log and memtable.
    Level Write Read Usage     ALL A write must be on all replica nodes in the cluster for that partition. Returns the record after all replicas. The read operation will fail if a replica does not respond. Provides the highest consistency and the lowest availability of any other level.</description>
+    </item>
+    
+    <item>
+      <title>Cassandra : Replication Factor &amp; Consistency Level</title>
+      <link>/posts/2019/09/cassandra-replication-factor-consistency-level/</link>
+      <pubDate>Sat, 28 Sep 2019 09:31:52 +0100</pubDate>
+      
+      <guid>/posts/2019/09/cassandra-replication-factor-consistency-level/</guid>
+      <description>Replication Factor Whenever we start Cassandra, we start a cluster, which is a collection of 1 or more than one nodes. A cluster can be splitted onto more than one datacenter. Cassandra’s architecture was that the hardware failure can occur at any time. Any node can be down. Even entire datacenter can go down so it is better to add more than one data centers in your cluster. Cassandra stores data replicas on multiple nodes to ensure reliability and fault tolerance.</description>
     </item>
     
   </channel>
