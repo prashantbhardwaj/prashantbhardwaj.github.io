@@ -3,6 +3,65 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/hi/</loc>
+    <lastmod>2021-02-17T22:07:39+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2021-02-17T22:07:39+00:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="hi"
+                href="/hi/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/"
+                />
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2021-02-17T22:07:39+00:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="hi"
+                href="/hi/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>/tags/farm-bills-2020/</loc>
+    <lastmod>2021-02-17T22:07:39+00:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="hi"
+                href="/hi/tags/farm-bills-2020/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/farm-bills-2020/"
+                />
+  </url>
+  
+  <url>
+    <loc>/hi/posts/why-msp-not-good/</loc>
+    <lastmod>2021-02-17T22:07:39+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/posts/2020/07/keys-to-success/</loc>
     <lastmod>2020-07-14T22:46:54+01:00</lastmod>
   </url>
@@ -20,38 +79,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="/posts/"
-                />
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2020-07-14T22:46:54+01:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="hi"
-                href="/hi/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/"
-                />
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2020-07-14T22:46:54+01:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="hi"
-                href="/hi/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/tags/"
                 />
   </url>
   
@@ -199,6 +226,11 @@
   </url>
   
   <url>
+    <loc>/hi/posts/manmarziyaan/</loc>
+    <lastmod>2019-11-03T21:11:09+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/posts/2019/10/cassandra-how-is-data-deleted-and-what-are-tombstones/</loc>
     <lastmod>2019-10-16T22:56:24+01:00</lastmod>
   </url>
@@ -235,9 +267,8 @@
   </url>
   
   <url>
-    <loc>/hi/</loc>
-    <lastmod>2019-08-13T00:40:27+01:00</lastmod>
-    <priority>0</priority>
+    <loc>/hi/posts/post2/</loc>
+    <lastmod>2019-08-13T23:10:51+01:00</lastmod>
   </url>
   
   <url>
@@ -258,6 +289,11 @@
                 hreflang="en"
                 href="/posts/2019/08/build-your-website-using-gohugo-and-host-it-on-github-pages/"
                 />
+  </url>
+  
+  <url>
+    <loc>/hi/posts/post1/</loc>
+    <lastmod>2019-08-12T23:22:50+01:00</lastmod>
   </url>
   
   <url>
