@@ -7,20 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>copyright@Prashant</copyright>
-    <lastBuildDate>Wed, 17 Feb 2021 22:07:39 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jul 2020 22:46:54 +0100</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>क्या किसानों को MSP पर क़ानूनी अधिकार मिलना चाहिए?</title>
-      <link>/hi/posts/why-msp-not-good/</link>
-      <pubDate>Wed, 17 Feb 2021 22:07:39 +0000</pubDate>
-      
-      <guid>/hi/posts/why-msp-not-good/</guid>
-      <description>बात बहुत सीधी है किसान जो अन्न उगाते हैं वो चाह रहे हैं कि कुछ ऐसा हो कि उनको अपनी उपज का अधिक से अधिक दाम मिले | और MSP की मांग करके वो ऐसा चाहते हैं कि सरकार ही एक निश्चित दाम पर उनका माल खरीदे | अब सरकार इतने अन्न को खरीदकर करेगी क्या?
-अब इतने गेहूं और धान की आवश्यकता नहीं है अभी सिर्फ ६ प्रतिशत किसानों का अनाज ही MSP पर खरीदा जा रहा है और यह 6 प्रतिशत ही इतना अधिक हो जाता है कि इसको रखने का प्रबंध FCI के पास है ही नहीं | अन्नदाता के कड़ी मेहनत से उगाये अन्न का एक बड़ा हिस्सा खुले में सड़ता है, जानवर खाते हैं और अंत में FCI को आवश्यकता से अधिक अनाज आने पौने दामों में बाज़ार में बेचना पड़ता है | अब आप कहेंगे कि FCI को प्रबंध करना चाहिए अधिक भण्डारण का | लेकिन क्यों करें प्रबंध जब आवश्यकता ही नहीं है | 41.</description>
-    </item>
     
     <item>
       <title>Keys to Success</title>
@@ -80,36 +70,6 @@ Document-oriented databases are one of the main categories of NoSQL databases, a
     </item>
     
     <item>
-      <title>मनमर्जियां (लुटेरा - 2013)</title>
-      <link>/hi/posts/manmarziyaan/</link>
-      <pubDate>Sun, 03 Nov 2019 21:11:09 +0000</pubDate>
-      
-      <guid>/hi/posts/manmarziyaan/</guid>
-      <description>यूँ तो सोलह सावन.. आये गये
-गौर नहीं किया. हमने
-भीगा मन का आँगन&amp;hellip; इस मर्तबा
-क्या जाने क्या किया. तुमने
-दिल में जागी
-इश्क वाली
-मनमर्जियां, मनमर्जियां
-ज़िद्द की मारी (यूँ तो सोलह)
-भोली भाली (सावन)
-मनमर्जियां (आये गये)
-मनमर्जियां
-अब तलक से
-कुछ अलग सी
-मनमर्जियां, मनमर्जियां
-हम ज़मीन पे (भीगा मन का)
-तो फलक से (आँगन)
-मनमर्जियां (इस मर्तबा)
-मनमर्जियां
-सिक्कों जैसे
-है उछाली
-मनमर्जियां, मनमर्जियां
-ज़िद्द की मारी (यूँ तो सोलह)</description>
-    </item>
-    
-    <item>
       <title>Cassandra : How is data deleted and what are Tombstones?</title>
       <link>/posts/2019/10/cassandra-how-is-data-deleted-and-what-are-tombstones/</link>
       <pubDate>Wed, 16 Oct 2019 22:56:24 +0100</pubDate>
@@ -128,6 +88,26 @@ Document-oriented databases are one of the main categories of NoSQL databases, a
 SimpleStrategy SimpleStrategy is used when you have just one data center. SimpleStrategy places the first replica on the node selected by the partitioner. After that, remaining replicas are placed in clockwise direction in the Node ring.
 NetworkTopologyStrategy NetworkTopologyStrategy is used when you have more than two data centers.
 In NetworkTopologyStrategy, replicas are set for each data center separately. NetworkTopologyStrategy places replicas in the clockwise direction in the ring until reaches the first node in another rack.</description>
+    </item>
+    
+    <item>
+      <title>Cassandra : Consistency Levels List</title>
+      <link>/posts/2019/09/cassandra-consistency-levels-list/</link>
+      <pubDate>Sat, 28 Sep 2019 11:19:22 +0100</pubDate>
+      
+      <guid>/posts/2019/09/cassandra-consistency-levels-list/</guid>
+      <description>Typical values of consistency levels are -
+Note - Write operation consists of writing to commit log and memtable.
+   Level Write Read Usage     ALL A write must be on all replica nodes in the cluster for that partition. Returns the record after all replicas. The read operation will fail if a replica does not respond. Provides the highest consistency and the lowest availability of any other level.</description>
+    </item>
+    
+    <item>
+      <title>Cassandra : Replication Factor &amp; Consistency Level</title>
+      <link>/posts/2019/09/cassandra-replication-factor-consistency-level/</link>
+      <pubDate>Sat, 28 Sep 2019 09:31:52 +0100</pubDate>
+      
+      <guid>/posts/2019/09/cassandra-replication-factor-consistency-level/</guid>
+      <description>Replication Factor Whenever we start Cassandra, we start a cluster, which is a collection of 1 or more than one nodes. A cluster can be splitted onto more than one datacenter. Cassandra’s architecture was that the hardware failure can occur at any time. Any node can be down. Even entire datacenter can go down so it is better to add more than one data centers in your cluster. Cassandra stores data replicas on multiple nodes to ensure reliability and fault tolerance.</description>
     </item>
     
   </channel>
