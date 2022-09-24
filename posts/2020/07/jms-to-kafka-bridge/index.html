@@ -22,32 +22,31 @@ This bridge application should satisfy following requirements -
 
 
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
 
-<link rel="stylesheet" href="/main.d1ea4af8fd04fb24a4f8b882ea54bd04eb245427ca4baf527c81a5dab071410b.css">
+<link rel="stylesheet" href="/main.4e5c639214707eff609bb55fe49e183dee42258a73bc90e4cc7b0a84f900798a.css">
 
 
 
-
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
 
 
 <meta itemprop="name" content="Jms to Kafka Bridge">
 <meta itemprop="description" content="Often we integrate two systems where one system is emitting events on some jms solution while another is listening a kafka topic and expecting source messages on kafka. In such cases, we write a bridge application which reads data from jms and writes on kafka.
 This bridge application should satisfy following requirements -
- It should send messages on kafka without breaking the sequence of message. If jms broker goes down, it should keep trying to connect to that and whenever broker starts, application should reconnect and should start listening messages.">
-
-
-<meta itemprop="datePublished" content="2020-07-06T23:07:49&#43;01:00" />
-<meta itemprop="dateModified" content="2020-07-06T23:07:49&#43;01:00" />
-<meta itemprop="wordCount" content="448">
-
-
-
+ It should send messages on kafka without breaking the sequence of message. If jms broker goes down, it should keep trying to connect to that and whenever broker starts, application should reconnect and should start listening messages."><meta itemprop="datePublished" content="2020-07-06T23:07:49+01:00" />
+<meta itemprop="dateModified" content="2020-07-06T23:07:49+01:00" />
+<meta itemprop="wordCount" content="448"><meta itemprop="image" content="/"/>
 <meta itemprop="keywords" content="jms,open-source,apache,qpid,apache-qpid,kafka,apache-kafka,camel,apache-camel,storm,apache-storm,java," />
-
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/"/>
 
@@ -71,21 +70,26 @@ This bridge application should satisfy following requirements -
 
 
 
+
+
     </head>
 
-    <body class="">
+    
+        <body>
+    
+    
         <div class="container">
             <header class="header">
     <span class="header__inner">
         <a href="/" style="text-decoration: none;">
     <div class="logo">
         
-            <span class="logo__mark">></span>
-            <span class="logo__text">prashant_bhardwaj</span>
+            <span class="logo__mark"> </span>
+            <span class="logo__text">Prashant Bhardwaj</span>
             <span class="logo__cursor" style=
-                  "
-                   
-                   ">
+                  "visibility:hidden;
+                   background-color:#67a2c9;
+                   animation-duration:2s;">
             </span>
         
     </div>
@@ -95,7 +99,7 @@ This bridge application should satisfy following requirements -
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="/about">About</a></li><li><a href="/posts">Blogs</a></li><li><a href="/hi">हिन्दी</a></li>
+    <ul class="menu__inner"><li><a href="/about">About Me</a></li><li><a href="/posts">Articles</a></li><li><a href="/hi">हिन्दी</a></li>
     </ul>
 </nav>
 
@@ -106,13 +110,11 @@ This bridge application should satisfy following requirements -
                     </svg>
                 </span>
             
-
-            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
-  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
-  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
-</svg>
-</span>
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
         </span>
     </span>
 </header>
@@ -141,15 +143,14 @@ This bridge application should satisfy following requirements -
 
       
 
+      
+
+      
+
       <div class="post-content">
-        
-
-<p>Often we integrate two systems where one system is emitting events on some jms solution while another is listening a kafka topic and expecting source messages on kafka. In such cases, we write a bridge application which reads data from jms and writes on kafka.</p>
-
-<p><img src="/jms-to-kafka-1.PNG" alt="alt text" /></p>
-
+        <p>Often we integrate two systems where one system is emitting events on some jms solution while another is listening a kafka topic and expecting source messages on kafka. In such cases, we write a bridge application which reads data from jms and writes on kafka.</p>
+<p><img src="/jms-to-kafka-1.PNG" alt="alt text"></p>
 <p>This bridge application should satisfy following requirements -</p>
-
 <ul>
 <li>It should send messages on kafka without breaking the sequence of message.</li>
 <li>If jms broker goes down, it should keep trying to connect to that and whenever broker starts, application should reconnect and should start listening messages.</li>
@@ -158,187 +159,154 @@ This bridge application should satisfy following requirements -
 <li>If application goes down, it should do that gracefully - should stop listening new messages and should finish processing of messages which are already under process.</li>
 <li>In no case, a message should be lost.</li>
 </ul>
-
 <p>Next, we&rsquo;ll be discussing 3 examples using different technologies. We are using Apache Qpid as JMS broker.</p>
-
 <ol>
 <li>JMS to Kafka using Spring JMS</li>
 <li>JMS to Kafka using Apache Camel</li>
 <li>JMS to Kafka using Apache Storm</li>
 </ol>
-
 <h3 id="1-jms-to-kafka-using-spring-jms">1. JMS to Kafka using Spring JMS</h3>
-
-<p>This code can be found here - <br> <a href="https://github.com/prashantbhardwaj/qpid-to-kafka-using-spring-jms">https://github.com/prashantbhardwaj/qpid-to-kafka-using-spring-jms</a></p>
-
+<p>This code can be found here - <!-- raw HTML omitted --> <a href="https://github.com/prashantbhardwaj/qpid-to-kafka-using-spring-jms">https://github.com/prashantbhardwaj/qpid-to-kafka-using-spring-jms</a></p>
 <p><code>DefaultMessageListenerContainer</code> is used to create connection with Qpid and <code>KafkaTemplate</code> is used to send message to Kafka.</p>
-
 <table>
 <thead>
 <tr>
 <th>Test case</th>
-<th align="center">Pass/Fail</th>
-<th align="right">Remark</th>
+<th style="text-align:center">Pass/Fail</th>
+<th style="text-align:right">Remark</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>no out of sequence message</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>reconnect on jms broker start up</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>reconnect on jms broker node shuffle up</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>reconnect on kafka start up</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>graceful application shutdown</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>no message loss</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>performance</td>
-<td align="center">x msgs/sec</td>
-<td align="right"></td>
+<td style="text-align:center">x msgs/sec</td>
+<td style="text-align:right"></td>
 </tr>
 </tbody>
 </table>
-
 <h3 id="2-jms-to-kafka-using-apache-camel">2. JMS to Kafka using Apache Camel</h3>
-
-<p>This code can be found here - <br>  <a href="https://github.com/prashantbhardwaj/qpid-to-kafka-using-camel">https://github.com/prashantbhardwaj/qpid-to-kafka-using-camel</a></p>
-
+<p>This code can be found here - <!-- raw HTML omitted -->  <a href="https://github.com/prashantbhardwaj/qpid-to-kafka-using-camel">https://github.com/prashantbhardwaj/qpid-to-kafka-using-camel</a></p>
 <table>
 <thead>
 <tr>
 <th>Test case</th>
-<th align="center">Pass/Fail</th>
-<th align="right">Remark</th>
+<th style="text-align:center">Pass/Fail</th>
+<th style="text-align:right">Remark</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>no out of sequence message</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>reconnect on jms broker start up</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>reconnect on jms broker node shuffle up</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>reconnect on kafka start up</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>graceful application shutdown</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>no message loss</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>performance</td>
-<td align="center">y msgs/sec</td>
-<td align="right"></td>
+<td style="text-align:center">y msgs/sec</td>
+<td style="text-align:right"></td>
 </tr>
 </tbody>
 </table>
-
 <h3 id="3-jms-to-kafka-using-apache-storm">3. JMS to Kafka using Apache Storm</h3>
-
-<p>This code can be found here - <br> <a href="https://github.com/prashantbhardwaj/qpid-to-kafka-using-storm">https://github.com/prashantbhardwaj/qpid-to-kafka-using-storm</a></p>
-
+<p>This code can be found here - <!-- raw HTML omitted --> <a href="https://github.com/prashantbhardwaj/qpid-to-kafka-using-storm">https://github.com/prashantbhardwaj/qpid-to-kafka-using-storm</a></p>
 <table>
 <thead>
 <tr>
 <th>Test case</th>
-<th align="center">Pass/Fail</th>
-<th align="right">Remark</th>
+<th style="text-align:center">Pass/Fail</th>
+<th style="text-align:right">Remark</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>no out of sequence message</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>reconnect on jms broker start up</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>reconnect on jms broker node shuffle up</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>reconnect on kafka start up</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>graceful application shutdown</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>no message loss</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>performance</td>
-<td align="center">z msgs/sec</td>
-<td align="right"></td>
+<td style="text-align:center">z msgs/sec</td>
+<td style="text-align:right"></td>
 </tr>
 </tbody>
 </table>
@@ -349,12 +317,26 @@ This bridge application should satisfy following requirements -
     <hr />
 
     <div class="post-info">
-        <p>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon">
-            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
-            <line x1="7" y1="7" x2="7" y2="7"></line>
-          </svg><span class="tag"><a href="/tags/jms/">jms</a></span><span class="tag"><a href="/tags/open-source/">open-source</a></span><span class="tag"><a href="/tags/apache/">apache</a></span><span class="tag"><a href="/tags/qpid/">qpid</a></span><span class="tag"><a href="/tags/apache-qpid/">apache-qpid</a></span><span class="tag"><a href="/tags/kafka/">kafka</a></span><span class="tag"><a href="/tags/apache-kafka/">apache-kafka</a></span><span class="tag"><a href="/tags/camel/">camel</a></span><span class="tag"><a href="/tags/apache-camel/">apache-camel</a></span><span class="tag"><a href="/tags/storm/">storm</a></span><span class="tag"><a href="/tags/apache-storm/">apache-storm</a></span><span class="tag"><a href="/tags/java/">java</a></span>
-        </p>
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="/tags/jms/">jms</a></span>
+        <span class="tag"><a href="/tags/open-source/">open-source</a></span>
+        <span class="tag"><a href="/tags/apache/">apache</a></span>
+        <span class="tag"><a href="/tags/qpid/">qpid</a></span>
+        <span class="tag"><a href="/tags/apache-qpid/">apache-qpid</a></span>
+        <span class="tag"><a href="/tags/kafka/">kafka</a></span>
+        <span class="tag"><a href="/tags/apache-kafka/">apache-kafka</a></span>
+        <span class="tag"><a href="/tags/camel/">camel</a></span>
+        <span class="tag"><a href="/tags/apache-camel/">apache-camel</a></span>
+        <span class="tag"><a href="/tags/storm/">storm</a></span>
+        <span class="tag"><a href="/tags/apache-storm/">apache-storm</a></span>
+        <span class="tag"><a href="/tags/java/">java</a></span>
+        
+    </p>
+
+      
 
       <p>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
@@ -374,38 +356,45 @@ This bridge application should satisfy following requirements -
           <line x1="8" y1="2" x2="8" y2="6"></line>
           <line x1="3" y1="10" x2="21" y2="10"></line>
         </svg>
-        2020-07-06 23:07 &#43;0100
+        
+          2020-07-06 23:07 &#43;0100
+        
+
+         
+          
+        
       </p>
     </div>
 
     
-      <div class="pagination">
+    <div class="pagination">
+        
         <div class="pagination__title">
-          <span class="pagination__title-h">Read other posts</span>
-          <hr />
+            <span class="pagination__title-h">Read other posts</span>
+            <hr />
         </div>
+        
 
         <div class="pagination__buttons">
-          
+            
             <span class="button previous">
-              <a href="/posts/2020/07/keys-to-success/">
-                <span class="button__icon">←</span>
-                <span class="button__text">Keys to Success</span>
-              </a>
+                <a href="/posts/2020/07/keys-to-success/">
+                    <span class="button__icon">←</span>
+                    <span class="button__text">Keys to Success</span>
+                </a>
             </span>
-          
+            
 
-          
+            
             <span class="button next">
-              <a href="/posts/2020/07/open-source-contributions/">
-                <span class="button__text">Open Source Contributions</span>
-                <span class="button__icon">→</span>
-              </a>
+                <a href="/posts/2020/07/open-source-contributions/">
+                    <span class="button__text">Open Source Contributions</span>
+                    <span class="button__icon">→</span>
+                </a>
             </span>
-          
+            
         </div>
-      </div>
-    
+    </div>
 
 
     
@@ -435,30 +424,16 @@ This bridge application should satisfy following requirements -
       
     
 
+    
+
   </main>
 
             </div>
 
             
                 <footer class="footer">
-    <div class="footer__inner">
-        <div class="footer__content">
-            <span>&copy; 2021</span>
-            
-                <span><a href="/">Prashant Bhardwaj</a></span>
-            
-            
-                <span>copyright@Prashant</span>
-            
-            <span> <a href="/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
-        </div>
-    </div>
-    <div class="footer__inner">
-        <div class="footer__content">
-            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
-            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
-        </div>
-    </div>
+    
+    
 </footer>
 
             
@@ -468,8 +443,7 @@ This bridge application should satisfy following requirements -
 
 
 
-
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
 
 
 

@@ -22,32 +22,31 @@ Note - Write operation consists of writing to commit log and memtable.
 
 
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
     type="text/css">
 
 
 
-<link rel="stylesheet" href="/main.d1ea4af8fd04fb24a4f8b882ea54bd04eb245427ca4baf527c81a5dab071410b.css">
+<link rel="stylesheet" href="/main.4e5c639214707eff609bb55fe49e183dee42258a73bc90e4cc7b0a84f900798a.css">
 
 
 
-
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
 
 
 <meta itemprop="name" content="Cassandra : Consistency Levels List">
 <meta itemprop="description" content="Typical values of consistency levels are -
 Note - Write operation consists of writing to commit log and memtable.
-   Level Write Read Usage     ALL A write must be on all replica nodes in the cluster for that partition. Returns the record after all replicas. The read operation will fail if a replica does not respond. Provides the highest consistency and the lowest availability of any other level.">
-
-
-<meta itemprop="datePublished" content="2019-09-28T11:19:22&#43;01:00" />
-<meta itemprop="dateModified" content="2019-09-28T11:19:22&#43;01:00" />
-<meta itemprop="wordCount" content="617">
-
-
-
+   Level Write Read Usage     ALL A write must be on all replica nodes in the cluster for that partition. Returns the record after all replicas. The read operation will fail if a replica does not respond. Provides the highest consistency and the lowest availability of any other level."><meta itemprop="datePublished" content="2019-09-28T11:19:22+01:00" />
+<meta itemprop="dateModified" content="2019-09-28T11:19:22+01:00" />
+<meta itemprop="wordCount" content="617"><meta itemprop="image" content="/"/>
 <meta itemprop="keywords" content="cassandra,open-source,apache,databases," />
-
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/"/>
 
@@ -71,21 +70,26 @@ Note - Write operation consists of writing to commit log and memtable.
 
 
 
+
+
     </head>
 
-    <body class="">
+    
+        <body>
+    
+    
         <div class="container">
             <header class="header">
     <span class="header__inner">
         <a href="/" style="text-decoration: none;">
     <div class="logo">
         
-            <span class="logo__mark">></span>
-            <span class="logo__text">prashant_bhardwaj</span>
+            <span class="logo__mark"> </span>
+            <span class="logo__text">Prashant Bhardwaj</span>
             <span class="logo__cursor" style=
-                  "
-                   
-                   ">
+                  "visibility:hidden;
+                   background-color:#67a2c9;
+                   animation-duration:2s;">
             </span>
         
     </div>
@@ -95,7 +99,7 @@ Note - Write operation consists of writing to commit log and memtable.
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="/about">About</a></li><li><a href="/posts">Blogs</a></li><li><a href="/hi">हिन्दी</a></li>
+    <ul class="menu__inner"><li><a href="/about">About Me</a></li><li><a href="/posts">Articles</a></li><li><a href="/hi">हिन्दी</a></li>
     </ul>
 </nav>
 
@@ -106,13 +110,11 @@ Note - Write operation consists of writing to commit log and memtable.
                     </svg>
                 </span>
             
-
-            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
-  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
-  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
-</svg>
-</span>
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
         </span>
     </span>
 </header>
@@ -141,96 +143,87 @@ Note - Write operation consists of writing to commit log and memtable.
 
       
 
+      
+
+      
+
       <div class="post-content">
         <p>Typical values of consistency levels are -</p>
-
 <p>Note - Write operation consists of writing to commit log and memtable.</p>
-
 <table>
 <thead>
 <tr>
 <th>Level</th>
-<th align="center">Write</th>
-<th align="right">Read</th>
+<th style="text-align:center">Write</th>
+<th style="text-align:right">Read</th>
 <th>Usage</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>ALL</td>
-<td align="center">A write must be on all replica nodes in the cluster for that partition.</td>
-<td align="right">Returns the record after all replicas. The read operation will fail if a replica does not respond.</td>
+<td style="text-align:center">A write must be on all replica nodes in the cluster for that partition.</td>
+<td style="text-align:right">Returns the record after all replicas. The read operation will fail if a replica does not respond.</td>
 <td>Provides the highest consistency and the lowest availability of any other level.</td>
 </tr>
-
 <tr>
 <td>EACH_QUORUM</td>
-<td align="center">A write must be on a quorum of replica nodes in each datacenter.</td>
-<td align="right">Not supported for reads.</td>
+<td style="text-align:center">A write must be on a quorum of replica nodes in each datacenter.</td>
+<td style="text-align:right">Not supported for reads.</td>
 <td>Strong consistency. Used in multiple datacenter clusters to strictly maintain consistency at the same level in each datacenter. For example, choose this level if you want a write to fail when a datacenter is down and the QUORUM cannot be reached on that datacenter.</td>
 </tr>
-
 <tr>
 <td>QUORUM</td>
-<td align="center">A write must be on a quorum of replica nodes across all datacenters.</td>
-<td align="right">Returns the record after a quorum of replicas from all datacenters has responded.</td>
+<td style="text-align:center">A write must be on a quorum of replica nodes across all datacenters.</td>
+<td style="text-align:right">Returns the record after a quorum of replicas from all datacenters has responded.</td>
 <td>Used in either single or multiple datacenter clusters to maintain strong consistency across the cluster. Use if you can tolerate some level of failure.</td>
 </tr>
-
 <tr>
 <td>LOCAL_QUORUM</td>
-<td align="center">A write must be on a quorum of replica nodes in the same datacenter as the coordinator.</td>
-<td align="right">Returns the record after a quorum of replicas in the current datacenter as the coordinator has reported.</td>
+<td style="text-align:center">A write must be on a quorum of replica nodes in the same datacenter as the coordinator.</td>
+<td style="text-align:right">Returns the record after a quorum of replicas in the current datacenter as the coordinator has reported.</td>
 <td>Strong consistency. Avoids latency of inter-datacenter communication. Used in multiple datacenter clusters with a rack-aware replica placement strategy, such as NetworkTopologyStrategy, and a properly configured snitch. Use to maintain consistency locally (within the single datacenter). Can be used with SimpleStrategy.</td>
 </tr>
-
 <tr>
 <td>ONE</td>
-<td align="center">A write must be at least one replica node.</td>
-<td align="right">Returns a response from the closest replica, as determined by the snitch. By default, a read repair runs in the background to make the other replicas consistent.</td>
+<td style="text-align:center">A write must be at least one replica node.</td>
+<td style="text-align:right">Returns a response from the closest replica, as determined by the snitch. By default, a read repair runs in the background to make the other replicas consistent.</td>
 <td>Satisfies the needs of most users because consistency requirements are not stringent.</td>
 </tr>
-
 <tr>
 <td>TWO</td>
-<td align="center">A write must be at least two replica nodes.</td>
-<td align="right">Returns the most recent data from two of the closest replicas.</td>
+<td style="text-align:center">A write must be at least two replica nodes.</td>
+<td style="text-align:right">Returns the most recent data from two of the closest replicas.</td>
 <td>Similar to ONE.</td>
 </tr>
-
 <tr>
 <td>THREE</td>
-<td align="center">A write must be at least three replica nodes.</td>
-<td align="right">Returns the most recent data from three of the closest replicas.</td>
+<td style="text-align:center">A write must be at least three replica nodes.</td>
+<td style="text-align:right">Returns the most recent data from three of the closest replicas.</td>
 <td>Similar to TWO.</td>
 </tr>
-
 <tr>
 <td>LOCAL_ONE</td>
-<td align="center">A write must be sent to, and successfully acknowledged by, at least one replica node in the local datacenter.</td>
-<td align="right">Returns a response from the closest replica in the local datacenter.</td>
+<td style="text-align:center">A write must be sent to, and successfully acknowledged by, at least one replica node in the local datacenter.</td>
+<td style="text-align:right">Returns a response from the closest replica in the local datacenter.</td>
 <td>In a multiple datacenter clusters, a consistency level of ONE is often desirable, but cross-DC traffic is not. LOCAL_ONE accomplishes this. For security and quality reasons, you can use this consistency level in an offline datacenter to prevent automatic connection to online nodes in other datacenters if an offline node goes down.</td>
 </tr>
-
 <tr>
 <td>SERIAL</td>
-<td align="center">Not supported</td>
-<td align="right">Allows reading the current (and possibly uncommitted) state of data without proposing a new addition or update. If a SERIAL read finds an uncommitted transaction in progress, it will commit the transaction as part of the read. Similar to QUORUM.</td>
+<td style="text-align:center">Not supported</td>
+<td style="text-align:right">Allows reading the current (and possibly uncommitted) state of data without proposing a new addition or update. If a SERIAL read finds an uncommitted transaction in progress, it will commit the transaction as part of the read. Similar to QUORUM.</td>
 <td>To read the latest value of a column after a user has invoked a lightweight transaction to write to the column, use SERIAL. Cassandra then checks the inflight lightweight transaction for updates and, if found, returns the latest data.</td>
 </tr>
-
 <tr>
 <td>LOCAL_SERIAL</td>
-<td align="center">Not supported</td>
-<td align="right">Same as SERIAL, but confined to the datacenter. Similar to LOCAL_QUORUM.</td>
+<td style="text-align:center">Not supported</td>
+<td style="text-align:right">Same as SERIAL, but confined to the datacenter. Similar to LOCAL_QUORUM.</td>
 <td>Used to achieve linearizable consistency for lightweight transactions.</td>
 </tr>
-
 <tr>
 <td>ANY</td>
-<td align="center">A write must be written to at least one node. If all replica nodes for the given partition key are down, the write can still succeed after a hinted handoff has been written. If all replica nodes are down at write time, an ANY write is not readable until the replica nodes for that partition have recovered.</td>
-<td align="right">Not supported</td>
+<td style="text-align:center">A write must be written to at least one node. If all replica nodes for the given partition key are down, the write can still succeed after a hinted handoff has been written. If all replica nodes are down at write time, an ANY write is not readable until the replica nodes for that partition have recovered.</td>
+<td style="text-align:right">Not supported</td>
 <td>Provides low latency and a guarantee that a write never fails. Delivers the lowest consistency and highest availability.</td>
 </tr>
 </tbody>
@@ -242,12 +235,18 @@ Note - Write operation consists of writing to commit log and memtable.
     <hr />
 
     <div class="post-info">
-        <p>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon">
-            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
-            <line x1="7" y1="7" x2="7" y2="7"></line>
-          </svg><span class="tag"><a href="/tags/cassandra/">cassandra</a></span><span class="tag"><a href="/tags/open-source/">open-source</a></span><span class="tag"><a href="/tags/apache/">apache</a></span><span class="tag"><a href="/tags/databases/">databases</a></span>
-        </p>
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="/tags/cassandra/">cassandra</a></span>
+        <span class="tag"><a href="/tags/open-source/">open-source</a></span>
+        <span class="tag"><a href="/tags/apache/">apache</a></span>
+        <span class="tag"><a href="/tags/databases/">databases</a></span>
+        
+    </p>
+
+      
 
       <p>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
@@ -267,38 +266,45 @@ Note - Write operation consists of writing to commit log and memtable.
           <line x1="8" y1="2" x2="8" y2="6"></line>
           <line x1="3" y1="10" x2="21" y2="10"></line>
         </svg>
-        2019-09-28 11:19 &#43;0100
+        
+          2019-09-28 11:19 &#43;0100
+        
+
+         
+          
+        
       </p>
     </div>
 
     
-      <div class="pagination">
+    <div class="pagination">
+        
         <div class="pagination__title">
-          <span class="pagination__title-h">Read other posts</span>
-          <hr />
+            <span class="pagination__title-h">Read other posts</span>
+            <hr />
         </div>
+        
 
         <div class="pagination__buttons">
-          
+            
             <span class="button previous">
-              <a href="/posts/2019/09/cassandra-replication-strategies/">
-                <span class="button__icon">←</span>
-                <span class="button__text">Cassandra : Replication Strategies</span>
-              </a>
+                <a href="/posts/2019/09/cassandra-replication-strategies/">
+                    <span class="button__icon">←</span>
+                    <span class="button__text">Cassandra : Replication Strategies</span>
+                </a>
             </span>
-          
+            
 
-          
+            
             <span class="button next">
-              <a href="/posts/2019/09/cassandra-replication-factor-consistency-level/">
-                <span class="button__text">Cassandra : Replication Factor &amp; Consistency Level</span>
-                <span class="button__icon">→</span>
-              </a>
+                <a href="/posts/2019/09/cassandra-replication-factor-consistency-level/">
+                    <span class="button__text">Cassandra : Replication Factor &amp; Consistency Level</span>
+                    <span class="button__icon">→</span>
+                </a>
             </span>
-          
+            
         </div>
-      </div>
-    
+    </div>
 
 
     
@@ -328,30 +334,16 @@ Note - Write operation consists of writing to commit log and memtable.
       
     
 
+    
+
   </main>
 
             </div>
 
             
                 <footer class="footer">
-    <div class="footer__inner">
-        <div class="footer__content">
-            <span>&copy; 2021</span>
-            
-                <span><a href="/">Prashant Bhardwaj</a></span>
-            
-            
-                <span>copyright@Prashant</span>
-            
-            <span> <a href="/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
-        </div>
-    </div>
-    <div class="footer__inner">
-        <div class="footer__content">
-            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
-            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
-        </div>
-    </div>
+    
+    
 </footer>
 
             
@@ -361,8 +353,7 @@ Note - Write operation consists of writing to commit log and memtable.
 
 
 
-
-<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
+<script type="text/javascript" src="/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
 
 
 

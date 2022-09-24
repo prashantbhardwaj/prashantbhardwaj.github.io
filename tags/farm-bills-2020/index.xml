@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>farm-bills-2020 on Prashant Bhardwaj</title>
@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>copyright@Prashant</copyright>
-    <lastBuildDate>Wed, 17 Feb 2021 22:07:39 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/farm-bills-2020/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 17 Feb 2021 22:07:39 +0000</lastBuildDate><atom:link href="/tags/farm-bills-2020/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>क्या किसानों को MSP पर क़ानूनी अधिकार मिलना चाहिए?</title>
       <link>/hi/posts/why-msp-not-good/</link>

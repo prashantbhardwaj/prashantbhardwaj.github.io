@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>cassandra on Prashant Bhardwaj</title>
@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>copyright@Prashant</copyright>
-    <lastBuildDate>Wed, 16 Oct 2019 22:56:24 +0100</lastBuildDate>
-    
-	<atom:link href="/tags/cassandra/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 16 Oct 2019 22:56:24 +0100</lastBuildDate><atom:link href="/tags/cassandra/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cassandra : How is data deleted and what are Tombstones?</title>
       <link>/posts/2019/10/cassandra-how-is-data-deleted-and-what-are-tombstones/</link>
@@ -28,8 +24,8 @@
       
       <guid>/posts/2019/09/cassandra-replication-strategies/</guid>
       <description>There are two kinds of replication strategies in Cassandra.
-SimpleStrategy SimpleStrategy is used when you have just one data center. SimpleStrategy places the first replica on the node selected by the partitioner. After that, remaining replicas are placed in clockwise direction in the Node ring.
-NetworkTopologyStrategy NetworkTopologyStrategy is used when you have more than two data centers.
+SimpleStrategy is used when you have just one data center. SimpleStrategy places the first replica on the node selected by the partitioner. After that, remaining replicas are placed in clockwise direction in the Node ring.
+NetworkTopologyStrategy is used when you have more than two data centers.
 In NetworkTopologyStrategy, replicas are set for each data center separately. NetworkTopologyStrategy places replicas in the clockwise direction in the ring until reaches the first node in another rack.</description>
     </item>
     
@@ -50,7 +46,8 @@ Note - Write operation consists of writing to commit log and memtable.
       <pubDate>Sat, 28 Sep 2019 09:31:52 +0100</pubDate>
       
       <guid>/posts/2019/09/cassandra-replication-factor-consistency-level/</guid>
-      <description>Replication Factor Whenever we start Cassandra, we start a cluster, which is a collection of 1 or more than one nodes. A cluster can be splitted onto more than one datacenter. Cassandra’s architecture was that the hardware failure can occur at any time. Any node can be down. Even entire datacenter can go down so it is better to add more than one data centers in your cluster. Cassandra stores data replicas on multiple nodes to ensure reliability and fault tolerance.</description>
+      <description>In a production system, it is advisable to have three or more Cassandra nodes in each data center, and the default replication factor should be three. As a general rule, the replication factor should not exceed the number of Cassandra nodes in the cluster. If there are 3 nodes in your cluster then how can you store data on more than three nodes?
+If you add additional Cassandra nodes to the cluster, the default replication factor is not affected.</description>
     </item>
     
     <item>
@@ -61,8 +58,8 @@ Note - Write operation consists of writing to commit log and memtable.
       <guid>/posts/2019/09/cassandra-when-not-to-use/</guid>
       <description>I don&amp;rsquo;t think that I need to explain what Cassandra is. OK, one liner is enough ! It is NoSQL database, primarily used in big data projects.
 Before we start discussing scenarios where Cassandra fits very well, let&amp;rsquo;s discuss where it doesn&amp;rsquo;t fit at all.
-Common mistakes when using Cassandra We&amp;rsquo;ll have lots of data, let&amp;rsquo;s use Cassandra
-Cassandra is not a typical database which fits in every Big Data use case.</description>
+We&amp;rsquo;ll have lots of data, let&amp;rsquo;s use Cassandra
+Cassandra is not a typical database which fits in every Big Data use case. In some no big data cases also it can fit very well.</description>
     </item>
     
     <item>
@@ -71,7 +68,7 @@ Cassandra is not a typical database which fits in every Big Data use case.</desc
       <pubDate>Sat, 14 Sep 2019 17:01:38 +0100</pubDate>
       
       <guid>/posts/2019/09/cassandra-overview-how-is-data-written-and-read/</guid>
-      <description>Agenda  Characterstics How does it internally work References  The Apache Cassandra database is the right choice when you need scalability and high availability without compromising performance. Linear scalability and proven fault-tolerance on commodity hardware or cloud infrastructure make it the perfect platform for mission-critical data. Cassandra&amp;rsquo;s support for replicating across multiple datacenters is best-in-class, providing lower latency for your users and the peace of mind of knowing that you can survive regional outages.</description>
+      <description>[Characterstics] (#h2-characterstics-h2) [How does it internally work] (#h2-how-does-it-internally-work-h2) [References] (#h2-references-h2)  The Apache Cassandra database is the right choice when you need scalability and high availability without compromising performance. Linear scalability and proven fault-tolerance on commodity hardware or cloud infrastructure make it the perfect platform for mission-critical data. Cassandra&amp;rsquo;s support for replicating across multiple datacenters is best-in-class, providing lower latency for your users and the peace of mind of knowing that you can survive regional outages.</description>
     </item>
     
   </channel>

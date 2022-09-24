@@ -37,14 +37,9 @@
             <description>Often we integrate two systems where one system is emitting events on some jms solution while another is listening a kafka topic and expecting source messages on kafka. In such cases, we write a bridge application which reads data from jms and writes on kafka.
 This bridge application should satisfy following requirements -
  It should send messages on kafka without breaking the sequence of message. If jms broker goes down, it should keep trying to connect to that and whenever broker starts, application should reconnect and should start listening messages.</description>
-            <content type="html"><![CDATA[
-
-<p>Often we integrate two systems where one system is emitting events on some jms solution while another is listening a kafka topic and expecting source messages on kafka. In such cases, we write a bridge application which reads data from jms and writes on kafka.</p>
-
-<p><img src="/jms-to-kafka-1.PNG" alt="alt text" /></p>
-
+            <content type="html"><![CDATA[<p>Often we integrate two systems where one system is emitting events on some jms solution while another is listening a kafka topic and expecting source messages on kafka. In such cases, we write a bridge application which reads data from jms and writes on kafka.</p>
+<p><img src="/jms-to-kafka-1.PNG" alt="alt text"></p>
 <p>This bridge application should satisfy following requirements -</p>
-
 <ul>
 <li>It should send messages on kafka without breaking the sequence of message.</li>
 <li>If jms broker goes down, it should keep trying to connect to that and whenever broker starts, application should reconnect and should start listening messages.</li>
@@ -53,187 +48,154 @@ This bridge application should satisfy following requirements -
 <li>If application goes down, it should do that gracefully - should stop listening new messages and should finish processing of messages which are already under process.</li>
 <li>In no case, a message should be lost.</li>
 </ul>
-
 <p>Next, we&rsquo;ll be discussing 3 examples using different technologies. We are using Apache Qpid as JMS broker.</p>
-
 <ol>
 <li>JMS to Kafka using Spring JMS</li>
 <li>JMS to Kafka using Apache Camel</li>
 <li>JMS to Kafka using Apache Storm</li>
 </ol>
-
 <h3 id="1-jms-to-kafka-using-spring-jms">1. JMS to Kafka using Spring JMS</h3>
-
-<p>This code can be found here - <br> <a href="https://github.com/prashantbhardwaj/qpid-to-kafka-using-spring-jms">https://github.com/prashantbhardwaj/qpid-to-kafka-using-spring-jms</a></p>
-
+<p>This code can be found here - <!-- raw HTML omitted --> <a href="https://github.com/prashantbhardwaj/qpid-to-kafka-using-spring-jms">https://github.com/prashantbhardwaj/qpid-to-kafka-using-spring-jms</a></p>
 <p><code>DefaultMessageListenerContainer</code> is used to create connection with Qpid and <code>KafkaTemplate</code> is used to send message to Kafka.</p>
-
 <table>
 <thead>
 <tr>
 <th>Test case</th>
-<th align="center">Pass/Fail</th>
-<th align="right">Remark</th>
+<th style="text-align:center">Pass/Fail</th>
+<th style="text-align:right">Remark</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>no out of sequence message</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>reconnect on jms broker start up</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>reconnect on jms broker node shuffle up</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>reconnect on kafka start up</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>graceful application shutdown</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>no message loss</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>performance</td>
-<td align="center">x msgs/sec</td>
-<td align="right"></td>
+<td style="text-align:center">x msgs/sec</td>
+<td style="text-align:right"></td>
 </tr>
 </tbody>
 </table>
-
 <h3 id="2-jms-to-kafka-using-apache-camel">2. JMS to Kafka using Apache Camel</h3>
-
-<p>This code can be found here - <br>  <a href="https://github.com/prashantbhardwaj/qpid-to-kafka-using-camel">https://github.com/prashantbhardwaj/qpid-to-kafka-using-camel</a></p>
-
+<p>This code can be found here - <!-- raw HTML omitted -->  <a href="https://github.com/prashantbhardwaj/qpid-to-kafka-using-camel">https://github.com/prashantbhardwaj/qpid-to-kafka-using-camel</a></p>
 <table>
 <thead>
 <tr>
 <th>Test case</th>
-<th align="center">Pass/Fail</th>
-<th align="right">Remark</th>
+<th style="text-align:center">Pass/Fail</th>
+<th style="text-align:right">Remark</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>no out of sequence message</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>reconnect on jms broker start up</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>reconnect on jms broker node shuffle up</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>reconnect on kafka start up</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>graceful application shutdown</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>no message loss</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>performance</td>
-<td align="center">y msgs/sec</td>
-<td align="right"></td>
+<td style="text-align:center">y msgs/sec</td>
+<td style="text-align:right"></td>
 </tr>
 </tbody>
 </table>
-
 <h3 id="3-jms-to-kafka-using-apache-storm">3. JMS to Kafka using Apache Storm</h3>
-
-<p>This code can be found here - <br> <a href="https://github.com/prashantbhardwaj/qpid-to-kafka-using-storm">https://github.com/prashantbhardwaj/qpid-to-kafka-using-storm</a></p>
-
+<p>This code can be found here - <!-- raw HTML omitted --> <a href="https://github.com/prashantbhardwaj/qpid-to-kafka-using-storm">https://github.com/prashantbhardwaj/qpid-to-kafka-using-storm</a></p>
 <table>
 <thead>
 <tr>
 <th>Test case</th>
-<th align="center">Pass/Fail</th>
-<th align="right">Remark</th>
+<th style="text-align:center">Pass/Fail</th>
+<th style="text-align:right">Remark</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>no out of sequence message</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>reconnect on jms broker start up</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>reconnect on jms broker node shuffle up</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>reconnect on kafka start up</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>graceful application shutdown</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>no message loss</td>
-<td align="center">not tested yet</td>
-<td align="right"></td>
+<td style="text-align:center">not tested yet</td>
+<td style="text-align:right"></td>
 </tr>
-
 <tr>
 <td>performance</td>
-<td align="center">z msgs/sec</td>
-<td align="right"></td>
+<td style="text-align:center">z msgs/sec</td>
+<td style="text-align:right"></td>
 </tr>
 </tbody>
 </table>
@@ -246,11 +208,8 @@ This bridge application should satisfy following requirements -
             <pubDate>Thu, 02 Jul 2020 00:38:30 +0100</pubDate>
             
             <guid>/posts/2020/07/open-source-contributions/</guid>
-            <description> Hugo theme - hugo-theme-hello-friend-ng  Hindi language added in langFlags and translations also added for hindi.  </description>
-            <content type="html"><![CDATA[
-
-<h2 id="hugo-theme-hugo-theme-hello-friend-ng">Hugo theme - hugo-theme-hello-friend-ng</h2>
-
+            <description>Hugo theme - hugo-theme-hello-friend-ng  Hindi language added in langFlags and translations also added for hindi.  </description>
+            <content type="html"><![CDATA[<h2 id="hugo-theme---hugo-theme-hello-friend-ng">Hugo theme - hugo-theme-hello-friend-ng</h2>
 <ul>
 <li><a href="https://github.com/rhazdon/hugo-theme-hello-friend-ng/commit/9e5753f16f9b1bd7da3d8fe60cb5a439f9a9ff27">Hindi language added in langFlags and translations also added for hindi.</a></li>
 </ul>
@@ -286,10 +245,7 @@ This bridge application should satisfy following requirements -
             
             <guid>/posts/2020/02/new-home-move-checklist/</guid>
             <description>A. Things to be checked with agent before you handover keys  None of your stuff left in the house, garden, sheds Bins are clear Leave some money in &amp;lsquo;Pay as you go&amp;rsquo; accounts so that when new family moves in they have things (like electricity, gas) working. If you are moving electronic applinces with you, make sure you don&amp;rsquo;t break plugs/switched and other connectors like water connectors etc. Divert your posts to your new address If you are leaving any newly purchased item in the house, don&amp;rsquo;t forget to leave guarantee/warranty papers of those items Leave smoke/fire alarms in working condition Clear all the bills (Internet, electricity, gas, water, council, factor etc.</description>
-            <content type="html"><![CDATA[
-
-<h2 id="a-things-to-be-checked-with-agent-before-you-handover-keys">A. Things to be checked with agent before you handover keys</h2>
-
+            <content type="html"><![CDATA[<h2 id="a-things-to-be-checked-with-agent-before-you-handover-keys">A. Things to be checked with agent before you handover keys</h2>
 <ul>
 <li>None of your stuff left in the house, garden, sheds</li>
 <li>Bins are clear</li>
@@ -306,9 +262,7 @@ This bridge application should satisfy following requirements -
 <li>If any electric/electronic item is not working - inform agent</li>
 <li>Cut the grass in the garden</li>
 </ul>
-
 <h2 id="b-things-to-be-checked-with-agent-before-you-take-keys">B. Things to be checked with agent before you take keys</h2>
-
 <ul>
 <li>There is no stuff left in the house, which belongs to previous owner</li>
 <li>There is no debt in &lsquo;Pay as you go&rsquo; accounts (I had in Electricity account and there was no electricity when I moved in)</li>
@@ -319,9 +273,7 @@ This bridge application should satisfy following requirements -
 <li>Check whether there is any factor charge. Make sure all the pending bills are paid by previous owner (Internet, Phone, Electricity, Council, Water, Gas, Factor, House help, Cleaning)</li>
 <li>If some of the items were part of your deal, make sure all the items are present - if anything is missing then please inform Agent</li>
 </ul>
-
 <h2 id="c-things-to-be-checked-before-moving-in-the-new-house">C. Things to be checked before moving in the new house</h2>
-
 <ul>
 <li>You have enough charge in pre-paid meters (Electricity, Gas, Water), if not then recharge</li>
 <li>Transfer council in your name</li>
@@ -333,11 +285,8 @@ This bridge application should satisfy following requirements -
 <li>Make sure you have Internet working on the day you move in</li>
 <li>Take initial readings of all meters (Electricity, Gas, Water)</li>
 </ul>
-
 <h2 id="d-essentials-items-need-to-be-purchased-before-entry">D. Essentials items need to be purchased before entry</h2>
-
-<h3 id="kitchen-dining">Kitchen &amp; Dining</h3>
-
+<h3 id="kitchen--dining">Kitchen &amp; Dining</h3>
 <ul>
 <li>Cooking utencils - Better to buy a complete set</li>
 <li>Diningware (Plates, bowls, glasses, spoons, forks, knifes) - Better to buy a complete set</li>
@@ -347,9 +296,7 @@ This bridge application should satisfy following requirements -
 <li>Kitchen towels</li>
 <li>Dining table with chairs</li>
 </ul>
-
 <h3 id="bedroom">Bedroom</h3>
-
 <ul>
 <li>Bed</li>
 <li>Mattress with sheet cover</li>
@@ -357,33 +304,25 @@ This bridge application should satisfy following requirements -
 <li>Pillow with cover</li>
 <li>Bed side tables</li>
 </ul>
-
-<h3 id="bathroom-toilets">Bathroom/toilets</h3>
-
+<h3 id="bathroomtoilets">Bathroom/toilets</h3>
 <ul>
 <li>Tissue papers</li>
 <li>Soap, Shampoo, Tooth paste, Tooth brush, Hand wash soap</li>
 <li>Toilet cleaning liquid, brush</li>
 <li>Towel</li>
 </ul>
-
 <h3 id="living-room">Living room</h3>
-
 <ul>
 <li>Printer</li>
 <li>Sofa</li>
 <li>TV</li>
 <li>Coffe Table</li>
 </ul>
-
 <h3 id="garden">Garden</h3>
-
 <ul>
 <li>Lawnmover</li>
 </ul>
-
 <h2 id="e-on-the-day-when-you-move-in">E. On the day when you move in</h2>
-
 <ul>
 <li>Keep window open for few hours or a day so you have clean air</li>
 <li>Do not open light immidiatly entering the house, make sure there is no gas leakage</li>
@@ -392,9 +331,7 @@ This bridge application should satisfy following requirements -
 <li>Cook light food which can be cooked with very few things and doesn&rsquo;t take too much time to cook and should be light to eat</li>
 <li>Take bath, change cloth and go to sleep</li>
 </ul>
-
 <h2 id="f-items-which-can-be-arranged-later">F. Items which can be arranged later</h2>
-
 <ul>
 <li>Paintings</li>
 <li>Wine</li>
@@ -409,111 +346,65 @@ This bridge application should satisfy following requirements -
             <pubDate>Sun, 29 Dec 2019 11:53:57 +0000</pubDate>
             
             <guid>/posts/2019/12/document-oriented-databases/</guid>
-            <description>Agenda  Overview ArangoDB CouchDB Crate.IO OrientDB SednaDB Apache-Solr RethinkDB MongoDB References  Overview A document-oriented database is a database designed for storing, retrieving and managing document-oriented information, also known as semi-structured data.
-Document-oriented databases are one of the main categories of NoSQL databases, and the popularity of the term &amp;ldquo;document-oriented database&amp;rdquo; has grown with the use of the term NoSQL itself. XML databases are a subclass of document-oriented databases that are optimized to work with XML documents.</description>
-            <content type="html"><![CDATA[
-
-<h2>Agenda</h2>
-
+            <description>[Overview] (#h2-overview-h2) [ArangoDB] (#h2-arangodb-h2) [CouchDB] (#h2-couchdb-h2) [Crate.IO] (#h2-crate.io-h2) [OrientDB] (#h2-orientdb-h2) [SednaDB] (#h2-sednadb-h2) [Apache-Solr] (#h2-apache-solr-h2) [RethinkDB] (#h2-rethinkdb-h2) [MongoDB] (#h2-mongodbdb-h2) [References] (#h2-references-h2)  Overview A document-oriented database is a database designed for storing, retrieving and managing document-oriented information, also known as semi-structured data.
+Document-oriented databases are one of the main categories of NoSQL databases, and the popularity of the term &amp;ldquo;document-oriented database&amp;rdquo; has grown with the use of the term NoSQL itself.</description>
+            <content type="html"><![CDATA[<!-- raw HTML omitted -->
 <ul>
-<li><a href="#h2-overview-h2">Overview</a></li>
-<li><a href="#h2-arangodb-h2">ArangoDB</a></li>
-<li><a href="#h2-couchdb-h2">CouchDB</a></li>
-<li><a href="#h2-crate.io-h2">Crate.IO</a></li>
-<li><a href="#h2-orientdb-h2">OrientDB</a></li>
-<li><a href="#h2-sednadb-h2">SednaDB</a></li>
-<li><a href="#h2-apache-solr-h2">Apache-Solr</a></li>
-<li><a href="#h2-rethinkdb-h2">RethinkDB</a></li>
-<li><a href="#h2-mongodbdb-h2">MongoDB</a></li>
-<li><a href="#h2-references-h2">References</a></li>
+<li>[Overview] (#h2-overview-h2)</li>
+<li>[ArangoDB] (#h2-arangodb-h2)</li>
+<li>[CouchDB] (#h2-couchdb-h2)</li>
+<li>[Crate.IO] (#h2-crate.io-h2)</li>
+<li>[OrientDB] (#h2-orientdb-h2)</li>
+<li>[SednaDB] (#h2-sednadb-h2)</li>
+<li>[Apache-Solr] (#h2-apache-solr-h2)</li>
+<li>[RethinkDB] (#h2-rethinkdb-h2)</li>
+<li>[MongoDB] (#h2-mongodbdb-h2)</li>
+<li>[References] (#h2-references-h2)</li>
 </ul>
-
-<h2 id="h2-overview-h2"><h2>Overview</h2></h2>
-
+<h2 id="h2overviewh2"><!-- raw HTML omitted -->Overview<!-- raw HTML omitted --></h2>
 <p>A document-oriented database is a database designed for storing, retrieving and managing document-oriented information, also known as semi-structured data.</p>
-
 <p>Document-oriented databases are one of the main categories of NoSQL databases, and the popularity of the term &ldquo;document-oriented database&rdquo; has grown with the use of the term NoSQL itself. XML databases are a subclass of document-oriented databases that are optimized to work with XML documents. Graph databases are similar, but add another layer, the relationship, which allows them to link documents for rapid traversal.</p>
-
 <p>Document-oriented databases are inherently a subclass of the key-value store, another NoSQL database concept. The difference lies in the way the data is processed; in a key-value store, the data is considered to be inherently opaque to the database, whereas a document-oriented system relies on internal structure in the document in order to extract metadata that the database engine uses for further optimization. Although the difference is often moot due to tools in the systems, conceptually the document-store is designed to offer a richer experience with modern programming techniques.</p>
-
 <p>Document databases contrast strongly with the traditional relational database (RDB). Relational databases generally store data in separate tables that are defined by the programmer, and a single object may be spread across several tables. Document databases store all information for a given object in a single instance in the database, and every stored object can be different from every other. This eliminates the need for object-relational mapping while loading data into the database.</p>
-
 <p>Next, we are going to discuss some of the popular &lsquo;Document Oriented Databases&rsquo; -</p>
-
-<h2 id="h2-arangodb-h2"><h2>ArangoDB</h2></h2>
-
+<h2 id="h2arangodbh2"><!-- raw HTML omitted -->ArangoDB<!-- raw HTML omitted --></h2>
 <p>(<a href="https://www.arangodb.com/">https://www.arangodb.com/</a>)</p>
-
 <p>ArangoDB is the open-source native multi-model database for graph, document, key/value and search needs.</p>
-
 <p>In this database -</p>
-
 <p>developers can Map data natively to the database and access it with the best patterns for the job – traversals, joins, search, ranking, geospatial, aggregations – you name it. It is available in under Apache License. It supports languages like - C, .NET, Java, Python, Node.js, PHP, Scala, Go, Ruby, Elixir.</p>
-
 <p>For architects - Polyglot persistence without the costs. Easily design, scale and adapt your architectures to changing needs and with much less effort.</p>
-
 <p>For Data Scientiests - Combine the flexibility of JSON with semantic search and graph technology for next generation feature extraction even for large datasets.</p>
-
 <p>ArangoDB OASIS is scalable fully managed service for ArangoDB. Which can be deployed in AWS, Google Cloud or Azure. It can be run under Docker or Kubernetes.</p>
-
 <p>AQL (ArangoDB&rsquo;s query language) is a declarative query language letting you access the very same data with a broad range of access patterns like traversals, JOINs, search, geospatial or any combination. Everyone experienced with SQL will have an easy start with AQL and might think AQL feels more like coding.</p>
-
-<h2 id="h2-couchdb-h2"><h2>CouchDB</h2></h2>
-
+<h2 id="h2couchdbh2"><!-- raw HTML omitted -->CouchDB<!-- raw HTML omitted --></h2>
 <p>(<a href="https://couchdb.apache.org/">https://couchdb.apache.org/</a>)</p>
-
 <p>Seamless multi-master sync, that scales from Big Data to Mobile, with an Intuitive HTTP/JSON API and designed for Reliability.
- Apache CouchDB™ lets you access your data where you need it. The Couch Replication Protocol is implemented in a variety of projects and products that span every imaginable computing environment from globally distributed server-clusters, over mobile phones to web browsers.</p>
-
+Apache CouchDB™ lets you access your data where you need it. The Couch Replication Protocol is implemented in a variety of projects and products that span every imaginable computing environment from globally distributed server-clusters, over mobile phones to web browsers.</p>
 <p>Store your data safely, on your own servers, or with any leading cloud provider. Your web- and native applications love CouchDB, because it speaks JSON natively and supports binary data for all your data storage needs.</p>
-
 <p>The Couch Replication Protocol lets your data flow seamlessly between server clusters to mobile phones and web browsers, enabling a compelling offline-first user-experience while maintaining high performance and strong reliability. CouchDB comes with a developer-friendly query language, and optionally MapReduce for simple, efficient, and comprehensive data retrieval.</p>
-
 <p><strong>Single node or cluster</strong> CouchDB is a terrific single-node database that works just like any other database behind an application server of your choice. Most people start with a single node CouchDB instance. More demanding projects can seamlessly upgrade to a cluster. CouchDB is also a clustered database that allows you to run a single logical database server on any number of servers or VMs. A CouchDB cluster improves on the single-node setup with higher capacity and high-availability without changing any APIs.</p>
-
 <p><strong>HTTP/JSON</strong> CouchDB makes use of the ubiquitous HTTP protocol and JSON data format and is compatible with any software that supports them. CouchDB also works great with external tools like HTTP proxy servers, load balancers.</p>
-
 <p><strong>Offline First Data Sync</strong> CouchDB’s unique Replication Protocol is the foundation for a whole new generation of “Offline First” applications for Mobile applications and other environments with challenging network infrastructures.</p>
-
 <p><strong>Ecosystem</strong> CouchDB is built for servers (from a Raspberry Pi to big cloud installations), while PouchDB is built for mobile &amp; desktop web-browsers and Couchbase Lite is built for native iOS &amp; Android apps. And all of them can seamlessly replicate data with each other.
 CouchDB is serious about data reliability.</p>
-
 <p><strong>Reliability</strong> Individual nodes use a crash-resistent append-only data structure. A multi-node CouchDB cluster saves all data redundantly, so it is always available when you need it.</p>
-
-<h2 id="h2-crate-io-h2"><h2>Crate.IO</h2></h2>
-
+<h2 id="h2crateioh2"><!-- raw HTML omitted -->Crate.IO<!-- raw HTML omitted --></h2>
 <p>(<a href="https://crate.io/">https://crate.io/</a>)</p>
-
 <p>It claims to be the #1 database for IoT-scale. Purpose-built to scale modern applications in a machine data world.</p>
-
 <p>A highly scalable SQL database seam­lessly growing with the use case. Pro­cess, store, query &amp; analyze massive amounts of data in real-time with ease.</p>
-
 <p><strong>SQL Ease + NoSQL Agility</strong> A distributed SQL DBMS built atop NoSQL storage &amp; indexing delivers the best of SQL &amp; NoSQL in one DB.</p>
-
 <p><strong>Simple Scalability, Always On</strong> Masterless architecture with auto-sharding &amp; replication. Simple to scale and to keep running, 24x7.</p>
-
 <p><strong>Real-time Performance</strong> Distributed. In-memory. Columnar. Query a firehose of data in real time&ndash;time series, geospatial, joins, aggregations, text search,&hellip;</p>
-
 <p><strong>Dynamic Schema</strong> Schema evolves automatically as new columns are inserted. Elegantly handles any tabular or non-tabular data to support a wide range of use cases.</p>
-
 <p><strong>Instant Results</strong> Monitor your data in real-time. Connect your data to any SQL-based visualization tool. Turn your data into action.</p>
-
-<h2 id="h2-orientdb-h2"><h2>OrientDB</h2></h2>
-
+<h2 id="h2orientdbh2"><!-- raw HTML omitted -->OrientDB<!-- raw HTML omitted --></h2>
 <p>(<a href="https://orientdb.org">https://orientdb.org</a>)</p>
-
 <p>OrientDB is the first Multi-Model Open Source NoSQL DBMS that combines the power of graphs and the flexibility of documents into one scalable, high-performance operational database.</p>
-
 <p>Gone are the days where your database only supports a single data model. As a direct response to polyglot persistence, multi-model databases acknowledge the need for multiple data models, combining them to reduce operational complexity and maintain data consistency. Though graph databases have grown in popularity, most NoSQL products are still used to provide scalability to applications sitting on a relational DBMS. Advanced 2nd generation NoSQL products like OrientDB are the future: providing more functionality and flexibility, while being powerful enough to replace your operational DBMS.</p>
-
-<h2 id="h2-sednadb-h2"><h2>SednaDB</h2></h2>
-
+<h2 id="h2sednadbh2"><!-- raw HTML omitted -->SednaDB<!-- raw HTML omitted --></h2>
 <p>(<a href="https://www.sedna.org/">https://www.sedna.org/</a>)</p>
-
 <p>Sedna is a free native XML database which provides a full range of core database services - persistent storage, ACID transactions, security, indices, hot backup. Flexible XML processing facilities include W3C XQuery implementation, tight integration of XQuery with full-text search facilities and a node-level update language.</p>
-
 <p><strong>Basic Features</strong></p>
-
 <ul>
 <li>Available for free in open source form under Apache License 2.0</li>
 <li>Native XML database system implemented in C/C++</li>
@@ -529,101 +420,68 @@ CouchDB is serious about data reliability.</p>
 <li>XQuery external functions implemented in C</li>
 <li>Database security (users, roles and privileges)</li>
 </ul>
-
-<h2 id="h2-apache-solr-h2"><h2>Apache Solr</h2></h2>
-
+<h2 id="h2apache-solrh2"><!-- raw HTML omitted -->Apache Solr<!-- raw HTML omitted --></h2>
 <p>(<a href="https://lucene.apache.org/solr/">https://lucene.apache.org/solr/</a>)</p>
-
 <p>Solr is the popular, blazing-fast, open source enterprise search platform built on Apache Lucene.
 Solr is highly reliable, scalable and fault tolerant, providing distributed indexing, replication and load-balanced querying, automated failover and recovery, centralized configuration and more. Solr powers the search and navigation features of many of the world&rsquo;s largest internet sites.</p>
-
-<p><strong>Features</strong>
-* Advanced Full-Text Search Capabilities
-* Optimized for High Volume Traffic
-* Standards Based Open Interfaces - XML, JSON and HTTP
-* Comprehensive Administration Interfaces
-* Easy Monitoring
-* Highly Scalable and Fault Tolerant
-* Flexible and Adaptable with easy configuration
-* Near Real-Time Indexing
-* Extensible Plugin Architecture</p>
-
-<h2 id="h2-rethinkdb-h2"><h2>RethinkDB</h2></h2>
-
+<p><strong>Features</strong></p>
+<ul>
+<li>Advanced Full-Text Search Capabilities</li>
+<li>Optimized for High Volume Traffic</li>
+<li>Standards Based Open Interfaces - XML, JSON and HTTP</li>
+<li>Comprehensive Administration Interfaces</li>
+<li>Easy Monitoring</li>
+<li>Highly Scalable and Fault Tolerant</li>
+<li>Flexible and Adaptable with easy configuration</li>
+<li>Near Real-Time Indexing</li>
+<li>Extensible Plugin Architecture</li>
+</ul>
+<h2 id="h2rethinkdbh2"><!-- raw HTML omitted -->RethinkDB<!-- raw HTML omitted --></h2>
 <p>(<a href="https://rethinkdb.com/">https://rethinkdb.com/</a>)</p>
-
 <p>RethinkDB is the open-source, scalable database that makes building realtime apps dramatically easier.
 RethinkDB pushes JSON to your apps in realtime. When your app polls for data, it becomes slow, unscalable, and cumbersome to maintain.</p>
-
-<h3>Use Cases</h3>
-
+<!-- raw HTML omitted -->
 <p><strong>Web + mobile apps</strong></p>
-
 <p>Web apps like Google Docs, Trello, and Quora pioneered the realtime experience on the web. With RethinkDB, you can build amazing realtime apps with dramatically less engineering effort.</p>
-
 <p><strong>Multiplayer games</strong></p>
-
 <p>When a player takes an action in a multiplayer game, every other player in the game needs to see the change in realtime. RethinkDB dramatically simplifies the data infrastructure for low latency, high throughput realtime interactions.</p>
-
 <p><strong>Realtime marketplaces</strong></p>
-
 <p>RethinkDB dramatically reduces the complexity of building realtime trading and optimization engines. Publish realtime updates to thousands of clients, and provide pricing updates to users in milliseconds.</p>
-
 <p><strong>Streaming analytics</strong></p>
-
 <p>Build realtime dashboards with RethinkDB data push notifications, and make instantaneous business decisions.</p>
-
 <p><strong>Connected devices</strong></p>
-
 <p>RethinkDB dramatically simplifies modern IoT infrastructures. Stream data between connected devices, enable messaging and signaling, and trigger actions in millions of devices in milliseconds.</p>
-
-<h3>Other features</h3>
-
+<!-- raw HTML omitted -->
 <p><strong>Work with your favorite stack</strong>
 Query JSON documents with Python, Ruby, Node.js or dozens of other languages. Build modern apps using your favorite web framework, paired with realtime technologies like <a href="https://socket.io/">Socket.io</a> or <a href="https://dotnet.microsoft.com/apps/aspnet/signalr">SignalR</a>.</p>
-
 <p><strong>Everything you need to build modern apps</strong>
 Express relationships using joins, build location-aware apps, or store multimedia and time-series data. Do analytics with aggregation and map/reduce, and speed up your apps using flexible indexing.</p>
-
 <p><strong>Built with love by the open source community</strong>
 Originally developed by a core team of database experts and over 100 contributors from around the world, RethinkDB is shaped by developers like you participating in an open source community development process.</p>
-
 <p><strong>Robust architecture</strong>
 RethinkDB integrates the latest advances in database technology. It has a modern distributed architecture, a highly-optimized buffer cache, and a state-of-the-art storage engine. All of these components work together to create a robust, scalable, high-performance database.</p>
-
 <p><strong>Changefeeds in RethinkDB</strong>
 Learn about changefeeds, RethinkDB&rsquo;s realtime push technology, and how it can be used to build and scale realtime apps.</p>
-
 <p><strong>Map-reduce in RethinkDB</strong>
 RethinkDB has powerful Hadoop-style map-reduce tools, that integrate cleanly into the query language. Learn how they work, and play with a few examples.</p>
-
 <p><strong>Geospatial queries</strong>
 Learn how to use GeoJSON features to build location-aware apps in RethinkDB.</p>
-
 <p><strong>Deploying with a PaaS</strong>
 Learn how to deploy RethinkDB on cloud services like Compose.io, AWS, and others.</p>
-
-<h2 id="h2-mongodb-h2"><h2>MongoDB</h2></h2>
-
+<h2 id="h2mongodbh2"><!-- raw HTML omitted -->MongoDB<!-- raw HTML omitted --></h2>
 <p>(<a href="https://www.mongodb.com/">https://www.mongodb.com/</a>)</p>
-
 <p>As claimed by themselves, it is most popular database. It is a general purpose, document-based, distributed database built for modern application developers and for the cloud era. No database makes you more productive.</p>
-
 <p>MongoDB is a document database, which means it stores data in JSON-like documents. We believe this is the most natural way to think about data, and is much more expressive and powerful than the traditional row/column model.</p>
-
 <p><strong>Rich JSON Documents</strong>
 The most natural and productive way to work with data. Supports arrays and nested objects as values. Allows for flexible and dynamic schemas.</p>
-
 <p><strong>Powerful query language</strong>
 Rich and expressive query language that allows you to filter and sort by any field, no matter how nested it may be within a document.
 Support for aggregations and other modern use-cases such as geo-based search, graph search, and text search.
 Queries are themselves JSON, and thus easily composable. No more concatenating strings to dynamically generate SQL queries.</p>
-
 <p><strong>All the power of a relational database, and more&hellip;</strong>
 Full ACID transactions.
 Support for joins in queries.
 Two types of relationships instead of one: reference and embedded.</p>
-
 <ul>
 <li>Fully Automated</li>
 <li>Global Clusters</li>
@@ -635,9 +493,7 @@ Two types of relationships instead of one: reference and embedded.</p>
 <li>BI Connector</li>
 <li>Compass</li>
 </ul>
-
-<h2 id="h2-references-h2"><h2>References</h2></h2>
-
+<h2 id="h2referencesh2"><!-- raw HTML omitted -->References<!-- raw HTML omitted --></h2>
 <ul>
 <li>Wikipedia</li>
 <li>Websites of mentioned databases</li>
@@ -653,15 +509,10 @@ Two types of relationships instead of one: reference and embedded.</p>
             <guid>/posts/2019/10/cassandra-how-is-data-deleted-and-what-are-tombstones/</guid>
             <description>Data in Cassandra is replcated on more than one node. In another terms - &amp;lsquo;Same data is copied on more than one node&amp;rsquo;. Any change in that data should be made in all the copies of that data stored on various nodes of a cluster. Same is applied for deletes as well. If a data is deleted then it should be deleted from all the nodes. But what if any node which has a copy of that data is down.</description>
             <content type="html"><![CDATA[<p>Data in Cassandra is replcated on more than one node. In another terms - &lsquo;Same data is copied on more than one node&rsquo;. Any change in that data should be made in all the copies of that data stored on various nodes of a cluster. Same is applied for <strong>deletes</strong> as well. If a data is deleted then it should be deleted from all the nodes. But what if any node which has a copy of that data is down. When that node will come up and will be asked for that data, it will provide that data and same data will be copied on other nodes once again. Such data is called <strong>Zombie</strong> record.</p>
-
 <p>How does Cassandra make sure that if a data is deleted than it should be deleted from all the nodes even if any node where that data is stored, is down. Cassandra manages that by creating <strong>tombstones</strong>.</p>
-
 <p>How does these tombstones help Cassandra? Now again think about the scenario in which a data is stored on three nodes. With Local_Quorum consistency and 3 replication factor and just 2 nodes are up and running, if DELETE requests came, data got deleted from 2 live nodes, while remained saved on one node which was down when DELETE request came. Now this third node comes up and a READ request comes. This third node returns the data but other two nodes say that we had data but now we have tombstones at the place of that data. Now, cassandra knows that if two nodes have tombstones that means that data was deleted and then it repairs data on that remaining third node and deletes from that node as well.</p>
-
 <p>Now, we understand why Cassandra creates tombstones to flagged the data as deleted so that same message can be propegated to nodes which were down when DELETE request came. But another question here - Is DELETE is the only operation, in which Cassandra creates tombstone? Answer is &lsquo;NO&rsquo;.</p>
-
 <p>Tombstones are created in following cases -</p>
-
 <ul>
 <li>Using a CQL DELETE statement</li>
 <li>Expiring data with time-to-live (TTL)</li>
@@ -669,9 +520,7 @@ Two types of relationships instead of one: reference and embedded.</p>
 <li>INSERT or UPDATE operations with a null value</li>
 <li>UPDATE operations with a collection column</li>
 </ul>
-
 <p>When a tombstone is created, it can be marked on different parts of a partition. Based on the location of the marker, tombstones can be categorized into one of the following groups. Each category typically corresponds to one unique type of data deletion operation.</p>
-
 <ul>
 <li>Partition tombstones</li>
 <li>Row tombstones</li>
@@ -680,70 +529,42 @@ Two types of relationships instead of one: reference and embedded.</p>
 <li>Cell tombstones</li>
 <li>TTL tombstones</li>
 </ul>
-
 <p>All of these types are explained in details <a href="https://docs.datastax.com/en/dse/5.1/dse-arch/datastax_enterprise/dbInternals/archTombstones.html">on this page</a>.</p>
-
 <p>The tombstones go through the write path, and are written to SSTables on one or more nodes. A key differentiator of a tombstone is a built-in expiration known as the grace period, set by gc_grace_seconds. At the end of its expiration period, the tombstone is deleted as part of the normal compaction process.</p>
-
 <p>Having an excessive number of tombstones in a table can negatively impact application performance. Many tombstones often indicate potential issues with either the data model or in the application.</p>
-
 <p><strong>Partition tombstones</strong></p>
-
 <p>Partition tombstones are generated when an entire partition is deleted explicitly. In the CQL DELETE statement, the WHERE clause is an equality condition against the partition key.</p>
-
 <pre><code>DELETE from cycling.rank_by_year_and_name WHERE 
  race_year = 2014 AND race_name = '4th Tour of Beijing';
-</code></pre>
-
-<p><strong>Row tombstones</strong></p>
-
+</code></pre><p><strong>Row tombstones</strong></p>
 <p>Row tombstones are generated when a particular row within a partition is deleted explicitly. The schema has a composite primary key that includes both the partition key and the clustering key. In the CQL DELETE statement, the WHERE clause is an equality condition against both the partition key and the clustering key columns.</p>
-
 <pre><code>DELETE from cycling.rank_by_year_and_name WHERE 
  race_year = 2015 AND race_name = 'Giro d''Italia - Stage 11 - Forli &gt; Imola' AND rank = 2;
-</code></pre>
-
-<p><strong>Range tombstones</strong></p>
-
+</code></pre><p><strong>Range tombstones</strong></p>
 <p>Range tombstones occur when several rows within a partition that can be expressed through a range search are deleted explicitly. The schema has a composite primary key that includes both a partition key and a clustering key. In the CQL DELETE statement, the WHERE clause is an equality condition against the partition key, plus an inequality condition against the clustering key.
 Tip: If following this tutorial from the beginning, drop the rank_by_year_and_name table and then recreate it to populate the table with the necessary data.</p>
-
 <pre><code>DELETE from cycling.rank_by_year_and_name WHERE 
  race_year = 2015 AND race_name = 'Tour of Japan - Stage 4 - Minami &gt; Shinshu' AND rank &gt; 1;
-</code></pre>
-
-<p><strong>ComplexColumn tombstones</strong></p>
-
+</code></pre><p><strong>ComplexColumn tombstones</strong></p>
 <p>ComplexColumn tombstones are generated when inserting or updating a collection type column, such as set, list, and map.</p>
-
 <p>Previously we created the cyclist_career_teams table. Run the following cqlsh command to insert data into that table.</p>
-
 <pre><code>INSERT INTO cycling.cyclist_career_teams (
      id,
      lastname,
      teams)
      VALUES (cb07baad-eac8-4f65-b28a-bddc06a0de23, 'ARMITSTEAD', { 
      'Boels-Dolmans Cycling Team','AA Drink - Leontien.nl','Team Garmin - Cervelo' } );
-</code></pre>
-
-<p><strong>Cell tombstones</strong></p>
-
+</code></pre><p><strong>Cell tombstones</strong></p>
 <p>Cell tombstones are generated when explicitly deleting a value from a cell, such as a column for a specific row of a partition, or when inserting or updating a cell with null values, as shown in the following example.</p>
-
 <pre><code>INSERT INTO cycling.rank_by_year_and_name (
      race_year,
      race_name,
      cyclist_name,
      rank)
      VALUES (2018, 'Giro d''Italia - Stage 11 - Osimo &gt; Imola', null, 1);
-</code></pre>
-
-<p><strong>TTL tombstones</strong></p>
-
+</code></pre><p><strong>TTL tombstones</strong></p>
 <p>TTL tombstones are generated when the TTL (time-to-live) period expires. The TTL expiration marker can occur at either the row or cell level. However, DSE marks TTL data differently from tombstone data that was explicitly deleted. Even if a partition has only a single row (with no clustering key), the TTL mark is still made at the row level.</p>
-
 <p>The following statement sets TTL for an entire row.</p>
-
 <pre><code>INSERT INTO cycling.cyclist_career_teams (
      id,
      lastname,
@@ -758,15 +579,11 @@ Tip: If following this tutorial from the beginning, drop the rank_by_year_and_na
         }
       ) 
      USING TTL 1;
-</code></pre>
-
-<p>The following statement sets TTL for a single cell.</p>
-
+</code></pre><p>The following statement sets TTL for a single cell.</p>
 <pre><code>UPDATE cycling.rank_by_year_and_name USING TTL 1
   SET cyclist_name = 'Cloudy Archipelago' WHERE race_year = 2018 AND 
   race_name = 'Giro d''Italia - Stage 11 - Osimo &gt; Imola' AND rank = 1;
-</code></pre>
-]]></content>
+</code></pre>]]></content>
         </item>
         
         <item>
@@ -776,28 +593,19 @@ Tip: If following this tutorial from the beginning, drop the rank_by_year_and_na
             
             <guid>/posts/2019/09/cassandra-replication-strategies/</guid>
             <description>There are two kinds of replication strategies in Cassandra.
-SimpleStrategy SimpleStrategy is used when you have just one data center. SimpleStrategy places the first replica on the node selected by the partitioner. After that, remaining replicas are placed in clockwise direction in the Node ring.
-NetworkTopologyStrategy NetworkTopologyStrategy is used when you have more than two data centers.
+SimpleStrategy is used when you have just one data center. SimpleStrategy places the first replica on the node selected by the partitioner. After that, remaining replicas are placed in clockwise direction in the Node ring.
+NetworkTopologyStrategy is used when you have more than two data centers.
 In NetworkTopologyStrategy, replicas are set for each data center separately. NetworkTopologyStrategy places replicas in the clockwise direction in the ring until reaches the first node in another rack.</description>
             <content type="html"><![CDATA[<p>There are two kinds of replication strategies in Cassandra.</p>
-
-<h3>SimpleStrategy</h3>
-
+<!-- raw HTML omitted -->
 <p>SimpleStrategy is used when you have just one data center. SimpleStrategy places the first replica on the node selected by the partitioner. After that, remaining replicas are placed in clockwise direction in the Node ring.</p>
-
-<p><img src="/caas/simple-replication-strategy.jpg" alt="alt text" /></p>
-
-<h3>NetworkTopologyStrategy</h3>
-
+<p><img src="/caas/simple-replication-strategy.jpg" alt="alt text"></p>
+<!-- raw HTML omitted -->
 <p>NetworkTopologyStrategy is used when you have more than two data centers.</p>
-
 <p>In NetworkTopologyStrategy, replicas are set for each data center separately. NetworkTopologyStrategy places replicas in the clockwise direction in the ring until reaches the first node in another rack.</p>
-
 <p>This strategy tries to place replicas on different racks in the same data center. This is due to the reason that sometimes failure or problem can occur in the rack. Then replicas on other nodes can provide data.</p>
-
 <p>Here is the pictorial representation of the Network topology strategy</p>
-
-<p><img src="/caas/network-replication-strategy.jpg" alt="alt text" /></p>
+<p><img src="/caas/network-replication-strategy.jpg" alt="alt text"></p>
 ]]></content>
         </item>
         
@@ -811,94 +619,81 @@ In NetworkTopologyStrategy, replicas are set for each data center separately. Ne
 Note - Write operation consists of writing to commit log and memtable.
    Level Write Read Usage     ALL A write must be on all replica nodes in the cluster for that partition. Returns the record after all replicas. The read operation will fail if a replica does not respond. Provides the highest consistency and the lowest availability of any other level.</description>
             <content type="html"><![CDATA[<p>Typical values of consistency levels are -</p>
-
 <p>Note - Write operation consists of writing to commit log and memtable.</p>
-
 <table>
 <thead>
 <tr>
 <th>Level</th>
-<th align="center">Write</th>
-<th align="right">Read</th>
+<th style="text-align:center">Write</th>
+<th style="text-align:right">Read</th>
 <th>Usage</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>ALL</td>
-<td align="center">A write must be on all replica nodes in the cluster for that partition.</td>
-<td align="right">Returns the record after all replicas. The read operation will fail if a replica does not respond.</td>
+<td style="text-align:center">A write must be on all replica nodes in the cluster for that partition.</td>
+<td style="text-align:right">Returns the record after all replicas. The read operation will fail if a replica does not respond.</td>
 <td>Provides the highest consistency and the lowest availability of any other level.</td>
 </tr>
-
 <tr>
 <td>EACH_QUORUM</td>
-<td align="center">A write must be on a quorum of replica nodes in each datacenter.</td>
-<td align="right">Not supported for reads.</td>
+<td style="text-align:center">A write must be on a quorum of replica nodes in each datacenter.</td>
+<td style="text-align:right">Not supported for reads.</td>
 <td>Strong consistency. Used in multiple datacenter clusters to strictly maintain consistency at the same level in each datacenter. For example, choose this level if you want a write to fail when a datacenter is down and the QUORUM cannot be reached on that datacenter.</td>
 </tr>
-
 <tr>
 <td>QUORUM</td>
-<td align="center">A write must be on a quorum of replica nodes across all datacenters.</td>
-<td align="right">Returns the record after a quorum of replicas from all datacenters has responded.</td>
+<td style="text-align:center">A write must be on a quorum of replica nodes across all datacenters.</td>
+<td style="text-align:right">Returns the record after a quorum of replicas from all datacenters has responded.</td>
 <td>Used in either single or multiple datacenter clusters to maintain strong consistency across the cluster. Use if you can tolerate some level of failure.</td>
 </tr>
-
 <tr>
 <td>LOCAL_QUORUM</td>
-<td align="center">A write must be on a quorum of replica nodes in the same datacenter as the coordinator.</td>
-<td align="right">Returns the record after a quorum of replicas in the current datacenter as the coordinator has reported.</td>
+<td style="text-align:center">A write must be on a quorum of replica nodes in the same datacenter as the coordinator.</td>
+<td style="text-align:right">Returns the record after a quorum of replicas in the current datacenter as the coordinator has reported.</td>
 <td>Strong consistency. Avoids latency of inter-datacenter communication. Used in multiple datacenter clusters with a rack-aware replica placement strategy, such as NetworkTopologyStrategy, and a properly configured snitch. Use to maintain consistency locally (within the single datacenter). Can be used with SimpleStrategy.</td>
 </tr>
-
 <tr>
 <td>ONE</td>
-<td align="center">A write must be at least one replica node.</td>
-<td align="right">Returns a response from the closest replica, as determined by the snitch. By default, a read repair runs in the background to make the other replicas consistent.</td>
+<td style="text-align:center">A write must be at least one replica node.</td>
+<td style="text-align:right">Returns a response from the closest replica, as determined by the snitch. By default, a read repair runs in the background to make the other replicas consistent.</td>
 <td>Satisfies the needs of most users because consistency requirements are not stringent.</td>
 </tr>
-
 <tr>
 <td>TWO</td>
-<td align="center">A write must be at least two replica nodes.</td>
-<td align="right">Returns the most recent data from two of the closest replicas.</td>
+<td style="text-align:center">A write must be at least two replica nodes.</td>
+<td style="text-align:right">Returns the most recent data from two of the closest replicas.</td>
 <td>Similar to ONE.</td>
 </tr>
-
 <tr>
 <td>THREE</td>
-<td align="center">A write must be at least three replica nodes.</td>
-<td align="right">Returns the most recent data from three of the closest replicas.</td>
+<td style="text-align:center">A write must be at least three replica nodes.</td>
+<td style="text-align:right">Returns the most recent data from three of the closest replicas.</td>
 <td>Similar to TWO.</td>
 </tr>
-
 <tr>
 <td>LOCAL_ONE</td>
-<td align="center">A write must be sent to, and successfully acknowledged by, at least one replica node in the local datacenter.</td>
-<td align="right">Returns a response from the closest replica in the local datacenter.</td>
+<td style="text-align:center">A write must be sent to, and successfully acknowledged by, at least one replica node in the local datacenter.</td>
+<td style="text-align:right">Returns a response from the closest replica in the local datacenter.</td>
 <td>In a multiple datacenter clusters, a consistency level of ONE is often desirable, but cross-DC traffic is not. LOCAL_ONE accomplishes this. For security and quality reasons, you can use this consistency level in an offline datacenter to prevent automatic connection to online nodes in other datacenters if an offline node goes down.</td>
 </tr>
-
 <tr>
 <td>SERIAL</td>
-<td align="center">Not supported</td>
-<td align="right">Allows reading the current (and possibly uncommitted) state of data without proposing a new addition or update. If a SERIAL read finds an uncommitted transaction in progress, it will commit the transaction as part of the read. Similar to QUORUM.</td>
+<td style="text-align:center">Not supported</td>
+<td style="text-align:right">Allows reading the current (and possibly uncommitted) state of data without proposing a new addition or update. If a SERIAL read finds an uncommitted transaction in progress, it will commit the transaction as part of the read. Similar to QUORUM.</td>
 <td>To read the latest value of a column after a user has invoked a lightweight transaction to write to the column, use SERIAL. Cassandra then checks the inflight lightweight transaction for updates and, if found, returns the latest data.</td>
 </tr>
-
 <tr>
 <td>LOCAL_SERIAL</td>
-<td align="center">Not supported</td>
-<td align="right">Same as SERIAL, but confined to the datacenter. Similar to LOCAL_QUORUM.</td>
+<td style="text-align:center">Not supported</td>
+<td style="text-align:right">Same as SERIAL, but confined to the datacenter. Similar to LOCAL_QUORUM.</td>
 <td>Used to achieve linearizable consistency for lightweight transactions.</td>
 </tr>
-
 <tr>
 <td>ANY</td>
-<td align="center">A write must be written to at least one node. If all replica nodes for the given partition key are down, the write can still succeed after a hinted handoff has been written. If all replica nodes are down at write time, an ANY write is not readable until the replica nodes for that partition have recovered.</td>
-<td align="right">Not supported</td>
+<td style="text-align:center">A write must be written to at least one node. If all replica nodes for the given partition key are down, the write can still succeed after a hinted handoff has been written. If all replica nodes are down at write time, an ANY write is not readable until the replica nodes for that partition have recovered.</td>
+<td style="text-align:right">Not supported</td>
 <td>Provides low latency and a guarantee that a write never fails. Delivers the lowest consistency and highest availability.</td>
 </tr>
 </tbody>
@@ -912,40 +707,23 @@ Note - Write operation consists of writing to commit log and memtable.
             <pubDate>Sat, 28 Sep 2019 09:31:52 +0100</pubDate>
             
             <guid>/posts/2019/09/cassandra-replication-factor-consistency-level/</guid>
-            <description>Replication Factor Whenever we start Cassandra, we start a cluster, which is a collection of 1 or more than one nodes. A cluster can be splitted onto more than one datacenter. Cassandra’s architecture was that the hardware failure can occur at any time. Any node can be down. Even entire datacenter can go down so it is better to add more than one data centers in your cluster. Cassandra stores data replicas on multiple nodes to ensure reliability and fault tolerance.</description>
-            <content type="html"><![CDATA[<p><h2>Replication Factor</h2>
-Whenever we start Cassandra, we start a cluster, which is a collection of 1 or more than one nodes. A cluster can be splitted onto more than one datacenter. Cassandra’s architecture was that the hardware failure can occur at any time. Any node can be down. Even entire datacenter can go down so it is better to add more than one data centers in your cluster. Cassandra stores data replicas on multiple nodes to ensure reliability and fault tolerance. The total number of replicas for a keyspace across a Cassandra cluster is referred to as the keyspace&rsquo;s replication factor. A replication factor of one means that there is only one copy of each row in the Cassandra cluster. A replication factor of two means there are two copies of each row, where each copy is on a different node. All replicas are equally important; there is no primary or master replica.</p>
-
+            <description>In a production system, it is advisable to have three or more Cassandra nodes in each data center, and the default replication factor should be three. As a general rule, the replication factor should not exceed the number of Cassandra nodes in the cluster. If there are 3 nodes in your cluster then how can you store data on more than three nodes?
+If you add additional Cassandra nodes to the cluster, the default replication factor is not affected.</description>
+            <content type="html"><![CDATA[<!-- raw HTML omitted -->
 <p>In a production system, it is advisable to have three or more Cassandra nodes in each data center, and the default replication factor should be three. As a general rule, the replication factor should not exceed the number of Cassandra nodes in the cluster. If there are 3 nodes in your cluster then how can you store data on more than three nodes?</p>
-
 <p>If you add additional Cassandra nodes to the cluster, the default replication factor is not affected.</p>
-
 <p>For example, if you increase the number of Cassandra nodes to six, but leave the replication factor at three, that means data will be replicated on just three nodes not on all six nodes. If you are adding of deleting nodes in a cluster, it is your responsibility to change the replication factor. If a node goes down, a higher replication factor means a higher probability that the data on the node exists on one of the remaining nodes. The downside of a higher replication factor is an increased latency on data writes.</p>
-
 <p>All the nodes exchange information with each other using Gossip protocol. Gossip is a protocol in Cassandra by which nodes can communicate with each other.</p>
-
 <p>There are two kinds of replication strategies in Cassandra. Which are mentioned <a href="../cassandra-replication-strategy/">here</a>.</p>
-
-<p><h2>Consistency Level</h2>
-When you write any data in a cluster which has four nodes and replication factor three, data is stored on three nodes. This replication of data on three nodes is quick but not instant. When you write a data and instantly read the same data, it is possible that data is not yet completly replicated and some of the nodes are returning old data. Then how Cassandra enforces consistency? Simple answer is - Using consistency level.</p>
-
+<!-- raw HTML omitted -->
 <p>The Cassandra consistency level is defined as the minimum number of Cassandra nodes that must acknowledge a read or write operation before the operation can be considered successful. Different consistency levels can be assigned to different Edge keyspaces.</p>
-
 <p><a href="../cassandra-consistency-levels-list/">This table describes various types of write/read consistency levels. </a></p>
-
 <p>When connecting to Cassandra for read and write operations, generally used consistency level value is LOCAL_QUORUM. However, some keyspaces are defined to use a consistency level of one.</p>
-
 <p>The calculation of the value of LOCAL_QUORUM for a data center is:</p>
-
 <pre><code>LOCAL_QUORUM = (replication_factor/2) + 1 
-</code></pre>
-
-<p>As described above, the default replication factor for an Edge production environment with three Cassandra nodes is three. Therefore, the default value of LOCAL_QUORUM = (<sup>3</sup>&frasl;<sub>2</sub>) +1 = 2 (the value is rounded down to an integer).</p>
-
+</code></pre><p>As described above, the default replication factor for an Edge production environment with three Cassandra nodes is three. Therefore, the default value of LOCAL_QUORUM = (3/2) +1 = 2 (the value is rounded down to an integer).</p>
 <p>With LOCAL_QUORUM = 2, at least two of the three Cassandra nodes in the data center must respond to a read/write operation for the operation to succeed. For a three node Cassandra cluster, the cluster could therefore tolerate one node being down per data center.</p>
-
 <p>By specifying the consistency level as LOCAL_QUORUM, Edge avoids the latency required by validating operations across multiple data centers. If a keyspace used the Cassandra QUORUM value as the consistency level, read/write operations would have to be validated across all data centers.</p>
-
 <p>If you add additional Cassandra nodes to the cluster, the consistency level is not affected.
 Consistency level can be different for read and write queries however it is advised to use same consistency level for read and write.</p>
 ]]></content>
@@ -959,35 +737,23 @@ Consistency level can be different for read and write queries however it is advi
             <guid>/posts/2019/09/cassandra-when-not-to-use/</guid>
             <description>I don&amp;rsquo;t think that I need to explain what Cassandra is. OK, one liner is enough ! It is NoSQL database, primarily used in big data projects.
 Before we start discussing scenarios where Cassandra fits very well, let&amp;rsquo;s discuss where it doesn&amp;rsquo;t fit at all.
-Common mistakes when using Cassandra We&amp;rsquo;ll have lots of data, let&amp;rsquo;s use Cassandra
-Cassandra is not a typical database which fits in every Big Data use case.</description>
+We&amp;rsquo;ll have lots of data, let&amp;rsquo;s use Cassandra
+Cassandra is not a typical database which fits in every Big Data use case. In some no big data cases also it can fit very well.</description>
             <content type="html"><![CDATA[<p>I don&rsquo;t think that I need to explain what Cassandra is. OK, one liner is enough ! It is NoSQL database, primarily used in big data projects.</p>
-
 <p>Before we start discussing scenarios where Cassandra fits very well, let&rsquo;s discuss where it doesn&rsquo;t fit at all.</p>
-
-<h2>Common mistakes when using Cassandra</h2>
-
+<!-- raw HTML omitted -->
 <p><strong>We&rsquo;ll have lots of data, let&rsquo;s use Cassandra</strong></p>
-
 <p>Cassandra is not a typical database which fits in every Big Data use case. In some no big data cases also it can fit very well. At other side it can be a bad choice even in a big data project.
 Cassandra is useless unless you need to read a lot of data in one go and that data is stored side by side so that a single seek read can grab entire data you need.
 It is very bad if your query is returning just one or few rows and you are making lot of queries.</p>
-
 <p><strong>Our organization has Cassandra running as a service so it is easy for us to atleast start with it</strong></p>
-
 <p>So what? Let other teams use but you stay away if it doesn&rsquo;t suite you.
 Sometime MySQL can be a better choice than Cassandra.</p>
-
 <p><strong>Ohh ! CQL is just like SQL. Great !!, now we can query any data !</strong></p>
-
 <p>No this is incorrect. CQL is not SQL. You can&rsquo;t join tables in CQL. There are many other differences too.</p>
-
 <p><strong>Ohh no, Cassandra doesn&rsquo;t allow manipulation of data during read or write</strong></p>
-
 <p>Yes, it just gives you what is stored or simply writes what you give it. No data manupulation on the fly.</p>
-
 <p><strong>WoW, this User defined functions are great things, let&rsquo;s create many</strong></p>
-
 <p>Don&rsquo;t keep Cassandra coordinator busy in doing things which are not related to Cassandra. This will impact the performance of your Cassandra cluster.</p>
 ]]></content>
         </item>
@@ -998,53 +764,35 @@ Sometime MySQL can be a better choice than Cassandra.</p>
             <pubDate>Sat, 14 Sep 2019 17:01:38 +0100</pubDate>
             
             <guid>/posts/2019/09/cassandra-overview-how-is-data-written-and-read/</guid>
-            <description>Agenda  Characterstics How does it internally work References  The Apache Cassandra database is the right choice when you need scalability and high availability without compromising performance. Linear scalability and proven fault-tolerance on commodity hardware or cloud infrastructure make it the perfect platform for mission-critical data. Cassandra&amp;rsquo;s support for replicating across multiple datacenters is best-in-class, providing lower latency for your users and the peace of mind of knowing that you can survive regional outages.</description>
-            <content type="html"><![CDATA[
-
-<h2>Agenda</h2>
-
+            <description>[Characterstics] (#h2-characterstics-h2) [How does it internally work] (#h2-how-does-it-internally-work-h2) [References] (#h2-references-h2)  The Apache Cassandra database is the right choice when you need scalability and high availability without compromising performance. Linear scalability and proven fault-tolerance on commodity hardware or cloud infrastructure make it the perfect platform for mission-critical data. Cassandra&amp;rsquo;s support for replicating across multiple datacenters is best-in-class, providing lower latency for your users and the peace of mind of knowing that you can survive regional outages.</description>
+            <content type="html"><![CDATA[<!-- raw HTML omitted -->
 <ul>
-<li><a href="#h2-characterstics-h2">Characterstics</a></li>
-<li><a href="#h2-how-does-it-internally-work-h2">How does it internally work</a></li>
-<li><a href="#h2-references-h2">References</a></li>
+<li>[Characterstics] (#h2-characterstics-h2)</li>
+<li>[How does it internally work] (#h2-how-does-it-internally-work-h2)</li>
+<li>[References] (#h2-references-h2)</li>
 </ul>
-
 <p>The Apache Cassandra database is the right choice when you need scalability and high availability without compromising performance. Linear scalability and proven fault-tolerance on commodity hardware or cloud infrastructure make it the perfect platform for mission-critical data. Cassandra&rsquo;s support for replicating across multiple datacenters is best-in-class, providing lower latency for your users and the peace of mind of knowing that you can survive regional outages.</p>
-
-<h2 id="h2-characterstics-h2"><h2>Characterstics</h2></h2>
-
+<h2 id="h2charactersticsh2"><!-- raw HTML omitted -->Characterstics<!-- raw HTML omitted --></h2>
 <p><strong>Fault tolerant</strong>
 Data is automatically replicated to multiple nodes for fault-tolerance. Replication across multiple data centers is supported. Failed nodes can be replaced with no downtime.</p>
-
 <p><strong>Performant</strong>
 Cassandra consistently outperforms popular NoSQL alternatives in benchmarks and real applications, primarily because of fundamental architectural choices.</p>
-
 <p><strong>Decentralized</strong>
 There are no single points of failure. There are no network bottlenecks. Every node in the cluster is identical.</p>
-
 <p><strong>Scalable</strong>
 Some of the largest production deployments include Apple&rsquo;s, with over 75,000 nodes storing over 10 PB of data, Netflix (2,500 nodes, 420 TB, over 1 trillion requests per day), Chinese search engine Easou (270 nodes, 300 TB, over 800 million requests per day), and eBay (over 100 nodes, 250 TB).</p>
-
 <p><strong>Durable</strong>
 Cassandra is suitable for applications that can&rsquo;t afford to lose data, even when an entire data center goes down.</p>
-
 <p><strong>You&rsquo;re in control</strong>
 Choose between synchronous or asynchronous replication for each update. Highly available asynchronous operations are optimized with features like Hinted Handoff and Read Repair.</p>
-
 <p><strong>Elastic</strong>
 Read and write throughput both increase linearly as new machines are added, with no downtime or interruption to applications.</p>
-
 <p><strong>Professionally Supported</strong>
 Cassandra support contracts and services are available from third parties.</p>
-
-<h2 id="h2-how-does-it-internally-work-h2"><h2>How does it internally work</h2></h2>
-
-<h3>Writes on a single node</h3>
-
-<p><img src="/caas/cass-write.png" alt="alt text" /></p>
-
+<h2 id="h2how-does-it-internally-workh2"><!-- raw HTML omitted -->How does it internally work<!-- raw HTML omitted --></h2>
+<!-- raw HTML omitted -->
+<p><img src="/caas/cass-write.png" alt="alt text"></p>
 <p>Entire write happens in following steps</p>
-
 <ul>
 <li>Logging data in the commit log</li>
 <li>Writing data to the memtable</li>
@@ -1052,37 +800,22 @@ Cassandra support contracts and services are available from third parties.</p>
 <li>Storing data on disk in SSTables</li>
 <li>Compaction</li>
 </ul>
-
 <p>First thing it does, is writing the data in commit log, which is on disc, because of that it is durable.
 It is append only log which is sequencial write and that is the reason that write in Cassandra is super fast.</p>
-
 <p>Then it writes data in memtable. The memtable is a write-back cache of data partitions that Cassandra looks up by key. The more a table is used, the larger its memtable needs to be. Cassandra can dynamically allocate the right amount of memory for the memtable or you can manage the amount of memory being utilized yourself.</p>
-
 <p>Row in memtable can have 2 billion columns. After writing data in the column it sends acknowldgement back to client.</p>
-
 <p>The memtable, unlike a write-through cache, stores writes until reaching a limit, and then is flushed. When memtable contents exceed a configurable threshold, the memtable data, which includes indexes, is put in a queue to be flushed to disk. To flush the data, Cassandra sorts memtables by partition key and then writes the data to disk sequentially. The process is extremely fast because it involves only a commitlog append and the sequential write.</p>
-
 <p>SSTables are immutable, not written to again after the memtable is flushed. Consequently, a partition is typically stored across multiple SSTable files So, if a row is not in memtable, a read of the row needs look-up in all the SSTable files. This is why read in Cassandra is much slower than write.</p>
-
 <p>Data in the commit log is purged after its corresponding data in the memtable is flushed to the SSTable. The commit log is for recovering the data in memtable in the event of a hardware failure.</p>
-
 <p>as we know that data for a row in SSTable is not in just one SSTable. Whenever data in a row is updated Cassandra writes a new timestamped version of the inserted or updated data in another SSTable. Cassandra also does not delete in place because the SSTable is immutable. Instead, Cassandra marks data to be deleted using a tombstone. Tombstones exist for a configured time period defined by the gc_grace_seconds value set on the table. During compaction, there is a temporary spike in disk space usage and disk I/O because the old and new SSTables co-exist. This diagram depicts the compaction process:</p>
-
-<p><img src="/caas/caas-compaction.png" alt="alt text" /></p>
-
+<p><img src="/caas/caas-compaction.png" alt="alt text"></p>
 <p>Compaction merges the data in each SSTable data by partition key, selecting the latest data for storage based on its timestamp. Cassandra can merge the data performantly, without random IO, because rows are sorted by partition key within each SSTable. After evicting tombstones and removing deleted data, columns, and rows, the compaction process consolidates SSTables into a single file. The old SSTable files are deleted as soon as any pending reads finish using the files. Disk space occupied by old SSTables becomes available for reuse.</p>
-
 <p>Data input to SSTables is sorted to prevent random I/O during SSTable consolidation. After compaction, Cassandra uses the new consolidated SSTable instead of multiple old SSTables, fulfilling read requests more efficiently than before compaction. The old SSTable files are deleted as soon as any pending reads finish using the files. Disk space occupied by old SSTables becomes available for reuse.</p>
-
 <p>Although no random I/O occurs, compaction can still be a fairly heavyweight operation. During compaction, there is a temporary spike in disk space usage and disk I/O because the old and new SSTables co-exist. To minimize deteriorating read speed, compaction runs in the background.</p>
-
-<h3>Coordinated reads</h3>
-
-<p><img src="/caas/caas-read.png" alt="alt text" /></p>
-
+<!-- raw HTML omitted -->
+<p><img src="/caas/caas-read.png" alt="alt text"></p>
 <p>Application client can send data request to any node of your cluster. That node then becomes coordinator for that request. Now it is coordinator&rsquo;s job to talk to other nodes, get the data and return it to client.
 When a read request starts its journey, the data’s partition key is used to find what nodes have the data. After that, the request is sent to a number of nodes set by the tunable consistency level for reads. Then, on each node, in a certain order, Cassandra checks different places that can have the data.</p>
-
 <ul>
 <li>The first one is the memtable.</li>
 <li>If the data is not there, it checks the row key cache (if enabled),</li>
@@ -1093,23 +826,16 @@ When a read request starts its journey, the data’s partition key is used to fi
 <li>If the partition key wasn’t found in partition key cache, Cassandra checks the partition summary</li>
 <li>and then the primary index before going to the compression offsets and extracting the data from the SSTable.</li>
 </ul>
-
 <p>After the data with the latest timestamp is located, it is fetched to the coordinator. Here, another stage of the read occurs. As we’ve stated here, Cassandra has issues with data consistency. The thing is that you write many data replicas and you may read their old versions instead of the newer ones. But Cassandra doesn’t ignore these consistency-related problems: it tries to solve them with a read repair process. The nodes that are involved in the read return results. Then, Cassandra compares these results based on the “last write wins” policy. Hence, the new data version is the main candidate to be returned to the user, while the older versions are rewritten to their nodes. But that’s not all. In the background, Cassandra checks the rest of the nodes that have the requested data (because the replication factor is often bigger than consistency level). When these nodes return results, the DB also compares them and the older ones get rewritten. Only after this, the user actually gets the result.</p>
-
-<h3>Fully replicated</h3>
-
+<!-- raw HTML omitted -->
 <p>You run Cassandra in a cluster with more than one nodes. Which not only gives reliability in case any node goes down but this reliability comes with the fact that data of each node is replicated on other nodes. That is why if any node goes down, other nodes start serving that data.</p>
-
-<p><img src="/caas/caas-cluster.png" alt="alt text" /></p>
-
+<p><img src="/caas/caas-cluster.png" alt="alt text"></p>
 <ul>
 <li>Client writes local</li>
 <li>Data syncs across WAN</li>
 <li>Replication factor per data center</li>
 </ul>
-
-<h2 id="h2-references-h2"><h2>References</h2></h2>
-
+<h2 id="h2referencesh2"><!-- raw HTML omitted -->References<!-- raw HTML omitted --></h2>
 <ul>
 <li><a href="https://docs.datastax.com/en/archived/cassandra/2.0/cassandra/dml/dml_write_path_c.html">https://docs.datastax.com/en/archived/cassandra/2.0/cassandra/dml/dml_write_path_c.html</a></li>
 <li><a href="https://www.scnsoft.com/blog/cassandra-performance">https://www.scnsoft.com/blog/cassandra-performance</a></li>
@@ -1125,63 +851,34 @@ When a read request starts its journey, the data’s partition key is used to fi
             <guid>/posts/2019/08/build-your-website-using-gohugo-and-host-it-on-github-pages/</guid>
             <description>Overview GitHub came up with GitHub pages service, which hosts static web content free of cost. For Tech bloggers and for those who are trying to make their hands dirty in static web content creation, this is the best service at this moment. Read tagline of GitHub Pages -
 GoHugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, GoHugo makes building websites fun again.</description>
-            <content type="html"><![CDATA[
-
-<h3 id="overview">Overview</h3>
-
+            <content type="html"><![CDATA[<h3 id="overview">Overview</h3>
 <p><strong>GitHub</strong> came up with <a href="https://pages.github.com/">GitHub pages service</a>, which hosts static web content free of cost. For Tech bloggers and for those who are trying to make their hands dirty in static web content creation, this is the best service at this moment. Read tagline of GitHub Pages -</p>
-
-<p><img src="/GitHub-pages-intro.PNG" alt="alt text" /></p>
-
+<p><img src="/GitHub-pages-intro.PNG" alt="alt text"></p>
 <p><strong>GoHugo</strong> is one of the most popular open-source <a href="https://gohugo.io/">static site generators</a>. With its amazing speed and flexibility, GoHugo makes building websites fun again. It is <a href="https://themes.gohugo.io/">theme</a> based framework. You write markdown files and hugo creates static html by blending the content written in markdown files with the theme you selected. I am using <a href="https://themes.gohugo.io/hugo-theme-hello-friend-ng/">hello-friend-ng</a> theme for this website. And this entire post is written in single markdown file. Result is in-front of you. In future, I can choose any other theme and same content then will be presented differently on UI.</p>
-
-<p><img src="/Hugo-intro.PNG" alt="alt text" /></p>
-
+<p><img src="/Hugo-intro.PNG" alt="alt text"></p>
 <p>Now, In this post I will explain the step by step procedure to create a personal blog site using Hugo and then hosting this on GitHubPages.</p>
-
-<h3 id="step-1-repository-setup-in-github">Step 1 - Repository setup in GitHub</h3>
-
-<h4 id="1-1-to-create-a-user-page-site-on-github-pages-create-a-repository-using-the-naming-scheme-lt-username-gt-github-io">1.1 - To create a User Page site on GitHub Pages, create a repository using the naming scheme  &lt;username&gt;.github.io.</h4>
-
+<h3 id="step-1---repository-setup-in-github">Step 1 - Repository setup in GitHub</h3>
+<h4 id="11---to-create-a-user-page-site-on-github-pages-create-a-repository-using-the-naming-scheme--ltusernamegtgithubio">1.1 - To create a User Page site on GitHub Pages, create a repository using the naming scheme  &lt;username&gt;.github.io.</h4>
 <p>My GitHub username is prashantbhardwaj hence I created a repository with the name as <em>prashantbhardwaj.github.io</em>.
 Now, when I will push any static web contents like HTML, CSS or JS files, those files will be hosted on GitHub Pages and can be accessed on this <a href="https://prashantbhardwaj.github.io">URL</a>. Please Note - Content from the master branch will be used to publish your GitHub Pages site.</p>
-
-<h4 id="1-2-now-create-one-more-repository-to-keep-the-code-of-your-hugo-website-project">1.2 - Now create one more repository to keep the code of your Hugo Website project.</h4>
-
+<h4 id="12---now-create-one-more-repository-to-keep-the-code-of-your-hugo-website-project">1.2 - Now create one more repository to keep the code of your Hugo Website project.</h4>
 <p>GoHugo will be used to create static content of your website. To do so, you need a github repository to keep you Hugo project code. Finally that generated static content will be pushed into &lt;username&gt;.github.io repository. You can give any name for your GoHugo project repository. I chose <em>website</em>.</p>
-
 <h4 id="please-note">Please note</h4>
-
 <p>These two repository will remain blank until step 3. Later we will use these repositories to push static website content and the GoHugo code which will be used to generate these static web content.</p>
-
-<h3 id="step-2-gohugo-installation">Step 2 - GoHugo installation</h3>
-
+<h3 id="step-2---gohugo-installation">Step 2 - GoHugo installation</h3>
 <p>To install GoHugo in your local machine, follow steps mentioned on this <a href="https://gohugo.io/getting-started/installing/">page</a>.</p>
-
-<h3 id="step-3-learn-gohugo">Step 3 - Learn GoHugo</h3>
-
+<h3 id="step-3---learn-gohugo">Step 3 - Learn GoHugo</h3>
 <p>Check this <a href="https://www.youtube.com/watch?v=qtIqKaDlqXo&amp;list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3">YouTube playlist</a>, to learn GoHugo, step by step. During this learning exercise you will also create your GoHugo website project.</p>
-
-<h3 id="step-4-link-your-gohugo-project-to-your-github-repository">Step 4 - Link your GoHugo project to your github repository.</h3>
-
+<h3 id="step-4---link-your-gohugo-project-to-your-github-repository">Step 4 - Link your GoHugo project to your github repository.</h3>
 <p>I hope during learning GoHugo by watching the youtube clips mentioned in previous step, you created your project. Now, it is time to link your GoHugo project with your website project repository you created under step 1.2. Steps to link your project code with GitHub repository are mentioned on your GitHub repository home page. Open that home page on your GitHub repository website and follow them.</p>
-
-<h3 id="step-5-link-your-theme-subproject-with-its-github-repository">Step 5 - Link your theme subproject with its github repository.</h3>
-
+<h3 id="step-5---link-your-theme-subproject-with-its-github-repository">Step 5 - Link your theme subproject with its github repository.</h3>
 <p>I hope during learning GoHugo by watching the youtube clips mentioned in previous step, you created your project and if so then probably you downloaded your chosen theme from it&rsquo;s GitHub repository. For my project, I cloned hello-friend-ng theme from <a href="https://github.com/rhazdon/hugo-theme-hello-friend-ng.git">it&rsquo;s github repository</a> in my project&rsquo;s themes directory. As mentioned on <a href="https://themes.gohugo.io/hugo-theme-hello-friend-ng/">hello-friend-ng</a> website, I used following command to link this theme subproject with my main website project -</p>
-
 <p><code>$ git submodule add https://github.com/rhazdon/hugo-theme-hello-friend-ng.git themes/hello-friend-ng</code></p>
-
 <p>There is a benefit of linking your theme subproject with your theme&rsquo;s GitHub repository - whenever there will be any changes in your theme&rsquo;s code, you can very easily download them by using <code>git clone</code> command.</p>
-
-<h3 id="step-6-generate-static-content-of-your-website">Step 6 - Generate static content of your website</h3>
-
+<h3 id="step-6---generate-static-content-of-your-website">Step 6 - Generate static content of your website</h3>
 <p><code>hugo -t theme-name</code> command generates static content of your website in <code>/public</code> directory. If you will link this directory with the repository created under step 1.1 the by just pushing that generated static web content, your website will be hosted on GitHubPages. Steps to link your <code>/public</code> with GitHub repository are mentioned on your GitHub repository home page. Open that home page on your GitHub repository website and follow them.</p>
-
 <p>Now add this github project as submodule with your main website project. Detailed steps are mentioned <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">here</a>.</p>
-
 <h3 id="useful-links">Useful Links</h3>
-
 <ul>
 <li><a href="https://www.youtube.com/watch?v=qtIqKaDlqXo&amp;list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3">Videos to learn GoHugo</a></li>
 <li><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#emphasis">Markdown cheatsheet</a></li>

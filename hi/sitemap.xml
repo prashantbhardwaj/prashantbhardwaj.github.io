@@ -1,11 +1,48 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
+    <loc>/hi/tags/constitution/</loc>
+    <lastmod>2021-03-10T22:21:33+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/constitution/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="hi"
+                href="/hi/tags/constitution/"
+                />
+  </url><url>
+    <loc>/hi/tags/gram-vikas/</loc>
+    <lastmod>2021-03-10T22:21:33+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/gram-vikas/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="hi"
+                href="/hi/tags/gram-vikas/"
+                />
+  </url><url>
+    <loc>/hi/tags/panchayat/</loc>
+    <lastmod>2021-03-10T22:21:33+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/panchayat/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="hi"
+                href="/hi/tags/panchayat/"
+                />
+  </url><url>
     <loc>/hi/posts/</loc>
     <lastmod>2021-03-10T22:21:33+00:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -16,12 +53,9 @@
                 hreflang="hi"
                 href="/hi/posts/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/hi/tags/</loc>
     <lastmod>2021-03-10T22:21:33+00:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -32,30 +66,9 @@
                 hreflang="hi"
                 href="/hi/tags/"
                 />
-  </url>
-  
-  <url>
-    <loc>/hi/tags/constitution/</loc>
-    <lastmod>2021-03-10T22:21:33+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/hi/tags/gram-vikas/</loc>
-    <lastmod>2021-03-10T22:21:33+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/hi/tags/panchayat/</loc>
-    <lastmod>2021-03-10T22:21:33+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/hi/</loc>
     <lastmod>2021-03-10T22:21:33+00:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -66,35 +79,32 @@
                 hreflang="hi"
                 href="/hi/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/hi/posts/2021/03/%E0%A4%AD%E0%A4%BE%E0%A4%B0%E0%A4%A4-%E0%A4%95%E0%A5%87-%E0%A4%B8%E0%A4%82%E0%A4%B5%E0%A4%BF%E0%A4%A7%E0%A4%BE%E0%A4%A8-%E0%A4%95%E0%A4%BE-%E0%A4%AD%E0%A4%BE%E0%A4%97-9-%E0%A4%AA%E0%A4%82%E0%A4%9A%E0%A4%BE%E0%A4%AF%E0%A4%A4%E0%A5%8B%E0%A4%82-%E0%A4%95%E0%A5%87-%E0%A4%B2%E0%A4%BF%E0%A4%8F-%E0%A4%A8%E0%A4%BF%E0%A4%AF%E0%A4%AE/</loc>
     <lastmod>2021-03-10T22:21:33+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/hi/tags/farm-bills-2020/</loc>
     <lastmod>2021-02-17T22:07:39+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/farm-bills-2020/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="hi"
+                href="/hi/tags/farm-bills-2020/"
+                />
+  </url><url>
     <loc>/hi/posts/2021/02/%E0%A4%95%E0%A5%8D%E0%A4%AF%E0%A4%BE-%E0%A4%95%E0%A4%BF%E0%A4%B8%E0%A4%BE%E0%A4%A8%E0%A5%8B%E0%A4%82-%E0%A4%95%E0%A5%8B-msp-%E0%A4%AA%E0%A4%B0-%E0%A5%98%E0%A4%BE%E0%A4%A8%E0%A5%82%E0%A4%A8%E0%A5%80-%E0%A4%85%E0%A4%A7%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%B0-%E0%A4%AE%E0%A4%BF%E0%A4%B2%E0%A4%A8%E0%A4%BE-%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%BF%E0%A4%8F/</loc>
     <lastmod>2021-02-17T22:07:39+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/hi/posts/2019/11/%E0%A4%AE%E0%A4%A8%E0%A4%AE%E0%A4%B0%E0%A5%8D%E0%A4%9C%E0%A4%BF%E0%A4%AF%E0%A4%BE%E0%A4%82-%E0%A4%B2%E0%A5%81%E0%A4%9F%E0%A5%87%E0%A4%B0%E0%A4%BE-2013/</loc>
     <lastmod>2019-11-03T21:11:09+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/hi/posts/2019/08/%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%A4%E0%A5%8D%E0%A4%AF%E0%A5%87%E0%A4%95-%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A4%BF-%E0%A4%95%E0%A4%BE-%E0%A4%95%E0%A4%B2%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%A3-%E0%A4%95%E0%A5%88%E0%A4%B8%E0%A5%87-%E0%A4%B8%E0%A4%82%E0%A4%AD%E0%A4%B5/</loc>
     <lastmod>2019-08-13T23:10:51+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/hi/about/</loc>
     <lastmod>2019-08-13T00:40:27+01:00</lastmod>
     <xhtml:link
@@ -107,9 +117,33 @@
                 hreflang="hi"
                 href="/hi/about/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>/hi/tags/github-pages/</loc>
+    <lastmod>2019-08-12T23:22:50+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/github-pages/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="hi"
+                href="/hi/tags/github-pages/"
+                />
+  </url><url>
+    <loc>/hi/tags/go-hugo/</loc>
+    <lastmod>2019-08-12T23:22:50+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/go-hugo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="hi"
+                href="/hi/tags/go-hugo/"
+                />
+  </url><url>
     <loc>/hi/posts/2019/08/hugo-%E0%A4%95%E0%A4%BE-%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%AF%E0%A5%8B%E0%A4%97-%E0%A4%95%E0%A4%B0-%E0%A4%AC%E0%A4%A8%E0%A4%BE%E0%A4%AF%E0%A5%87%E0%A4%82-%E0%A4%85%E0%A4%AA%E0%A4%A8%E0%A5%80-%E0%A4%B5%E0%A5%87%E0%A4%AC%E0%A4%B8%E0%A4%BE%E0%A4%87%E0%A4%9F-%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82-%E0%A4%B9%E0%A5%8B%E0%A4%B8%E0%A5%8D%E0%A4%9F-github-pages-%E0%A4%AA%E0%A4%B0-%E0%A4%B5%E0%A5%8B-%E0%A4%AD%E0%A5%80-%E0%A4%AE%E0%A5%81%E0%A5%9E%E0%A5%8D%E0%A4%A4-%E0%A4%AE%E0%A5%87%E0%A4%82/</loc>
     <lastmod>2019-08-12T23:22:50+01:00</lastmod>
     <xhtml:link
@@ -122,44 +156,9 @@
                 hreflang="hi"
                 href="/hi/posts/2019/08/hugo-%E0%A4%95%E0%A4%BE-%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%AF%E0%A5%8B%E0%A4%97-%E0%A4%95%E0%A4%B0-%E0%A4%AC%E0%A4%A8%E0%A4%BE%E0%A4%AF%E0%A5%87%E0%A4%82-%E0%A4%85%E0%A4%AA%E0%A4%A8%E0%A5%80-%E0%A4%B5%E0%A5%87%E0%A4%AC%E0%A4%B8%E0%A4%BE%E0%A4%87%E0%A4%9F-%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82-%E0%A4%B9%E0%A5%8B%E0%A4%B8%E0%A5%8D%E0%A4%9F-github-pages-%E0%A4%AA%E0%A4%B0-%E0%A4%B5%E0%A5%8B-%E0%A4%AD%E0%A5%80-%E0%A4%AE%E0%A5%81%E0%A5%9E%E0%A5%8D%E0%A4%A4-%E0%A4%AE%E0%A5%87%E0%A4%82/"
                 />
-  </url>
-  
-  <url>
-    <loc>/hi/tags/github-pages/</loc>
-    <lastmod>2019-08-12T23:22:50+01:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/tags/github-pages/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="hi"
-                href="/hi/tags/github-pages/"
-                />
-  </url>
-  
-  <url>
-    <loc>/hi/tags/go-hugo/</loc>
-    <lastmod>2019-08-12T23:22:50+01:00</lastmod>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/tags/go-hugo/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="hi"
-                href="/hi/tags/go-hugo/"
-                />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/hi/tags/open-source/</loc>
     <lastmod>2019-08-12T23:22:50+01:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -170,12 +169,9 @@
                 hreflang="hi"
                 href="/hi/tags/open-source/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/hi/tags/website/</loc>
     <lastmod>2019-08-12T23:22:50+01:00</lastmod>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -186,11 +182,8 @@
                 hreflang="hi"
                 href="/hi/tags/website/"
                 />
-  </url>
-  
-  <url>
+  </url><url>
     <loc>/hi/categories/</loc>
-    <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -202,5 +195,4 @@
                 href="/hi/categories/"
                 />
   </url>
-  
 </urlset>
