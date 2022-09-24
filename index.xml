@@ -80,8 +80,8 @@ This bridge application should satisfy following requirements -
       <pubDate>Sun, 29 Dec 2019 11:53:57 +0000</pubDate>
       
       <guid>/posts/document-oriented-databases/</guid>
-      <description>[Overview] (#h2-overview-h2) [ArangoDB] (#h2-arangodb-h2) [CouchDB] (#h2-couchdb-h2) [Crate.IO] (#h2-crate.io-h2) [OrientDB] (#h2-orientdb-h2) [SednaDB] (#h2-sednadb-h2) [Apache-Solr] (#h2-apache-solr-h2) [RethinkDB] (#h2-rethinkdb-h2) [MongoDB] (#h2-mongodbdb-h2) [References] (#h2-references-h2)  Overview A document-oriented database is a database designed for storing, retrieving and managing document-oriented information, also known as semi-structured data.
-Document-oriented databases are one of the main categories of NoSQL databases, and the popularity of the term &amp;ldquo;document-oriented database&amp;rdquo; has grown with the use of the term NoSQL itself.</description>
+      <description>Overview ArangoDB CouchDB Crate.IO OrientDB SednaDB Apache-Solr RethinkDB MongoDB References  Overview A document-oriented database is a database designed for storing, retrieving and managing document-oriented information, also known as semi-structured data.
+Document-oriented databases are one of the main categories of NoSQL databases, and the popularity of the term &amp;ldquo;document-oriented database&amp;rdquo; has grown with the use of the term NoSQL itself. XML databases are a subclass of document-oriented databases that are optimized to work with XML documents.</description>
     </item>
     
     <item>

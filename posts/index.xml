@@ -346,28 +346,28 @@ This bridge application should satisfy following requirements -
             <pubDate>Sun, 29 Dec 2019 11:53:57 +0000</pubDate>
             
             <guid>/posts/document-oriented-databases/</guid>
-            <description>[Overview] (#h2-overview-h2) [ArangoDB] (#h2-arangodb-h2) [CouchDB] (#h2-couchdb-h2) [Crate.IO] (#h2-crate.io-h2) [OrientDB] (#h2-orientdb-h2) [SednaDB] (#h2-sednadb-h2) [Apache-Solr] (#h2-apache-solr-h2) [RethinkDB] (#h2-rethinkdb-h2) [MongoDB] (#h2-mongodbdb-h2) [References] (#h2-references-h2)  Overview A document-oriented database is a database designed for storing, retrieving and managing document-oriented information, also known as semi-structured data.
-Document-oriented databases are one of the main categories of NoSQL databases, and the popularity of the term &amp;ldquo;document-oriented database&amp;rdquo; has grown with the use of the term NoSQL itself.</description>
+            <description>Overview ArangoDB CouchDB Crate.IO OrientDB SednaDB Apache-Solr RethinkDB MongoDB References  Overview A document-oriented database is a database designed for storing, retrieving and managing document-oriented information, also known as semi-structured data.
+Document-oriented databases are one of the main categories of NoSQL databases, and the popularity of the term &amp;ldquo;document-oriented database&amp;rdquo; has grown with the use of the term NoSQL itself. XML databases are a subclass of document-oriented databases that are optimized to work with XML documents.</description>
             <content type="html"><![CDATA[<!-- raw HTML omitted -->
 <ul>
-<li>[Overview] (#h2-overview-h2)</li>
-<li>[ArangoDB] (#h2-arangodb-h2)</li>
-<li>[CouchDB] (#h2-couchdb-h2)</li>
-<li>[Crate.IO] (#h2-crate.io-h2)</li>
-<li>[OrientDB] (#h2-orientdb-h2)</li>
-<li>[SednaDB] (#h2-sednadb-h2)</li>
-<li>[Apache-Solr] (#h2-apache-solr-h2)</li>
-<li>[RethinkDB] (#h2-rethinkdb-h2)</li>
-<li>[MongoDB] (#h2-mongodbdb-h2)</li>
-<li>[References] (#h2-references-h2)</li>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#arangodb">ArangoDB</a></li>
+<li><a href="#couchdb">CouchDB</a></li>
+<li><a href="#crateio">Crate.IO</a></li>
+<li><a href="#orientdb">OrientDB</a></li>
+<li><a href="#sednadb">SednaDB</a></li>
+<li><a href="#apache-solr">Apache-Solr</a></li>
+<li><a href="#rethinkdb">RethinkDB</a></li>
+<li><a href="#mongodb">MongoDB</a></li>
+<li><a href="#references">References</a></li>
 </ul>
-<h2 id="h2overviewh2"><!-- raw HTML omitted -->Overview<!-- raw HTML omitted --></h2>
+<h2 id="overview">Overview</h2>
 <p>A document-oriented database is a database designed for storing, retrieving and managing document-oriented information, also known as semi-structured data.</p>
 <p>Document-oriented databases are one of the main categories of NoSQL databases, and the popularity of the term &ldquo;document-oriented database&rdquo; has grown with the use of the term NoSQL itself. XML databases are a subclass of document-oriented databases that are optimized to work with XML documents. Graph databases are similar, but add another layer, the relationship, which allows them to link documents for rapid traversal.</p>
 <p>Document-oriented databases are inherently a subclass of the key-value store, another NoSQL database concept. The difference lies in the way the data is processed; in a key-value store, the data is considered to be inherently opaque to the database, whereas a document-oriented system relies on internal structure in the document in order to extract metadata that the database engine uses for further optimization. Although the difference is often moot due to tools in the systems, conceptually the document-store is designed to offer a richer experience with modern programming techniques.</p>
 <p>Document databases contrast strongly with the traditional relational database (RDB). Relational databases generally store data in separate tables that are defined by the programmer, and a single object may be spread across several tables. Document databases store all information for a given object in a single instance in the database, and every stored object can be different from every other. This eliminates the need for object-relational mapping while loading data into the database.</p>
 <p>Next, we are going to discuss some of the popular &lsquo;Document Oriented Databases&rsquo; -</p>
-<h2 id="h2arangodbh2"><!-- raw HTML omitted -->ArangoDB<!-- raw HTML omitted --></h2>
+<h2 id="arangodb">ArangoDB</h2>
 <p>(<a href="https://www.arangodb.com/">https://www.arangodb.com/</a>)</p>
 <p>ArangoDB is the open-source native multi-model database for graph, document, key/value and search needs.</p>
 <p>In this database -</p>
@@ -376,7 +376,7 @@ Document-oriented databases are one of the main categories of NoSQL databases, a
 <p>For Data Scientiests - Combine the flexibility of JSON with semantic search and graph technology for next generation feature extraction even for large datasets.</p>
 <p>ArangoDB OASIS is scalable fully managed service for ArangoDB. Which can be deployed in AWS, Google Cloud or Azure. It can be run under Docker or Kubernetes.</p>
 <p>AQL (ArangoDB&rsquo;s query language) is a declarative query language letting you access the very same data with a broad range of access patterns like traversals, JOINs, search, geospatial or any combination. Everyone experienced with SQL will have an easy start with AQL and might think AQL feels more like coding.</p>
-<h2 id="h2couchdbh2"><!-- raw HTML omitted -->CouchDB<!-- raw HTML omitted --></h2>
+<h2 id="couchdb">CouchDB</h2>
 <p>(<a href="https://couchdb.apache.org/">https://couchdb.apache.org/</a>)</p>
 <p>Seamless multi-master sync, that scales from Big Data to Mobile, with an Intuitive HTTP/JSON API and designed for Reliability.
 Apache CouchDB™ lets you access your data where you need it. The Couch Replication Protocol is implemented in a variety of projects and products that span every imaginable computing environment from globally distributed server-clusters, over mobile phones to web browsers.</p>
@@ -388,7 +388,7 @@ Apache CouchDB™ lets you access your data where you need it. The Couch Replica
 <p><strong>Ecosystem</strong> CouchDB is built for servers (from a Raspberry Pi to big cloud installations), while PouchDB is built for mobile &amp; desktop web-browsers and Couchbase Lite is built for native iOS &amp; Android apps. And all of them can seamlessly replicate data with each other.
 CouchDB is serious about data reliability.</p>
 <p><strong>Reliability</strong> Individual nodes use a crash-resistent append-only data structure. A multi-node CouchDB cluster saves all data redundantly, so it is always available when you need it.</p>
-<h2 id="h2crateioh2"><!-- raw HTML omitted -->Crate.IO<!-- raw HTML omitted --></h2>
+<h2 id="crateio">Crate.IO</h2>
 <p>(<a href="https://crate.io/">https://crate.io/</a>)</p>
 <p>It claims to be the #1 database for IoT-scale. Purpose-built to scale modern applications in a machine data world.</p>
 <p>A highly scalable SQL database seam­lessly growing with the use case. Pro­cess, store, query &amp; analyze massive amounts of data in real-time with ease.</p>
@@ -397,11 +397,11 @@ CouchDB is serious about data reliability.</p>
 <p><strong>Real-time Performance</strong> Distributed. In-memory. Columnar. Query a firehose of data in real time&ndash;time series, geospatial, joins, aggregations, text search,&hellip;</p>
 <p><strong>Dynamic Schema</strong> Schema evolves automatically as new columns are inserted. Elegantly handles any tabular or non-tabular data to support a wide range of use cases.</p>
 <p><strong>Instant Results</strong> Monitor your data in real-time. Connect your data to any SQL-based visualization tool. Turn your data into action.</p>
-<h2 id="h2orientdbh2"><!-- raw HTML omitted -->OrientDB<!-- raw HTML omitted --></h2>
+<h2 id="orientdb">OrientDB</h2>
 <p>(<a href="https://orientdb.org">https://orientdb.org</a>)</p>
 <p>OrientDB is the first Multi-Model Open Source NoSQL DBMS that combines the power of graphs and the flexibility of documents into one scalable, high-performance operational database.</p>
 <p>Gone are the days where your database only supports a single data model. As a direct response to polyglot persistence, multi-model databases acknowledge the need for multiple data models, combining them to reduce operational complexity and maintain data consistency. Though graph databases have grown in popularity, most NoSQL products are still used to provide scalability to applications sitting on a relational DBMS. Advanced 2nd generation NoSQL products like OrientDB are the future: providing more functionality and flexibility, while being powerful enough to replace your operational DBMS.</p>
-<h2 id="h2sednadbh2"><!-- raw HTML omitted -->SednaDB<!-- raw HTML omitted --></h2>
+<h2 id="sednadb">SednaDB</h2>
 <p>(<a href="https://www.sedna.org/">https://www.sedna.org/</a>)</p>
 <p>Sedna is a free native XML database which provides a full range of core database services - persistent storage, ACID transactions, security, indices, hot backup. Flexible XML processing facilities include W3C XQuery implementation, tight integration of XQuery with full-text search facilities and a node-level update language.</p>
 <p><strong>Basic Features</strong></p>
@@ -420,7 +420,7 @@ CouchDB is serious about data reliability.</p>
 <li>XQuery external functions implemented in C</li>
 <li>Database security (users, roles and privileges)</li>
 </ul>
-<h2 id="h2apache-solrh2"><!-- raw HTML omitted -->Apache Solr<!-- raw HTML omitted --></h2>
+<h2 id="apache-solr">Apache Solr</h2>
 <p>(<a href="https://lucene.apache.org/solr/">https://lucene.apache.org/solr/</a>)</p>
 <p>Solr is the popular, blazing-fast, open source enterprise search platform built on Apache Lucene.
 Solr is highly reliable, scalable and fault tolerant, providing distributed indexing, replication and load-balanced querying, automated failover and recovery, centralized configuration and more. Solr powers the search and navigation features of many of the world&rsquo;s largest internet sites.</p>
@@ -436,7 +436,7 @@ Solr is highly reliable, scalable and fault tolerant, providing distributed inde
 <li>Near Real-Time Indexing</li>
 <li>Extensible Plugin Architecture</li>
 </ul>
-<h2 id="h2rethinkdbh2"><!-- raw HTML omitted -->RethinkDB<!-- raw HTML omitted --></h2>
+<h2 id="rethinkdb">RethinkDB</h2>
 <p>(<a href="https://rethinkdb.com/">https://rethinkdb.com/</a>)</p>
 <p>RethinkDB is the open-source, scalable database that makes building realtime apps dramatically easier.
 RethinkDB pushes JSON to your apps in realtime. When your app polls for data, it becomes slow, unscalable, and cumbersome to maintain.</p>
@@ -468,7 +468,7 @@ RethinkDB has powerful Hadoop-style map-reduce tools, that integrate cleanly int
 Learn how to use GeoJSON features to build location-aware apps in RethinkDB.</p>
 <p><strong>Deploying with a PaaS</strong>
 Learn how to deploy RethinkDB on cloud services like Compose.io, AWS, and others.</p>
-<h2 id="h2mongodbh2"><!-- raw HTML omitted -->MongoDB<!-- raw HTML omitted --></h2>
+<h2 id="mongodb">MongoDB</h2>
 <p>(<a href="https://www.mongodb.com/">https://www.mongodb.com/</a>)</p>
 <p>As claimed by themselves, it is most popular database. It is a general purpose, document-based, distributed database built for modern application developers and for the cloud era. No database makes you more productive.</p>
 <p>MongoDB is a document database, which means it stores data in JSON-like documents. We believe this is the most natural way to think about data, and is much more expressive and powerful than the traditional row/column model.</p>
@@ -493,7 +493,7 @@ Two types of relationships instead of one: reference and embedded.</p>
 <li>BI Connector</li>
 <li>Compass</li>
 </ul>
-<h2 id="h2referencesh2"><!-- raw HTML omitted -->References<!-- raw HTML omitted --></h2>
+<h2 id="references">References</h2>
 <ul>
 <li>Wikipedia</li>
 <li>Websites of mentioned databases</li>
