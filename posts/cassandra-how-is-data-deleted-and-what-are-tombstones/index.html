@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Prashant Bhardwaj ">
+<meta name="description" content="Data in Cassandra is replcated on more than one node. In another terms - &amp;lsquo;Same data is copied on more than one node&amp;rsquo;. Any change in that data should be made in all the copies of that data stored on various nodes of a cluster. Same is applied for deletes as well. If a data is deleted then it should be deleted from all the nodes. But what if any node which has a copy of that data is down." />
+<meta name="keywords" content="homepage, blog, science, informatics, development, programming, cassandra, open-source, apache, databases" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="#252627" />
+<link rel="canonical" href="/posts/cassandra-how-is-data-deleted-and-what-are-tombstones/" />
+
+
+    <title>
+        
+            Cassandra : How is data deleted and what are Tombstones? :: Prashant Bhardwaj  — A Java developer
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.4e5c639214707eff609bb55fe49e183dee42258a73bc90e4cc7b0a84f900798a.css">
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="Cassandra : How is data deleted and what are Tombstones?">
+<meta itemprop="description" content="Data in Cassandra is replcated on more than one node. In another terms - &lsquo;Same data is copied on more than one node&rsquo;. Any change in that data should be made in all the copies of that data stored on various nodes of a cluster. Same is applied for deletes as well. If a data is deleted then it should be deleted from all the nodes. But what if any node which has a copy of that data is down."><meta itemprop="datePublished" content="2019-10-16T22:56:24+01:00" />
+<meta itemprop="dateModified" content="2019-10-16T22:56:24+01:00" />
+<meta itemprop="wordCount" content="1008"><meta itemprop="image" content="/"/>
+<meta itemprop="keywords" content="cassandra,open-source,apache,databases," />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/"/>
+
+<meta name="twitter:title" content="Cassandra : How is data deleted and what are Tombstones?"/>
+<meta name="twitter:description" content="Data in Cassandra is replcated on more than one node. In another terms - &lsquo;Same data is copied on more than one node&rsquo;. Any change in that data should be made in all the copies of that data stored on various nodes of a cluster. Same is applied for deletes as well. If a data is deleted then it should be deleted from all the nodes. But what if any node which has a copy of that data is down."/>
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2019-10-16 22:56:24 &#43;0100 BST" />
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark"> </span>
+            <span class="logo__text">Prashant Bhardwaj</span>
+            <span class="logo__cursor" style=
+                  "visibility:hidden;
+                   background-color:#67a2c9;
+                   animation-duration:2s;">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about">About Me</a></li><li><a href="/posts">Articles</a></li><li><a href="/hi">हिन्दी</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        5 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="/posts/cassandra-how-is-data-deleted-and-what-are-tombstones/">Cassandra : How is data deleted and what are Tombstones?</a>
+      </h1>
+
+      
+
+      
+
+      
+
+      <div class="post-content">
+        <p>Data in Cassandra is replcated on more than one node. In another terms - &lsquo;Same data is copied on more than one node&rsquo;. Any change in that data should be made in all the copies of that data stored on various nodes of a cluster. Same is applied for <strong>deletes</strong> as well. If a data is deleted then it should be deleted from all the nodes. But what if any node which has a copy of that data is down. When that node will come up and will be asked for that data, it will provide that data and same data will be copied on other nodes once again. Such data is called <strong>Zombie</strong> record.</p>
+<p>How does Cassandra make sure that if a data is deleted than it should be deleted from all the nodes even if any node where that data is stored, is down. Cassandra manages that by creating <strong>tombstones</strong>.</p>
+<p>How does these tombstones help Cassandra? Now again think about the scenario in which a data is stored on three nodes. With Local_Quorum consistency and 3 replication factor and just 2 nodes are up and running, if DELETE requests came, data got deleted from 2 live nodes, while remained saved on one node which was down when DELETE request came. Now this third node comes up and a READ request comes. This third node returns the data but other two nodes say that we had data but now we have tombstones at the place of that data. Now, cassandra knows that if two nodes have tombstones that means that data was deleted and then it repairs data on that remaining third node and deletes from that node as well.</p>
+<p>Now, we understand why Cassandra creates tombstones to flagged the data as deleted so that same message can be propegated to nodes which were down when DELETE request came. But another question here - Is DELETE is the only operation, in which Cassandra creates tombstone? Answer is &lsquo;NO&rsquo;.</p>
+<p>Tombstones are created in following cases -</p>
+<ul>
+<li>Using a CQL DELETE statement</li>
+<li>Expiring data with time-to-live (TTL)</li>
+<li>Using internal operations, such as Using materialized views</li>
+<li>INSERT or UPDATE operations with a null value</li>
+<li>UPDATE operations with a collection column</li>
+</ul>
+<p>When a tombstone is created, it can be marked on different parts of a partition. Based on the location of the marker, tombstones can be categorized into one of the following groups. Each category typically corresponds to one unique type of data deletion operation.</p>
+<ul>
+<li>Partition tombstones</li>
+<li>Row tombstones</li>
+<li>Range tombstones</li>
+<li>ComplexColumn tombstones</li>
+<li>Cell tombstones</li>
+<li>TTL tombstones</li>
+</ul>
+<p>All of these types are explained in details <a href="https://docs.datastax.com/en/dse/5.1/dse-arch/datastax_enterprise/dbInternals/archTombstones.html">on this page</a>.</p>
+<p>The tombstones go through the write path, and are written to SSTables on one or more nodes. A key differentiator of a tombstone is a built-in expiration known as the grace period, set by gc_grace_seconds. At the end of its expiration period, the tombstone is deleted as part of the normal compaction process.</p>
+<p>Having an excessive number of tombstones in a table can negatively impact application performance. Many tombstones often indicate potential issues with either the data model or in the application.</p>
+<p><strong>Partition tombstones</strong></p>
+<p>Partition tombstones are generated when an entire partition is deleted explicitly. In the CQL DELETE statement, the WHERE clause is an equality condition against the partition key.</p>
+<pre><code>DELETE from cycling.rank_by_year_and_name WHERE 
+ race_year = 2014 AND race_name = '4th Tour of Beijing';
+</code></pre><p><strong>Row tombstones</strong></p>
+<p>Row tombstones are generated when a particular row within a partition is deleted explicitly. The schema has a composite primary key that includes both the partition key and the clustering key. In the CQL DELETE statement, the WHERE clause is an equality condition against both the partition key and the clustering key columns.</p>
+<pre><code>DELETE from cycling.rank_by_year_and_name WHERE 
+ race_year = 2015 AND race_name = 'Giro d''Italia - Stage 11 - Forli &gt; Imola' AND rank = 2;
+</code></pre><p><strong>Range tombstones</strong></p>
+<p>Range tombstones occur when several rows within a partition that can be expressed through a range search are deleted explicitly. The schema has a composite primary key that includes both a partition key and a clustering key. In the CQL DELETE statement, the WHERE clause is an equality condition against the partition key, plus an inequality condition against the clustering key.
+Tip: If following this tutorial from the beginning, drop the rank_by_year_and_name table and then recreate it to populate the table with the necessary data.</p>
+<pre><code>DELETE from cycling.rank_by_year_and_name WHERE 
+ race_year = 2015 AND race_name = 'Tour of Japan - Stage 4 - Minami &gt; Shinshu' AND rank &gt; 1;
+</code></pre><p><strong>ComplexColumn tombstones</strong></p>
+<p>ComplexColumn tombstones are generated when inserting or updating a collection type column, such as set, list, and map.</p>
+<p>Previously we created the cyclist_career_teams table. Run the following cqlsh command to insert data into that table.</p>
+<pre><code>INSERT INTO cycling.cyclist_career_teams (
+     id,
+     lastname,
+     teams)
+     VALUES (cb07baad-eac8-4f65-b28a-bddc06a0de23, 'ARMITSTEAD', { 
+     'Boels-Dolmans Cycling Team','AA Drink - Leontien.nl','Team Garmin - Cervelo' } );
+</code></pre><p><strong>Cell tombstones</strong></p>
+<p>Cell tombstones are generated when explicitly deleting a value from a cell, such as a column for a specific row of a partition, or when inserting or updating a cell with null values, as shown in the following example.</p>
+<pre><code>INSERT INTO cycling.rank_by_year_and_name (
+     race_year,
+     race_name,
+     cyclist_name,
+     rank)
+     VALUES (2018, 'Giro d''Italia - Stage 11 - Osimo &gt; Imola', null, 1);
+</code></pre><p><strong>TTL tombstones</strong></p>
+<p>TTL tombstones are generated when the TTL (time-to-live) period expires. The TTL expiration marker can occur at either the row or cell level. However, DSE marks TTL data differently from tombstone data that was explicitly deleted. Even if a partition has only a single row (with no clustering key), the TTL mark is still made at the row level.</p>
+<p>The following statement sets TTL for an entire row.</p>
+<pre><code>INSERT INTO cycling.cyclist_career_teams (
+     id,
+     lastname,
+     teams)
+     VALUES (
+       e7cd5752-bc0d-4157-a80f-7523add8dbcd, 
+       'VAN DER BREGGEN', 
+       {
+         'Rabobank-Liv Woman Cycling Team',
+         'Sengers Ladies Cycling Team',
+         'Team Flexpoint' 
+        }
+      ) 
+     USING TTL 1;
+</code></pre><p>The following statement sets TTL for a single cell.</p>
+<pre><code>UPDATE cycling.rank_by_year_and_name USING TTL 1
+  SET cyclist_name = 'Cloudy Archipelago' WHERE race_year = 2018 AND 
+  race_name = 'Giro d''Italia - Stage 11 - Osimo &gt; Imola' AND rank = 1;
+</code></pre>
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="/tags/cassandra/">cassandra</a></span>
+        <span class="tag"><a href="/tags/open-source/">open-source</a></span>
+        <span class="tag"><a href="/tags/apache/">apache</a></span>
+        <span class="tag"><a href="/tags/databases/">databases</a></span>
+        
+    </p>
+
+      
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        1008 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2019-10-16 22:56 &#43;0100
+        
+
+         
+          
+        
+      </p>
+    </div>
+      <hr />
+      <div class="sharing-buttons">
+        
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2fposts%2fcassandra-how-is-data-deleted-and-what-are-tombstones%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?url=%2fposts%2fcassandra-how-is-data-deleted-and-what-are-tombstones%2f" target="_blank" rel="noopener" aria-label="" title="Share on twitter">
+  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+      <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=Cassandra%20%3a%20How%20is%20data%20deleted%20and%20what%20are%20Tombstones%3f&amp;caption=Cassandra%20%3a%20How%20is%20data%20deleted%20and%20what%20are%20Tombstones%3f&amp;canonicalUrl=%2fposts%2fcassandra-how-is-data-deleted-and-what-are-tombstones%2f" target="_blank" rel="noopener" aria-label="" title="Share on tumblr">
+  <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small">
+    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.4 1.374-4.156 1.404h-.178l.011.002z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="mailto:?subject=Cassandra%20%3a%20How%20is%20data%20deleted%20and%20what%20are%20Tombstones%3f&amp;body=%2fposts%2fcassandra-how-is-data-deleted-and-what-are-tombstones%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=%2fposts%2fcassandra-how-is-data-deleted-and-what-are-tombstones%2f&amp;media=%2fposts%2fcassandra-how-is-data-deleted-and-what-are-tombstones%2f;description=Cassandra%20%3a%20How%20is%20data%20deleted%20and%20what%20are%20Tombstones%3f" target="_blank" rel="noopener" aria-label="" title="Share on pinterest">
+  <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fposts%2fcassandra-how-is-data-deleted-and-what-are-tombstones%2f&amp;title=Cassandra%20%3a%20How%20is%20data%20deleted%20and%20what%20are%20Tombstones%3f&amp;summary=Cassandra%20%3a%20How%20is%20data%20deleted%20and%20what%20are%20Tombstones%3f&amp;source=%2fposts%2fcassandra-how-is-data-deleted-and-what-are-tombstones%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
+  <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=%2fposts%2fcassandra-how-is-data-deleted-and-what-are-tombstones%2f&amp;resubmit=true&amp;title=Cassandra%20%3a%20How%20is%20data%20deleted%20and%20what%20are%20Tombstones%3f" target="_blank" rel="noopener" aria-label="" title="Share on reddit">
+  <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.xing.com/app/user?op=share;url=%2fposts%2fcassandra-how-is-data-deleted-and-what-are-tombstones%2f;title=Cassandra%20%3a%20How%20is%20data%20deleted%20and%20what%20are%20Tombstones%3f" target="_blank" rel="noopener" aria-label="" title="Share on xing">
+  <div class="resp-sharing-button resp-sharing-button--xing resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L1.86 16.051c-.099.188-.093.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="whatsapp://send?text=Cassandra%20%3a%20How%20is%20data%20deleted%20and%20what%20are%20Tombstones%3f%20%2fposts%2fcassandra-how-is-data-deleted-and-what-are-tombstones%2f" target="_blank" rel="noopener" aria-label="" title="Share on whatsapp">
+  <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=%2fposts%2fcassandra-how-is-data-deleted-and-what-are-tombstones%2f&amp;t=Cassandra%20%3a%20How%20is%20data%20deleted%20and%20what%20are%20Tombstones%3f" target="_blank" rel="noopener" aria-label="" title="Share on hacker news">
+  <div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=Cassandra%20%3a%20How%20is%20data%20deleted%20and%20what%20are%20Tombstones%3f&amp;url=%2fposts%2fcassandra-how-is-data-deleted-and-what-are-tombstones%2f" target="_blank" rel="noopener" aria-label="" title="Share on telegram">
+  <div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+    </div>
+  </div>
+</a>
+
+      </div>
+
+    
+
+    
+      
+        <div id="comments">
+          <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "prashantbhardwaj" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+      
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
+
+
+
+    </body>
+</html>

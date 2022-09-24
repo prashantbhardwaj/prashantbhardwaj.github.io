@@ -89,7 +89,7 @@
     <loc>/hi/posts/why-msp-not-good/</loc>
     <lastmod>2021-02-17T22:07:39+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020/07/keys-to-success/</loc>
+    <loc>/posts/keys-to-success/</loc>
     <lastmod>2020-07-14T22:46:54+01:00</lastmod>
   </url><url>
     <loc>/tags/motivational/</loc>
@@ -132,7 +132,7 @@
     <loc>/tags/jms/</loc>
     <lastmod>2020-07-06T23:07:49+01:00</lastmod>
   </url><url>
-    <loc>/posts/2020/07/jms-to-kafka-bridge/</loc>
+    <loc>/posts/jms-to-kafka-bridge/</loc>
     <lastmod>2020-07-06T23:07:49+01:00</lastmod>
   </url><url>
     <loc>/tags/kafka/</loc>
@@ -163,19 +163,19 @@
     <loc>/tags/github/</loc>
     <lastmod>2020-07-02T00:38:30+01:00</lastmod>
   </url><url>
-    <loc>/posts/2020/07/open-source-contributions/</loc>
+    <loc>/posts/open-source-contributions/</loc>
     <lastmod>2020-07-02T00:38:30+01:00</lastmod>
   </url><url>
-    <loc>/posts/2020/05/managing-stakeholders/</loc>
+    <loc>/posts/managing-stakeholders/</loc>
     <lastmod>2020-05-26T14:04:23+01:00</lastmod>
   </url><url>
-    <loc>/posts/2020/02/new-home-move-checklist/</loc>
+    <loc>/posts/new-home-move-checklist/</loc>
     <lastmod>2020-02-26T13:32:16+00:00</lastmod>
   </url><url>
     <loc>/tags/databases/</loc>
     <lastmod>2019-12-29T11:53:57+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019/12/document-oriented-databases/</loc>
+    <loc>/posts/document-oriented-databases/</loc>
     <lastmod>2019-12-29T11:53:57+00:00</lastmod>
   </url><url>
     <loc>/tags/document-oriented-design/</loc>
@@ -190,22 +190,22 @@
     <loc>/tags/cassandra/</loc>
     <lastmod>2019-10-16T22:56:24+01:00</lastmod>
   </url><url>
-    <loc>/posts/2019/10/cassandra-how-is-data-deleted-and-what-are-tombstones/</loc>
+    <loc>/posts/cassandra-how-is-data-deleted-and-what-are-tombstones/</loc>
     <lastmod>2019-10-16T22:56:24+01:00</lastmod>
   </url><url>
-    <loc>/posts/2019/09/cassandra-replication-strategies/</loc>
+    <loc>/posts/cassandra-replication-strategies/</loc>
     <lastmod>2019-09-29T13:49:13+01:00</lastmod>
   </url><url>
-    <loc>/posts/2019/09/cassandra-consistency-levels-list/</loc>
+    <loc>/posts/cassandra-consistency-levels-list/</loc>
     <lastmod>2019-09-28T11:19:22+01:00</lastmod>
   </url><url>
-    <loc>/posts/2019/09/cassandra-replication-factor-consistency-level/</loc>
+    <loc>/posts/cassandra-replication-factor-consistency-level/</loc>
     <lastmod>2019-09-28T09:31:52+01:00</lastmod>
   </url><url>
-    <loc>/posts/2019/09/cassandra-when-not-to-use/</loc>
+    <loc>/posts/cassandra-when-not-to-use/</loc>
     <lastmod>2019-09-19T23:36:07+01:00</lastmod>
   </url><url>
-    <loc>/posts/2019/09/cassandra-overview-how-is-data-written-and-read/</loc>
+    <loc>/posts/cassandra-overview-how-is-data-written-and-read/</loc>
     <lastmod>2019-09-14T17:01:38+01:00</lastmod>
   </url><url>
     <loc>/hi/posts/post2/</loc>
@@ -214,17 +214,17 @@
     <loc>/hi/about/</loc>
     <lastmod>2019-08-13T00:40:27+01:00</lastmod>
   </url><url>
-    <loc>/posts/2019/08/build-your-website-using-gohugo-and-host-it-on-github-pages/</loc>
+    <loc>/posts/build-your-website-using-gohugo-and-host-it-on-github-pages/</loc>
     <lastmod>2019-08-12T23:22:50+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="hi"
-                href="/hi/posts/2019/08/hugo-%E0%A4%95%E0%A4%BE-%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%AF%E0%A5%8B%E0%A4%97-%E0%A4%95%E0%A4%B0-%E0%A4%AC%E0%A4%A8%E0%A4%BE%E0%A4%AF%E0%A5%87%E0%A4%82-%E0%A4%85%E0%A4%AA%E0%A4%A8%E0%A5%80-%E0%A4%B5%E0%A5%87%E0%A4%AC%E0%A4%B8%E0%A4%BE%E0%A4%87%E0%A4%9F-%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82-%E0%A4%B9%E0%A5%8B%E0%A4%B8%E0%A5%8D%E0%A4%9F-github-pages-%E0%A4%AA%E0%A4%B0-%E0%A4%B5%E0%A5%8B-%E0%A4%AD%E0%A5%80-%E0%A4%AE%E0%A5%81%E0%A5%9E%E0%A5%8D%E0%A4%A4-%E0%A4%AE%E0%A5%87%E0%A4%82/"
+                href="/hi/posts/hugo-%E0%A4%95%E0%A4%BE-%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%AF%E0%A5%8B%E0%A4%97-%E0%A4%95%E0%A4%B0-%E0%A4%AC%E0%A4%A8%E0%A4%BE%E0%A4%AF%E0%A5%87%E0%A4%82-%E0%A4%85%E0%A4%AA%E0%A4%A8%E0%A5%80-%E0%A4%B5%E0%A5%87%E0%A4%AC%E0%A4%B8%E0%A4%BE%E0%A4%87%E0%A4%9F-%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82-%E0%A4%B9%E0%A5%8B%E0%A4%B8%E0%A5%8D%E0%A4%9F-github-pages-%E0%A4%AA%E0%A4%B0-%E0%A4%B5%E0%A5%8B-%E0%A4%AD%E0%A5%80-%E0%A4%AE%E0%A5%81%E0%A5%9E%E0%A5%8D%E0%A4%A4-%E0%A4%AE%E0%A5%87%E0%A4%82/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/posts/2019/08/build-your-website-using-gohugo-and-host-it-on-github-pages/"
+                href="/posts/build-your-website-using-gohugo-and-host-it-on-github-pages/"
                 />
   </url><url>
     <loc>/tags/github-pages/</loc>

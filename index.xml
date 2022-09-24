@@ -29,19 +29,19 @@
     
     <item>
       <title>Keys to Success</title>
-      <link>/posts/2020/07/keys-to-success/</link>
+      <link>/posts/keys-to-success/</link>
       <pubDate>Tue, 14 Jul 2020 22:46:54 +0100</pubDate>
       
-      <guid>/posts/2020/07/keys-to-success/</guid>
+      <guid>/posts/keys-to-success/</guid>
       <description> Empathy Optimism Embrace ambiguity Make it Learn from failure Iterate, Iterate Creative Confidence  </description>
     </item>
     
     <item>
       <title>Jms to Kafka Bridge</title>
-      <link>/posts/2020/07/jms-to-kafka-bridge/</link>
+      <link>/posts/jms-to-kafka-bridge/</link>
       <pubDate>Mon, 06 Jul 2020 23:07:49 +0100</pubDate>
       
-      <guid>/posts/2020/07/jms-to-kafka-bridge/</guid>
+      <guid>/posts/jms-to-kafka-bridge/</guid>
       <description>Often we integrate two systems where one system is emitting events on some jms solution while another is listening a kafka topic and expecting source messages on kafka. In such cases, we write a bridge application which reads data from jms and writes on kafka.
 This bridge application should satisfy following requirements -
  It should send messages on kafka without breaking the sequence of message. If jms broker goes down, it should keep trying to connect to that and whenever broker starts, application should reconnect and should start listening messages.</description>
@@ -49,37 +49,37 @@ This bridge application should satisfy following requirements -
     
     <item>
       <title>Open Source Contributions</title>
-      <link>/posts/2020/07/open-source-contributions/</link>
+      <link>/posts/open-source-contributions/</link>
       <pubDate>Thu, 02 Jul 2020 00:38:30 +0100</pubDate>
       
-      <guid>/posts/2020/07/open-source-contributions/</guid>
+      <guid>/posts/open-source-contributions/</guid>
       <description>Hugo theme - hugo-theme-hello-friend-ng  Hindi language added in langFlags and translations also added for hindi.  </description>
     </item>
     
     <item>
       <title>Managing Stakeholders</title>
-      <link>/posts/2020/05/managing-stakeholders/</link>
+      <link>/posts/managing-stakeholders/</link>
       <pubDate>Tue, 26 May 2020 14:04:23 +0100</pubDate>
       
-      <guid>/posts/2020/05/managing-stakeholders/</guid>
+      <guid>/posts/managing-stakeholders/</guid>
       <description> Communicate Consult early and often Remember - &amp;lsquo;they are human&amp;rsquo; Plan it Relationships Show your care Manage risks Compromise Understand - what is success Take responsibilities  </description>
     </item>
     
     <item>
       <title>New Home Move - Checklist</title>
-      <link>/posts/2020/02/new-home-move-checklist/</link>
+      <link>/posts/new-home-move-checklist/</link>
       <pubDate>Wed, 26 Feb 2020 13:32:16 +0000</pubDate>
       
-      <guid>/posts/2020/02/new-home-move-checklist/</guid>
+      <guid>/posts/new-home-move-checklist/</guid>
       <description>A. Things to be checked with agent before you handover keys  None of your stuff left in the house, garden, sheds Bins are clear Leave some money in &amp;lsquo;Pay as you go&amp;rsquo; accounts so that when new family moves in they have things (like electricity, gas) working. If you are moving electronic applinces with you, make sure you don&amp;rsquo;t break plugs/switched and other connectors like water connectors etc. Divert your posts to your new address If you are leaving any newly purchased item in the house, don&amp;rsquo;t forget to leave guarantee/warranty papers of those items Leave smoke/fire alarms in working condition Clear all the bills (Internet, electricity, gas, water, council, factor etc.</description>
     </item>
     
     <item>
       <title>Document Oriented Databases</title>
-      <link>/posts/2019/12/document-oriented-databases/</link>
+      <link>/posts/document-oriented-databases/</link>
       <pubDate>Sun, 29 Dec 2019 11:53:57 +0000</pubDate>
       
-      <guid>/posts/2019/12/document-oriented-databases/</guid>
+      <guid>/posts/document-oriented-databases/</guid>
       <description>[Overview] (#h2-overview-h2) [ArangoDB] (#h2-arangodb-h2) [CouchDB] (#h2-couchdb-h2) [Crate.IO] (#h2-crate.io-h2) [OrientDB] (#h2-orientdb-h2) [SednaDB] (#h2-sednadb-h2) [Apache-Solr] (#h2-apache-solr-h2) [RethinkDB] (#h2-rethinkdb-h2) [MongoDB] (#h2-mongodbdb-h2) [References] (#h2-references-h2)  Overview A document-oriented database is a database designed for storing, retrieving and managing document-oriented information, also known as semi-structured data.
 Document-oriented databases are one of the main categories of NoSQL databases, and the popularity of the term &amp;ldquo;document-oriented database&amp;rdquo; has grown with the use of the term NoSQL itself.</description>
     </item>
@@ -116,10 +116,10 @@ Document-oriented databases are one of the main categories of NoSQL databases, a
     
     <item>
       <title>Cassandra : How is data deleted and what are Tombstones?</title>
-      <link>/posts/2019/10/cassandra-how-is-data-deleted-and-what-are-tombstones/</link>
+      <link>/posts/cassandra-how-is-data-deleted-and-what-are-tombstones/</link>
       <pubDate>Wed, 16 Oct 2019 22:56:24 +0100</pubDate>
       
-      <guid>/posts/2019/10/cassandra-how-is-data-deleted-and-what-are-tombstones/</guid>
+      <guid>/posts/cassandra-how-is-data-deleted-and-what-are-tombstones/</guid>
       <description>Data in Cassandra is replcated on more than one node. In another terms - &amp;lsquo;Same data is copied on more than one node&amp;rsquo;. Any change in that data should be made in all the copies of that data stored on various nodes of a cluster. Same is applied for deletes as well. If a data is deleted then it should be deleted from all the nodes. But what if any node which has a copy of that data is down.</description>
     </item>
     

@@ -10,10 +10,10 @@
     <lastBuildDate>Thu, 02 Jul 2020 00:38:30 +0100</lastBuildDate><atom:link href="/tags/contribution/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Open Source Contributions</title>
-      <link>/posts/2020/07/open-source-contributions/</link>
+      <link>/posts/open-source-contributions/</link>
       <pubDate>Thu, 02 Jul 2020 00:38:30 +0100</pubDate>
       
-      <guid>/posts/2020/07/open-source-contributions/</guid>
+      <guid>/posts/open-source-contributions/</guid>
       <description>Hugo theme - hugo-theme-hello-friend-ng  Hindi language added in langFlags and translations also added for hindi.  </description>
     </item>
     

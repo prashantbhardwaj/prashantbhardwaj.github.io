@@ -11,10 +11,10 @@
         
         <item>
             <title>Keys to Success</title>
-            <link>/posts/2020/07/keys-to-success/</link>
+            <link>/posts/keys-to-success/</link>
             <pubDate>Tue, 14 Jul 2020 22:46:54 +0100</pubDate>
             
-            <guid>/posts/2020/07/keys-to-success/</guid>
+            <guid>/posts/keys-to-success/</guid>
             <description> Empathy Optimism Embrace ambiguity Make it Learn from failure Iterate, Iterate Creative Confidence  </description>
             <content type="html"><![CDATA[<ul>
 <li>Empathy</li>
@@ -30,10 +30,10 @@
         
         <item>
             <title>Jms to Kafka Bridge</title>
-            <link>/posts/2020/07/jms-to-kafka-bridge/</link>
+            <link>/posts/jms-to-kafka-bridge/</link>
             <pubDate>Mon, 06 Jul 2020 23:07:49 +0100</pubDate>
             
-            <guid>/posts/2020/07/jms-to-kafka-bridge/</guid>
+            <guid>/posts/jms-to-kafka-bridge/</guid>
             <description>Often we integrate two systems where one system is emitting events on some jms solution while another is listening a kafka topic and expecting source messages on kafka. In such cases, we write a bridge application which reads data from jms and writes on kafka.
 This bridge application should satisfy following requirements -
  It should send messages on kafka without breaking the sequence of message. If jms broker goes down, it should keep trying to connect to that and whenever broker starts, application should reconnect and should start listening messages.</description>
@@ -204,10 +204,10 @@ This bridge application should satisfy following requirements -
         
         <item>
             <title>Open Source Contributions</title>
-            <link>/posts/2020/07/open-source-contributions/</link>
+            <link>/posts/open-source-contributions/</link>
             <pubDate>Thu, 02 Jul 2020 00:38:30 +0100</pubDate>
             
-            <guid>/posts/2020/07/open-source-contributions/</guid>
+            <guid>/posts/open-source-contributions/</guid>
             <description>Hugo theme - hugo-theme-hello-friend-ng  Hindi language added in langFlags and translations also added for hindi.  </description>
             <content type="html"><![CDATA[<h2 id="hugo-theme---hugo-theme-hello-friend-ng">Hugo theme - hugo-theme-hello-friend-ng</h2>
 <ul>
@@ -218,10 +218,10 @@ This bridge application should satisfy following requirements -
         
         <item>
             <title>Managing Stakeholders</title>
-            <link>/posts/2020/05/managing-stakeholders/</link>
+            <link>/posts/managing-stakeholders/</link>
             <pubDate>Tue, 26 May 2020 14:04:23 +0100</pubDate>
             
-            <guid>/posts/2020/05/managing-stakeholders/</guid>
+            <guid>/posts/managing-stakeholders/</guid>
             <description> Communicate Consult early and often Remember - &amp;lsquo;they are human&amp;rsquo; Plan it Relationships Show your care Manage risks Compromise Understand - what is success Take responsibilities  </description>
             <content type="html"><![CDATA[<ul>
 <li>Communicate</li>
@@ -240,10 +240,10 @@ This bridge application should satisfy following requirements -
         
         <item>
             <title>New Home Move - Checklist</title>
-            <link>/posts/2020/02/new-home-move-checklist/</link>
+            <link>/posts/new-home-move-checklist/</link>
             <pubDate>Wed, 26 Feb 2020 13:32:16 +0000</pubDate>
             
-            <guid>/posts/2020/02/new-home-move-checklist/</guid>
+            <guid>/posts/new-home-move-checklist/</guid>
             <description>A. Things to be checked with agent before you handover keys  None of your stuff left in the house, garden, sheds Bins are clear Leave some money in &amp;lsquo;Pay as you go&amp;rsquo; accounts so that when new family moves in they have things (like electricity, gas) working. If you are moving electronic applinces with you, make sure you don&amp;rsquo;t break plugs/switched and other connectors like water connectors etc. Divert your posts to your new address If you are leaving any newly purchased item in the house, don&amp;rsquo;t forget to leave guarantee/warranty papers of those items Leave smoke/fire alarms in working condition Clear all the bills (Internet, electricity, gas, water, council, factor etc.</description>
             <content type="html"><![CDATA[<h2 id="a-things-to-be-checked-with-agent-before-you-handover-keys">A. Things to be checked with agent before you handover keys</h2>
 <ul>
@@ -342,10 +342,10 @@ This bridge application should satisfy following requirements -
         
         <item>
             <title>Document Oriented Databases</title>
-            <link>/posts/2019/12/document-oriented-databases/</link>
+            <link>/posts/document-oriented-databases/</link>
             <pubDate>Sun, 29 Dec 2019 11:53:57 +0000</pubDate>
             
-            <guid>/posts/2019/12/document-oriented-databases/</guid>
+            <guid>/posts/document-oriented-databases/</guid>
             <description>[Overview] (#h2-overview-h2) [ArangoDB] (#h2-arangodb-h2) [CouchDB] (#h2-couchdb-h2) [Crate.IO] (#h2-crate.io-h2) [OrientDB] (#h2-orientdb-h2) [SednaDB] (#h2-sednadb-h2) [Apache-Solr] (#h2-apache-solr-h2) [RethinkDB] (#h2-rethinkdb-h2) [MongoDB] (#h2-mongodbdb-h2) [References] (#h2-references-h2)  Overview A document-oriented database is a database designed for storing, retrieving and managing document-oriented information, also known as semi-structured data.
 Document-oriented databases are one of the main categories of NoSQL databases, and the popularity of the term &amp;ldquo;document-oriented database&amp;rdquo; has grown with the use of the term NoSQL itself.</description>
             <content type="html"><![CDATA[<!-- raw HTML omitted -->
@@ -503,10 +503,10 @@ Two types of relationships instead of one: reference and embedded.</p>
         
         <item>
             <title>Cassandra : How is data deleted and what are Tombstones?</title>
-            <link>/posts/2019/10/cassandra-how-is-data-deleted-and-what-are-tombstones/</link>
+            <link>/posts/cassandra-how-is-data-deleted-and-what-are-tombstones/</link>
             <pubDate>Wed, 16 Oct 2019 22:56:24 +0100</pubDate>
             
-            <guid>/posts/2019/10/cassandra-how-is-data-deleted-and-what-are-tombstones/</guid>
+            <guid>/posts/cassandra-how-is-data-deleted-and-what-are-tombstones/</guid>
             <description>Data in Cassandra is replcated on more than one node. In another terms - &amp;lsquo;Same data is copied on more than one node&amp;rsquo;. Any change in that data should be made in all the copies of that data stored on various nodes of a cluster. Same is applied for deletes as well. If a data is deleted then it should be deleted from all the nodes. But what if any node which has a copy of that data is down.</description>
             <content type="html"><![CDATA[<p>Data in Cassandra is replcated on more than one node. In another terms - &lsquo;Same data is copied on more than one node&rsquo;. Any change in that data should be made in all the copies of that data stored on various nodes of a cluster. Same is applied for <strong>deletes</strong> as well. If a data is deleted then it should be deleted from all the nodes. But what if any node which has a copy of that data is down. When that node will come up and will be asked for that data, it will provide that data and same data will be copied on other nodes once again. Such data is called <strong>Zombie</strong> record.</p>
 <p>How does Cassandra make sure that if a data is deleted than it should be deleted from all the nodes even if any node where that data is stored, is down. Cassandra manages that by creating <strong>tombstones</strong>.</p>
@@ -588,10 +588,10 @@ Tip: If following this tutorial from the beginning, drop the rank_by_year_and_na
         
         <item>
             <title>Cassandra : Replication Strategies</title>
-            <link>/posts/2019/09/cassandra-replication-strategies/</link>
+            <link>/posts/cassandra-replication-strategies/</link>
             <pubDate>Sun, 29 Sep 2019 13:49:13 +0100</pubDate>
             
-            <guid>/posts/2019/09/cassandra-replication-strategies/</guid>
+            <guid>/posts/cassandra-replication-strategies/</guid>
             <description>There are two kinds of replication strategies in Cassandra.
 SimpleStrategy is used when you have just one data center. SimpleStrategy places the first replica on the node selected by the partitioner. After that, remaining replicas are placed in clockwise direction in the Node ring.
 NetworkTopologyStrategy is used when you have more than two data centers.
@@ -611,10 +611,10 @@ In NetworkTopologyStrategy, replicas are set for each data center separately. Ne
         
         <item>
             <title>Cassandra : Consistency Levels List</title>
-            <link>/posts/2019/09/cassandra-consistency-levels-list/</link>
+            <link>/posts/cassandra-consistency-levels-list/</link>
             <pubDate>Sat, 28 Sep 2019 11:19:22 +0100</pubDate>
             
-            <guid>/posts/2019/09/cassandra-consistency-levels-list/</guid>
+            <guid>/posts/cassandra-consistency-levels-list/</guid>
             <description>Typical values of consistency levels are -
 Note - Write operation consists of writing to commit log and memtable.
    Level Write Read Usage     ALL A write must be on all replica nodes in the cluster for that partition. Returns the record after all replicas. The read operation will fail if a replica does not respond. Provides the highest consistency and the lowest availability of any other level.</description>
@@ -703,10 +703,10 @@ Note - Write operation consists of writing to commit log and memtable.
         
         <item>
             <title>Cassandra : Replication Factor &amp; Consistency Level</title>
-            <link>/posts/2019/09/cassandra-replication-factor-consistency-level/</link>
+            <link>/posts/cassandra-replication-factor-consistency-level/</link>
             <pubDate>Sat, 28 Sep 2019 09:31:52 +0100</pubDate>
             
-            <guid>/posts/2019/09/cassandra-replication-factor-consistency-level/</guid>
+            <guid>/posts/cassandra-replication-factor-consistency-level/</guid>
             <description>In a production system, it is advisable to have three or more Cassandra nodes in each data center, and the default replication factor should be three. As a general rule, the replication factor should not exceed the number of Cassandra nodes in the cluster. If there are 3 nodes in your cluster then how can you store data on more than three nodes?
 If you add additional Cassandra nodes to the cluster, the default replication factor is not affected.</description>
             <content type="html"><![CDATA[<!-- raw HTML omitted -->
@@ -731,10 +731,10 @@ Consistency level can be different for read and write queries however it is advi
         
         <item>
             <title>Cassandra : When not to use</title>
-            <link>/posts/2019/09/cassandra-when-not-to-use/</link>
+            <link>/posts/cassandra-when-not-to-use/</link>
             <pubDate>Thu, 19 Sep 2019 23:36:07 +0100</pubDate>
             
-            <guid>/posts/2019/09/cassandra-when-not-to-use/</guid>
+            <guid>/posts/cassandra-when-not-to-use/</guid>
             <description>I don&amp;rsquo;t think that I need to explain what Cassandra is. OK, one liner is enough ! It is NoSQL database, primarily used in big data projects.
 Before we start discussing scenarios where Cassandra fits very well, let&amp;rsquo;s discuss where it doesn&amp;rsquo;t fit at all.
 We&amp;rsquo;ll have lots of data, let&amp;rsquo;s use Cassandra
@@ -760,10 +760,10 @@ Sometime MySQL can be a better choice than Cassandra.</p>
         
         <item>
             <title>Cassandra : Overview, how is data written and read?</title>
-            <link>/posts/2019/09/cassandra-overview-how-is-data-written-and-read/</link>
+            <link>/posts/cassandra-overview-how-is-data-written-and-read/</link>
             <pubDate>Sat, 14 Sep 2019 17:01:38 +0100</pubDate>
             
-            <guid>/posts/2019/09/cassandra-overview-how-is-data-written-and-read/</guid>
+            <guid>/posts/cassandra-overview-how-is-data-written-and-read/</guid>
             <description>[Characterstics] (#h2-characterstics-h2) [How does it internally work] (#h2-how-does-it-internally-work-h2) [References] (#h2-references-h2)  The Apache Cassandra database is the right choice when you need scalability and high availability without compromising performance. Linear scalability and proven fault-tolerance on commodity hardware or cloud infrastructure make it the perfect platform for mission-critical data. Cassandra&amp;rsquo;s support for replicating across multiple datacenters is best-in-class, providing lower latency for your users and the peace of mind of knowing that you can survive regional outages.</description>
             <content type="html"><![CDATA[<!-- raw HTML omitted -->
 <ul>
@@ -845,10 +845,10 @@ When a read request starts its journey, the data’s partition key is used to fi
         
         <item>
             <title>Build your website using GoHugo and host it on GitHub Pages</title>
-            <link>/posts/2019/08/build-your-website-using-gohugo-and-host-it-on-github-pages/</link>
+            <link>/posts/build-your-website-using-gohugo-and-host-it-on-github-pages/</link>
             <pubDate>Mon, 12 Aug 2019 23:22:50 +0100</pubDate>
             
-            <guid>/posts/2019/08/build-your-website-using-gohugo-and-host-it-on-github-pages/</guid>
+            <guid>/posts/build-your-website-using-gohugo-and-host-it-on-github-pages/</guid>
             <description>Overview GitHub came up with GitHub pages service, which hosts static web content free of cost. For Tech bloggers and for those who are trying to make their hands dirty in static web content creation, this is the best service at this moment. Read tagline of GitHub Pages -
 GoHugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, GoHugo makes building websites fun again.</description>
             <content type="html"><![CDATA[<h3 id="overview">Overview</h3>
