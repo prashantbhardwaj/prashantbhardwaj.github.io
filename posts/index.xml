@@ -6,8 +6,268 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>copyright@Prashant</copyright>
-        <lastBuildDate>Tue, 14 Jul 2020 22:46:54 +0100</lastBuildDate>
+        <lastBuildDate>Mon, 03 Oct 2022 21:45:21 +0100</lastBuildDate>
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Microservices : Decomposition Strategies</title>
+            <link>/posts/microservices-decomposition-strategies/</link>
+            <pubDate>Mon, 03 Oct 2022 21:45:21 +0100</pubDate>
+            
+            <guid>/posts/microservices-decomposition-strategies/</guid>
+            <description>Main idea behind Microservices pattern is to construct an application by developing interconnected smaller services.
+Decomposition of an application into smaller services facilitates two things:
+ Division of labor and knowledge Loose coupling of interactions  </description>
+            <content type="html"><![CDATA[<p>Main idea behind Microservices pattern is to construct an application by developing interconnected smaller services.</p>
+<p>Decomposition of an application into smaller services facilitates two things:</p>
+<ol>
+<li>Division of labor and knowledge</li>
+<li>Loose coupling of interactions</li>
+</ol>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Microservices : Introduction</title>
+            <link>/posts/microservices-introduction/</link>
+            <pubDate>Mon, 03 Oct 2022 11:39:12 +0100</pubDate>
+            
+            <guid>/posts/microservices-introduction/</guid>
+            <description>Microservice pattern is an architecture that functionally decomposes an application into a set of services. It doesn&amp;rsquo;t say anything about size. Each service has focused, cohesive set of responsibility.
+ Characterstics of Microservice architecture  X, Y and Z-Axis Scalability of micro services (Michael Fisher&amp;rsquo;s book - The Art of Scalability (Addison-Wesley, 2015) - Scale cube) Microservices as a form of modularity Each service has its own database  How is this different from Service oriented architecture (SOA)?</description>
+            <content type="html"><![CDATA[<blockquote>
+<p>Microservice pattern is an architecture that functionally decomposes an application into a set of services. It doesn&rsquo;t say anything about size. Each service has focused, cohesive set of responsibility.</p>
+</blockquote>
+<h2 id="characterstics-of-microservice-architecture">Characterstics of Microservice architecture</h2>
+<ul>
+<li>X, Y and Z-Axis Scalability of micro services (Michael Fisher&rsquo;s book - The Art of Scalability (Addison-Wesley, 2015) - Scale cube)</li>
+<li>Microservices as a form of modularity</li>
+<li>Each service has its own database</li>
+</ul>
+<h2 id="how-is-this-different-from-service-oriented-architecture-soa">How is this different from Service oriented architecture (SOA)?</h2>
+<ul>
+<li>In SOA, smart pipes as Enterprise Services Bus (ESB) using heavyweight protocols like SOAP, while Microservices has Dumb pipes as a message broker, or direct service to service communication using REST or gRPC.</li>
+<li>In SOA, data is global and shared, in MS database per service</li>
+<li>SOA is a typical large monolith.</li>
+</ul>
+<h2 id="benefits-of-microservices">Benefits of Microservices</h2>
+<ul>
+<li>continuous delivery and deployment</li>
+<li>small services easy to maintain</li>
+<li>independently deployable</li>
+<li>independently scalable</li>
+<li>enables team to be autonomous</li>
+<li>allows experimenting and adoption of new tech</li>
+<li>better fault isolation</li>
+</ul>
+<h2 id="challenges-with--microservices">Challenges with  Microservices</h2>
+<ul>
+<li>Finding right set of services</li>
+<li>Distributed systems are complex, makes dev, test and deployment difficult</li>
+<li>deploying fetures that span multiple services required carefult coordination</li>
+<li>hard to know that when to adopt MS acrhitecture</li>
+</ul>
+<h2 id="when-to-use-or-not-use-microservices">When to use (or not use) Microservices</h2>
+<ul>
+<li>If it is working then don&rsquo;t change it</li>
+<li>MS is not a silver bullet</li>
+</ul>
+<h1 id="microservices-architecture-pattern-language">Microservices Architecture Pattern Language</h1>
+<p>It is a collection of patterns that help you:</p>
+<ul>
+<li>architect your application</li>
+<li>decide whther to use microservice architecture</li>
+<li>use it effectively by solving various architecture and design issues.</li>
+</ul>
+<blockquote>
+<p>Christopher Alexender - A Pattern Language: Town, Buildings, Construction</p>
+</blockquote>
+<blockquote>
+<p>Erich Gamma, Richard Helm, Ralf Johnson and John Vlissides - Design Patterns: Elements of Reusable Object Oriented Software</p>
+</blockquote>
+<h2 id="design-patterns">Design Patterns</h2>
+<p>A Pattern is reusable solution to a problem that occurs in a particular context.
+Any repetable Pattern must describe the context in which that pattern is useful.</p>
+<p>A commonly used pattern structure includes three especially valuable sections:</p>
+<ul>
+<li><strong>Forces</strong>: What issues you must address when solving with the pattern</li>
+<li><strong>Resulting Context</strong>: The consequences of applying the pattern
+<ul>
+<li>Benefits: What issues (Forces) pattern is going to solve</li>
+<li>Drawback: which existing issues (forces) pattern doesn&rsquo;t solve</li>
+<li>Issues: if it introduces few more issues</li>
+</ul>
+</li>
+<li><strong>Related Patterns</strong>:
+<ul>
+<li>Predecessor: Monolith architecture is predecessor of Microservices Architecture</li>
+<li>Successor: A pattern which solves issues that has been introduced by current pattern</li>
+<li>Alternative: A pattern that provides an alternative solution to this pattern. Like Microservice is alternative to Monolith.</li>
+<li>Generaliztion: Any pattern which is a general solution to a common problem,</li>
+<li>Specializaton: A pattern which solves a special problem. Like container patter is specialization of single service per host.</li>
+</ul>
+</li>
+</ul>
+<p>Patterns broadly can be divided into following three categories:</p>
+<ul>
+<li><strong>Infrastructure Patterns</strong>: solve problems that are mostly outside of development.</li>
+<li><strong>Application Ifrastructure Patterns</strong>: Infrastructure issues that also impact development</li>
+<li><strong>Application Patterns</strong>: These solve problems faced by developers.</li>
+</ul>
+<p><img src="/microservices/pattern-layers.PNG" alt="Pattern Layers"></p>
+<h2 id="main-groups-of-patterns">Main Groups of patterns</h2>
+<ul>
+<li>
+<p>Communication Patterns</p>
+<ul>
+<li>Communication style</li>
+<li>Discovery</li>
+<li>Reliability</li>
+<li>Transactional messaging</li>
+<li>External API</li>
+<li>Message prpcess gurantee</li>
+</ul>
+</li>
+<li>
+<p>Data consistency Patterns for Transaction management</p>
+</li>
+<li>
+<p>Patterns for querying the data in MS architecture (CQRS)</p>
+</li>
+<li>
+<p>Service deployment patterns</p>
+</li>
+<li>
+<p>Observability patterns provide insight into app behaviour</p>
+<ul>
+<li>Health check API</li>
+<li>Log aggregation</li>
+<li>Distributed tracing</li>
+<li>Exception tracking</li>
+<li>Application metrics</li>
+<li>Audit logging</li>
+</ul>
+</li>
+<li>
+<p>Patterns for automated testing</p>
+<ul>
+<li>Consumer-driven contract test: Verify that service meets expectations of its clients</li>
+<li>consumer-side contract test: verify tat the client of a service can communicate with the service</li>
+<li>Service componen test: test a service in isolation</li>
+</ul>
+</li>
+<li>
+<p>Pattern for handling cross cutting concerns (database, Kafka related reusable concerns)</p>
+</li>
+<li>
+<p>Security Patterns</p>
+</li>
+</ul>
+<h2 id="delivery-organization">Delivery Organization</h2>
+<blockquote>
+<p>Fred Brooks: The Mythical Man-Month</p>
+</blockquote>
+<h2 id="delivery-process">Delivery Process</h2>
+<blockquote>
+<p>Move fast without breaking things.</p>
+</blockquote>
+<ul>
+<li><a href="https://continuousdelivery.com">https://continuousdelivery.com</a></li>
+<li>Deployment frequency</li>
+<li>Lead time</li>
+<li>Mean time to recover</li>
+<li>Change failure rate</li>
+</ul>
+<h2 id="human-side">Human side</h2>
+<ul>
+<li>Ending, Losing and Letting Go</li>
+<li>The Neutral zone</li>
+<li>New beginning</li>
+</ul>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Monolith Architecture</title>
+            <link>/posts/monolith-architecture/</link>
+            <pubDate>Sun, 02 Oct 2022 21:42:56 +0100</pubDate>
+            
+            <guid>/posts/monolith-architecture/</guid>
+            <description>Benefits of Monolith architecture  Simple to develop Easy to make radical changes Strightforward to test Strightforward to deploy Easy to scale  Issues with Monolith architecture  Development is Slow Path from commit to deployment is long and aduous Scaling is difficult delivering a reliable monolith is challenging locked into increasingly obslete technology stack  </description>
+            <content type="html"><![CDATA[<h2 id="benefits-of-monolith-architecture">Benefits of Monolith architecture</h2>
+<ul>
+<li>Simple to develop</li>
+<li>Easy to make radical changes</li>
+<li>Strightforward to test</li>
+<li>Strightforward to deploy</li>
+<li>Easy to scale</li>
+</ul>
+<h2 id="issues-with-monolith-architecture">Issues with Monolith architecture</h2>
+<ul>
+<li>Development is Slow</li>
+<li>Path from commit to deployment is long and aduous</li>
+<li>Scaling is difficult</li>
+<li>delivering a reliable monolith is challenging</li>
+<li>locked into increasingly obslete technology stack</li>
+</ul>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Software Architecture</title>
+            <link>/posts/software-architecture/</link>
+            <pubDate>Sat, 01 Oct 2022 22:37:40 +0100</pubDate>
+            
+            <guid>/posts/software-architecture/</guid>
+            <description>Any software architecture of a computing system is the set of working components and relationsship between them. Exaple: Database, Message Broker, Server and an application running on that server.
+ The 4+1 View Model Of Software Architecture More concretely, an application’s architecture can be viewed from multiple perspectives.
+ 📚 Phillip Krutchen: “Architectural Blueprints—The ‘4+1’ View Model of Software Architecture”
+  🔔 A good architecture never enables you to satisfy your functional requirement, however it helps you to achieve the quality of service (non-functional and developer experience) requirements.</description>
+            <content type="html"><![CDATA[<blockquote>
+<p>Any software architecture of a computing system is the set of working components and relationsship between them. Exaple: Database, Message Broker, Server and an application running on that server.</p>
+</blockquote>
+<h2 id="the-41-view-model-of-software-architecture">The 4+1 View Model Of Software Architecture</h2>
+<p>More concretely, an application’s architecture can be viewed from multiple perspectives.</p>
+<blockquote>
+<p>📚
+Phillip Krutchen: <a href="https://www.cs.ubc.ca/~gregor/teaching/papers/4+1view-architecture.pdf">“Architectural Blueprints—The ‘4+1’ View Model of Software Architecture”</a></p>
+</blockquote>
+<p><img src="/microservices/4+1-view.PNG" alt="The 4+1 View Model"></p>
+<blockquote>
+<p>🔔
+A good architecture never enables you to satisfy your functional requirement, however it helps you to achieve the quality of service (non-functional and <strong>developer experience</strong>) requirements.</p>
+</blockquote>
+<blockquote>
+<p>📚
+David Garlan and Mary Shaw <a href="https://www.cs.cmu.edu/afs/cs/project/able/ftp/intro_softarch/intro_softarch.pdf">&ldquo;An Introduction to Software Architecture, January 1994&rdquo;</a></p>
+</blockquote>
+<h2 id="layered-architectural-style">Layered Architectural Style</h2>
+<ul>
+<li>Presentation layer</li>
+<li>Business logic layer</li>
+<li>Persistance layer</li>
+</ul>
+<h2 id="hexagonal-architecture">Hexagonal Architecture</h2>
+<p><img src="/microservices/hexagonal-architecture.PNG" alt="Hexagonal Architecture"></p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Help</title>
+            <link>/posts/help/</link>
+            <pubDate>Sat, 03 Oct 2020 22:07:51 +0100</pubDate>
+            
+            <guid>/posts/help/</guid>
+            <description>Useful Hugo commands hugo server hugo new .\content\posts\page-name.md -D
+Useful links https://www.markdownguide.org/cheat-sheet/ https://gist.github.com/rxaviers/7360908</description>
+            <content type="html"><![CDATA[<h3 id="useful-hugo-commands">Useful Hugo commands</h3>
+<p>hugo server
+hugo new .\content\posts\page-name.md -D</p>
+<h3 id="useful-links">Useful links</h3>
+<p><a href="https://www.markdownguide.org/cheat-sheet/">https://www.markdownguide.org/cheat-sheet/</a>
+<a href="https://gist.github.com/rxaviers/7360908">https://gist.github.com/rxaviers/7360908</a></p>
+]]></content>
+        </item>
         
         <item>
             <title>Keys to Success</title>

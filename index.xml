@@ -7,7 +7,49 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>copyright@Prashant</copyright>
-    <lastBuildDate>Wed, 10 Mar 2021 22:21:33 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Oct 2022 21:45:21 +0100</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microservices : Decomposition Strategies</title>
+      <link>/posts/microservices-decomposition-strategies/</link>
+      <pubDate>Mon, 03 Oct 2022 21:45:21 +0100</pubDate>
+      
+      <guid>/posts/microservices-decomposition-strategies/</guid>
+      <description>Main idea behind Microservices pattern is to construct an application by developing interconnected smaller services.
+Decomposition of an application into smaller services facilitates two things:
+ Division of labor and knowledge Loose coupling of interactions  </description>
+    </item>
+    
+    <item>
+      <title>Microservices : Introduction</title>
+      <link>/posts/microservices-introduction/</link>
+      <pubDate>Mon, 03 Oct 2022 11:39:12 +0100</pubDate>
+      
+      <guid>/posts/microservices-introduction/</guid>
+      <description>Microservice pattern is an architecture that functionally decomposes an application into a set of services. It doesn&amp;rsquo;t say anything about size. Each service has focused, cohesive set of responsibility.
+ Characterstics of Microservice architecture  X, Y and Z-Axis Scalability of micro services (Michael Fisher&amp;rsquo;s book - The Art of Scalability (Addison-Wesley, 2015) - Scale cube) Microservices as a form of modularity Each service has its own database  How is this different from Service oriented architecture (SOA)?</description>
+    </item>
+    
+    <item>
+      <title>Monolith Architecture</title>
+      <link>/posts/monolith-architecture/</link>
+      <pubDate>Sun, 02 Oct 2022 21:42:56 +0100</pubDate>
+      
+      <guid>/posts/monolith-architecture/</guid>
+      <description>Benefits of Monolith architecture  Simple to develop Easy to make radical changes Strightforward to test Strightforward to deploy Easy to scale  Issues with Monolith architecture  Development is Slow Path from commit to deployment is long and aduous Scaling is difficult delivering a reliable monolith is challenging locked into increasingly obslete technology stack  </description>
+    </item>
+    
+    <item>
+      <title>Software Architecture</title>
+      <link>/posts/software-architecture/</link>
+      <pubDate>Sat, 01 Oct 2022 22:37:40 +0100</pubDate>
+      
+      <guid>/posts/software-architecture/</guid>
+      <description>Any software architecture of a computing system is the set of working components and relationsship between them. Exaple: Database, Message Broker, Server and an application running on that server.
+ The 4+1 View Model Of Software Architecture More concretely, an application’s architecture can be viewed from multiple perspectives.
+ 📚 Phillip Krutchen: “Architectural Blueprints—The ‘4+1’ View Model of Software Architecture”
+  🔔 A good architecture never enables you to satisfy your functional requirement, however it helps you to achieve the quality of service (non-functional and developer experience) requirements.</description>
+    </item>
+    
     <item>
       <title>भारत के संविधान का भाग 9 - पंचायतों के लिए नियम</title>
       <link>/hi/posts/panchayat-in-constitution/</link>
@@ -25,6 +67,16 @@
       <guid>/hi/posts/why-msp-not-good/</guid>
       <description>बात बहुत सीधी है किसान जो अन्न उगाते हैं वो चाह रहे हैं कि कुछ ऐसा हो कि उनको अपनी उपज का अधिक से अधिक दाम मिले | और MSP की मांग करके वो ऐसा चाहते हैं कि सरकार ही एक निश्चित दाम पर उनका माल खरीदे | अब सरकार इतने अन्न को खरीदकर करेगी क्या?
 अब इतने गेहूं और धान की आवश्यकता नहीं है अभी सिर्फ ६ प्रतिशत किसानों का अनाज ही MSP पर खरीदा जा रहा है और यह 6 प्रतिशत ही इतना अधिक हो जाता है कि इसको रखने का प्रबंध FCI के पास है ही नहीं | अन्नदाता के कड़ी मेहनत से उगाये अन्न का एक बड़ा हिस्सा खुले में सड़ता है, जानवर खाते हैं और अंत में FCI को आवश्यकता से अधिक अनाज आने पौने दामों में बाज़ार में बेचना पड़ता है | अब आप कहेंगे कि FCI को प्रबंध करना चाहिए अधिक भण्डारण का | लेकिन क्यों करें प्रबंध जब आवश्यकता ही नहीं है | 41.</description>
+    </item>
+    
+    <item>
+      <title>Help</title>
+      <link>/posts/help/</link>
+      <pubDate>Sat, 03 Oct 2020 22:07:51 +0100</pubDate>
+      
+      <guid>/posts/help/</guid>
+      <description>Useful Hugo commands hugo server hugo new .\content\posts\page-name.md -D
+Useful links https://www.markdownguide.org/cheat-sheet/ https://gist.github.com/rxaviers/7360908</description>
     </item>
     
     <item>
@@ -54,73 +106,6 @@ This bridge application should satisfy following requirements -
       
       <guid>/posts/open-source-contributions/</guid>
       <description>Hugo theme - hugo-theme-hello-friend-ng  Hindi language added in langFlags and translations also added for hindi.  </description>
-    </item>
-    
-    <item>
-      <title>Managing Stakeholders</title>
-      <link>/posts/managing-stakeholders/</link>
-      <pubDate>Tue, 26 May 2020 14:04:23 +0100</pubDate>
-      
-      <guid>/posts/managing-stakeholders/</guid>
-      <description> Communicate Consult early and often Remember - &amp;lsquo;they are human&amp;rsquo; Plan it Relationships Show your care Manage risks Compromise Understand - what is success Take responsibilities  </description>
-    </item>
-    
-    <item>
-      <title>New Home Move - Checklist</title>
-      <link>/posts/new-home-move-checklist/</link>
-      <pubDate>Wed, 26 Feb 2020 13:32:16 +0000</pubDate>
-      
-      <guid>/posts/new-home-move-checklist/</guid>
-      <description>A. Things to be checked with agent before you handover keys  None of your stuff left in the house, garden, sheds Bins are clear Leave some money in &amp;lsquo;Pay as you go&amp;rsquo; accounts so that when new family moves in they have things (like electricity, gas) working. If you are moving electronic applinces with you, make sure you don&amp;rsquo;t break plugs/switched and other connectors like water connectors etc. Divert your posts to your new address If you are leaving any newly purchased item in the house, don&amp;rsquo;t forget to leave guarantee/warranty papers of those items Leave smoke/fire alarms in working condition Clear all the bills (Internet, electricity, gas, water, council, factor etc.</description>
-    </item>
-    
-    <item>
-      <title>Document Oriented Databases</title>
-      <link>/posts/document-oriented-databases/</link>
-      <pubDate>Sun, 29 Dec 2019 11:53:57 +0000</pubDate>
-      
-      <guid>/posts/document-oriented-databases/</guid>
-      <description>Overview ArangoDB CouchDB Crate.IO OrientDB SednaDB Apache-Solr RethinkDB MongoDB References  Overview A document-oriented database is a database designed for storing, retrieving and managing document-oriented information, also known as semi-structured data.
-Document-oriented databases are one of the main categories of NoSQL databases, and the popularity of the term &amp;ldquo;document-oriented database&amp;rdquo; has grown with the use of the term NoSQL itself. XML databases are a subclass of document-oriented databases that are optimized to work with XML documents.</description>
-    </item>
-    
-    <item>
-      <title>मनमर्जियां (लुटेरा - 2013)</title>
-      <link>/hi/posts/manmarziyaan/</link>
-      <pubDate>Sun, 03 Nov 2019 21:11:09 +0000</pubDate>
-      
-      <guid>/hi/posts/manmarziyaan/</guid>
-      <description>यूँ तो सोलह सावन.. आये गये
-गौर नहीं किया. हमने
-भीगा मन का आँगन&amp;hellip; इस मर्तबा
-क्या जाने क्या किया. तुमने
-दिल में जागी
-इश्क वाली
-मनमर्जियां, मनमर्जियां
-ज़िद्द की मारी (यूँ तो सोलह)
-भोली भाली (सावन)
-मनमर्जियां (आये गये)
-मनमर्जियां
-अब तलक से
-कुछ अलग सी
-मनमर्जियां, मनमर्जियां
-हम ज़मीन पे (भीगा मन का)
-तो फलक से (आँगन)
-मनमर्जियां (इस मर्तबा)
-मनमर्जियां
-सिक्कों जैसे
-है उछाली
-मनमर्जियां, मनमर्जियां
-ज़िद्द की मारी (यूँ तो सोलह)</description>
-    </item>
-    
-    <item>
-      <title>Cassandra : How is data deleted and what are Tombstones?</title>
-      <link>/posts/cassandra-how-is-data-deleted-and-what-are-tombstones/</link>
-      <pubDate>Wed, 16 Oct 2019 22:56:24 +0100</pubDate>
-      
-      <guid>/posts/cassandra-how-is-data-deleted-and-what-are-tombstones/</guid>
-      <description>Data in Cassandra is replcated on more than one node. In another terms - &amp;lsquo;Same data is copied on more than one node&amp;rsquo;. Any change in that data should be made in all the copies of that data stored on various nodes of a cluster. Same is applied for deletes as well. If a data is deleted then it should be deleted from all the nodes. But what if any node which has a copy of that data is down.</description>
     </item>
     
   </channel>

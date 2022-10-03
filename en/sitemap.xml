@@ -2,6 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/tags/architecture/</loc>
+    <lastmod>2022-10-03T21:45:21+01:00</lastmod>
+  </url><url>
+    <loc>/tags/design/</loc>
+    <lastmod>2022-10-03T21:45:21+01:00</lastmod>
+  </url><url>
+    <loc>/tags/microservices/</loc>
+    <lastmod>2022-10-03T21:45:21+01:00</lastmod>
+  </url><url>
+    <loc>/posts/microservices-decomposition-strategies/</loc>
+    <lastmod>2022-10-03T21:45:21+01:00</lastmod>
+  </url><url>
+    <loc>/posts/</loc>
+    <lastmod>2022-10-03T21:45:21+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="hi"
+                href="/hi/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/posts/"
+                />
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2022-10-03T21:45:21+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="hi"
+                href="/hi/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/"
+                />
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2022-10-03T21:45:21+01:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="hi"
+                href="/hi/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/"
+                />
+  </url><url>
+    <loc>/posts/microservices-introduction/</loc>
+    <lastmod>2022-10-03T11:39:12+01:00</lastmod>
+  </url><url>
+    <loc>/posts/monolith-architecture/</loc>
+    <lastmod>2022-10-02T21:42:56+01:00</lastmod>
+  </url><url>
+    <loc>/posts/software-architecture/</loc>
+    <lastmod>2022-10-01T22:37:40+01:00</lastmod>
+  </url><url>
     <loc>/tags/constitution/</loc>
     <lastmod>2021-03-10T22:21:33+00:00</lastmod>
     <xhtml:link
@@ -44,32 +104,6 @@
                 href="/tags/panchayat/"
                 />
   </url><url>
-    <loc>/</loc>
-    <lastmod>2021-03-10T22:21:33+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="hi"
-                href="/hi/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/"
-                />
-  </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2021-03-10T22:21:33+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="hi"
-                href="/hi/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/tags/"
-                />
-  </url><url>
     <loc>/hi/posts/panchayat-in-constitution/</loc>
     <lastmod>2021-03-10T22:21:33+00:00</lastmod>
   </url><url>
@@ -89,24 +123,14 @@
     <loc>/hi/posts/why-msp-not-good/</loc>
     <lastmod>2021-02-17T22:07:39+00:00</lastmod>
   </url><url>
+    <loc>/posts/help/</loc>
+    <lastmod>2020-10-03T22:07:51+01:00</lastmod>
+  </url><url>
     <loc>/posts/keys-to-success/</loc>
     <lastmod>2020-07-14T22:46:54+01:00</lastmod>
   </url><url>
     <loc>/tags/motivational/</loc>
     <lastmod>2020-07-14T22:46:54+01:00</lastmod>
-  </url><url>
-    <loc>/posts/</loc>
-    <lastmod>2020-07-14T22:46:54+01:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="hi"
-                href="/hi/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/posts/"
-                />
   </url><url>
     <loc>/tags/apache/</loc>
     <lastmod>2020-07-06T23:07:49+01:00</lastmod>

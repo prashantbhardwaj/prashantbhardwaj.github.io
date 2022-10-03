@@ -7,7 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>copyright@Prashant</copyright>
-    <lastBuildDate>Wed, 10 Mar 2021 22:21:33 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Oct 2022 21:45:21 +0100</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>architecture</title>
+      <link>/tags/architecture/</link>
+      <pubDate>Mon, 03 Oct 2022 21:45:21 +0100</pubDate>
+      
+      <guid>/tags/architecture/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>design</title>
+      <link>/tags/design/</link>
+      <pubDate>Mon, 03 Oct 2022 21:45:21 +0100</pubDate>
+      
+      <guid>/tags/design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>microservices</title>
+      <link>/tags/microservices/</link>
+      <pubDate>Mon, 03 Oct 2022 21:45:21 +0100</pubDate>
+      
+      <guid>/tags/microservices/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>constitution</title>
       <link>/tags/constitution/</link>
@@ -68,33 +95,6 @@
       <pubDate>Mon, 06 Jul 2020 23:07:49 +0100</pubDate>
       
       <guid>/tags/apache-camel/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>apache-kafka</title>
-      <link>/tags/apache-kafka/</link>
-      <pubDate>Mon, 06 Jul 2020 23:07:49 +0100</pubDate>
-      
-      <guid>/tags/apache-kafka/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>apache-qpid</title>
-      <link>/tags/apache-qpid/</link>
-      <pubDate>Mon, 06 Jul 2020 23:07:49 +0100</pubDate>
-      
-      <guid>/tags/apache-qpid/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>apache-storm</title>
-      <link>/tags/apache-storm/</link>
-      <pubDate>Mon, 06 Jul 2020 23:07:49 +0100</pubDate>
-      
-      <guid>/tags/apache-storm/</guid>
       <description></description>
     </item>
     
