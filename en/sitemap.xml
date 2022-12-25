@@ -2,7 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/posts/kafka-streams/</loc>
+    <loc>/tags/java/</loc>
+    <lastmod>2022-12-24T23:18:23+00:00</lastmod>
+  </url><url>
+    <loc>/tags/kafka/</loc>
+    <lastmod>2022-12-24T23:18:23+00:00</lastmod>
+  </url><url>
+    <loc>/posts/kafka-streams-wip/</loc>
+    <lastmod>2022-12-24T23:18:23+00:00</lastmod>
+  </url><url>
+    <loc>/tags/kafka-streams/</loc>
+    <lastmod>2022-12-24T23:18:23+00:00</lastmod>
+  </url><url>
+    <loc>/tags/ktable/</loc>
     <lastmod>2022-12-24T23:18:23+00:00</lastmod>
   </url><url>
     <loc>/posts/</loc>
@@ -31,7 +43,38 @@
                 href="/"
                 />
   </url><url>
-    <loc>/posts/introduction-aws-certified-solutions-architect-associate/</loc>
+    <loc>/tags/spring-kafka/</loc>
+    <lastmod>2022-12-24T23:18:23+00:00</lastmod>
+  </url><url>
+    <loc>/tags/springboot/</loc>
+    <lastmod>2022-12-24T23:18:23+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2022-12-24T23:18:23+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="hi"
+                href="/hi/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/tags/"
+                />
+  </url><url>
+    <loc>/tags/wip/</loc>
+    <lastmod>2022-12-24T23:18:23+00:00</lastmod>
+  </url><url>
+    <loc>/tags/aws/</loc>
+    <lastmod>2022-10-16T21:19:45+01:00</lastmod>
+  </url><url>
+    <loc>/tags/certification/</loc>
+    <lastmod>2022-10-16T21:19:45+01:00</lastmod>
+  </url><url>
+    <loc>/tags/cloud/</loc>
+    <lastmod>2022-10-16T21:19:45+01:00</lastmod>
+  </url><url>
+    <loc>/posts/introduction-aws-certified-solutions-architect-associate-wip/</loc>
     <lastmod>2022-10-16T21:19:45+01:00</lastmod>
   </url><url>
     <loc>/tags/architecture/</loc>
@@ -45,19 +88,6 @@
   </url><url>
     <loc>/posts/microservices-decomposition-strategies/</loc>
     <lastmod>2022-10-03T21:45:21+01:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2022-10-03T21:45:21+01:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="hi"
-                href="/hi/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/tags/"
-                />
   </url><url>
     <loc>/posts/microservices-introduction/</loc>
     <lastmod>2022-10-03T11:39:12+01:00</lastmod>
@@ -156,16 +186,10 @@
     <loc>/tags/camel/</loc>
     <lastmod>2020-07-06T23:07:49+01:00</lastmod>
   </url><url>
-    <loc>/tags/java/</loc>
-    <lastmod>2020-07-06T23:07:49+01:00</lastmod>
-  </url><url>
     <loc>/tags/jms/</loc>
     <lastmod>2020-07-06T23:07:49+01:00</lastmod>
   </url><url>
     <loc>/posts/jms-to-kafka-bridge/</loc>
-    <lastmod>2020-07-06T23:07:49+01:00</lastmod>
-  </url><url>
-    <loc>/tags/kafka/</loc>
     <lastmod>2020-07-06T23:07:49+01:00</lastmod>
   </url><url>
     <loc>/tags/open-source/</loc>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>certification on Prashant Bhardwaj</title>
+    <link>/tags/certification/</link>
+    <description>Recent content in certification on Prashant Bhardwaj</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>copyright@Prashant</copyright>
+    <lastBuildDate>Sun, 16 Oct 2022 21:19:45 +0100</lastBuildDate><atom:link href="/tags/certification/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction: AWS Certified Solutions Architect - Associate (WIP)</title>
+      <link>/posts/introduction-aws-certified-solutions-architect-associate-wip/</link>
+      <pubDate>Sun, 16 Oct 2022 21:19:45 +0100</pubDate>
+      
+      <guid>/posts/introduction-aws-certified-solutions-architect-associate-wip/</guid>
+      <description>Exam structure  There are 65 questions within the exam and are multiple-choice requiring you to select either a single or multiple answers for each question The scoring is based out of 1000, with a minimum passing score of 720 (72%) You get 130 minutes to answer these questions.  The exam is split into 4 different domains that you will be assessed against, each carrying a different percentage weighting, these are identified as:</description>
+    </item>
+    
+  </channel>
+</rss>

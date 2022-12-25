@@ -10,14 +10,21 @@
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
-            <title>Kafka Streams</title>
-            <link>/posts/kafka-streams/</link>
+            <title>Kafka Streams - WIP</title>
+            <link>/posts/kafka-streams-wip/</link>
             <pubDate>Sat, 24 Dec 2022 23:18:23 +0000</pubDate>
             
-            <guid>/posts/kafka-streams/</guid>
-            <description>Introduction Despite being a humble library, Kafka Streams directly addresses a lot of the hard problems in stream processing:
- Event-at-a-time processing (not microbatch) with millisecond latency Stateful processing including distributed joins and aggregations A convenient DSL Windowing with out-of-order data using a DataFlow-like model Distributed processing and fault-tolerance with fast failover Reprocessing capabilities so you can recalculate output when your code changes No-downtime rolling deployments   There is a wealth of interesting work happening in the stream processing area—ranging from open source frameworks like Apache Spark, Apache Storm, Apache Flink, and Apache Samza, to proprietary services such as Google’s DataFlow and AWS Lambda — so it is worth outlining how Kafka Streams is similar and different from these things.</description>
-            <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2>
+            <guid>/posts/kafka-streams-wip/</guid>
+            <description>If any team is using Kafka as a message broker or event sourcing system or change logs or commit log; no matter what your use case is, you must be having producers and consumers. Now at the consumer side, to process the event stream, you&amp;rsquo;ll be having one of following 2 systems -
+ Microservices using Kafka&amp;rsquo;s Producer and Consumer API, procssing one message at a time Full fledged stream processing applications using Streaming framework as explained just above.</description>
+            <content type="html"><![CDATA[<p>If any team is using Kafka as a message broker or event sourcing system or change logs or commit log; no matter what your use case is, you must be having producers and consumers. Now at the consumer side, to process the event stream, you&rsquo;ll be having one of following 2 systems -</p>
+<ol>
+<li>Microservices using Kafka&rsquo;s Producer and Consumer API, procssing one message at a time</li>
+<li>Full fledged stream processing applications using Streaming framework as explained just above.</li>
+</ol>
+<blockquote>
+<p>There is a wealth of interesting work happening in the stream processing area—ranging from open source frameworks like <a href="https://spark.apache.org/">Apache Spark</a>, <a href="https://storm.apache.org/">Apache Storm</a>, <a href="https://flink.apache.org/">Apache Flink</a>, and <a href="https://samza.apache.org/">Apache Samza</a>, to proprietary services such as <a href="https://cloud.google.com/dataflow">Google’s DataFlow</a> and <a href="https://aws.amazon.com/lambda/">AWS Lambda</a> — so it is worth outlining how Kafka Streams is similar and different from these things.</p>
+</blockquote>
 <p>Despite being a humble library, Kafka Streams directly addresses a lot of the hard problems in stream processing:</p>
 <ul>
 <li>Event-at-a-time processing (not microbatch) with millisecond latency</li>
@@ -27,16 +34,8 @@
 <li>Distributed processing and fault-tolerance with fast failover</li>
 <li>Reprocessing capabilities so you can recalculate output when your code changes</li>
 <li>No-downtime rolling deployments</li>
+<li>And <strong>everything with a very simple architecture; which is not possible with other Open source Streaming frameworks</strong> 😂</li>
 </ul>
-<blockquote>
-<p>There is a wealth of interesting work happening in the stream processing area—ranging from open source frameworks like <a href="https://spark.apache.org/">Apache Spark</a>, <a href="https://storm.apache.org/">Apache Storm</a>, <a href="https://flink.apache.org/">Apache Flink</a>, and <a href="https://samza.apache.org/">Apache Samza</a>, to proprietary services such as <a href="https://cloud.google.com/dataflow">Google’s DataFlow</a> and <a href="https://aws.amazon.com/lambda/">AWS Lambda</a> — so it is worth outlining how Kafka Streams is similar and different from these things.</p>
-</blockquote>
-<h2 id="kafka-use-cases-in-the-enterprises">Kafka use-cases in the enterprises</h2>
-<ol>
-<li>Microservices using Kafka&rsquo;s Producer and Consumer API, procssing one message at a time</li>
-<li>Full fledged stream processing applications using Streaming framework as explained just above.</li>
-</ol>
-<h2 id="benefits-of-kafka-stream-over-other-streaming-frameworks">Benefits of Kafka Stream over other streaming frameworks</h2>
 <h3 id="framework-free-stream-processing">Framework-Free Stream Processing</h3>
 <p>Existing streaming frameworks come with heavy and complex deployment process. You need to create a cluster of say Apache Storm and then you need to deploy your application code into the cluster which will then be copied across all the nodes.</p>
 <p>Kafka Stream application, you write using simple API, without any framework. You can run it as single instance and even if you start another intsnace; no issues then Kafka will districute the load evenly to the new instances.</p>
@@ -49,7 +48,8 @@
 </ol>
 <p>The result is that a Kafka Streams app is just like any other service. It may have some <a href="http://docs.confluent.io/current/streams/architecture.html#state">local state on disk</a>, but that is just a cache that can be recreated if it is lost or if that instance of the app is moved elsewhere. You just use the library in your app, and start as many instances of the app as you like, and Kafka will partition up and balance the work over these instances.</p>
 <h3 id="how-to-deploy-the-kafka-stream-application">How to deploy the Kafka Stream application</h3>
-<p>Simple answer - as you are deploying your other microservices. Using one of the deployment framework.</p>
+<p>Simple answer - as you are deploying your other microservices.</p>
+<p>Using one of the following deployment framework -</p>
 <ul>
 <li>Apache Mesos with a framework like Marathon</li>
 <li>Kubernetes</li>
@@ -102,11 +102,11 @@
         </item>
         
         <item>
-            <title>Introduction: AWS Certified Solutions Architect - Associate</title>
-            <link>/posts/introduction-aws-certified-solutions-architect-associate/</link>
+            <title>Introduction: AWS Certified Solutions Architect - Associate (WIP)</title>
+            <link>/posts/introduction-aws-certified-solutions-architect-associate-wip/</link>
             <pubDate>Sun, 16 Oct 2022 21:19:45 +0100</pubDate>
             
-            <guid>/posts/introduction-aws-certified-solutions-architect-associate/</guid>
+            <guid>/posts/introduction-aws-certified-solutions-architect-associate-wip/</guid>
             <description>Exam structure  There are 65 questions within the exam and are multiple-choice requiring you to select either a single or multiple answers for each question The scoring is based out of 1000, with a minimum passing score of 720 (72%) You get 130 minutes to answer these questions.  The exam is split into 4 different domains that you will be assessed against, each carrying a different percentage weighting, these are identified as:</description>
             <content type="html"><![CDATA[<h2 id="exam-structure">Exam structure</h2>
 <ul>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wip on Prashant Bhardwaj</title>
+    <link>/tags/wip/</link>
+    <description>Recent content in wip on Prashant Bhardwaj</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>copyright@Prashant</copyright>
+    <lastBuildDate>Sat, 24 Dec 2022 23:18:23 +0000</lastBuildDate><atom:link href="/tags/wip/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kafka Streams - WIP</title>
+      <link>/posts/kafka-streams-wip/</link>
+      <pubDate>Sat, 24 Dec 2022 23:18:23 +0000</pubDate>
+      
+      <guid>/posts/kafka-streams-wip/</guid>
+      <description>If any team is using Kafka as a message broker or event sourcing system or change logs or commit log; no matter what your use case is, you must be having producers and consumers. Now at the consumer side, to process the event stream, you&amp;rsquo;ll be having one of following 2 systems -
+ Microservices using Kafka&amp;rsquo;s Producer and Consumer API, procssing one message at a time Full fledged stream processing applications using Streaming framework as explained just above.</description>
+    </item>
+    
+    <item>
+      <title>Introduction: AWS Certified Solutions Architect - Associate (WIP)</title>
+      <link>/posts/introduction-aws-certified-solutions-architect-associate-wip/</link>
+      <pubDate>Sun, 16 Oct 2022 21:19:45 +0100</pubDate>
+      
+      <guid>/posts/introduction-aws-certified-solutions-architect-associate-wip/</guid>
+      <description>Exam structure  There are 65 questions within the exam and are multiple-choice requiring you to select either a single or multiple answers for each question The scoring is based out of 1000, with a minimum passing score of 720 (72%) You get 130 minutes to answer these questions.  The exam is split into 4 different domains that you will be assessed against, each carrying a different percentage weighting, these are identified as:</description>
+    </item>
+    
+  </channel>
+</rss>

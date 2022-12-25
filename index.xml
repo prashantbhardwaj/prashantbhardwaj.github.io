@@ -9,21 +9,21 @@
     <copyright>copyright@Prashant</copyright>
     <lastBuildDate>Sat, 24 Dec 2022 23:18:23 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Kafka Streams</title>
-      <link>/posts/kafka-streams/</link>
+      <title>Kafka Streams - WIP</title>
+      <link>/posts/kafka-streams-wip/</link>
       <pubDate>Sat, 24 Dec 2022 23:18:23 +0000</pubDate>
       
-      <guid>/posts/kafka-streams/</guid>
-      <description>Introduction Despite being a humble library, Kafka Streams directly addresses a lot of the hard problems in stream processing:
- Event-at-a-time processing (not microbatch) with millisecond latency Stateful processing including distributed joins and aggregations A convenient DSL Windowing with out-of-order data using a DataFlow-like model Distributed processing and fault-tolerance with fast failover Reprocessing capabilities so you can recalculate output when your code changes No-downtime rolling deployments   There is a wealth of interesting work happening in the stream processing area—ranging from open source frameworks like Apache Spark, Apache Storm, Apache Flink, and Apache Samza, to proprietary services such as Google’s DataFlow and AWS Lambda — so it is worth outlining how Kafka Streams is similar and different from these things.</description>
+      <guid>/posts/kafka-streams-wip/</guid>
+      <description>If any team is using Kafka as a message broker or event sourcing system or change logs or commit log; no matter what your use case is, you must be having producers and consumers. Now at the consumer side, to process the event stream, you&amp;rsquo;ll be having one of following 2 systems -
+ Microservices using Kafka&amp;rsquo;s Producer and Consumer API, procssing one message at a time Full fledged stream processing applications using Streaming framework as explained just above.</description>
     </item>
     
     <item>
-      <title>Introduction: AWS Certified Solutions Architect - Associate</title>
-      <link>/posts/introduction-aws-certified-solutions-architect-associate/</link>
+      <title>Introduction: AWS Certified Solutions Architect - Associate (WIP)</title>
+      <link>/posts/introduction-aws-certified-solutions-architect-associate-wip/</link>
       <pubDate>Sun, 16 Oct 2022 21:19:45 +0100</pubDate>
       
-      <guid>/posts/introduction-aws-certified-solutions-architect-associate/</guid>
+      <guid>/posts/introduction-aws-certified-solutions-architect-associate-wip/</guid>
       <description>Exam structure  There are 65 questions within the exam and are multiple-choice requiring you to select either a single or multiple answers for each question The scoring is based out of 1000, with a minimum passing score of 720 (72%) You get 130 minutes to answer these questions.  The exam is split into 4 different domains that you will be assessed against, each carrying a different percentage weighting, these are identified as:</description>
     </item>
     

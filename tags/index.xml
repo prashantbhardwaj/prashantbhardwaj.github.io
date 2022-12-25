@@ -7,94 +7,94 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>copyright@Prashant</copyright>
-    <lastBuildDate>Mon, 03 Oct 2022 21:45:21 +0100</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Dec 2022 23:18:23 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>architecture</title>
-      <link>/tags/architecture/</link>
-      <pubDate>Mon, 03 Oct 2022 21:45:21 +0100</pubDate>
+      <title>java</title>
+      <link>/tags/java/</link>
+      <pubDate>Sat, 24 Dec 2022 23:18:23 +0000</pubDate>
       
-      <guid>/tags/architecture/</guid>
+      <guid>/tags/java/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>design</title>
-      <link>/tags/design/</link>
-      <pubDate>Mon, 03 Oct 2022 21:45:21 +0100</pubDate>
+      <title>kafka</title>
+      <link>/tags/kafka/</link>
+      <pubDate>Sat, 24 Dec 2022 23:18:23 +0000</pubDate>
       
-      <guid>/tags/design/</guid>
+      <guid>/tags/kafka/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>microservices</title>
-      <link>/tags/microservices/</link>
-      <pubDate>Mon, 03 Oct 2022 21:45:21 +0100</pubDate>
+      <title>kafka-streams</title>
+      <link>/tags/kafka-streams/</link>
+      <pubDate>Sat, 24 Dec 2022 23:18:23 +0000</pubDate>
       
-      <guid>/tags/microservices/</guid>
+      <guid>/tags/kafka-streams/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>constitution</title>
-      <link>/tags/constitution/</link>
-      <pubDate>Wed, 10 Mar 2021 22:21:33 +0000</pubDate>
+      <title>ktable</title>
+      <link>/tags/ktable/</link>
+      <pubDate>Sat, 24 Dec 2022 23:18:23 +0000</pubDate>
       
-      <guid>/tags/constitution/</guid>
+      <guid>/tags/ktable/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>gram-vikas</title>
-      <link>/tags/gram-vikas/</link>
-      <pubDate>Wed, 10 Mar 2021 22:21:33 +0000</pubDate>
+      <title>spring-kafka</title>
+      <link>/tags/spring-kafka/</link>
+      <pubDate>Sat, 24 Dec 2022 23:18:23 +0000</pubDate>
       
-      <guid>/tags/gram-vikas/</guid>
+      <guid>/tags/spring-kafka/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>panchayat</title>
-      <link>/tags/panchayat/</link>
-      <pubDate>Wed, 10 Mar 2021 22:21:33 +0000</pubDate>
+      <title>springboot</title>
+      <link>/tags/springboot/</link>
+      <pubDate>Sat, 24 Dec 2022 23:18:23 +0000</pubDate>
       
-      <guid>/tags/panchayat/</guid>
+      <guid>/tags/springboot/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>farm-bills-2020</title>
-      <link>/tags/farm-bills-2020/</link>
-      <pubDate>Wed, 17 Feb 2021 22:07:39 +0000</pubDate>
+      <title>wip</title>
+      <link>/tags/wip/</link>
+      <pubDate>Sat, 24 Dec 2022 23:18:23 +0000</pubDate>
       
-      <guid>/tags/farm-bills-2020/</guid>
+      <guid>/tags/wip/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>motivational</title>
-      <link>/tags/motivational/</link>
-      <pubDate>Tue, 14 Jul 2020 22:46:54 +0100</pubDate>
+      <title>aws</title>
+      <link>/tags/aws/</link>
+      <pubDate>Sun, 16 Oct 2022 21:19:45 +0100</pubDate>
       
-      <guid>/tags/motivational/</guid>
+      <guid>/tags/aws/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>apache</title>
-      <link>/tags/apache/</link>
-      <pubDate>Mon, 06 Jul 2020 23:07:49 +0100</pubDate>
+      <title>certification</title>
+      <link>/tags/certification/</link>
+      <pubDate>Sun, 16 Oct 2022 21:19:45 +0100</pubDate>
       
-      <guid>/tags/apache/</guid>
+      <guid>/tags/certification/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>apache-camel</title>
-      <link>/tags/apache-camel/</link>
-      <pubDate>Mon, 06 Jul 2020 23:07:49 +0100</pubDate>
+      <title>cloud</title>
+      <link>/tags/cloud/</link>
+      <pubDate>Sun, 16 Oct 2022 21:19:45 +0100</pubDate>
       
-      <guid>/tags/apache-camel/</guid>
+      <guid>/tags/cloud/</guid>
       <description></description>
     </item>
     
