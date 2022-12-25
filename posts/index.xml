@@ -6,8 +6,371 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>copyright@Prashant</copyright>
-        <lastBuildDate>Mon, 03 Oct 2022 21:45:21 +0100</lastBuildDate>
+        <lastBuildDate>Sat, 24 Dec 2022 23:18:23 +0000</lastBuildDate>
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Kafka Streams</title>
+            <link>/posts/kafka-streams/</link>
+            <pubDate>Sat, 24 Dec 2022 23:18:23 +0000</pubDate>
+            
+            <guid>/posts/kafka-streams/</guid>
+            <description>Introduction Despite being a humble library, Kafka Streams directly addresses a lot of the hard problems in stream processing:
+ Event-at-a-time processing (not microbatch) with millisecond latency Stateful processing including distributed joins and aggregations A convenient DSL Windowing with out-of-order data using a DataFlow-like model Distributed processing and fault-tolerance with fast failover Reprocessing capabilities so you can recalculate output when your code changes No-downtime rolling deployments   There is a wealth of interesting work happening in the stream processing area—ranging from open source frameworks like Apache Spark, Apache Storm, Apache Flink, and Apache Samza, to proprietary services such as Google’s DataFlow and AWS Lambda — so it is worth outlining how Kafka Streams is similar and different from these things.</description>
+            <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2>
+<p>Despite being a humble library, Kafka Streams directly addresses a lot of the hard problems in stream processing:</p>
+<ul>
+<li>Event-at-a-time processing (not microbatch) with millisecond latency</li>
+<li>Stateful processing including distributed joins and aggregations</li>
+<li>A convenient DSL</li>
+<li>Windowing with out-of-order data using a DataFlow-like model</li>
+<li>Distributed processing and fault-tolerance with fast failover</li>
+<li>Reprocessing capabilities so you can recalculate output when your code changes</li>
+<li>No-downtime rolling deployments</li>
+</ul>
+<blockquote>
+<p>There is a wealth of interesting work happening in the stream processing area—ranging from open source frameworks like <a href="https://spark.apache.org/">Apache Spark</a>, <a href="https://storm.apache.org/">Apache Storm</a>, <a href="https://flink.apache.org/">Apache Flink</a>, and <a href="https://samza.apache.org/">Apache Samza</a>, to proprietary services such as <a href="https://cloud.google.com/dataflow">Google’s DataFlow</a> and <a href="https://aws.amazon.com/lambda/">AWS Lambda</a> — so it is worth outlining how Kafka Streams is similar and different from these things.</p>
+</blockquote>
+<h2 id="kafka-use-cases-in-the-enterprises">Kafka use-cases in the enterprises</h2>
+<ol>
+<li>Microservices using Kafka&rsquo;s Producer and Consumer API, procssing one message at a time</li>
+<li>Full fledged stream processing applications using Streaming framework as explained just above.</li>
+</ol>
+<h2 id="benefits-of-kafka-stream-over-other-streaming-frameworks">Benefits of Kafka Stream over other streaming frameworks</h2>
+<h3 id="framework-free-stream-processing">Framework-Free Stream Processing</h3>
+<p>Existing streaming frameworks come with heavy and complex deployment process. You need to create a cluster of say Apache Storm and then you need to deploy your application code into the cluster which will then be copied across all the nodes.</p>
+<p>Kafka Stream application, you write using simple API, without any framework. You can run it as single instance and even if you start another intsnace; no issues then Kafka will districute the load evenly to the new instances.</p>
+<h3 id="so-what-does-kafka-streams-do-instead">So What Does Kafka Streams Do Instead?</h3>
+<p>Kafka Streams is much more focused in the problems it solves. It does the following:</p>
+<ol>
+<li>Balance the processing load as new instances of your app are added or existing ones crash</li>
+<li>Maintain local state for tables</li>
+<li>Recover from failures</li>
+</ol>
+<p>The result is that a Kafka Streams app is just like any other service. It may have some <a href="http://docs.confluent.io/current/streams/architecture.html#state">local state on disk</a>, but that is just a cache that can be recreated if it is lost or if that instance of the app is moved elsewhere. You just use the library in your app, and start as many instances of the app as you like, and Kafka will partition up and balance the work over these instances.</p>
+<h3 id="how-to-deploy-the-kafka-stream-application">How to deploy the Kafka Stream application</h3>
+<p>Simple answer - as you are deploying your other microservices. Using one of the deployment framework.</p>
+<ul>
+<li>Apache Mesos with a framework like Marathon</li>
+<li>Kubernetes</li>
+<li>YARN with something like Slider</li>
+<li>Swarm from Docker</li>
+<li>Various hosted container services such as ECS from Amazon</li>
+<li>Cloud Foundry</li>
+</ul>
+<h2 id="streams-meet-tables">Streams meet tables</h2>
+<h3 id="tables-is-nothing-but-a-snapshot-of-streams-processing">Tables is nothing but a snapshot of Streams processing</h3>
+<p>When you log on in Amazon website you sometimes see the cart filled with some of the items which you added in the cart in past. Current state of of your cart may show number 5, however if you you try to remember - you added those 5 items one after another. Here the stream of Item-Added-Into-Cart events was processed and every time count was increased by 1. It is also possible that you deleted some of the items from the cart and another stream of Item-Deleted-From-Cart events was then processed and numbers were reduced from your cart one after another. End result in a table (in Database) is nothing but processing the change logs (events).</p>
+<h3 id="ways-to-capture-change-logs">Ways to capture change logs</h3>
+<p>By <a href="http://docs.confluent.io/current/streams/concepts.html#duality-of-streams-and-tables">modeling the table concept in this way</a>, Kafka Streams lets you compute derived values against the table using just the stream of changes. In other words it lets you process database change streams just as you would a stream of clicks.
+<a href="https://www.confluent.io/blog/announcing-kafka-connect-building-large-scale-low-latency-data-pipelines">Kafka Connect</a>, a framework that is built for data capture and was newly added to Apache Kafka in the 0.9 release.</p>
+<h3 id="joins-and-aggregates-are-tables-too">Joins and Aggregates are Tables Too</h3>
+<p>Let’s say I have a stream of user clicks coming in and I want to compute the total number of clicks for each user. Kafka Streams lets you compute this aggregation, and the set of counts that are computed, is, unsurprisingly, a table of the current number of clicks per user.</p>
+<p>In terms of implementation Kafka Streams stores this derived aggregation <a href="http://docs.confluent.io/current/streams/architecture.html#state">in a local embedded key-value store</a> (RocksDB by default, but you can plug in anything). The output of the job is exactly the changelog of updates to this table. This changelog is used for high-availability of the computation, but it’s also an output that can be consumed and transformed by other Kafka Streams processing or loaded into another system using Kafka Connect.</p>
+<p>They share a lot of the same operations, and can be converted back and forth just as the table/stream duality suggests, but, for example, an aggregation on a KTable will automatically handle that fact that it is made up of updates to the underlying values. This matters, as the semantics of computing a sum over a tables undergoing updates and a stream of immutable updates are totally different; likewise the semantics of joining two streams (say clicks and impressions) are totally different from the semantics of joining a stream to a table (say clicks to user accounts). By modeling these two concepts in the DSL, these details fall out automatically.</p>
+<h3 id="windows-and-tables">Windows and Tables </h3>
+<p>Kafka Streams makes handling this really simple: the semantics of a <a href="http://docs.confluent.io/current/streams/developer-guide.html#windowing-a-stream">windowed aggregation</a> like a count is that it represents the count “so far” for the window. It is continuously updated as new data arrives and allows the downstream receiver to decide when it is complete. And yes, this notion of an updatable quantity should seem eerily familiar: it is nothing more than a table where the window being updated is part of the key. Naturally downstream operations know that this stream represents a table, and process these refinements as they come.</p>
+<h2 id="references">References</h2>
+<h3 id="kafka-streams">Kafka Streams</h3>
+<ul>
+<li><a href="https://www.confluent.io/blog/introducing-kafka-streams-stream-processing-made-simple/">Introducing Kafka Streams: Stream Processing Made Simple</a></li>
+<li><a href="https://docs.confluent.io/platform/current/streams/index.html#kstreams-overview">Kafka Streams Overview</a></li>
+<li><a href="https://www.confluent.io/blog/kafka-streams-tables-part-1-event-streaming/">Streams and Tables in Apache Kafka: A Primer</a></li>
+<li><a href="https://developer.confluent.io/learn-kafka/kafka-streams/get-started/">Getting Started with Kafka Streams</a></li>
+<li><a href="https://developer.confluent.io/learn/kafka-storage-and-processing/">Kafka Storage &amp; Processing Fundamentals</a></li>
+<li><a href="http://docs.confluent.io/current/streams/architecture.html">Kafka Stream Architecture</a></li>
+<li><a href="http://docs.confluent.io/current/streams/concepts.html">kafka Stream Concepts</a></li>
+<li><a href="http://docs.confluent.io/current/streams/developer-guide.html">Kafka Stream Developer Guide</a></li>
+<li><a href="https://developer.confluent.io/learn-kafka/kafka-streams/get-started/">Free Video Course</a></li>
+<li><a href="https://developer.confluent.io/learn/kafka-storage-and-processing/">Kafka Storage &amp; Processing Fundamentals</a></li>
+</ul>
+<h3 id="other-useful-concepts">Other useful concepts</h3>
+<ul>
+<li><a href="https://www.confluent.io/blog/turning-the-database-inside-out-with-apache-samza/">turning the database inside out</a></li>
+<li><a href="http://highscalability.com/blog/2015/10/12/making-the-case-for-building-scalable-stateful-services-in-t.html">Making the Case for Building Scalable Stateful Services in the Modern Era</a></li>
+<li><a href="https://www.oreilly.com/radar/questioning-the-lambda-architecture/">Questioning the Lambda Architecture</a></li>
+<li><a href="https://cwiki.apache.org/confluence/display/KAFKA/Transactional+Messaging+in+Kafka">Transactional Messaging in Kafka</a></li>
+</ul>
+<h3 id="code-examples">Code examples</h3>
+<ul>
+<li><a href="https://developer.confluent.io/tutorials/creating-first-apache-kafka-streams-application/confluent.html">Build your first Kafka Streams application</a></li>
+<li><a href="https://docs.confluent.io/platform/current/streams/code-examples.html">Kafka Stream Code Examples</a></li>
+<li><a href="https://github.com/confluentinc/kafka-streams-examples">Other code examples</a></li>
+<li><a href="https://www.youtube.com/watch?v=40BmRRl_hp0&amp;list=PL7dZNxCsTH8fCJwRiWKyED-CLKDtZl08-&amp;index=8">Create a REST API with Spring Boot for our Kafka Streams Bank Application!</a></li>
+</ul>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Introduction: AWS Certified Solutions Architect - Associate</title>
+            <link>/posts/introduction-aws-certified-solutions-architect-associate/</link>
+            <pubDate>Sun, 16 Oct 2022 21:19:45 +0100</pubDate>
+            
+            <guid>/posts/introduction-aws-certified-solutions-architect-associate/</guid>
+            <description>Exam structure  There are 65 questions within the exam and are multiple-choice requiring you to select either a single or multiple answers for each question The scoring is based out of 1000, with a minimum passing score of 720 (72%) You get 130 minutes to answer these questions.  The exam is split into 4 different domains that you will be assessed against, each carrying a different percentage weighting, these are identified as:</description>
+            <content type="html"><![CDATA[<h2 id="exam-structure">Exam structure</h2>
+<ul>
+<li>There are 65 questions within the exam and are multiple-choice</li>
+<li>requiring you to select either a single or multiple answers for each question</li>
+<li>The scoring is based out of 1000, with a minimum passing score of 720 (72%)</li>
+<li>You get 130 minutes to answer these questions.</li>
+</ul>
+<p>The exam is split into 4 different domains that you will be assessed against, each carrying a different percentage weighting, these are identified as:</p>
+<ul>
+<li>Domain 1: Design Resilient Architectures 30%</li>
+<li>Domain 2: Design High-Performing Architectures 28%</li>
+<li>Domain 3: Design Secure Applications and Architectures 24%</li>
+<li>Domain 4: Design Cost-Optimized Architectures 18%</li>
+</ul>
+<h2 id="compute">Compute</h2>
+<h3 id="ec2-elastic-compute-cloud">EC2 (Elastic Compute Cloud)</h3>
+<h4 id="amazon-machine-images">Amazon Machine Images</h4>
+<p>AMI is an image baseline that will include an operating system and applications along with any custom configuration</p>
+<h4 id="instance-types">Instance types</h4>
+<p>An instance type simply defines the size of the instance based on a number of different parameters, these being ECUs. This defines a number of EC2 compute units for instance, vCPUs this is the number of virtual CPUs on the instance. Physical processor, this is the process speed used on the instance. Clock speed, it&rsquo;s clock speed in gigahertz.</p>
+<ul>
+<li>Micro instances</li>
+<li>General-purpose</li>
+<li>Compute optimized</li>
+<li>GPU</li>
+<li>FPGA</li>
+</ul>
+<h4 id="memory">Memory</h4>
+<ul>
+<li>Ephemeral: meaning temporary</li>
+<li>Persistent storage: is available by attaching elastic block storage EBS volumes</li>
+</ul>
+<h4 id="payment-plans">Payment plans</h4>
+<ul>
+<li>On-demand instances</li>
+<li>Reserved instances</li>
+<li>Scheduled instances</li>
+<li>Spot instances</li>
+<li>Capacity reservations</li>
+</ul>
+<h4 id="tenancy">TENANCY</h4>
+<ul>
+<li>Shared tenancy</li>
+<li>Dedicated instances</li>
+<li>Dedicated Hosts</li>
+</ul>
+<h4 id="user-data">User data</h4>
+<p>commands which run at start up. Like for software update.</p>
+<h3 id="ecs-elastic-container-service">ECS (Elastic Container Service)</h3>
+<p>This allows you to run Docker-enabled applications packaged as containers across a cluster of EC2 instances without requiring you to manage a complex and administratively heavy cluster management system</p>
+<blockquote>
+<p><strong>AWS Fargate</strong>: is an engine used to enable ECS to run containers without having to manage and provision instances and clusters for containers.</p>
+</blockquote>
+<blockquote>
+<p><strong>Docker</strong> is piece of software that allows you to automate the installation and distribution of applications inside Linux Containers.</p>
+</blockquote>
+<blockquote>
+<p>A <strong>Container</strong> holds everything that an application requires to enable it to run from within it&rsquo;s isolated container package. This may include system libraries, code, system tools, run time, etcetera. But it does not include an operating system like a virtual machine does, and so reduces overhead of the actual container itself.</p>
+</blockquote>
+<blockquote>
+<p><strong>Cloud Watch</strong> is used for monitoring.</p>
+</blockquote>
+<h4 id="launch-methods">Launch methods</h4>
+<ul>
+<li>Fargate launch</li>
+<li>EC2 launch</li>
+</ul>
+<h3 id="eks---elastic-container-service-for-kubernetes">EKS - Elastic Container Service for Kubernetes</h3>
+<blockquote>
+<p>Kubernetes is an open-source container orchestration tool designed to automate, deploy, scale, and operate containerized applications. It is designed to grow from tens, thousands, or even millions of containers. Kubernetes is also container-runtime agnostic, which means you can actually use Kubernetes to run rocket and docker containers.</p>
+</blockquote>
+<h3 id="aws-batch">AWS Batch</h3>
+<h3 id="ec2-auto-scaling">EC2 Auto Scaling</h3>
+<h3 id="elastic-load-balancer-elb">Elastic Load Balancer (ELB)</h3>
+<h3 id="ssl-server-certificates">SSL Server Certificates</h3>
+<h3 id="application-load-balancers">Application Load Balancers</h3>
+<h3 id="network-load-balancers">Network Load Balancers</h3>
+<h3 id="classic-load-balancers">Classic Load Balancers</h3>
+<h3 id="using-elb-and-auto-scaling-together">Using ELB and Auto Scaling Together</h3>
+<h3 id="aws-lambda">AWS Lambda</h3>
+<h3 id="understanding-event-source-mapping">Understanding Event Source Mapping</h3>
+<h3 id="monitoring-and-common-errors">Monitoring and Common Errors</h3>
+<h2 id="storage">Storage</h2>
+<h3 id="amazon-s3">Amazon S3</h3>
+<h3 id="storage-classes">Storage Classes</h3>
+<h3 id="versioning">Versioning</h3>
+<h3 id="server-access-logging">Server-Access Logging</h3>
+<h3 id="static-website-hosting">Static Website Hosting</h3>
+<h3 id="object-level-logging">Object-Level Logging</h3>
+<h3 id="transfer-acceleration">Transfer Acceleration</h3>
+<h3 id="using-policies-to-control-access">Using Policies to Control Access</h3>
+<h3 id="managing-public-access-to-your-buckets">Managing Public Access to Your Buckets</h3>
+<h3 id="cross-origin-resource-sharing-cors-with-s3">Cross Origin Resource Sharing (CORS) with S3</h3>
+<h3 id="amazon-elastic-file-system">Amazon Elastic File System</h3>
+<h3 id="storage-classes-and-performance-options">Storage Classes and Performance Options</h3>
+<h3 id="efs-security">EFS Security</h3>
+<h3 id="importing-data">Importing Data</h3>
+<h3 id="ec2-instance-storage">EC2 Instance Storage</h3>
+<h3 id="amazon-elastic-block-store-ebs">Amazon Elastic Block Store (EBS)</h3>
+<h3 id="amazon-fsx">Amazon FSx</h3>
+<h3 id="aws-storage-gateway">AWS Storage Gateway</h3>
+<h3 id="aws-backup">AWS Backup</h3>
+<h2 id="networking">Networking</h2>
+<h3 id="vpc">VPC</h3>
+<h3 id="subnets">Subnets</h3>
+<h3 id="network-access-control-lists-nacls">Network Access Control Lists (NACLs)</h3>
+<h3 id="security-groups">Security Groups</h3>
+<h3 id="nat-gateway">NAT Gateway</h3>
+<h3 id="bastion-hosts">Bastion Hosts</h3>
+<h3 id="vpn--direct-connect">VPN &amp; Direct Connect</h3>
+<h3 id="vpc-peering">VPC Peering</h3>
+<h3 id="transit-gateway">Transit Gateway</h3>
+<h3 id="elastic-ip-addresses-eips">Elastic IP Addresses (EIPs)</h3>
+<h3 id="elastic-network-interfaces-enis">Elastic Network Interfaces (ENIs)</h3>
+<h3 id="ec2-enhanced-networking-with-the-elastic-network-adaptor-ena">EC2 Enhanced Networking with the Elastic Network Adaptor (ENA)</h3>
+<h3 id="vpc-endpoints">VPC Endpoints</h3>
+<h3 id="aws-global-accelerator">AWS Global Accelerator</h3>
+<h3 id="amazon-route-53">Amazon Route 53</h3>
+<h3 id="amazon-cloudfront">Amazon CloudFront</h3>
+<h2 id="databases">Databases</h2>
+<h3 id="amazon-relational-database-service">Amazon Relational Database Service</h3>
+<h3 id="amazon-dynamodb">Amazon DynamoDB</h3>
+<h3 id="amazon-elasticache">Amazon ElastiCache</h3>
+<h3 id="amazon-neptune">Amazon Neptune</h3>
+<h3 id="amazon-redshift">Amazon Redshift</h3>
+<h3 id="rds-instance-purchasing-options">RDS Instance Purchasing Options</h3>
+<h3 id="database-storage-and-io-pricing">Database Storage and I/O Pricing</h3>
+<h3 id="backup-storage-pricing">Backup Storage Pricing</h3>
+<h3 id="backtrack-storage-pricing">Backtrack Storage Pricing</h3>
+<h3 id="snapshot-export-pricing">Snapshot Export Pricing</h3>
+<h3 id="data-transfer-pricing">Data Transfer Pricing</h3>
+<h2 id="aws-global-infrastructure">AWS Global Infrastructure</h2>
+<h3 id="availability-zones">Availability Zones,</h3>
+<h3 id="regions">Regions,</h3>
+<h3 id="edge-locations">Edge Locations,</h3>
+<h3 id="regional-edge-caches">Regional Edge Caches</h3>
+<h2 id="high-availability">High Availability</h2>
+<h3 id="backup-and-dr-strategies">Backup and DR Strategies</h3>
+<h3 id="high-availability-vs-fault-tolerance">High Availability vs Fault Tolerance</h3>
+<h3 id="considerations-when-planning-an-aws-dr-storage-solution">Considerations when planning an AWS DR Storage Solution</h3>
+<h3 id="using-amazon-s3-as-a-data-backup-solution">Using Amazon S3 as a Data Backup Solution</h3>
+<h3 id="using-aws-snowball-for-data-transfer">Using AWS Snowball for Data Transfer</h3>
+<h3 id="using-aws-storage-gateway-for-on-premise-data-backup">Using AWS Storage Gateway for On-premise Data Backup</h3>
+<h3 id="rds-multi-az">RDS Multi AZ</h3>
+<h3 id="read-replicas">Read Replicas</h3>
+<h3 id="amazon-aurora-ha-options">Amazon Aurora HA Options</h3>
+<h3 id="aurora-single-master---multiple-read-replicas">Aurora Single Master - Multiple Read Replicas</h3>
+<h3 id="aurora-single-master---multiple-read-replicas-demo">Aurora Single Master - Multiple Read Replicas DEMO</h3>
+<h3 id="aurora-multi-master">Aurora Multi Master</h3>
+<h3 id="aurora-multi-master-setup-and-use-demo">Aurora Multi-Master Setup and Use DEMO</h3>
+<h3 id="aurora-serverless">Aurora Serverless</h3>
+<h3 id="aurora-serverless-database-cluster-demo">Aurora Serverless Database Cluster DEMO</h3>
+<h3 id="high-availability-in-dynamodb">High Availability in DynamoDB</h3>
+<h3 id="aws-dynamodb-ha-options">AWS DynamoDB HA Options</h3>
+<h3 id="aws-dynamodb-ha-options-demo">AWS DynamoDB HA Options Demo</h3>
+<h3 id="on-demand-backup-and-restore">On-Demand Backup and Restore</h3>
+<h3 id="point-in-time-recovery">Point in Time Recovery</h3>
+<h3 id="point-in-time-recovery-demo">Point in Time Recovery Demo</h3>
+<h3 id="dynamodb-accelerator">DynamoDB Accelerator</h3>
+<h3 id="dynamodb-accelerator-dax">DynamoDB Accelerator (DAX)</h3>
+<h2 id="architecture">Architecture</h2>
+<p>What is a Decoupled and Event-Driven Architecture?
+Application services
+Introduction to the Simple Queue Service
+Introduction to the Simple Notification Service
+Streaming Data
+Fundamentals of Stream Processing
+Amazon Kinesis Overview
+A Streaming Framework
+Design a Multi-Tier Solution
+Architecture Basics
+What is Multi-Tier Design and When Should We Use it?
+When Should We Consider Single-Tier Architecture?
+Designing a Multi-Tier Solution
+Connectivity Within The VPC
+Design considerations
+Serverless Design Patterns
+Micro Service Design Patterns</p>
+<h2 id="security">Security</h2>
+<p>What is Identity and Access Management?
+IAM Features
+Managing user identities with long term credentials in IAM
+Overview of the User Dashboard
+Creating IAM Users
+Managing IAM Users
+Managing access using IAM user groups &amp; roles
+Managing Multiple Users with IAM User Groups
+IAM Roles
+Using AWS Service Roles to Access AWS Resources on Your Behalf
+Using IAM User Roles to Grant Temporary Access for Users
+Using Roles for Federated Access
+Using IAM policies to define and manage permissions
+IAM AWS Policy Types
+Examining the JSON Policy Structure
+Creating an AWS IAM Policy
+Policy Evaluation Logic
+Cross-account access
+Implementing Cross-Account Access Using IAM
+AWS Web Application Firewall
+An Overview of AWS WAF
+Understanding Rules and Rule Groups
+Creating a Web ACL Demo
+AWS Firewall Manager
+AWS Firewall Manager and Prerequisites
+Policies
+AWS Shield
+What is AWS Shield?
+Configuring Shield
+Amazon Cognito
+Overview of Amazon Cognito
+The Basics of Cognito
+User Pools
+User Pools Authentication Flow
+Identity Pools
+Identity Pools Authentication Flow
+Identity Federation
+Using AWS Identity Federation to Simplify Access at Scale</p>
+<h2 id="management">Management</h2>
+<p>What is Amazon CloudWatch?
+Audit Logs
+The Benefits of Logging
+AWS CloudTrail
+What is AWS CloudTrail?
+AWS CloudTrail Operations
+AWS Config
+What is AWS Config?
+Key Components of AWS Config
+AWS Organizations
+AWS Organizations
+Implementing AWS Organizations
+Securing Your Organizations with Service Control Policies
+AWS Logging
+CloudWatch Logging Agent
+CloudTrail Logging
+Monitoring CloudTrail with CloudWatch
+CloudFront Access Logs
+VPC Flow Logs
+Cost Management
+Bills and Cost Drivers
+Credits
+Cost Explorer
+Reports
+Cost and Usage Reports
+Budgets</p>
+<h2 id="encryption">Encryption</h2>
+<p>What is KMS?
+Components of KMS
+Understanding Permissions &amp; Key Policies
+Key Management
+CloudHSM
+What is CloudHSM?
+Understanding AWS CloudHSM Architecture &amp; Implementation
+Using CloudHSM as a Custom Key Store in KMS
+S3 Encryption Mechanisms
+Overview of Encryption Mechanisms
+Encryption Mechanisms
+Server-Side Encryption with S3 Managed Keys (SSE-S3)
+Server-Side Encryption with KMS Managed Keys (SSE-KMS)
+Server-Side Encryption with Customer Provided keys (SSE-C)
+Client-Side Encryption with KMS Managed Keys (CSE-KMS)
+Client-Side Encryption with Customer Provided Keys (CSE-C)</p>
+]]></content>
+        </item>
         
         <item>
             <title>Microservices : Decomposition Strategies</title>
@@ -258,11 +621,12 @@ David Garlan and Mary Shaw <a href="https://www.cs.cmu.edu/afs/cs/project/able/f
             <pubDate>Sat, 03 Oct 2020 22:07:51 +0100</pubDate>
             
             <guid>/posts/help/</guid>
-            <description>Useful Hugo commands hugo server hugo new .\content\posts\page-name.md -D
+            <description>Useful Hugo commands hugo server
+hugo new .\content\posts\page-name.md -D
 Useful links https://www.markdownguide.org/cheat-sheet/ https://gist.github.com/rxaviers/7360908</description>
             <content type="html"><![CDATA[<h3 id="useful-hugo-commands">Useful Hugo commands</h3>
-<p>hugo server
-hugo new .\content\posts\page-name.md -D</p>
+<p>hugo server</p>
+<p>hugo new .\content\posts\page-name.md -D</p>
 <h3 id="useful-links">Useful links</h3>
 <p><a href="https://www.markdownguide.org/cheat-sheet/">https://www.markdownguide.org/cheat-sheet/</a>
 <a href="https://gist.github.com/rxaviers/7360908">https://gist.github.com/rxaviers/7360908</a></p>
