@@ -14,8 +14,8 @@
       <pubDate>Sat, 24 Dec 2022 23:18:23 +0000</pubDate>
       
       <guid>/posts/kafka-streams-wip/</guid>
-      <description>If any team is using Kafka as a message broker or event sourcing system or change logs or commit log; no matter what your use case is, you must be having producers and consumers. Now at the consumer side, to process the event stream, you&amp;rsquo;ll be having one of following 2 systems -
- Microservices using Kafka&amp;rsquo;s Producer and Consumer API, procssing one message at a time Full fledged stream processing applications using Streaming framework as explained just above.</description>
+      <description>Stream is unbound flow of data (call it message, event or log).
+  The Streams API of Apache Kafka®, available through a Java library, can be used to build highly scalable, elastic, fault-tolerant, distributed applications and microservices. First and foremost, the Kafka Streams API allows you to create real-time applications that power your core business. It is the easiest yet the most powerful technology to process data stored in Kafka.</description>
     </item>
     
     <item>
