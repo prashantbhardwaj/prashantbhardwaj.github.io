@@ -10,11 +10,11 @@
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
-            <title>Kafka Streams - WIP</title>
-            <link>/posts/kafka-streams-wip/</link>
+            <title>Kafka Streams : Introduction</title>
+            <link>/posts/kafka-streams-introduction/</link>
             <pubDate>Sat, 24 Dec 2022 23:18:23 +0000</pubDate>
             
-            <guid>/posts/kafka-streams-wip/</guid>
+            <guid>/posts/kafka-streams-introduction/</guid>
             <description>Stream is unbound flow of data (call it message, event or log).
   The Streams API of Apache Kafka®, available through a Java library, can be used to build highly scalable, elastic, fault-tolerant, distributed applications and microservices. First and foremost, the Kafka Streams API allows you to create real-time applications that power your core business. It is the easiest yet the most powerful technology to process data stored in Kafka.</description>
             <content type="html"><![CDATA[<blockquote>
@@ -23,11 +23,7 @@
 <blockquote>
 <p>The <strong>Streams API of Apache Kafka®</strong>, available through a Java library, can be used to build highly scalable, elastic, fault-tolerant, distributed applications and microservices. First and foremost, the Kafka Streams API allows you to create real-time applications that power your core business. It is the easiest yet the most powerful technology to process data stored in Kafka.</p>
 </blockquote>
-<p>If your team is using Kafka as a message broker or event sourcing system or change logs or commit log; no matter what your use case is, you must be having producers and consumers (mostly Kafka Producer and Consumer APIs). Now at the consumer side, to process the event stream, you&rsquo;ll be following one of 2 approaches -</p>
-<ol>
-<li>Microservices using Kafka&rsquo;s Producer and Consumer API, procssing one message at a time</li>
-<li>Full fledged stream processing applications using Streaming framework as explained just above. <strong>Let&rsquo;s discuss this approach in detail.</strong></li>
-</ol>
+<p>If your team is using Kafka as a message broker or event sourcing system or change logs or commit log; no matter what your use case is, you must be having producers and consumers (mostly Kafka Producer and Consumer APIs). Beside using Kafka Consumer API to process messages/events, Kafka STream API is another way. <strong>Let&rsquo;s discuss this approach in detail.</strong></p>
 <blockquote>
 <p>There is a wealth of interesting work happening in the stream processing area—ranging from open source frameworks like <a href="https://spark.apache.org/">Apache Spark</a>, <a href="https://storm.apache.org/">Apache Storm</a>, <a href="https://flink.apache.org/">Apache Flink</a>, and <a href="https://samza.apache.org/">Apache Samza</a>, to proprietary services such as <a href="https://cloud.google.com/dataflow">Google’s DataFlow</a> and <a href="https://aws.amazon.com/lambda/">AWS Lambda</a> — so it is worth outlining how Kafka Streams is similar and different from these things.</p>
 </blockquote>
@@ -66,9 +62,10 @@
 </ul>
 <h2 id="streams-meet-tables">Streams meet tables</h2>
 <h3 id="tables-is-nothing-but-a-snapshot-of-streams-processing">Tables is nothing but a snapshot of Streams processing</h3>
-<p>When you log on in Amazon website you sometimes see the cart filled with some of the items which you added in the cart in past. Current state of of your cart may show number 5, however if you you try to remember - you added those 5 items one after another. Here the stream of Item-Added-Into-Cart events was processed and every time count was increased by 1. It is also possible that you deleted some of the items from the cart and another stream of Item-Deleted-From-Cart events was then processed and numbers were reduced from your cart one after another. End result in a table (in Database) is nothing but processing the change logs (events).</p>
+<p>Current state of data in a database table is nothing but a result of processing of some add-data and update-data events.
+Example: When you log on in Amazon website you sometimes see your shopping cart already showing some of the items which you added in the past. If current state of your cart is showing 5 items, which means you added those 5 items one after another. Here the stream of Item-Added-Into-Cart events was processed and every time count was increased by 1. It is also possible that you deleted some of the items from the cart and another stream of Item-Deleted-From-Cart events was then processed and numbers were reduced from your cart one after another. End result in a table (in Database) is nothing but processing the inbound change events.</p>
 <h3 id="ways-to-capture-change-logs">Ways to capture change logs</h3>
-<p>By <a href="http://docs.confluent.io/current/streams/concepts.html#duality-of-streams-and-tables">modeling the table concept in this way</a>, Kafka Streams lets you compute derived values against the table using just the stream of changes. In other words it lets you process database change streams just as you would a stream of clicks.
+<p>By <a href="http://docs.confluent.io/current/streams/concepts.html#duality-of-streams-and-tables">modeling the table concept in this way</a>, Kafka Streams lets you compute derived values against the table using just the stream of changes. In other words it lets you process database change streams just as you would in case of a stream of clicks.
 <a href="https://www.confluent.io/blog/announcing-kafka-connect-building-large-scale-low-latency-data-pipelines">Kafka Connect</a>, a framework that is built for data capture and was newly added to Apache Kafka in the 0.9 release.</p>
 <h3 id="joins-and-aggregates-are-tables-too">Joins and Aggregates are Tables Too</h3>
 <p>Let’s say I have a stream of user clicks coming in and I want to compute the total number of clicks for each user. Kafka Streams lets you compute this aggregation, and the set of counts that are computed, is, unsurprisingly, a table of the current number of clicks per user.</p>
@@ -77,18 +74,34 @@
 <h3 id="windows-and-tables">Windows and Tables </h3>
 <p>Kafka Streams makes handling this really simple: the semantics of a <a href="http://docs.confluent.io/current/streams/developer-guide.html#windowing-a-stream">windowed aggregation</a> like a count is that it represents the count “so far” for the window. It is continuously updated as new data arrives and allows the downstream receiver to decide when it is complete. And yes, this notion of an updatable quantity should seem eerily familiar: it is nothing more than a table where the window being updated is part of the key. Naturally downstream operations know that this stream represents a table, and process these refinements as they come.</p>
 <h2 id="references">References</h2>
-<h3 id="kafka-streams">Kafka Streams</h3>
+<h3 id="kafka-streams-concepts-and-architecture">Kafka Streams (Concepts and Architecture)</h3>
 <ul>
 <li><a href="https://www.confluent.io/blog/introducing-kafka-streams-stream-processing-made-simple/">Introducing Kafka Streams: Stream Processing Made Simple</a></li>
-<li><a href="https://docs.confluent.io/platform/current/streams/index.html#kstreams-overview">Kafka Streams Overview</a></li>
-<li><a href="https://www.confluent.io/blog/kafka-streams-tables-part-1-event-streaming/">Streams and Tables in Apache Kafka: A Primer</a></li>
-<li><a href="https://developer.confluent.io/learn-kafka/kafka-streams/get-started/">Getting Started with Kafka Streams</a></li>
-<li><a href="https://developer.confluent.io/learn/kafka-storage-and-processing/">Kafka Storage &amp; Processing Fundamentals</a></li>
-<li><a href="http://docs.confluent.io/current/streams/architecture.html">Kafka Stream Architecture</a></li>
+<li><a href="https://docs.confluent.io/platform/current/streams/index.html">Kafka Streams Overview</a></li>
 <li><a href="http://docs.confluent.io/current/streams/concepts.html">kafka Stream Concepts</a></li>
-<li><a href="http://docs.confluent.io/current/streams/developer-guide.html">Kafka Stream Developer Guide</a></li>
-<li><a href="https://developer.confluent.io/learn-kafka/kafka-streams/get-started/">Free Video Course</a></li>
+<li><a href="http://docs.confluent.io/current/streams/architecture.html">Kafka Stream Architecture</a></li>
+</ul>
+<h3 id="kafka-storage--processing-fundamentals">Kafka Storage &amp; Processing Fundamentals</h3>
+<ul>
 <li><a href="https://developer.confluent.io/learn/kafka-storage-and-processing/">Kafka Storage &amp; Processing Fundamentals</a></li>
+<li><a href="https://www.confluent.io/blog/kafka-streams-tables-part-1-event-streaming/">Streams and Tables in Apache Kafka: Part 1</a></li>
+<li><a href="https://www.confluent.io/blog/kafka-streams-tables-part-2-topics-partitions-and-storage-fundamentals/">The Storage Layer: Topics, Partitions, And More</a></li>
+<li><a href="https://www.confluent.io/blog/kafka-streams-tables-part-3-event-processing-fundamentals/">The Processing Layer: Distributed Applications, Parallelism with Partitions, Data Contracts</a></li>
+<li><a href="https://www.confluent.io/blog/kafka-streams-tables-part-4-elasticity-fault-tolerance-advanced-concepts/">Elasticity, Fault Tolerance, and Other Advanced Concepts</a></li>
+<li><a href="https://developer.confluent.io/learn-kafka/kafka-streams/get-started/">Getting Started with Kafka Streams - Free Video Course</a></li>
+</ul>
+<h3 id="developer-guides">Developer Guides</h3>
+<ul>
+<li><a href="http://docs.confluent.io/current/streams/developer-guide.html">Kafka Stream Developer Guide</a></li>
+<li><a href="https://docs.confluent.io/platform/current/streams/developer-guide/write-streams.html">Writing a Streams Application</a></li>
+<li><a href="https://docs.confluent.io/platform/current/streams/developer-guide/test-streams.html">Testing Streams Code</a></li>
+<li><a href="https://docs.confluent.io/platform/current/streams/developer-guide/config-streams.html">Configuring a Streams Application</a></li>
+<li><a href="https://docs.confluent.io/platform/current/streams/developer-guide/dsl-api.html">High Level API: Streams DSL</a></li>
+<li><a href="https://docs.confluent.io/platform/current/streams/developer-guide/processor-api.html">Low Level API: Kafka Streams Processor API</a></li>
+<li><a href="https://docs.confluent.io/platform/current/streams/developer-guide/interactive-queries.html">Kafka Streams Interactive Queries</a></li>
+<li><a href="https://docs.confluent.io/platform/current/streams/developer-guide/running-app.html">Running Streams Applications</a></li>
+<li><a href="https://docs.confluent.io/platform/current/streams/developer-guide/manage-topics.html">Managing Streams Application Topics</a></li>
+<li><a href="https://docs.confluent.io/platform/current/streams/developer-guide/security.html">Kafka Streams Security</a></li>
 </ul>
 <h3 id="other-useful-concepts">Other useful concepts</h3>
 <ul>
@@ -103,6 +116,13 @@
 <li><a href="https://docs.confluent.io/platform/current/streams/code-examples.html">Kafka Stream Code Examples</a></li>
 <li><a href="https://github.com/confluentinc/kafka-streams-examples">Other code examples</a></li>
 <li><a href="https://www.youtube.com/watch?v=40BmRRl_hp0&amp;list=PL7dZNxCsTH8fCJwRiWKyED-CLKDtZl08-&amp;index=8">Video - Create a REST API with Spring Boot for our Kafka Streams Bank Application!</a></li>
+</ul>
+<h3 id="springboot-and-kafka-streams">SpringBoot and Kafka Streams</h3>
+<ul>
+<li><a href="https://github.com/spring-cloud/spring-cloud-stream-samples/tree/main/kafka-streams-samples">Sample code for writing Kafka Streams Applications using SpringBoot</a></li>
+<li><a href="https://github.com/spring-cloud/spring-cloud-stream-binder-kafka">SpringBoot Kafka Stream Binder Reference Document</a></li>
+<li><a href="https://docs.spring.io/spring-cloud-stream/docs/current/reference/html/spring-cloud-stream-binder-kafka.html#_kafka_streams_binder">Spring Cloud Stream Kafka Binder Reference Guide</a></li>
+<li><a href="https://developer.confluent.io/learn-kafka/spring/process-messages-with-kafka-streams/">Process Messages with KafkaStreams and Spring Boot</a></li>
 </ul>
 <h3 id="videos">Videos</h3>
 <ul>
