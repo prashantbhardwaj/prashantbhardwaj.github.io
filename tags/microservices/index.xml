@@ -7,25 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>copyright@Prashant</copyright>
-    <lastBuildDate>Mon, 03 Oct 2022 21:45:21 +0100</lastBuildDate><atom:link href="/tags/microservices/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Oct 2022 21:45:21 +0100</lastBuildDate><atom:link href="/tags/microservices/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Microservices : Decomposition Strategies</title>
-      <link>/posts/microservices-decomposition-strategies/</link>
-      <pubDate>Mon, 03 Oct 2022 21:45:21 +0100</pubDate>
+      <title>Microservices : Service to Service Communications [Part 3]</title>
+      <link>/posts/microservices-service-to-service-communications-part-3/</link>
+      <pubDate>Tue, 04 Oct 2022 21:45:21 +0100</pubDate>
       
-      <guid>/posts/microservices-decomposition-strategies/</guid>
-      <description>Main idea behind Microservices pattern is to construct an application by developing interconnected smaller services.
-Decomposition of an application into smaller services facilitates two things:
- Division of labor and knowledge Loose coupling of interactions  </description>
+      <guid>/posts/microservices-service-to-service-communications-part-3/</guid>
+      <description>Types of communication among microservices 1. Synchronous communication using REST 2. Asynchronous messaging  Types of communication among microservices In a microservices architecture, there are typically three types of communication patterns used for inter-service communication:
+ Synchronous Asynchronous Data streaming [point to point]  1. Synchronous communication using REST 1.1 Handling failures  by using Circuit breaker pattern Network timeout if do not receive response within a configured timeout Limit the number of outstanding requests from a client to a target service   👉 Pattern: Circuit Breaker.</description>
     </item>
     
     <item>
-      <title>Microservices : Introduction</title>
-      <link>/posts/microservices-introduction/</link>
+      <title>Microservices : Decomposition Strategies [Part 2]</title>
+      <link>/posts/microservices-decomposition-strategies-part-2/</link>
+      <pubDate>Mon, 03 Oct 2022 21:45:21 +0100</pubDate>
+      
+      <guid>/posts/microservices-decomposition-strategies-part-2/</guid>
+      <description>Introduction In this blog post, we will explore the process of decomposing a monolithic application into microservices and the benefits it brings. We will discuss various strategies, best practices, and patterns involved in this architectural transformation.
+Benefits of Decomposing Monoliths  Scalability: Microservices enable individual components to scale independently, allowing you to allocate resources efficiently based on specific needs. Agility and Faster Time-to-Market: Microservices enable teams to work independently, allowing for parallel development and deployment cycles, leading to quicker feature delivery.</description>
+    </item>
+    
+    <item>
+      <title>Microservices : Introduction [Part 1]</title>
+      <link>/posts/microservices-introduction-part-1/</link>
       <pubDate>Mon, 03 Oct 2022 11:39:12 +0100</pubDate>
       
-      <guid>/posts/microservices-introduction/</guid>
-      <description>Microservice pattern is an architecture that functionally decomposes an application into a set of services. It doesn&amp;rsquo;t say anything about size. Each service has focused, cohesive set of responsibility.
+      <guid>/posts/microservices-introduction-part-1/</guid>
+      <description>⭐ Microservice pattern is an architecture that functionally decomposes an application into a set of services. It doesn&amp;rsquo;t say anything about size. Each service has focused, cohesive set of responsibility.
  Characterstics of Microservice architecture  X, Y and Z-Axis Scalability of micro services (Michael Fisher&amp;rsquo;s book - The Art of Scalability (Addison-Wesley, 2015) - Scale cube) Microservices as a form of modularity Each service has its own database  How is this different from Service oriented architecture (SOA)?</description>
     </item>
     
