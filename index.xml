@@ -7,14 +7,46 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>copyright@Prashant</copyright>
-    <lastBuildDate>Sun, 11 Jun 2023 20:31:29 +0100</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Jan 2024 23:07:52 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Logging in Java</title>
+      <link>/posts/logging-in-java/</link>
+      <pubDate>Sun, 28 Jan 2024 23:07:52 +0000</pubDate>
+      
+      <guid>/posts/logging-in-java/</guid>
+      <description>🔰 for beginner
+ As a Java developer, you have noticed the code like
+logger.info(&amp;#34;user added in database : &amp;#34; + user.getUserId()); Such lines are responsible to write logs from your application, which you normally find in the log files which are created on the servers where you run your application.
+ 📘 Normally the classes you use in your applications to log the information come from the thing called logging facade or logging API.</description>
+    </item>
+    
+    <item>
+      <title>AWS Certified Developer - Associate (DVA-C02)</title>
+      <link>/posts/aws-certified-developer-associate-dva-c02/</link>
+      <pubDate>Thu, 23 Nov 2023 23:43:09 +0000</pubDate>
+      
+      <guid>/posts/aws-certified-developer-associate-dva-c02/</guid>
+      <description>⭐ The AWS Certified Developer - Associate (DVA-C02) exam is intended for individuals who perform a developer role.
+The exam validates a candidate’s ability to demonstrate proficiency in developing, testing, deploying, and debugging AWS Cloud-based applications.
+ Official exam guide explains what a developer needs to know to pass this exam. AWS devides whole exam test content into 4 domains. We will request you to go through the official exam guide.</description>
+    </item>
+    
+    <item>
+      <title>Common Apache Kafka Mistakes to Avoid</title>
+      <link>/posts/common-apache-kafka-mistakes-to-avoid/</link>
+      <pubDate>Sun, 06 Aug 2023 01:10:27 +0100</pubDate>
+      
+      <guid>/posts/common-apache-kafka-mistakes-to-avoid/</guid>
+      <description>You do not need multiple Producers in a single service Producer is Thread Safe you can use its single instance. Now let&amp;rsquo;s talk about the benefits of single Producer instance. It batches your record and it also batches batches of records to minimize the number of request to the broker servers. Single Producer Instance gives you low number of requests (read it connection) to the broker server which means better performance.</description>
+    </item>
+    
     <item>
       <title>Books to Read</title>
       <link>/posts/books-to-read/</link>
       <pubDate>Sun, 11 Jun 2023 20:31:29 +0100</pubDate>
       
       <guid>/posts/books-to-read/</guid>
-      <description> Shreemad Bhagwat Gita  </description>
+      <description>Shreemad Bhagwat Gita the courage to be disliked marcus aurelius - medittions big questions of life - om swami who will cry when you die - robin sharma freedom frm the known - j krishna murti seneca on the shortness of life life is long if you know seneca letters rom stoic beyond good and evil the art of living epictetus how to love  https://www.dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_1.pdf https://www.dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf https://www.dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_3.pdf</description>
     </item>
     
     <item>
@@ -46,12 +78,12 @@
     </item>
     
     <item>
-      <title>Microservices : Service to Service Communications [Part 3]</title>
-      <link>/posts/microservices-service-to-service-communications-part-3/</link>
+      <title>Microservices : Service to Service Communication [Part 3]</title>
+      <link>/posts/microservices-service-to-service-communication-part-3/</link>
       <pubDate>Tue, 04 Oct 2022 21:45:21 +0100</pubDate>
       
-      <guid>/posts/microservices-service-to-service-communications-part-3/</guid>
-      <description>Types of communication among microservices 1. Synchronous communication using REST 2. Asynchronous messaging  Types of communication among microservices In a microservices architecture, there are typically three types of communication patterns used for inter-service communication:
+      <guid>/posts/microservices-service-to-service-communication-part-3/</guid>
+      <description>Topics  1. Synchronous communication using REST 2. Asynchronous messaging  Types of communication among microservices In a microservices architecture, there are typically three types of communication patterns used for inter-service communication:
  Synchronous Asynchronous Data streaming [point to point]  1. Synchronous communication using REST 1.1 Handling failures  by using Circuit breaker pattern Network timeout if do not receive response within a configured timeout Limit the number of outstanding requests from a client to a target service   👉 Pattern: Circuit Breaker.</description>
     </item>
     
@@ -73,36 +105,6 @@ Benefits of Decomposing Monoliths  Scalability: Microservices enable individual 
       <guid>/posts/microservices-introduction-part-1/</guid>
       <description>⭐ Microservice pattern is an architecture that functionally decomposes an application into a set of services. It doesn&amp;rsquo;t say anything about size. Each service has focused, cohesive set of responsibility.
  Characterstics of Microservice architecture  X, Y and Z-Axis Scalability of micro services (Michael Fisher&amp;rsquo;s book - The Art of Scalability (Addison-Wesley, 2015) - Scale cube) Microservices as a form of modularity Each service has its own database  How is this different from Service oriented architecture (SOA)?</description>
-    </item>
-    
-    <item>
-      <title>Monolith Architecture</title>
-      <link>/posts/monolith-architecture/</link>
-      <pubDate>Sun, 02 Oct 2022 21:42:56 +0100</pubDate>
-      
-      <guid>/posts/monolith-architecture/</guid>
-      <description>Benefits of Monolith architecture  Simple to develop Easy to make radical changes Strightforward to test Strightforward to deploy Easy to scale  Issues with Monolith architecture  Development is Slow Path from commit to deployment is long and aduous Scaling is difficult delivering a reliable monolith is challenging locked into increasingly obslete technology stack  </description>
-    </item>
-    
-    <item>
-      <title>Software Architecture</title>
-      <link>/posts/software-architecture/</link>
-      <pubDate>Sat, 01 Oct 2022 22:37:40 +0100</pubDate>
-      
-      <guid>/posts/software-architecture/</guid>
-      <description>Any software architecture of a computing system is the set of working components and relationsship between them. Exaple: Database, Message Broker, Server and an application running on that server.
- The 4+1 View Model Of Software Architecture More concretely, an application’s architecture can be viewed from multiple perspectives.
- 📚 Phillip Krutchen: “Architectural Blueprints—The ‘4+1’ View Model of Software Architecture”
-  🔔 A good architecture never enables you to satisfy your functional requirement, however it helps you to achieve the quality of service (non-functional and developer experience) requirements.</description>
-    </item>
-    
-    <item>
-      <title>भारत के संविधान का भाग 9 - पंचायतों के लिए नियम</title>
-      <link>/hi/posts/panchayat-in-constitution/</link>
-      <pubDate>Wed, 10 Mar 2021 22:21:33 +0000</pubDate>
-      
-      <guid>/hi/posts/panchayat-in-constitution/</guid>
-      <description>गाँधी जी ने परिकल्पना की थी गाँवों के स्तर पर भी एक लोकतंत्र की स्थापना हो जहाँ लोग आपस में मिलजुलकर आर्थिक व् सामजिक विकास के लिए कार्य करें | साथ में इस बात की भी बकालत की थी कि ज़मीनी स्तर पर पंचायत का एक ऐसा वास्तविक लोकतंत्र खड़ा हो जिसमें प्रत्येक व्यक्ति की भागेदारी हो | जो केंद्रीय लोकतंत्र में संभव नहीं है क्योंकि वहां लोगों के द्वारा चुने हुए लोग जाते हैं लोगों की स्वयं की आवाज़ वहां नहीं पहुँचती | किन्तु प्रत्येक व्यक्ति को यह अधिकार व् अवसर मिला हुआ है कि वह अपनी ग्राम सभा की बैठक में सबके सामने अपनी बात कह सके |</description>
     </item>
     
   </channel>

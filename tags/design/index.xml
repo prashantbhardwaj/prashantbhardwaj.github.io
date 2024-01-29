@@ -9,12 +9,12 @@
     <copyright>copyright@Prashant</copyright>
     <lastBuildDate>Tue, 04 Oct 2022 21:45:21 +0100</lastBuildDate><atom:link href="/tags/design/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Microservices : Service to Service Communications [Part 3]</title>
-      <link>/posts/microservices-service-to-service-communications-part-3/</link>
+      <title>Microservices : Service to Service Communication [Part 3]</title>
+      <link>/posts/microservices-service-to-service-communication-part-3/</link>
       <pubDate>Tue, 04 Oct 2022 21:45:21 +0100</pubDate>
       
-      <guid>/posts/microservices-service-to-service-communications-part-3/</guid>
-      <description>Types of communication among microservices 1. Synchronous communication using REST 2. Asynchronous messaging  Types of communication among microservices In a microservices architecture, there are typically three types of communication patterns used for inter-service communication:
+      <guid>/posts/microservices-service-to-service-communication-part-3/</guid>
+      <description>Topics  1. Synchronous communication using REST 2. Asynchronous messaging  Types of communication among microservices In a microservices architecture, there are typically three types of communication patterns used for inter-service communication:
  Synchronous Asynchronous Data streaming [point to point]  1. Synchronous communication using REST 1.1 Handling failures  by using Circuit breaker pattern Network timeout if do not receive response within a configured timeout Limit the number of outstanding requests from a client to a target service   👉 Pattern: Circuit Breaker.</description>
     </item>
     

@@ -5,17 +5,17 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="Prashant Bhardwaj ">
-<meta name="description" content="Introduction In this blog post, we will explore the process of decomposing a monolithic application into microservices and the benefits it brings. We will discuss various strategies, best practices, and patterns involved in this architectural transformation.
-Benefits of Decomposing Monoliths  Scalability: Microservices enable individual components to scale independently, allowing you to allocate resources efficiently based on specific needs. Agility and Faster Time-to-Market: Microservices enable teams to work independently, allowing for parallel development and deployment cycles, leading to quicker feature delivery." />
+<meta name="description" content="Topics  1. Synchronous communication using REST 2. Asynchronous messaging  Types of communication among microservices In a microservices architecture, there are typically three types of communication patterns used for inter-service communication:
+ Synchronous Asynchronous Data streaming [point to point]  1. Synchronous communication using REST 1.1 Handling failures  by using Circuit breaker pattern Network timeout if do not receive response within a configured timeout Limit the number of outstanding requests from a client to a target service   👉 Pattern: Circuit Breaker." />
 <meta name="keywords" content="homepage, blog, science, informatics, development, programming, microservices, design, architecture" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="#252627" />
-<link rel="canonical" href="/posts/microservices-decomposition-strategies-part-2/" />
+<link rel="canonical" href="/posts/microservices-service-to-service-communication-part-3/" />
 
 
     <title>
         
-            Microservices : Decomposition Strategies [Part 2] :: Prashant Bhardwaj  — A Java developer
+            Microservices : Service to Service Communication [Part 3] :: Prashant Bhardwaj  — A Java developer
         
     </title>
 
@@ -39,18 +39,18 @@ Benefits of Decomposing Monoliths  Scalability: Microservices enable individual 
     <meta name="msapplication-TileColor" content="">
 
 
-<meta itemprop="name" content="Microservices : Decomposition Strategies [Part 2]">
-<meta itemprop="description" content="Introduction In this blog post, we will explore the process of decomposing a monolithic application into microservices and the benefits it brings. We will discuss various strategies, best practices, and patterns involved in this architectural transformation.
-Benefits of Decomposing Monoliths  Scalability: Microservices enable individual components to scale independently, allowing you to allocate resources efficiently based on specific needs. Agility and Faster Time-to-Market: Microservices enable teams to work independently, allowing for parallel development and deployment cycles, leading to quicker feature delivery."><meta itemprop="datePublished" content="2022-10-03T21:45:21+01:00" />
-<meta itemprop="dateModified" content="2022-10-03T21:45:21+01:00" />
-<meta itemprop="wordCount" content="833"><meta itemprop="image" content="/"/>
+<meta itemprop="name" content="Microservices : Service to Service Communication [Part 3]">
+<meta itemprop="description" content="Topics  1. Synchronous communication using REST 2. Asynchronous messaging  Types of communication among microservices In a microservices architecture, there are typically three types of communication patterns used for inter-service communication:
+ Synchronous Asynchronous Data streaming [point to point]  1. Synchronous communication using REST 1.1 Handling failures  by using Circuit breaker pattern Network timeout if do not receive response within a configured timeout Limit the number of outstanding requests from a client to a target service   👉 Pattern: Circuit Breaker."><meta itemprop="datePublished" content="2022-10-04T21:45:21+01:00" />
+<meta itemprop="dateModified" content="2022-10-04T21:45:21+01:00" />
+<meta itemprop="wordCount" content="934"><meta itemprop="image" content="/"/>
 <meta itemprop="keywords" content="microservices,design,architecture," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/"/>
 
-<meta name="twitter:title" content="Microservices : Decomposition Strategies [Part 2]"/>
-<meta name="twitter:description" content="Introduction In this blog post, we will explore the process of decomposing a monolithic application into microservices and the benefits it brings. We will discuss various strategies, best practices, and patterns involved in this architectural transformation.
-Benefits of Decomposing Monoliths  Scalability: Microservices enable individual components to scale independently, allowing you to allocate resources efficiently based on specific needs. Agility and Faster Time-to-Market: Microservices enable teams to work independently, allowing for parallel development and deployment cycles, leading to quicker feature delivery."/>
+<meta name="twitter:title" content="Microservices : Service to Service Communication [Part 3]"/>
+<meta name="twitter:description" content="Topics  1. Synchronous communication using REST 2. Asynchronous messaging  Types of communication among microservices In a microservices architecture, there are typically three types of communication patterns used for inter-service communication:
+ Synchronous Asynchronous Data streaming [point to point]  1. Synchronous communication using REST 1.1 Handling failures  by using Circuit breaker pattern Network timeout if do not receive response within a configured timeout Limit the number of outstanding requests from a client to a target service   👉 Pattern: Circuit Breaker."/>
 
 
 
@@ -58,7 +58,7 @@ Benefits of Decomposing Monoliths  Scalability: Microservices enable individual 
 
 
 
-    <meta property="article:published_time" content="2022-10-03 21:45:21 &#43;0100 BST" />
+    <meta property="article:published_time" content="2022-10-04 21:45:21 &#43;0100 BST" />
 
 
 
@@ -128,7 +128,7 @@ Benefits of Decomposing Monoliths  Scalability: Microservices enable individual 
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        4 minutes
+        5 minutes
 
         
       </p>
@@ -136,7 +136,7 @@ Benefits of Decomposing Monoliths  Scalability: Microservices enable individual 
 
     <article>
       <h1 class="post-title">
-        <a href="/posts/microservices-decomposition-strategies-part-2/">Microservices : Decomposition Strategies [Part 2]</a>
+        <a href="/posts/microservices-service-to-service-communication-part-3/">Microservices : Service to Service Communication [Part 3]</a>
       </h1>
 
       
@@ -146,118 +146,134 @@ Benefits of Decomposing Monoliths  Scalability: Microservices enable individual 
       
 
       <div class="post-content">
-        <h2 id="introduction">Introduction</h2>
-<p>In this blog post, we will explore the process of decomposing a monolithic application into microservices and the benefits it brings. We will discuss various strategies, best practices, and patterns involved in this architectural transformation.</p>
-<h2 id="benefits-of-decomposing-monoliths">Benefits of Decomposing Monoliths</h2>
+        <h2 id="topics">Topics</h2>
 <ul>
-<li>Scalability: Microservices enable individual components to scale independently, allowing you to allocate resources efficiently based on specific needs.</li>
-<li>Agility and Faster Time-to-Market: Microservices enable teams to work independently, allowing for parallel development and deployment cycles, leading to quicker feature delivery.</li>
-<li>Improved Maintainability: Smaller, focused microservices are easier to understand, modify, and maintain compared to complex monolithic codebases.</li>
-<li>Fault Isolation and Resilience: In a microservices architecture, if one service fails, it doesn&rsquo;t affect the entire system, ensuring fault isolation and improved system resilience.</li>
-<li>Technology Heterogeneity: Microservices allow you to use different technologies and frameworks that are best suited for each service&rsquo;s requirements, promoting innovation and flexibility.</li>
-<li>Team Scalability: Microservices facilitate team autonomy, allowing smaller teams to work on specific services, enabling scalability and faster development cycles.</li>
-<li>Improved Fault Tolerance: With the decoupled nature of microservices, failures in one service are less likely to cascade to other parts of the system.</li>
-<li>Continuous Deployment: Microservices align well with continuous integration and deployment practices, enabling frequent and independent releases of services.</li>
-<li>Enhances System Stability: Microservices reduce the impact of changes by isolating them within smaller codebases, making it easier to identify and fix issues.</li>
-<li>Simplified Technology Stack: Microservices enable you to choose the most appropriate technology stack for each service, resulting in simplified development and maintenance.</li>
-<li>Division of labor and knowledge</li>
-<li>Loose coupling of interactions</li>
+<li><a href="#Synchronous">1. Synchronous communication using REST</a></li>
+<li><a href="#asynchronous">2. Asynchronous messaging</a></li>
 </ul>
-<h2 id="obstacles-to-decomposing-an-application-into-services">Obstacles to Decomposing an Application into Services</h2>
+<h2 id="types">Types of communication among microservices</h2>
+<p>In a microservices architecture, there are typically three types of communication patterns used for inter-service communication:</p>
 <ul>
-<li>Legacy dependencies: Discuss challenges related to dependencies on legacy code, databases, or external systems and strategies to overcome them.</li>
-<li>Shared state and data: Explain the difficulties in decomposing monolithic applications that rely on shared state and data and approaches to handle them.</li>
-<li>Coupling and interdependencies: Discuss the issues caused by tight coupling and interdependencies between components and how to identify and address them.</li>
-<li>Organizational resistance: Explore the challenges of organizational resistance to change and strategies to gain buy-in and support for the microservices initiative.</li>
-<li>Network latency</li>
-<li>Reduced availability due to synchronous communication</li>
-<li>Maintaining data consistency across services</li>
-<li>Obtaining a consistent view of the data</li>
-<li>God classes preventing decomposition</li>
+<li>Synchronous</li>
+<li>Asynchronous</li>
+<li>Data streaming [point to point]</li>
 </ul>
-<h2 id="monolith-decomposition-strategies">Monolith Decomposition Strategies</h2>
+<h2 id="Synchronous">1. Synchronous communication using REST</h2>
+<h3 id="11-handling-failures">1.1 Handling failures</h3>
 <ul>
-<li>Strangler Fig pattern: Explain how to gradually replace components of the monolith with microservices, ensuring seamless migration and minimizing disruption.</li>
-<li>Branch by Abstraction: Discuss the approach of creating an abstraction layer to gradually introduce microservices while maintaining the existing monolith.</li>
-<li>Parallel Runway: Explore the concept of building new microservices alongside the monolith, enabling a phased migration.</li>
+<li>by using <a href="http://microservices.io/patterns/reliability/circuit-breaker.html">Circuit breaker</a> pattern</li>
+<li>Network timeout if do not receive response within a configured timeout</li>
+<li>Limit the number of outstanding requests from a client to a target service</li>
 </ul>
-<h2 id="creating-the-architecture-of-the-target-service">Creating the Architecture of the Target Service</h2>
-<p>When designing the architecture of a target microservice, consider the following:</p>
-<ul>
-<li>Service boundaries: Define clear boundaries for the microservice, ensuring it has a single responsibility and can be independently developed and deployed.</li>
-<li>API design: Design a well-defined and versioned API that exposes the functionality of the microservice.</li>
-<li>Scalability: Implement scalability mechanisms like load balancing and horizontal scaling to handle increased demand.</li>
-</ul>
-<h2 id="service-communication-and-integration">Service Communication and Integration</h2>
-<ul>
-<li>Synchronous vs. asynchronous communication: Discuss the pros and cons of different communication styles and when to use each approach.</li>
-<li>Event-driven architectures: Explain the benefits of using events for loose coupling and scalability in a microservices ecosystem.</li>
-<li>Message brokers: Explore the use of message brokers like Apache Kafka or RabbitMQ for reliable and decoupled communication between services.</li>
-</ul>
-<h2 id="data-management-in-microservices">Data Management in Microservices</h2>
-<ul>
-<li>Database per service: Discuss the advantages of having a dedicated database for each microservice to ensure loose coupling and independent evolution.</li>
-<li>Eventual consistency: Explain the concept of eventual consistency and techniques like distributed transactions or compensating transactions.</li>
-<li>Data replication: Discuss strategies for replicating data across microservices and maintaining data integrity.</li>
-</ul>
-<h2 id="testing-and-deployment-strategies">Testing and Deployment Strategies</h2>
-<ul>
-<li>Unit testing: Describe how to write comprehensive unit tests for individual microservices to ensure their correctness and functionality.</li>
-<li>Continuous integration/continuous deployment (CI/CD): Discuss the importance of automation in the deployment process and how to set up CI/CD pipelines for microservices.</li>
-<li>Versioning and rollbacks</li>
-</ul>
-<h3 id="view-model-of-architecture">View Model of Architecture</h3>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Logical View</th>
-<th>Implementation View</th>
-<th>Process View</th>
-<th>Deployment View</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>❓</td>
-<td>What developers create</td>
-<td>What is produced by the build system</td>
-<td>Running components</td>
-<td>Processes running on machines</td>
-</tr>
-<tr>
-<td><strong>Elements</strong></td>
-<td>Classes, packages</td>
-<td>modules, jars, wars</td>
-<td>Processes</td>
-<td>Machines and Processes</td>
-</tr>
-<tr>
-<td><strong>Relations</strong></td>
-<td>Relationship between them</td>
-<td>Their dependencies</td>
-<td>Inter Process communication</td>
-<td>Networking</td>
-</tr>
-</tbody>
-</table>
-<h3 id="what-is-a-service-">What is a service ❓</h3>
 <blockquote>
-<p>✋ A service is a standalone, independently deployable software component that implements some useful functionality.</p>
+<p>👉 Pattern: <strong>Circuit Breaker</strong>. <a href="http://microservices.io/patterns/reliability/circuit-breaker.html">See</a></p>
 </blockquote>
+<p><a href="https://github.com/Netflix/Hystrix"><strong>Netflix Hystrix</strong></a> is an open source library that implements these and other patterns. If you’re using the JVM, you should definitely consider using Hystrix when implementing RPI proxies.</p>
+<h3 id="12-recovering-from-an-unavailable-service">1.2 Recovering from an unavailable service</h3>
+<p>How do you respond to a call when your dependent service is down depends on the case you are implementing.</p>
+<p>Though, there are following options:</p>
+<ul>
+<li>Return error to the client telling your dependent service is down</li>
+<li>Return a default response or the last cached value</li>
+<li>Keep the requests stored and respond the client that request is stored and will be procedded later. Keep an API which can be invoked to check the status of stored requests.</li>
+</ul>
+<h3 id="13-service-discovery">1.3 Service discovery</h3>
+<p>A service should never call another service directly, though it should search the service by name and should get the endpoint of that service.</p>
 <blockquote>
-<p>👉 A service has an API that encapsulates the implementation. The API defines operations, which are invoked by clients. There are two types of operations: commands update data, and queries retrieve data. When its data changes, a service publishes events that clients can subscribe to.</p>
+<p>👉 Pattern: <strong>Service Discovery</strong>. <a href="http://microservices.io/patterns/communication-style/messaging.html">See</a></p>
 </blockquote>
-<p>Identifying the system operations
-Creating a high-level domain model
-Defining system operations - command and queries</p>
-<p>Defining services by applying the Decompose by business capability pattern
-Business capabilities define what an organization does
-Identifying business capabilities
-From business capabilities to services</p>
-<p>Decomposition guidelines
-Single Responsibility Principle
-The other useful principle is the Common Closure Principle:</p>
+<p>Service discovery works in one of given four ways:</p>
+<ul>
+<li><a href="http://microservices.io/patterns/self-registration.html">Self registration</a></li>
+<li><a href="http://microservices.io/patterns/client-side-discovery.html">Client side discovery</a></li>
+<li><a href="http://microservices.io/patterns/3rd-party-registration.html">3rd party registration</a></li>
+<li><a href="http://microservices.io/patterns/server-side-discovery.html">Server-side discovery</a></li>
+</ul>
+<h2 id="asynchronous">2. Asynchronous messaging</h2>
+<p>A client invokes a service using asynchronous messaging.</p>
+<blockquote>
+<p>👉 Pattern: <strong>Messaging</strong>. <a href="http://microservices.io/patterns/communication-style/messaging.html">See</a></p>
+</blockquote>
+<h3 id="21-message">2.1 Message</h3>
+<p>A message consists of a header and a message body. <a href="www.enterpriseintegrationpatterns.com/Message.html">See</a></p>
+<p>There are several different kinds of messages:</p>
+<ul>
+<li><strong>Document</strong> : A generic message that contains only data. The receiver decides how to interpret it. The reply to a command is an example of a document message.- <strong>Command</strong> : A message that’s the equivalent of an RPC request. It specifies the operation to invoke and its parameters.</li>
+<li><strong>Event</strong> : A message indicating that something notable has occurred in the sender. An event is often a domain event, which represents a state change of a domain object such as an Order, or a Customer.</li>
+</ul>
+<h3 id="22-message-channel">2.2 Message Channel</h3>
+<p>Messages are exchanged over a <a href="www.enterpriseintegrationpatterns.com/MessageChannel.html">channel</a>. A <strong>Sender</strong> sends a message over a channel on a location [called <strong>queue</strong> or <strong>topics</strong>]</p>
+<blockquote>
+<p>👉 Pattern: <strong>Message Channel</strong>. <a href="www.enterpriseintegrationpatterns.com/MessageChannel.html">See</a></p>
+</blockquote>
+<h3 id="23-message-brokers">2.3 Message brokers</h3>
+<p>When selecting a message broker, you have various factors to consider, including the following:</p>
+<ul>
+<li><strong>Supported programming languages</strong> — You probably should pick one that supports a variety of programming languages.</li>
+<li><strong>Supported messaging standards</strong> — Does the message broker support any standards, such as AMQP and STOMP, or is it proprietary?</li>
+<li><strong>Messaging ordering</strong> — Does the message broker preserve ordering of messages?</li>
+<li><strong>Delivery guarantees</strong> — What kind of delivery guarantees does the broker make?</li>
+<li><strong>Persistence</strong> — Are messages persisted to disk and able to survive broker crashes?</li>
+<li><strong>Durability</strong> — If a consumer reconnects to the message broker, will it receive the messages that were sent while it was disconnected?</li>
+<li><strong>Scalability</strong> — How scalable is the message broker?</li>
+<li><strong>Latency</strong> — What is the end-to-end latency?</li>
+<li><strong>Competing consumers</strong> — Does the message broker support competing consumers?</li>
+</ul>
+<blockquote>
+<p>✋ In a brokerless architecture, services can exchange messages directly. ZeroMQ (<a href="http://zeromq.org">http://zeromq.org</a>) is a popular brokerless messaging technology. It’s both a specification and a set of libraries for different languages. It supports a variety of transports, including TCP, UNIX-style domain sockets, and multicast.</p>
+</blockquote>
+<h3 id="24-possible-ways-of-interactions-using-messages">2.4 Possible ways of interactions using messages</h3>
+<ul>
+<li>Request Response</li>
+<li>One way event sending</li>
+<li>Publish Seubscribe</li>
+<li>One way push notification</li>
+</ul>
+<h3 id="25-benefits-of-broker-based-messaging">2.5 Benefits of Broker based messaging</h3>
+<ul>
+<li><strong>Loose coupling</strong> — A client makes a request by simply sending a message to the appropriate channel. The client is completely unaware of the service instances. It doesn’t need to use a discovery mechanism to determine the location of a service instance.</li>
+<li><strong>Message buffering</strong> — The message broker buffers messages until they can be processed. With a synchronous request/response protocol such as HTTP, both the client and service must be available for the duration of the exchange. With messaging, though, messages will queue up until they can be processed by the consumer. This means, for example, that an online store can accept orders from customers even when the order-fulfillment system is slow or unavailable. The messages will simply queue up until they can be processed.</li>
+<li><strong>Flexible communication</strong> — Messaging supports all the interaction styles described earlier.</li>
+<li><strong>Explicit interprocess communication</strong> — RPC-based mechanism attempts to make invoking a remote service look the same as calling a local service. But due to the laws of physics and the possibility of partial failure, they’re in fact quite different. Messaging makes these differences very explicit, so developers aren’t lulled into a false sense of security.</li>
+</ul>
+<h3 id="26-downside-of-broker-based-messaging">2.6 Downside of Broker based messaging</h3>
+<ul>
+<li><strong>Potential performance bottleneck</strong> — There is a risk that the message broker could be a performance bottleneck. Fortunately, many modern message brokers are designed to be highly scalable.</li>
+<li><strong>Potential single point of failure</strong> — It’s essential that the message broker is highly available—otherwise, system reliability will be impacted. Fortunately, most modern brokers have been designed to be highly available.</li>
+<li><strong>Additional operational complexity</strong> — The messaging system is yet another system component that must be installed, configured, and operated.</li>
+</ul>
+<h3 id="27-handling-duplicate-messages">2.7 Handling duplicate messages</h3>
+<ul>
+<li>Write <em>Idemotent</em> message handlers</li>
+<li>Track messages and discard duplicates</li>
+</ul>
+<h3 id="28-message-ordering">2.8 Message ordering</h3>
+<h3 id="29-transactional-messaging">2.9 Transactional messaging</h3>
+<ul>
+<li>Using database table as message queue</li>
+</ul>
+<blockquote>
+<p>✋ Pattern: <strong>Transactional outbox</strong>. <a href="http://microservices.io/patterns/data/transactional-outbox.html">See</a></p>
+</blockquote>
+<ul>
+<li>Publishing events by using the Polling publisher pattern</li>
+</ul>
+<blockquote>
+<p>✋ Pattern: <strong>Polling publisher</strong>. <a href="http://microservices.io/patterns/data/polling-publisher.html">See</a></p>
+</blockquote>
+<ul>
+<li>Publishing events by applying the Transaction log tailing pattern</li>
+</ul>
+<blockquote>
+<p>✋ Pattern: <strong>Transaction log tailing</strong>. <a href="http://microservices.io/patterns/data/transaction-log-tailing.html">See</a></p>
+</blockquote>
+<p>Few examples:</p>
+<ul>
+<li><a href="http://debezium.io">Debezium</a></li>
+<li><a href="https://github.com/linkedin/databus">LinkedIn Databus</a></li>
+<li><a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html">DynamoDB streams</a></li>
+<li><a href="https://github.com/eventuate-tram/eventuate-tram-core">Eventuate Tram</a></li>
+</ul>
 
       </div>
     </article>
@@ -285,7 +301,7 @@ The other useful principle is the Common Closure Principle:</p>
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        833 Words
+        934 Words
       </p>
 
       <p>
@@ -296,7 +312,7 @@ The other useful principle is the Common Closure Principle:</p>
           <line x1="3" y1="10" x2="21" y2="10"></line>
         </svg>
         
-          2022-10-03 21:45 &#43;0100
+          2022-10-04 21:45 &#43;0100
         
 
          
@@ -307,7 +323,7 @@ The other useful principle is the Common Closure Principle:</p>
       <hr />
       <div class="sharing-buttons">
         
-<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2fposts%2fmicroservices-decomposition-strategies-part-2%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2fposts%2fmicroservices-service-to-service-communication-part-3%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
   <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
     </div>
@@ -315,7 +331,7 @@ The other useful principle is the Common Closure Principle:</p>
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?url=%2fposts%2fmicroservices-decomposition-strategies-part-2%2f" target="_blank" rel="noopener" aria-label="" title="Share on twitter">
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?url=%2fposts%2fmicroservices-service-to-service-communication-part-3%2f" target="_blank" rel="noopener" aria-label="" title="Share on twitter">
   <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
       <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
@@ -324,7 +340,7 @@ The other useful principle is the Common Closure Principle:</p>
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=Microservices%20%3a%20Decomposition%20Strategies%20%5bPart%202%5d&amp;caption=Microservices%20%3a%20Decomposition%20Strategies%20%5bPart%202%5d&amp;canonicalUrl=%2fposts%2fmicroservices-decomposition-strategies-part-2%2f" target="_blank" rel="noopener" aria-label="" title="Share on tumblr">
+<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=Microservices%20%3a%20Service%20to%20Service%20Communication%20%5bPart%203%5d&amp;caption=Microservices%20%3a%20Service%20to%20Service%20Communication%20%5bPart%203%5d&amp;canonicalUrl=%2fposts%2fmicroservices-service-to-service-communication-part-3%2f" target="_blank" rel="noopener" aria-label="" title="Share on tumblr">
   <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small">
     <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.4 1.374-4.156 1.404h-.178l.011.002z"/></svg>
@@ -333,7 +349,7 @@ The other useful principle is the Common Closure Principle:</p>
 </a>
 
 
-<a class="resp-sharing-button__link" href="mailto:?subject=Microservices%20%3a%20Decomposition%20Strategies%20%5bPart%202%5d&amp;body=%2fposts%2fmicroservices-decomposition-strategies-part-2%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
+<a class="resp-sharing-button__link" href="mailto:?subject=Microservices%20%3a%20Service%20to%20Service%20Communication%20%5bPart%203%5d&amp;body=%2fposts%2fmicroservices-service-to-service-communication-part-3%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
   <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
     </div>
@@ -341,7 +357,7 @@ The other useful principle is the Common Closure Principle:</p>
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=%2fposts%2fmicroservices-decomposition-strategies-part-2%2f&amp;media=%2fposts%2fmicroservices-decomposition-strategies-part-2%2f;description=Microservices%20%3a%20Decomposition%20Strategies%20%5bPart%202%5d" target="_blank" rel="noopener" aria-label="" title="Share on pinterest">
+<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=%2fposts%2fmicroservices-service-to-service-communication-part-3%2f&amp;media=%2fposts%2fmicroservices-service-to-service-communication-part-3%2f;description=Microservices%20%3a%20Service%20to%20Service%20Communication%20%5bPart%203%5d" target="_blank" rel="noopener" aria-label="" title="Share on pinterest">
   <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>
     </div>
@@ -349,7 +365,7 @@ The other useful principle is the Common Closure Principle:</p>
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fposts%2fmicroservices-decomposition-strategies-part-2%2f&amp;title=Microservices%20%3a%20Decomposition%20Strategies%20%5bPart%202%5d&amp;summary=Microservices%20%3a%20Decomposition%20Strategies%20%5bPart%202%5d&amp;source=%2fposts%2fmicroservices-decomposition-strategies-part-2%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fposts%2fmicroservices-service-to-service-communication-part-3%2f&amp;title=Microservices%20%3a%20Service%20to%20Service%20Communication%20%5bPart%203%5d&amp;summary=Microservices%20%3a%20Service%20to%20Service%20Communication%20%5bPart%203%5d&amp;source=%2fposts%2fmicroservices-service-to-service-communication-part-3%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
   <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
     </div>
@@ -357,7 +373,7 @@ The other useful principle is the Common Closure Principle:</p>
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=%2fposts%2fmicroservices-decomposition-strategies-part-2%2f&amp;resubmit=true&amp;title=Microservices%20%3a%20Decomposition%20Strategies%20%5bPart%202%5d" target="_blank" rel="noopener" aria-label="" title="Share on reddit">
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=%2fposts%2fmicroservices-service-to-service-communication-part-3%2f&amp;resubmit=true&amp;title=Microservices%20%3a%20Service%20to%20Service%20Communication%20%5bPart%203%5d" target="_blank" rel="noopener" aria-label="" title="Share on reddit">
   <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
     </div>
@@ -365,7 +381,7 @@ The other useful principle is the Common Closure Principle:</p>
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://www.xing.com/app/user?op=share;url=%2fposts%2fmicroservices-decomposition-strategies-part-2%2f;title=Microservices%20%3a%20Decomposition%20Strategies%20%5bPart%202%5d" target="_blank" rel="noopener" aria-label="" title="Share on xing">
+<a class="resp-sharing-button__link" href="https://www.xing.com/app/user?op=share;url=%2fposts%2fmicroservices-service-to-service-communication-part-3%2f;title=Microservices%20%3a%20Service%20to%20Service%20Communication%20%5bPart%203%5d" target="_blank" rel="noopener" aria-label="" title="Share on xing">
   <div class="resp-sharing-button resp-sharing-button--xing resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L1.86 16.051c-.099.188-.093.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"/></svg>
     </div>
@@ -373,7 +389,7 @@ The other useful principle is the Common Closure Principle:</p>
 </a>
 
 
-<a class="resp-sharing-button__link" href="whatsapp://send?text=Microservices%20%3a%20Decomposition%20Strategies%20%5bPart%202%5d%20%2fposts%2fmicroservices-decomposition-strategies-part-2%2f" target="_blank" rel="noopener" aria-label="" title="Share on whatsapp">
+<a class="resp-sharing-button__link" href="whatsapp://send?text=Microservices%20%3a%20Service%20to%20Service%20Communication%20%5bPart%203%5d%20%2fposts%2fmicroservices-service-to-service-communication-part-3%2f" target="_blank" rel="noopener" aria-label="" title="Share on whatsapp">
   <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
     </div>
@@ -381,7 +397,7 @@ The other useful principle is the Common Closure Principle:</p>
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=%2fposts%2fmicroservices-decomposition-strategies-part-2%2f&amp;t=Microservices%20%3a%20Decomposition%20Strategies%20%5bPart%202%5d" target="_blank" rel="noopener" aria-label="" title="Share on hacker news">
+<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=%2fposts%2fmicroservices-service-to-service-communication-part-3%2f&amp;t=Microservices%20%3a%20Service%20to%20Service%20Communication%20%5bPart%203%5d" target="_blank" rel="noopener" aria-label="" title="Share on hacker news">
   <div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
 			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/></svg>
     </div>
@@ -389,7 +405,7 @@ The other useful principle is the Common Closure Principle:</p>
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=Microservices%20%3a%20Decomposition%20Strategies%20%5bPart%202%5d&amp;url=%2fposts%2fmicroservices-decomposition-strategies-part-2%2f" target="_blank" rel="noopener" aria-label="" title="Share on telegram">
+<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=Microservices%20%3a%20Service%20to%20Service%20Communication%20%5bPart%203%5d&amp;url=%2fposts%2fmicroservices-service-to-service-communication-part-3%2f" target="_blank" rel="noopener" aria-label="" title="Share on telegram">
   <div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
     </div>
@@ -410,17 +426,17 @@ The other useful principle is the Common Closure Principle:</p>
         <div class="pagination__buttons">
             
             <span class="button previous">
-                <a href="/posts/microservices-service-to-service-communication-part-3/">
+                <a href="/posts/introduction-aws-certified-solutions-architect-associate-wip/">
                     <span class="button__icon">←</span>
-                    <span class="button__text">Microservices : Service to Service Communication [Part 3]</span>
+                    <span class="button__text">Introduction: AWS Certified Solutions Architect - Associate (WIP)</span>
                 </a>
             </span>
             
 
             
             <span class="button next">
-                <a href="/posts/microservices-introduction-part-1/">
-                    <span class="button__text">Microservices : Introduction [Part 1]</span>
+                <a href="/posts/microservices-decomposition-strategies-part-2/">
+                    <span class="button__text">Microservices : Decomposition Strategies [Part 2]</span>
                     <span class="button__icon">→</span>
                 </a>
             </span>
